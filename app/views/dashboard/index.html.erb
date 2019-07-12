@@ -1,0 +1,47 @@
+<div class="dashboard-page">
+  <div class="mdl-tabs mdl-js-tabs" id='page-summary'>
+    <div class="main-section">
+      <div class="mdl-tabs__tab-bar switching-tabs">
+        <a id="program-metrics-tab" href="#program-metrics-panel" class="mdl-tabs__tab is-active">
+          <b>Program Metrics</b>
+        </a>
+        <a id="cycle-metrics-tab" href="#cycle-metrics-panel" class="mdl-tabs__tab">
+          <b>Cycle &amp; Center Metrics</b>
+        </a>
+        <a id="program-feedback-tab" href="#program-feedback-panel" class="mdl-tabs__tab">
+          <b>Program Feedback</b>
+        </a>
+        <div class="export-div" data-html2canvas-ignore="true">
+          <div class="export-container">
+            <div class="export-div-text" id="export-dropdown">
+              <div class="text-icon">
+                <span class="pull-left">Export</span>
+                <span>
+                  <%= image_tag("download-icon.svg", class: 'export-icon') %>
+                </span>
+              </div>
+            </div>
+            <div class="mdl-menu mdl-js-menu export-parent-dropdown" for="export-dropdown">
+              <ul id="get-export" class="export-options-dropdown">
+                <li data-value="pdf">as PDF</li>
+                <li data-value="jpg">as JPG </li>
+                <li data-value="csv">as CSV </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mdl-tabs__panel is-active" id="program-metrics-panel">
+        <%= render "program_metrics"  %>
+      </div>
+      <div class="mdl-tabs__panel" id="cycle-metrics-panel">
+        <%= render("cycle_center_metrics") %>
+      </div>
+      <div class="mdl-tabs__panel" id="program-feedback-panel">
+        <%= render("program_feedback") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render ("tour/analytics_tour_modal") %>

@@ -1,0 +1,52 @@
+{
+  "editProgramsPageHints": [
+    {
+      "element": "[data-open*='8-dropdown']",
+      "hint": "<p>Click here to view more options<p>"
+    }
+  ],
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+  "VOFsteps": [
+    {
+      "element": ".checkpoints",
+      "intro": "select the options you prefer for this learner program"
+    }
+  ],
+  "EditLearnerProgramsSteps": [
+    {
+      "intro": "<span class='intro-title'> Program edit page</span><br>Here, you can edit a learner program you have created. Note that you can only do this once."
+    },
+    {
+      "element": ".first-row",
+      "intro": "Here you can edit the program name, its duration and select its language/stack."
+    },
+    {
+      "element": ".second-row",
+      "intro": "You can edit the description"
+    },
+    {
+      "element": ".current-phases",
+      "intro": "You can add or remove phases in this section"
+    },
+    {
+      "element": ".fourth-row",
+      "intro": "With this, you can select an option to include holistic evaluation in the learner program."
+    },
+    {
+      "element": ".mid-part",
+      "intro": "Here, you can set up the duration of the different phases and add decision bridges for the phases."
+    },
+    {
+      "element": "[data-open*='8-dropdown']",
+      "intro": "By clicking on any of the phases above (click on the phase number) you can select the criteria captured in the phase."
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ]
+}

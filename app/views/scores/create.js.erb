@@ -1,0 +1,12 @@
+<% if flash[:notice] == 'score-success' %>
+  $(".main-content").removeClass('loading')
+  $("#confirm-backend-score-save").attr("data-value", "success")
+<% elsif flash[:error] == 'phase-error'%>
+  $(".main-content").removeClass('loading')
+  $("#confirm-backend-score-save").attr("data-value", "phase-error")
+<% else %>
+  <% if @unsaved_scores && !(@unsaved_scores.empty?) %>
+    localStorage.setItem('unsaved_scores', <%= @unsaved_scores %>);
+    location.reload()
+  <% end %>
+<% end %>

@@ -1,0 +1,99 @@
+{
+  "surveyBuilderSteps": [
+    {
+      "intro": "<span class='intro-title'>Welcome to the Survey Builder</span><br><p>Here, you can create, edit and share surveys with VOF learners. You can also invite collaborators on a survey with whom you can edit the survey and view its responses.</p>"
+    },
+    {
+      "element": ".setup-container.form",
+      "intro": "<span>This is the survey builder which you’ll use to set up a survey. You can conveniently add questions and their descriptions,  sections.</span>"
+    },
+    {
+      "element": ".setup-container.preview",
+      "intro": "<span> This section will show the live preview of the survey you are building on the left.</span>"
+    },
+    {
+      "element": "#toggleSurvey",
+      "intro": "<p>You can use this to toggle the survey builder preview pane.</p>"
+    },
+    {
+      "element": "#maximize",
+      "intro": "<p>You can use this to maximize/minimize the survey builder.</p>"
+    },
+    {
+      "element": "#survey-share-btn",
+      "intro": "Having created your survey, you can use this button to save the survey, share it with collaborators and the recipients. <a target='_blank' rel='noopener' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342062148?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    },
+    {
+      "element": ".cloned",
+      "intro": "This is the question box, using this, you can select your question type, type in your question and set its options."
+    },
+    {
+      "element": ".add-question-btn",
+      "intro": "<p>Clicking on this, you can add a new question to the survey.</p>"
+    },
+    {
+      "element": ".add-section-btn",
+      "intro": "<p>You can also use this to add a section to the survey.</p>"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. The hint will guide you in creating a new survey.</p><br><p>Click on the hint on the title to get started</p>"
+    }
+  ],
+  "surveyBuilderHints": [
+    {
+      "element": "#survey-2-title",
+      "hint": "<p>This is where you add the title of the survey.</p>",
+      "hintPosition": "top-left"
+    },
+    {
+      "element": ".add-description",
+      "hint": "<p>This is where you add a description of the survey.</p>"
+    },
+    {
+      "element": ".cloned",
+      "hint": "<p>You can select the question by clicking on this dropdown.</p>",
+      "hintPosition": "middle-middle"
+    },
+    {
+      "element": ".add-question-btn",
+      "hint": "<p>You can click on this button to add a question to the survey</p>",
+      "hintPosition": "bottom-middle"
+    }
+  ],
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+  "addQuestionSteps": [
+    {
+      "element": ".cloned",
+      "intro": "<ul style='text-align: left,'><li>Click on the dropdown, scroll down and select a question type.</li><li>Type a question in the input field and the corresponding option.</p>"
+    },
+    {
+      "element": "#survey-share-btn",
+      "intro": "Now click on this button to share the survey.<br>"
+    },
+    {
+      "element": "#main-share-modal",
+      "intro": "<p>On this modal, you get to set the recipients of your survey, set the scheduled date of the survey and optionally invite collaborators on the survey.</p>"
+    },
+    {
+      "element": "#select-collaborators",
+      "intro": "This is where you invite the collaborators from the input."
+    },
+    {
+      "element": "#select_cycle",
+      "intro": " This is where you select the recipients of your survey."
+    },
+    {
+      "element": "#survey-save-progress",
+      "intro": "This button is used to save the progress of a survey that is yet to be completed"
+    },
+    {
+      "element": "#send-btn-shelter",
+      "intro": "<span>Click on this button to send the survey to the selected cycles</span>"
+    }
+  ]
+}

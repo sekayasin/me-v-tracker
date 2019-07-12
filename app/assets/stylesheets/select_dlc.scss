@@ -1,0 +1,313 @@
+@import 'base';
+
+$dropdown-alignment-style: (
+  margin-left: 12%
+);
+
+$dropdown-content-container-style: (
+  position: relative
+);
+
+$dropdown-input-style: (
+  background:#fff url(down.svg) no-repeat,
+  background-position: 205px 19px,
+  display: block,
+  padding-right: 4%,
+  width: 220px,
+  height: 45px,
+  border-radius: 5px,
+  margin-top: -3%
+);
+
+$dropdown-input-up-style: (
+  background:#fff url(up.svg) no-repeat,
+  background-position: 205px 19px,
+  display: block,
+  padding-right: 4%,
+  width: 220px,
+  height: 45px,
+  border-radius: 5px,
+  margin-top: -3%
+);
+
+$dropdown-input-span-style: (
+  display: block,
+  padding: 7px 13px,
+  font-size: 0.9rem
+);
+
+$dropdown-input-span-line-style: (
+  display: block,
+  position: relative,
+  left: 180px,
+  top: -35px,
+  bottom: 0,
+  height: 45px !important
+);
+
+$dropdown-content-style: (
+  padding: 2px 0,
+  position: absolute,
+  top: -2px,
+  width: auto,
+  min-width: 193px,
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.12),
+  border-radius: 4px,
+  min-height: 30px,
+  max-height: 200px
+);
+
+$dropdown-link-style: (
+  display: block,
+  font-size: 0.8rem
+);
+
+$dropdown-list-style: (
+  padding-left: 7%,
+  padding-bottom: 7px,
+  margin: 0,
+);
+
+$dropdown-list-first-child-style: (
+  padding-top: 12px
+);
+
+.dropdown dd, .dropdown dt, .dropdown ul { 
+  @include dropdown-alignment($dropdown-alignment-style...);
+
+  @include respond-to(wide-screens) {
+      margin-left: 12%;
+    }
+}
+
+.dropdown dd { 
+  @include dropdown-content-container($dropdown-content-container-style...);
+}
+
+.dropdown-input {
+  @include dropdown-input($dropdown-input-style...);
+
+  @media screen and (max-width: $break-point-smobile) {
+    background-position: 202px 15px;
+  }
+
+  @media screen and (min-width: 321px) and (max-width: $break-point-mobile) { 
+    background-position: 202px 15px;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: $break-point-tablet) {
+    background-position: 218px 15px;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: $break-point-desktop) {
+    margin-top: 3%;
+  }
+  
+  @media screen and (min-width: $break-point-large) {
+    width: 300px;
+    background-position: 280px 25px;
+    height: 60px !important;
+  }
+}
+
+.dropdown-input span {
+  @include dropdown-input-span($dropdown-input-span-style...);
+
+  @media screen and (max-width: $break-point-smobile) {
+    padding: 10px;
+  }
+
+  @media screen and (min-width: 321px) and (max-width: $break-point-mobile) { 
+    padding: 6px 10px;
+  }
+
+  @media screen and (min-width: $break-point-large) {
+    font-size: 1.2rem;
+    padding: 16px 20px;
+  }
+}
+
+.dropdown-input span::after {
+  @include dropdown-input-span-line($dropdown-input-span-line-style...);
+
+  @media screen and (max-width: $break-point-smobile) {
+    top: -38px;
+  }
+
+  @media screen and (min-width: 321px) and (max-width: $break-point-mobile) { 
+  }
+
+  @media screen and (min-width: 481px) and (max-width: $break-point-tablet) {
+    left: 195px;
+  }
+
+  @media screen and (min-width: $break-point-large) {
+    left: 240px;
+    top: -44px;
+    height: 60px !important;
+  }
+}
+
+#index-dropdown {
+  margin-left: 0;
+
+  @media screen and (min-width: $break-point-large) {
+    margin-left: 65px
+  }
+}
+
+.dropdown-content {
+  @include dropdown-content($dropdown-content-style...);
+  overflow-y: scroll;
+
+  @media screen and (min-width: $break-point-large) {
+    min-width: 260px;
+    left: -67px;
+    top: 2px;
+  }
+}
+        
+.dropdown span.value {
+  @include dropdown-span-value;
+}
+
+.dropdown-link {
+  @include dropdown-link($dropdown-link-style...);
+  @include dropdown-link-hover;
+
+  @media screen and (min-width: $break-point-large) {
+    font-size: 1rem;
+  }
+}
+
+.dropdown dd ul li {
+  @include dropdown-list($dropdown-list-style...);
+
+  @media screen and (min-width: $break-point-large) {
+    padding-bottom: 15px;
+  }
+}
+
+.dropdown dd ul li:last-child {
+  padding-bottom: 15px;
+}
+
+.dropdown dd ul li:first-child {
+  @include dropdown-list-first-child($dropdown-list-first-child-style...);
+}
+
+.select-class {
+  @include dropdown-select-class;
+}
+
+.up-arrow {
+  @include dropdown-input($dropdown-input-up-style...);
+
+  @media screen and (max-width: $break-point-smobile) {
+    background-position: 202px 15px;
+  }
+
+  @media screen and (min-width: 321px) and (max-width: $break-point-mobile) { 
+    background-position: 202px 15px;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: $break-point-tablet) {
+    background-position: 218px 15px;
+  }
+
+  @media screen and (min-width: $break-point-large) {
+    width: 300px;
+    background-position: 280px 25px;
+  }
+}
+
+.proceed-container {
+  padding-top: 2%;
+
+  .proceed-btn {
+    margin-left: 9.6%;
+    width: 45% !important;
+    
+    @media screen and (min-width: 321px) and (max-width: $break-point-mobile) {
+      width: 50% !important;
+    }
+
+    @media screen and (min-width: 484px) and (max-width: 840px){
+      margin-left: 10.5%;
+    }
+
+    @media screen and (min-width: 481px) and (max-width: $break-point-large-tablet) {
+      width: 25% !important;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.sign-out-container {
+  margin-left: 12%;
+  font-size: 1rem;
+  font-family: $font-family-light;
+  font-weight: 100;
+
+  @media screen and (min-width: $break-point-large) {
+    font-size: 1.3rem;
+  }
+
+  .sign-out-text {
+    text-decoration: none;
+    color: #4786ff;
+    font-family: $font-family-light;
+    font-size: 1rem;
+    font-weight: 100;
+
+    @media screen and (min-width: $break-point-large) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.dlc-text-wrapper {
+  height: 15%;
+  margin-left: 12%;
+  text-align: left;
+  color: $grey-color;
+  font-family: $font-family-light !important;
+  font-size: 1.65em;
+  font-weight: 100;
+  line-height: 130%;
+  margin-top: 10%;
+  margin-bottom: 20px;
+  height: 200px;
+
+  @media screen and (max-width: $break-point-mobile){
+    font-size: 1.18em;
+    height: 130px !important;
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: $break-point-large-tablet) {
+    font-size: 1.8em;
+  }
+
+  @media screen and (min-width: $break-point-large) {
+    font-size: 2.2em;
+    font-weight: 100;
+    margin-bottom: 5%;
+    height: 250px;
+  }
+}
+
+.dlc-brand-logo {
+  background-image: image-url('logos/home-vof-logo.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 94% 15.5%;
+  height: px-to-rem(45px);
+  object-fit: contain;
+  padding-top: 47%;
+  position: relative;
+  margin-left: 11%;
+  width: 35%;
+}

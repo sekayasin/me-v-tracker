@@ -1,0 +1,37 @@
+<div class="mdl-grid mdl-grid--no-spacing">
+  <section class=" mdl-cell--stretch mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet  mdl-cell--4-col-phone login-section">
+    <div class="login-container">
+      <div class="dlc-brand-logo"></div>
+      <div class="dlc-text-wrapper">
+          Thanks! <br>
+          Please select which <br>
+          Andela Learning <br>
+          Community (ALC) Program <br>
+          you want to view.
+      </div>
+      <div class="content">
+        <dl id="program-select" class="dropdown">
+          <dt><a href="#" class="dropdown-input"><span class="dropdown-text"> - Select ALC - </span></a></dt>
+          <dd>
+            <ul class="dropdown-content" id="index-dropdown">
+             <% program_options.each do |program|%>
+              <li><a class="dropdown-link" href="#"><%= program[0]%><span id="program-value" class="value"><%= program[1]%></span></a></li>
+            <% end %>
+            </ul>
+          </dd>
+        </dl>
+        <div id="program-select-error"></div>
+        <div id="redirect-error">
+          <p><%= flash[:error] unless flash[:error].blank? %></p>
+        </div>
+      <div class="proceed-container">
+        <%= link_to image_tag("dlc-select-button.svg", :class => "proceed-btn") %>
+      </div>
+      <p class="sign-out-container">
+        or <%= link_to "sign out", logout_path, class: 'sign-out-text'%>
+      </p>
+      </div>
+    </div>
+  </section>
+  <%= render("shared/slider")%>
+</div>

@@ -1,0 +1,64 @@
+{
+  "programPageModalView": [
+    {
+      "element": ".single-program-modal",
+      "intro": "This is the view for the programs created </br> As you may have noted, you can't edit this program since it has already been edited.",
+      "position": "top"
+    },
+    {
+      "element": ".program-phases-wrapper",
+      "intro": "This view holds all phases for the learner programs",
+      "position": "left"
+    },
+    {
+      "element": ".program-details-table-wrapper",
+      "intro": "This view shows the options available for Value-alignment, Output-quality and Feedback in the learner program",
+      "position": "left"
+    }
+  ],
+
+  "programsPageHints": [
+    {
+      "element": ".create-new-program",
+      "hint": "<p> Clicking on this will open a modal where you can create a particular program. </p> <br /> <a target='_new' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342061956?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    },
+    {
+      "element": ".action-data span.view-icon",
+      "hint": "<p>Click here to view a learner program<p>"
+    },
+    {
+      "element": ".edit-icon",
+      "hint": "<p>This allows you to edit a program you’ve created. Note that you can only do this once.<p>"
+    }
+  ],
+
+  "createProgramsModalSteps": [
+    {
+      "element": "#create-program-modal",
+      "intro": "<h5>This is the create programs modal</h5> <p>You can fill in the fields required to create the program</p>"
+    },
+    {
+      "element": ".ui-selectmenu-text",
+      "intro": "<p>You can choose to clone an existing program instead of creating one from scratch.</p>"
+    }
+  ],
+
+  "programsPageSteps": [
+    {
+      "intro": "<span class='intro-title'>This is the Programs Page</span><br> <p>Here you can create, edit and even view programs on VOF</p>"
+    },
+    {
+      "element": ".programs-row-wrapper",
+      "intro": "<p>This represents a single learner program. It gives a brief overview of the languages and phases supported on the program.</p> <br /> <a target='_new' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342062071?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ]
+}

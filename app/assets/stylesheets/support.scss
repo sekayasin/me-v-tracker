@@ -1,0 +1,508 @@
+@import "base";
+
+.support-page {
+  padding-top: $main-content-margin-top * 1.1;
+  display: flex;
+  margin-bottom: 0 !important;
+
+  .container {
+    width: 96%;
+  }
+  @include respond-to(wide-screens) {
+    margin-left: px-to-rem(90px);
+  }
+
+  @include respond-to(handhelds) {
+    margin-left: 0;
+    padding-top: px-to-rem(5px);
+  }
+
+  @include respond-to(tablets) {
+    margin-left: 0;
+    padding-top: px-to-rem(5px);
+  }
+
+  .container {
+    @include respond-to(tablets) {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .support-tab {
+    @include respond-to(handhelds) {
+      width: 100% !important;
+      padding-right: px-to-rem(20px) !important;
+    }
+
+    @include respond-to(tablets) {
+      width: 100% !important;
+      padding-right: px-to-rem(20px) !important;
+    }
+
+    .tabs {
+      margin-top: px-to-rem(4px);
+      padding-left: px-to-rem(20px);
+    }
+
+    .support-card-active {
+      border-radius: px-to-rem(4px);
+      background-color: $background-white;
+      box-shadow: px-to-rem(2px) px-to-rem(4px) px-to-rem(10px) 0
+        rgba(51, 89, 219, 0.1);
+      cursor: pointer;
+
+      .active-header {
+        font-family: $font-family-medium !important;
+      }
+    }
+
+    li.support-card {
+      list-style-type: none;
+
+      @include respond-to(handhelds) {
+        width: 100% !important;
+        padding-bottom: px-to-rem(10px);
+        height: unset;
+      }
+
+      @include respond-to(tablets) {
+        width: 100% !important;
+        padding-bottom: px-to-rem(5px);
+      }
+    }
+
+    .tab-link:hover {
+      cursor: pointer;
+      box-shadow: px-to-rem(2px) px-to-rem(4px) px-to-rem(10px) 0
+        rgba(51, 89, 219, 0.1);
+    }
+
+    .support-card {
+      box-sizing: border-box;
+      height: px-to-rem(94px);
+      padding-right: px-to-rem(5px);
+      padding-left: px-to-rem(15px);
+      font-family: $font-family-regular !important;
+      margin-bottom: px-to-rem(25px);
+
+      @include respond-to(handhelds) {
+        height: px-to-rem(74px);
+        margin-bottom: px-to-rem(15px);
+        font-size: px-to-rem(14px) !important;
+        margin-left: 0;
+      }
+
+      h6 {
+        padding-left: px-to-rem(20px);
+        padding-top: px-to-rem(15px);
+        color: $andela-blue;
+        font-size: px-to-rem(18px);
+        font-family: $font-family-regular !important;
+        margin-top: 0 !important;
+
+        @include respond-to(handhelds) {
+          padding-left: px-to-rem(10px);
+        }
+      }
+
+      p {
+        color: $answer-color;
+        padding-left: px-to-rem(20px);
+        line-height: px-to-rem(15px);
+
+        @include respond-to(handhelds) {
+          padding-left: px-to-rem(10px);
+        }
+      }
+    }
+  }
+
+  .info-section {
+    margin-left: px-to-rem(85px);
+    color: $answer-color;
+    overflow-y: scroll;
+    height: px-to-rem(580px);
+
+    @include respond-to(wide-screens) {
+      height: px-to-rem(700px);
+    }
+
+    @include respond-to(handhelds) {
+      margin-left: px-to-rem(15px);
+      height: px-to-rem(400px);
+
+      .appreciation {
+        margin-left: 0 !important;
+      }
+    }
+
+    .tab-content-wrapper {
+      padding-left: px-to-rem(45px) !important;
+
+      @include respond-to(wide-screens) {
+        padding-left: px-to-rem(70px) !important;
+      }
+
+      @include respond-to(handhelds) {
+        padding-left: px-to-rem(32px) !important;
+      }
+    }
+
+    .resource-card {
+      margin-top: px-to-rem(10px);
+
+      .resource-link + a {
+        font-family: inherit !important;
+        font-size: px-to-rem(16px) !important;
+      }
+
+      .resource-details {
+        font-size: px-to-rem(16px) !important;
+      }
+
+      .resource-link:hover {
+        color: $andela-blue;
+      }
+
+      .resource-title {
+        font-size: px-to-rem(18px) !important;
+        font-family: $font-family-regular !important;
+      }
+    }
+
+    a {
+      font-family: $font-family-regular;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .faq-link:hover,
+    .active {
+      color: $andela-blue !important;
+    }
+
+    .accordion,
+    .accordion * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .faq-question {
+      cursor: pointer;
+    }
+
+    .faq-question:hover {
+      color: $andela-blue;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.current {
+      display: inherit;
+    }
+  }
+
+  .accordion-section-content {
+    margin-top: px-to-rem(20px) !important;
+    font-size: px-to-rem(18px) !important;
+
+    .faq-answer {
+      font-size: px-to-rem(16px);
+    }
+
+    .feedback > p {
+      font-family: $font-family-light;
+      font-size: px-to-rem(16px);
+      margin-top: px-to-rem(30px);
+
+      .feedback-icon {
+        height: px-to-rem(18px);
+        width: px-to-rem(18px);
+        margin: 0 px-to-rem(5px);
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .appreciation {
+        margin-left: px-to-rem(100px);
+        display: none;
+      }
+
+      .yes-icon {
+        background: url("yes.svg") no-repeat;
+      }
+
+      .no-icon {
+        background: url("no.svg") no-repeat;
+      }
+
+      .yes-active {
+        background: url("yes-active.svg") no-repeat;
+      }
+
+      .no-active {
+        background: url("no-active.svg") no-repeat;
+      }
+    }
+  }
+
+  .support-search-results {
+    width: 60%;
+    color: #888;
+
+    @include respond-to(tablet-and-mobile) {
+      width: 80%;
+      margin: auto;
+    }
+
+    .support-search-header {
+      font-size: px-to-rem(22px);
+      color: $top-section-black;
+      font-family: $font-family-regular;
+
+      @include respond-to(handhelds) {
+        font-size: px-to-rem(18px);
+      }
+    }
+
+    .line {
+      margin-bottom: 2%;
+      .long {
+        @include blue-line(px-to-rem(50px), px-to-rem(10px));
+
+        @include respond-to(handhelds) {
+          @include blue-line(px-to-rem(30px), px-to-rem(6px));
+        }
+      }
+
+      .short {
+        @include blue-line(px-to-rem(10px), null);
+      }
+    }
+
+    a {
+      font-family: $font-family-regular;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+
+      &:hover {
+        color: $andela-blue;
+      }
+    }
+
+    .faq-link:hover,
+    .active {
+      color: $andela-blue !important;
+    }
+
+    .support-search-container {
+      height: 60vh;
+      overflow-y: scroll;
+
+      @include respond-to(handhelds) {
+        height: 70vh;
+      }
+    }
+  }
+
+  .support-learner-container {
+    .video-page {
+      a {
+        text-decoration: none;
+      }
+      .video-page-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+          text-align: center;
+          margin-bottom: px-to-rem(16px);
+        }
+      }
+
+      .video-card-container {
+        margin: px-to-rem(28px) 0;
+        .video-panel {
+          div {
+            @media only screen and (max-width: px-to-rem(1024px)) and (min-width: px-to-rem(901px)){
+              left: px-to-rem(150px);
+            }
+          }
+        }
+        .video-page-card {
+          
+          border-radius: px-to-rem(12px);
+          background-color: $background-white;
+          margin: 0 px-to-rem(50px) px-to-rem(21px) px-to-rem(50px);
+          
+          @media only screen and (max-width: px-to-rem(1024px)) and (min-width: px-to-rem(901px)){
+            margin: px-to-rem(17px) px-to-rem(39px);
+            width: px-to-rem(350px);
+          }
+          @include respond-to(tablets) {
+            width: px-to-rem(310px);
+            margin: 0 px-to-rem(20px) px-to-rem(21px) px-to-rem(30px);
+          }
+
+          @include respond-to(handhelds) {
+            width: px-to-rem(290px);
+            margin: 0 0 px-to-rem(21px) 0;
+          }
+        }
+      }
+    }
+  }
+
+  .video-page {
+    overflow-y: none;
+    padding-left: px-to-rem(20px) !important;
+
+    @include respond-to(tablets) {
+      padding-top: 6%;
+    }
+
+    @include respond-to(handhelds) {
+      margin-top: px-to-rem(60px);
+    }
+
+    .video-page-top {
+      padding-left: $base-font-size;
+
+      h2 {
+        height: px-to-rem(34px);
+        color: $profile-text-color;
+        font-family: $font-family-regular;
+        font-size: px-to-rem(22px);
+        font-weight: bold;
+        line-height: px-to-rem(34px);
+        margin-bottom: px-to-rem(9px) !important;
+      }
+
+      p {
+        height: px-to-rem(36px);
+        width: px-to-rem(331px);
+        color: #364147;
+        font-family: $font-family-regular;
+        font-size: px-to-rem(14px);
+        line-height: px-to-rem(18px);
+        margin-bottom: px-to-rem(47px);
+      }
+    }
+
+    .video-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: px-to-rem(18px) 0;
+      width: 99%;
+      overflow-y: hidden;
+      @include respond-to(handhelds) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .video-page-card {
+        height: px-to-rem(231px);
+        margin-bottom: px-to-rem(21px);
+        width: px-to-rem(344px);
+        border-radius: px-to-rem(12px);
+        background-color: $background-white;
+        margin: 0 px-to-rem(10px) px-to-rem(21px) px-to-rem(10px);
+        box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.05);
+        
+        @media only screen and (max-width: px-to-rem(1024px)) and (min-width: px-to-rem(901px)){
+          margin: 0 px-to-rem(35px) px-to-rem(25px) px-to-rem(25px);
+          width: px-to-rem(315px);
+        }
+
+        @include respond-to(tablets) {
+          width: px-to-rem(310px);
+          margin: 0 px-to-rem(25px) px-to-rem(25px) px-to-rem(25px);
+        }
+
+        @include respond-to(handhelds) {
+          width: px-to-rem(305px);
+        }
+      }
+
+      .video-text-section {
+        padding: px-to-rem(12px) px-to-rem(21px);
+
+        .video-title {
+          text-transform: uppercase;
+          color: $profile-text-color;
+          font-family: $font-family-regular;
+          font-size: px-to-rem(14px);
+          line-height: px-to-rem(8px);
+        }
+
+        .video-text {
+          height: px-to-rem(18px);
+          width: px-to-rem(310px);
+          color: #9f9f9f;
+          font-family: $font-family-regular;
+          font-size: px-to-rem(14px);
+          line-height: px-to-rem(18px);
+        }
+      }
+      .video-panel {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: px-to-rem(129px);
+        width: 94%;
+        border-radius: px-to-rem(8px);
+        box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.05);
+        margin: px-to-rem(10px) px-to-rem(12px);
+        margin-left: 3%;
+        .video-image {
+          height: px-to-rem(129px);
+          width: 100%;
+          border-radius: px-to-rem(8px);
+          box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.05);
+        }
+
+        div {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: px-to-rem(35px);
+          left: px-to-rem(130px);
+          height: px-to-rem(60px);
+          width: px-to-rem(60px);
+          background-color: #3054de;
+          box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.05);
+          border-radius: 50%;
+          padding-left: px-to-rem(4px);
+
+          @media only screen and (max-width: px-to-rem(1024px)) and (min-width: px-to-rem(901px)){
+            left: px-to-rem(120px);
+          }
+          @include respond-to(tablets) {
+            left: px-to-rem(120px);
+          }
+          @include respond-to(handhelds) {
+            left: px-to-rem(105px);
+          }
+
+          .fa {
+            width: px-to-rem(25px);
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+.fancybox-container {
+  z-index: 200000000;
+}

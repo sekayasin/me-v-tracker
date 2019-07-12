@@ -1,0 +1,83 @@
+<div id="learner-feedback-popup-modal">
+  <div class=" modal feedback-popup-container">
+    <div class="modal-top">
+      <span class="close-button close-feedback-popup-modal"></span>
+      <div class="feedback-question" id="feedback-question">
+        How likely are you to recommend Andela bootcamp to others?
+      </div>
+      <div class="line">
+        <span class="long"></span>
+        <span class="short"></span>
+      </div>
+    </div>
+    <div class="modal-content">
+      <div class='emoji-ratings'>
+        <div class="rating-container">
+          <%= image_tag 'sad-smiley', class: 'feedback-emoji', value: '0', id: 'zeroth-rating' %>
+          <span class="feedback-number">0</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'sad-smiley', class: 'feedback-emoji', value: '1', id: 'first-rating' %>
+          <span class="feedback-number">1</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'sad-smiley', class: 'feedback-emoji', value: '2', id: 'sec-rating' %>
+          <span class="feedback-number">2</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'sad-smiley', class: 'feedback-emoji', value: '3', id: 'third-rating' %>
+          <span class="feedback-number">3</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'sad-smiley', class: 'feedback-emoji', value: '4', id: 'fourth-rating' %>
+          <span class="feedback-number">4</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'sad-smiley', class: 'feedback-emoji', value: '5', id: 'fifth-rating' %>
+          <span class="feedback-number">5</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'sad-smiley', class: 'feedback-emoji', value: '6', id: 'sixth-rating' %>
+          <span class="feedback-number">6</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'surprised', class: 'feedback-emoji', value: '7', id: 'seventh-rating' %>
+          <span class="feedback-number">7</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'surprised', class: 'feedback-emoji', value: '8', id: 'eight-rating' %>
+          <span class="feedback-number">8</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'happiness', class: 'feedback-emoji', value: '9', id: 'ninth-rating' %>
+          <span class="feedback-number">9</span>
+        </div>
+        <div class="rating-container">
+          <%= image_tag 'happiness', class: 'feedback-emoji', value: '10', id: 'tenth-rating' %>
+          <span class="feedback-number">10</span>
+        </div>
+      </div>
+
+      <div class="feedback-rating">
+        <label class="feedback-question rating" for="rating">Please provide reason for your rating
+          <span class="error-mode"></span>
+        </label>
+        <p>
+          <textarea placeholder="Add your comment" type="text" name="rating" id="popup-textarea" maxlength="400"></textarea>
+        </p>
+      </div>
+      <div class="show-again-checkbox">
+        <label class="mdl-checkbox  mdl-js-checkbox" value="Show again" for="show-again">
+          <input type="checkbox" name="show-again" id="show-again" class="mdl-checkbox__input mdl-checkbox__input-mts" />
+          <span class="mdl-checkbox__label">Don't show this again.</span>
+        </label>
+      </div>
+      <div id="notification" style="display: none;">
+        <span>Thank you for your feedback</span>
+      </div>
+    </div>
+    <div class="modal-bottom save-btn" id="save-feedback">
+        <button class='save-button'>Submit</button>
+    </div>
+  </div>
+</div>

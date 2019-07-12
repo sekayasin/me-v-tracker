@@ -1,0 +1,50 @@
+<svg width="22px" height="24px" viewBox="0 0 22 24" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(4.000000, 4.000000)">
+            <path d="
+                M1.487,10.426
+                C0.862,9.426 0.5,8.246 0.5,6.981
+                C0.5,3.391 3.41,0.481 7,0.481
+                C10.59,0.481 13.5,3.391 13.5,6.981
+                C13.5,8.252 13.135,9.438 12.503,10.44"
+                stroke="#BCBCBC"
+                stroke-linecap="round"
+                stroke-linejoin="round
+            "/>
+            <path d="
+                M5.497,6.481
+                C5.497,5.928 5.944,5.481 6.497,5.481
+                C7.05,5.481 7.497,5.928 7.497,6.481
+                L7.497,11.235
+                L11.417,12.405
+                C12.071,12.594 12.464,13.26 12.311,13.925
+                C12.311,13.925 11.565,17.927 11.461,18.501
+                L5.341,18.501
+                L2.281,13.911
+                C1.066,12.054 4.117,11.409 5.498,14.501
+                L5.498,6.481
+                L5.497,6.481
+                Z"
+                stroke="#BCBCBC
+            "/>
+        </g>
+        <polyline
+          stroke="#BCBCBC" 
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          points="9 0.481 11 2.48 13 0.481"
+        />
+        <polyline
+          stroke="#BCBCBC"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          points="21.5 8.981 19.5 10.981 21.5 12.981"
+        />
+        <polyline
+          stroke="#BCBCBC"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          points="0.5 12.981 2.5 10.981 0.5 8.981"
+        />
+    </g>
+</svg>

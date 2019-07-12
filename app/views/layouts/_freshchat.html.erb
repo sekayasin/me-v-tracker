@@ -1,0 +1,15 @@
+
+<script>
+  let token = '<%= ENV["FRESHCHAT_TOKEN"]%>';
+  window.fcWidget.init({
+    token,
+    host: "https://wchat.freshchat.com",
+    email: '<%= session[:current_user_info] ? session[:current_user_info][:email] : '' %>',
+    config: {
+      headerProperty: {
+        backgroundColor: '#4786ff',
+        foregroundColor: '#ffffff',
+      }
+    }
+  });
+</script>

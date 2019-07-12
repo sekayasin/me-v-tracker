@@ -1,0 +1,37 @@
+<div id="edit-learner-technical-details-modal" class="edit-learner-technical-details-modal">
+  <div class="modal">
+    <div class="edit-learner-technical-details-modal-top modal-top">
+      <div class="modal-header">
+        <span id="close-button" class="close-button"></span>
+        <div class="edit-learner-technical-details-header">
+          <div class="title"></div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-content">
+      <div class="edit-learner-technical-details-body">
+        <form id="edit-learner-technical-details-form">
+          <div class="learner-alc-languages-stacks">
+            <label for="alc-languages-stacks-input" class="input-label">Languages/Stacks</label>
+          </div>
+          <div class="learner-preferred-languages-stacks">
+            <label for="preferred-languages-stacks-input" class="input-label">Preferred Languages/Stacks</label>
+            <% language_stacks.each do |language_stack| %>
+              <label class="input-container"><%= language_stack.name %>
+                <input type="checkbox" id="<%= language_stack.id %>" name="preferred_languages_stacks" value="<%= language_stack.id %>">
+                <span class="checkmark"></span>
+              </label>
+            <% end %>
+          </div>
+        </form>
+      </div>  
+    </div>
+  </div>
+  <div class="edit-learner-technical-details-footer">
+    <a class="save-edit-learner-technical-details btn-submit" id="save-technical-details">Save</a>
+  </div>
+</div>

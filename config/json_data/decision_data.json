@@ -1,0 +1,51 @@
+{
+  "In Progress": ["Not available until status is changed"],
+  "Rejected": [
+    "Integrity Issues",
+    "Output Quality - Technical Skills",
+    "Output Quality - Team Skills",
+    "Values Alignment",
+    "Ability to Incorporate Feedback",
+    "Other"
+  ],
+  "Dropped Out": [
+    "Personal/Health Reasons",
+    "Commitment",
+    "Other"
+  ],
+  "Advanced": [
+    "Output Quality - Technical Skills",
+    "Output Quality - Team Skills",
+    "Values Alignment",
+    "Ability to Incorporate Feedback",
+    "Other"
+  ],
+  "Level Up": [
+    "Output Quality - Technical Skills",
+    "Output Quality - Team Skills",
+    "Values Alignment",
+    "Ability to Incorporate Feedback",
+    "Other"
+  ],
+  "Try Again": [
+    "Output Quality - Technical Skills",
+    "Output Quality - Team Skills",
+    "Values Alignment",
+    "Ability to Incorporate Feedback",
+    "Other"
+  ],
+  "Accepted": [
+    "Output Quality - Technical Skills",
+    "Output Quality - Team Skills",
+    "Values Alignment",
+    "Ability to Incorporate Feedback",
+    "Other"
+  ],
+  "Fast-tracked": [
+    "Output Quality - Technical Skills",
+    "Output Quality - Team Skills",
+    "Values Alignment",
+    "Ability to Incorporate Feedback",
+    "Other"
+  ]
+}

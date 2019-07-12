@@ -1,0 +1,236 @@
+<div class="main-score-section">
+  <section class="smallscreen">
+    <div class="btn-wrapper">
+      <a class="btns evaluation-btn evaluation-select">
+        Evaluation <i class="material-icons evaluation-icon">&#xE5C5;</i>
+      </a>
+    </div>
+    <div class="evaluation-select-dropdown">
+      <dl class="dropdown evaluation-dropdown">
+        <dd>
+          <ul class="dropdown-content">
+            <% if user_is_lfa_or_admin?(@learner_details[:learner].bootcamper.camper_id)%>
+            <li class="dropdown-list learner-feedback-btn">PERSONAL FEEDBACK</li>
+            <% end %>
+            <li class="dropdown-list holistic-evaluation-btn">HOLISTIC EVALUATION</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </section>
+  <section class="learner-profile-section">
+    <div class="bio-info">
+      <% resized_profile_image = "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=80" %>
+      <img  src= "<%= resized_profile_image %>" alt="Profile Image" class="profile-pix" />
+      <div class="profile">
+        <h6 class="bio-text"><%= @learner_details[:learner].bootcamper.first_name %> <%= @learner_details[:learner].bootcamper.last_name %></h6>
+        <% if admin? %>
+          <span class="edit-learner-icon"></span>
+        <% end %>
+      </div>
+      <p class="bio-text" id="camper-gender"><%= @learner_details[:learner].bootcamper.gender %></p>
+      <p class="bio-text" id="camper-email"><%= @learner_details[:learner].bootcamper.email %></p>
+      <p class="bio-text"><%= @learner_details[:learner].bootcamper.phone_number %></p>
+      <p class="bio-text">
+        <span id="camper-city">
+          <%= @learner_details[:learner].cycle_center.cycle_center_details[:center] %>
+        </span>,
+        <span id="camper-country">
+          <%= @learner_details[:learner].cycle_center.cycle_center_details[:country] %>
+        </span>
+      </p>
+    </div>
+    <div class="social-links">
+      <a target=”_blank” class="link-item github" href="https://github.com/<%= @learner_details[:learner].bootcamper.github %>">
+        <span class="link-text">
+          <%= @learner_details[:learner].bootcamper.github %>
+        </span>
+      </a>
+      <a target=”_blank” class="link-item linkedin" href="https://www.linkedin.com/in/<%= @learner_details[:learner].bootcamper.linkedin %>">
+        <span class="link-text">
+          <%= @learner_details[:learner].bootcamper.linkedin %>
+        </span>
+      </a>
+      <a target=”_blank” class="link-item trello" href="https://trello.com/<%= @learner_details[:learner].bootcamper.trello %>">
+        <span class="link-text">
+          <%= @learner_details[:learner].bootcamper.trello %>
+        </span>
+      </a>
+      <a target=”_blank” class="link-item website" href="<%= @learner_details[:learner].bootcamper.website %>">
+        <span class="link-text">
+          <%= @learner_details[:learner].bootcamper.website %>
+        </span>
+      </a>
+    </div>
+    <% @learner_row=@learner_details[:learner].bootcamper.learner_programs.where(id: params[:learner_program_id])[0] %>
+    <div class="program-info">
+      <p class="key-detail">
+        Assigned week one LFA:
+        <%= display_lfa_details(@learner_row.week_one_facilitator.email) %>
+
+      </p>
+      <p class="key-detail">
+        Assigned week two LFA:
+        <%= display_lfa_details(@learner_row.week_two_facilitator.email) %>
+      </p>
+      <p class="key-detail">
+        Cycle:
+        <span><%= @learner_details[:learner].cycle_center.cycle_center_details[:cycle] %></span>
+      </p>
+
+      <% if admin? %>
+        <p class="key-detail">
+          Decision 1:
+          <span class="selection">
+            <select data-stage="one" name='decision-one' key="decision" id="decision-one" class="decision-dropdown profile-decision-dropdown" <%= admin? == false or @learner_details[:learner].decision_one.nil? ?  "disabled" : "" %>>
+              <% @learner_details[:decision_statuses].each do |decision_status| %>
+                <option id="decision" value="<%= decision_status %>" <%= @learner_details[:learner].decision_one == decision_status ? "selected" : "" %> ><%= decision_status %></option>
+              <% end %>
+            </select>
+          </span>
+        </p>
+        <p class="key-detail">
+          Decision 2:
+          <span class="selection">
+            <% if @learner_details[:learner].decision_two.nil? or @learner_details[:learner].decision_one != "Advanced"%>
+              <select data-stage="two" name='decision-two' id="decision-two" class="decision-dropdown profile-decision-dropdown second-decision" disabled>
+                <option id="not-applicable">Not Applicable</option>
+                <% @learner_details[:decision_statuses].each do |decision_status| %>
+                <option value="<%= decision_status %>" <%= @learner_details[:learner].decision_two == decision_status ? "selected" : "" %> ><%= decision_status %></option>
+
+                <% end %>
+              </select>
+            <% else %>
+              <select data-stage="two" name='decision-two' id="decision-two" class="decision-dropdown profile-decision-dropdown second-decision" <%= admin? == false ?  "disabled" : "" %>>
+                <% @learner_details[:decision_statuses].each do |decision_status| %>
+                  <option value="<%= decision_status %>" <%= @learner_details[:learner].decision_two == decision_status ? "selected" : "" %> ><%= decision_status %></option>
+                <% end %>
+              </select>
+            <% end %>
+          </span>
+        </p>
+      <% else %>
+        <p class="key-detail">
+          <%= @learner_details[:decision].keys[0] %>: <span><%= @learner_details[:decision].values[0] %></span>
+        </p>
+      <% end %>
+      <p class="key-detail">
+        <%= link_to_if(user_is_lfa_or_admin?(params[:id]), "Submissions:", submission_path(@learner_details[:learner]), :class => "view-learner-submissions") %>
+        <span><%= @learner_details[:assessment_submitted] %> of <%= @learner_details[:total_assessments][:learner_total_assessments]%></span>
+      </p>
+      <p class="key-detail">
+        Verified:
+        <span id="vfd-out"></span>
+      </p>
+      <p class="key-detail">
+        Holistic Evaluations:
+        <span>
+          <span id="holistic_evaluations_received"><%= @learner_details[:holistic_evaluations_received] %></span> of <%= @learner_details[:max_holisitic_evaluations] %>
+        </span>
+      </p>
+      <% if user_is_lfa_or_admin?(params[:id]) %>
+        <p class="key-detail">
+          <a class="view-decision-history" id="decision-history-view">View Decision History</a>
+        </p>
+      <% end %>
+      <p class="key-detail">
+        <a class="view-program-history" id="program-history-view">View Program History</a>
+      </p>
+    </div>
+  </section>
+  <section class="learner-score-section">
+      <div class="btn-wrapper bigscreen">
+        <a class="btns evaluation-btn evaluation-select" id="evaluation-btn">
+          Evaluation <i class="material-icons evaluation-icon">&#xE5C5;</i>
+        </a>
+      </div>
+      <div class="evaluation-select-dropdown bigscreen">
+        <dl class="dropdown evaluation-dropdown" id="evaluation-dropdown-id">
+          <dd>
+            <ul class="dropdown-content" id="evaluation-dropdown">
+              <% if user_is_lfa_or_admin?(@learner_details[:learner].bootcamper.camper_id)%>
+              <li class="dropdown-list learner-feedback-btn">PERSONAL FEEDBACK</li>
+              <% end %>
+              <li class="dropdown-list holistic-evaluation-btn">HOLISTIC EVALUATION</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    <div class="criteria-wrapper">
+      <div class="filter-criteria-wrapper" id="filter-by-phase">
+        <div class="serial-number">1</div>
+        <div class="criterium-dropdown" id="criterium-dropdown-phase" data-user-is-admin="<%= admin? %>">
+          <p> Filter by Phase </p>
+        <select name="assessment" class="assessment" id="phase-dropdown" data-active-phase="<%=yield_active_phase("title", @current_phase)%>" data-active-phase-index="<%=yield_active_phase("index", @current_phase)%>" >
+            <% @phases.each do |phase| %>
+              <option class="assessment-option" id="<%= "option-#{phase[0]}"%>" value=<%= phase[0] %>><%= phase[1] %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-criteria-wrapper" id="filter-by-framework">
+        <div class="serial-number">2</div>
+        <div class="criterium-dropdown">
+          <p> Filter by Framework </p>
+          <select name="assessment" class="assessment" id="framework-dropdown">
+            <option></option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-criteria-wrapper" id="filter-by-criteria">
+        <div class="serial-number">3</div>
+        <div class="criterium-dropdown">
+          <p> Filter by Criteria </p>
+          <select name="assessment" class="assessment" id="criterium-dropdown">
+            <option></option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="framework-criterium-wrapper">
+      <div class="framework-criterium">
+        <div class="framework-criterium-label" id="selection-label">
+        </div>
+        <div class="line">
+          <span class="long"></span>
+          <span class="short"></span>
+        </div>
+      </div>
+    </div>
+    <% unless can_edit_scores?(params[:id], @learner_details[:learner].cycle_center.id)%>
+      <div class="unauthorized-notice">
+        <div class="yellow-oval"></div>
+        <div class="user-notice">You are not authorised to update the scores for this learner</div>
+      </div>
+    <% end %>
+    <div class="score-section">
+      <div class="score-loader-modal">
+        <div class="loader">
+        </div>
+      </div>
+      <div class="score-form" id="score-form">
+
+      </div>
+      <div class="submit-button">
+        <% if can_edit_scores?(params[:id], @learner_details[:learner].cycle_center.id) %>
+          <a value="Submit Scores" class="submit-scores submit-score-btn inactive-submit-btn" id="submit-score">Submit Scores</a>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
+<div id='confirm-backend-score-save'></div>
+<%= render("holistic_evaluation/holistic_performance_history_modal") %>
+<%= render("feedback/holistic_evaluation_modal") %>
+<%= render("feedback/confirm_holistic") %>
+<%= render("feedback/finished_evaluation_modal") %>
+<%= render("profile/learner_feedback_modal")%>
+<%= render("profile/program_history_modal")%>
+<%= render("feedback/personal_feedback_modal")%>
+<%= render("profile/edit_learner_info_modal")%>
+<%= render("profile/decision_history_modal") %>
+<%= render("profile/output_info_modal") %>
+<%= render("feedback/holistic_feedback_modal") %>
+<%= render("profile/decision_modal") %>

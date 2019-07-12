@@ -1,0 +1,15 @@
+var message = "<%= flash[:notice] == 'criterion-success' ? 'Criterion Successfully created' : flash[:error] %>";
+
+$('.main-content').removeClass('loading')
+<% if flash[:notice] == 'criterion-success' %>
+  $(".toast").messageToast.start(message, "success")
+  $("#criterium_name").val("")
+  $("#criterium_description").val("")
+  $(".mdl-js-checkbox").each(function(index, element) {
+    element.MaterialCheckbox.uncheck()
+  })
+  $(".add-criterion-cancel").click()
+<% else %>
+  $(".toast").messageToast.start(message, "error")
+<% end %>
+

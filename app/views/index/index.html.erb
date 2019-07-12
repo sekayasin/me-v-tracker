@@ -1,0 +1,196 @@
+<div class="loader-modal">
+  <div class="loader">
+  </div>
+</div>
+
+<div class="learners-page-main-container">
+  <section class="top-section">
+    <div class="mdl-grid mdl-grid--no-spacing">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+        <% if params[:search] %>
+          <div class='total-learners'>
+            <span class="learners-type">Showing results for "<%= params[:search] %>"</span> <span class="total-search">(<span class="total-number"><%= number_with_delimiter(@all_campers_count, :delimiter => ',') %></span> total)</span></span>
+          </div>
+        <% else %>
+          <div class='total-learners'>
+            <span class="learners-type">All Learners</span> <span class="total">(<span class="total-number"><%= number_with_delimiter(@all_campers_count, :delimiter => ',') %>
+            </span> total)</span></span>
+          </div>
+          <div class="mobile-responsive">
+          <a class="clear-filters-btn hide">Clear Filters</a>
+          <% if admin? %>
+            <a class="export-btn">Export <%= image_tag("download-icon.svg", class: 'export-icon') %></a>
+          <% end %>
+          </div>
+        <% end %>
+        <div class="line">
+          <span class="long"></span>
+          <span class="short"></span>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+        <div class="btn-wrapper">
+          <% if params[:search] %>
+            <a class="clear-filters-btn large hide">Clear Filters</a>
+          <% end %>
+          <% if admin? %>
+            <% if params[:search] %>
+              <a class="export-btn large" href="/sheet?format=csv&program_id=<%= params[:program_id] %>&city=<%= params[:city] %>&cycle=<%= params[:cycle] %>&decision_one=<%= set_stubs(params[:decision_one], 'decision_one')%>&decision_two=<%= set_stubs(params[:decision_two], 'decision_two') %>&week_one_lfa=<%= params[:week_one_lfa] %>&week_two_lfa=<%= set_stubs(params[:week_two_lfa], 'week_two_lfa') %>">Export <%= image_tag("download-icon.svg", class: 'export-icon') %></a>
+            <% else %>
+              <a id="add-learner">
+                <span class='btns add-learner'>
+                  Add Learners <i class="icon material-icons add-learner-icon">add</i>
+                </span>
+              </a>
+              <a id="add-lfa">
+                <span class='btns add-lfa'>
+                  Add LFAs <i class="icon material-icons add-learner-icon">add</i>
+                </span>
+              </a>
+            <% end %>
+          <% end %>
+          <div class="learners-page-filter-container">
+            <a id="filter-dropdown" <%= admin? ? "" : "hidden" %>>
+              <span class='btns filter-btn'>
+                Filters <i class="icon material-icons">filter_list</i><span class="mdl-badge" data-badge="0"></span>
+              </span>
+            </a>
+            <div class="mdl-menu mdl-js-menu parent-dropdown" for="filter-dropdown">
+              <p class="filter-label">Location</p>
+              <div class="select-box arrow-down-icon" id="label-city">All</div>
+              <div class="list-wrapper hidden">
+                <ul id="locations-dropdown" data-next="cycles" data-key="city" class="locations-dropdown mdl-menu mdl-js-menu mdl-menu--bottom-left" for="label-city">
+                  <li class='checkbox-list' data-value='All'>
+                    <label class='mdl-checkbox mdl-js-checkbox' for='city-all'>
+                      <input type="checkbox" id='city-all' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item' disabled checked/>
+                      <span> All </span>
+                    </label>
+                  </li>
+                  <% @dashboard.locations.each do |location|%>
+                    <li class='checkbox-list' data-value='<%= location %>'>
+                      <label class='mdl-checkbox mdl-js-checkbox' for='city-<%= location %>'>
+                        <input type="checkbox" id='city-<%= location %>' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item'/>
+                        <span class='mdl-checkbox__label'> <%= location %> </span>
+                      </label>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+              <p class="filter-label">Cycle</p>
+              <div class="select-box arrow-down-icon" id="label-cycle">All</div>
+              <div class="list-wrapper hidden">
+                <ul id="cycles-dropdown" data-next="lfas-1" data-key="cycle" class="cycles-dropdown mdl-menu mdl-js-menu mdl-menu--bottom-left" for="label-cycle">
+                  <li class='checkbox-list' data-value='All'>
+                    <label class='mdl-checkbox mdl-js-checkbox' for='cycle-all'>
+                      <input type="checkbox" id='cycle-all' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item' disabled checked/>
+                      <span> All </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <p class="filter-label">LFA 1</p>
+              <div class="select-box arrow-down-icon" id="label-week_one_lfa">All</div>
+              <div class="list-wrapper hidden">
+                <ul id="lfas-1-dropdown" data-key="week_one_lfa" class="lfas-1-dropdown mdl-menu mdl-js-menu mdl-menu--bottom-left" for="label-week_one_lfa">
+                  <li class='checkbox-list' data-value='All'>
+                    <label class='mdl-checkbox mdl-js-checkbox' for='week_one_lfa-all'>
+                      <input type="checkbox" id='lfas-1-all' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item' disabled checked/>
+                      <span> All </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <p class="filter-label">LFA 2</p>
+              <div class="select-box arrow-down-icon" id="label-week_two_lfa">All</div>
+              <div class="list-wrapper hidden">
+                <ul id="lfas-2-dropdown" data-key="week_two_lfa" class="lfas-2-dropdown mdl-menu mdl-js-menu mdl-menu--bottom-left" for="label-week_two_lfa">
+                  <li class='checkbox-list' data-value='All'>
+                    <label class='mdl-checkbox mdl-js-checkbox' for='week_two_lfa-all'>
+                      <input type="checkbox" id='lfas-2-all' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item' disabled checked/>
+                      <span> All </span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <p class="filter-label">Decision 1</p>
+              <div class="select-box arrow-down-icon" id="label-decision_one">All</div>
+              <div class="list-wrapper hidden">
+                <ul id="decision_one-dropdown" data-key="decision_one" class="decision-dropdown mdl-menu mdl-js-menu mdl-menu--bottom-left" for="label-decision_one">
+                  <li class='checkbox-list' data-value='All'>
+                    <label class='mdl-checkbox mdl-js-checkbox' for='decision_one-all'>
+                      <input type="checkbox" id='decision_one-all' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item' disabled checked/>
+                      <span> All </span>
+                    </label>
+                  </li>
+
+                  <% @dashboard.statuses.each do |status| %>
+                    <li class='checkbox-list' data-value='<%= status %>'>
+                      <label class='mdl-checkbox mdl-js-checkbox' for='decision_one-<%= status %>'>
+                        <input type="checkbox" id='decision_one-<%= status %>' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item'/>
+                        <span class='mdl-checkbox__label'> <%= status %> </span>
+                      </label>
+                    </li>
+                  <% end %>
+
+                </ul>
+              </div>
+              <p class="filter-label">Decision 2</p>
+              <div class="select-box arrow-down-icon decision-select" id="label-decision_two">All</div>
+              <div class="list-wrapper hidden">
+                <ul id="decision_two-dropdown" data-key="decision_two" class="decision-dropdown mdl-menu mdl-js-menu mdl-menu--bottom-left" for="label-decision_two">
+                  <li class='checkbox-list' data-value='All'>
+                    <label class='mdl-checkbox mdl-js-checkbox' for='decision_two-all'>
+                      <input type="checkbox" id='decision_two-all' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item' disabled checked/>
+                      <span> All </span>
+                    </label>
+                  </li>
+
+                  <% @dashboard.statuses.each do |status| %>
+                    <li class='checkbox-list' data-value='<%= status %>'>
+                      <label class='mdl-checkbox mdl-js-checkbox' for='decision_two-<%= status %>'>
+                        <input type="checkbox" id='decision_two-<%= status %>' class='mdl-checkbox__input mdl-checkbox__input-mts filter-item'/>
+                        <span class='mdl-checkbox__label'> <%= status %> </span>
+                      </label>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+              <a class='btns apply-btn'>
+                APPLY
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="learners-data">
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col learners-table">
+        <div class="bootcamper-data">
+          <%# learners table starts %>
+          <div class="all-campers-no-data <%= @campers.length == 0 ? '' : 'hidden' %>"><h5>No data to show :(</h5></div>
+          <div class="pane-hScroll scrollable" id="all_campers">
+            <%= render("render_camper") %>
+          </div>
+          <%# learners table ends %>
+          <div class="u-topSpacing">
+            <div id="pagination-div">
+              <div class="pagination-container">
+                <%= paginate @campers %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%= render("decision_modal")%>
+  <%= render("add_learner_modal") %>
+  <%= render("confirm_add_learner_modal") %>
+  <%= render("add_learner_error_modal") %>
+  <%= render("holistic_evaluation/holistic_performance_history_modal") %>
+  <%= render("add_facilitator_modal") %>
+</div>

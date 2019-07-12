@@ -1,0 +1,264 @@
+
+@import "base";
+
+.ratings-container {
+
+    @include main-content-margin;
+
+    @include respond-to(handhelds) {
+        margin-top: -7.5em;
+        width: 90%;
+
+        .line {
+            margin-bottom: px-to-rem(10px);
+        }
+    }
+
+    display: flex;
+    align-content: center;
+    width: 85%;
+    padding: px-to-rem(36px);
+    margin: px-to-rem(120px) auto;
+    min-height: px-to-rem(623px);
+    border-radius: px-to-rem(6px);
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1px solid rgba(178,187,198,0.12);
+    border-radius: 8px;	background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    font-size: px-to-rem(18px);
+
+    @media only screen and (max-width: px-to-rem(1000px)) {
+        flex-direction: column;
+        width: 95%;
+        padding: px-to-rem(10px);
+        padding-top:px-to-rem(36px);
+        margin: px-to-rem(90px) auto;
+    }
+}
+
+.breakdown-panelists {
+    flex: 2;
+    padding: px-to-rem(20px);
+    margin-left: px-to-rem(10px);
+    border-right: 1px solid #F6F7F8;
+
+    @media only screen and (max-width: px-to-rem(1000px)) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img.back {
+            height: px-to-rem(17px);
+            width: px-to-rem(17px);
+            background-color: #ccc;
+        }
+    }
+
+    .rating-info-1 {
+        height: px-to-rem(20px);
+        width: px-to-rem(202px);
+        color: #3359DB;
+        font-weight: 500;
+        line-height: px-to-rem(20px);
+        font-size: px-to-rem(18px);
+        margin-bottom: px-to-rem(18px);
+    }
+
+    .rating-info-2 {
+        height: px-to-rem(15px);
+        width: 2px-to-rem(211px);
+        color: #333E44;
+        line-height: px-to-rem(15px);
+        padding-top: px-to-rem(18px);
+        margin-bottom: px-to-rem(18px);
+    }
+
+    .one-panelist {
+        box-sizing: border-box;
+        height: px-to-rem(80px);
+        width: px-to-rem(250px);
+        border: 1px solid rgba(178,187,198,0.12);
+        border-radius: px-to-rem(18px);
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.03);
+        margin: px-to-rem(25px) px-to-rem(10px) ;
+        padding: px-to-rem(14px) px-to-rem(10px) px-to-rem(16.5px) px-to-rem(18.5px);
+        text-align: center;
+
+        @media only screen and (max-width: px-to-rem(868px)) {
+            flex-direction: column;
+            align-items: center;
+            padding: px-to-rem(14px) auto;
+        }
+
+            .panelist-image {
+                box-sizing: border-box;
+                height: px-to-rem(52px);
+                width: px-to-rem(52px);
+                line-height: px-to-rem(52px);
+                border: 1px solid #FFFFFF;
+                border-radius: px-to-rem(30px);
+                background-color: #ccc;
+                float: left;
+                text-align: center;
+            }
+
+            .panelist-info {
+                float: left;
+
+                .panelist-name {
+                    height: px-to-rem(21px);
+                    width: px-to-rem(110px);
+                    color: #333E44;
+                    font-size: px-to-rem(18px);
+                    font-weight: bold;
+                    line-height: 21px;
+                    margin-top: px-to-rem(5px);
+                    margin-bottom: px-to-rem(5px);
+                }
+
+                .panelist-email {
+                    height: 1px-to-rem(15px);
+                    width: px-to-rem(136px);
+                    color: #333E44;
+                    font-size: px-to-rem(12px);
+                    line-height: px-to-rem(15px);
+                }
+
+            }
+    }
+
+    .one-panelist-active {
+        background-color: #3359DB !important;
+
+        .panelist-name {
+            color: #fff !important;
+        }
+
+        .panelist-email {
+            color: #fff !important;
+        }
+    }
+
+
+.breakdown-one-panelist {
+    flex: 6;
+    padding: px-to-rem(50px);
+    min-height: px-to-rem(623px);
+    background-color: #fff;
+
+    .group-2-container {
+        display: inline-block !important;
+    }
+
+    .group-2 {
+        margin-top: px-to-rem(30px);
+        display: inline-flex;
+        justify-content: space-evenly;
+        width: 80%;
+        list-style: none;
+        margin-right: px-to-rem(30px);
+
+        @media only screen and (max-width: px-to-rem(868px)) {
+            flex-direction: column;
+            align-items: center;
+            padding-left: 0px;
+            margin-left: 0px;
+            margin-right: px-to-rem(30px);
+            width: auto;
+        }
+
+        @media only screen and (max-width: px-to-rem(1360px)) {
+            flex-direction: column;
+            align-items: center;
+            padding-left: 0px;
+            margin-left: 0px;
+            margin-right: px-to-rem(30px);
+            width: auto;
+        }
+
+        div {
+            ul {
+                li.ui-ui-rating {
+                    font-weight: bolder !important;
+                    font-size: px-to-rem(20px)
+                }
+            }
+        }
+    }
+
+    .group-2 ul {
+        list-style: none;
+    }
+
+    hr {
+        margin-top: px-to-rem(30px);
+    }
+
+    .decision-wrapper {
+        width: 80%;
+        display: inline-block;
+    }
+
+    .decision-word-wrapper {
+        border-radius: px-to-rem(11px);
+        margin:  px-to-rem(3px) px-to-rem(10px);
+        padding:  px-to-rem(5px) px-to-rem(10px);
+        text-align: center;
+        background-color: #00B803;
+    }
+
+    .decision-word {
+        height: px-to-rem(15px);
+        width: px-to-rem(23px);
+        color: #FFFFFF;
+        font-size: px-to-rem(14px);
+        font-weight: bold;
+        letter-spacing: px-to-rem(0.9px);
+        line-height: px-to-rem(15px);
+    }
+
+    .decision-phrase, .decision-comments  {
+        color: rgb(90, 100, 105);
+        margin: px-to-rem(40px) 0px;
+    }
+
+    .panelist-ratings {
+        text-align: center;
+        padding: px-to-rem(10px) px-to-rem(25px);
+        margin-bottom: px-to-rem(25px);
+
+        .group-2 {
+            .cumulative-average {
+                display: none;
+            }
+        }
+
+        .one-panelist-image {
+            display: inline-block;
+            box-sizing: border-box;
+            height: px-to-rem(29px);
+            width: px-to-rem(29px);
+            border: 1px solid #FFFFFF;
+            border-radius: px-to-rem(30px);
+            background-color: #ccc;
+            font-size: px-to-rem(12px);
+        }
+    }
+
+    .panelist-cumulative-average {
+        text-align: center;
+        background-color: #F7F8FB;
+        border-radius: px-to-rem(15px);
+        padding: px-to-rem(40px) px-to-rem(10px) px-to-rem(40px) px-to-rem(10px);
+
+        #rating-info-1 {
+            width: auto;
+            display: block;
+            margin: auto;
+
+        }
+    }
+}

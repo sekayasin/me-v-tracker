@@ -1,0 +1,14 @@
+overdue_submission_notification:
+  cron: "25 16 * * 1-5"
+  class: "OverdueSubmissionJob"
+  queue: default
+
+feedback_pop:
+  cron: "* * * * *"
+  class: "ProgramFeedbackPopupJob"
+  queue: default
+
+notify_learners:
+ cron: "00 00 * * 1-7"
+ class: "SurveyResponseNotificationJob"
+ queue: default

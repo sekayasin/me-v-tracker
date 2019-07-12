@@ -1,0 +1,141 @@
+<% @campers.each_with_index do |data, index| %>
+    <tr
+      data-program_id="<%= data[:program_id] %>"
+      data-city="<%= data[:city] %>"
+      data-cycle="<%= data[:cycle] %>"
+      data-lfa1="<%= data[:week_one_lfa] %>"
+      data-lfa2="<%= set_stubs(data[:week_two_lfa], 'week_two_lfa') %>"
+      data-decision1="<%= set_stubs(data[:decision_one], 'decision_one') %>"
+      data-decision2="<%= set_stubs(data[:decision_two], 'decision_two') %>">
+      <td class="campers-check">
+        <% if ['Advanced', 'Fast-tracked'].include?(set_stubs(data[:decision_one], 'decision_one')) %>
+          <span id="learner_status_<%= data[:learner_program_id] %>" class="status-color <%= set_status_color(set_stubs(data[:decision_two], 'decision_two')) %>"></span>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="learner_check_<%= data[:learner_program_id] %>">
+            <input type="checkbox" id="learner_check_<%= data[:learner_program_id] %>" class="mdl-checkbox__input" />
+          </label>
+        <% else %>
+          <span id="learner_status_<%= data[:learner_program_id] %>" class="status-color <%= set_status_color(set_stubs(data[:decision_one], 'decision_one')) %>"></span>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="learner_check_<%= data[:learner_program_id] %>">
+            <input type="checkbox" id="learner_check_<%= data[:learner_program_id] %>" class="mdl-checkbox__input" />
+          </label>
+        <% end %>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric learner">
+          <a class="learner-name" href="/learners/<%= data[:camper_id] %>/<%= data[:learner_program_id] %>/scores">
+          <%= data[:first_name] %> <%= data[:last_name] %>
+        </a>
+      </td>
+      <td class="email">
+        <%= data[:email] %>
+      </td>
+      <td class="overall-avg">
+        <%= data[:overall_average] %>
+      </td>
+      <td class="outputs-scored">
+        <% total_assessed =  get_total_assessed(data[:learner_program_id]) %>
+          <% total_assessments =  get_total_assessments(data[:program_id]) %>
+            <%= total_assessed %>/
+              <%= total_assessments %>
+      </td>
+      <td class="feedback-average">
+        <%= data[:feedback_average] %>
+      </td>
+      <td class="outputs-average">
+        <%= data[:output_average] %>
+      </td>
+      <td class="values-average">
+        <%= data[:value_average] %>
+      </td>
+      <td class="output-progress">
+        <% total_assessed =  get_total_assessed(data[:learner_program_id]) %>
+        <% total_assessments =  get_total_assessments(data[:program_id]) %>
+        <% total_percentage = get_total_percentage(total_assessed, total_assessments) %>
+        <%= total_percentage %>%
+      </td>
+      <td class="holistic-eval-avg" >
+        <span class="learner-name holistic-avg" data-learner-program-id="<%= data[:learner_program_id]%>"
+              id="<%= data[:learner_program_id]%>" >
+          <%= data[:holistic_average] %>
+            <div class="mdl-tooltip mdl-tooltip--top" for="<%= data[:learner_program_id]%>">
+              Click to view Holistic evaluation scores
+            </div>
+        </span>
+      </td>
+      <td class="holistic-evaluations">
+        <% received_evaluations = get_received_holistic_evaluations(data[:learner_program_id]) %>
+        <%= received_evaluations %>/ <%= @maximum_evaluations %>
+      </td>
+      <td class="dev-framework-avg">
+        <%= data[:dev_framework_average] %>
+      </td>
+      <td class="decision-one">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height" >
+          <input class="mdl-textfield__input decision-status-input" type="text" id="decision-status-one-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" value="<%= set_stubs(data[:decision_one], 'decision_one') %>" readonly
+            tabIndex="-1" <%= (admin? && !data[:cycle_ended]) ? "" : "disabled" %> >
+          <label for="decision-status-one-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" value="<%= set_stubs(data[:decision_one], 'decision_one') %>">
+            <i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+          </label>
+          <ul for="decision-status-one-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" data-learner="<%= data[:first_name] %> <%= data[:last_name] %>" class="mdl-menu mdl-menu--bottom-left mdl-js-menu learner-decision-dropdown decision-status-dropdown" <%=admin? == false ? "disabled": "" %> >
+            <% @dashboard.statuses.each do |value| %>
+              <li class="mdl-menu__item decision-item" data-initial-decision="<%= set_stubs(data[:decision_one], 'decision_one') %>" id="decision_status_one_<%= data[:camper_id] %>_status_<%= data[:camper_id] %>_status_<%= data[:learner_program_id] %>"
+                data-val="<%= value %> ">
+                <%= value %>
+              </li>
+              <% end %>
+          </ul>
+        </div>
+      </td>
+      <td class="decision-two">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height" >
+          <input class="mdl-textfield__input decision-status-input" type="text" id="decision-status-two-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" value="<%= set_stubs(data[:decision_two], 'decision_two') %>" readonly tabIndex="-1" <%= data[:cycle_ended] ? "disabled" : "" %>>
+          <label for="decision-status-two-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" value="<%= set_stubs(data[:decision_two], 'decision_two') %>">
+            <i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+          </label>
+          <ul for="decision-status-two-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" data-learner="<%= data[:first_name] %> <%= data[:last_name] %>" class="mdl-menu mdl-menu--bottom-left mdl-js-menu learner-decision-dropdown decision-status-dropdown" <%=admin? == false ? "disabled": "" %> >
+            <% @dashboard.statuses.each do |value| %>
+              <li class="mdl-menu__item decision-item" data-initial-decision="<%= set_stubs(data[:decision_two], 'decision_two') %>" id="decision_status_two_<%= data[:camper_id] %>_status_<%= data[:camper_id] %>_status_<%= data[:learner_program_id] %>"
+                data-val="<%= value %> ">
+                <%= value %>
+              </li>
+              <% end %>
+          </ul>
+        </div>
+      </td>
+      <td class="lfa-week-1">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+          <input class="mdl-textfield__input lfa-week-1-input" type="text" id="lfa-week-1-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" value="<%= data[:week_one_lfa] %>" tabIndex="-1" readonly <%= admin? == false ? "disabled" : "" %>>
+          <label for="lfa-week-1-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" value="<%= data[:week_one_lfa] %>">
+            <i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+          </label>
+          <ul for="lfa-week-1-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" class="mdl-menu mdl-menu--bottom-left mdl-js-menu lfa-week-1-dropdown">
+            <% get_lfas(data[:center], data[:cycle]).each do |value| %>
+              <li class="mdl-menu__item lfa-1-item" data-value="<%= value[:email] %>" data-id="<%= data[:learner_program_id] %>" data-lfa="lfa-1">
+                <%= value[:name] %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </td>
+      <td class="lfa-week-2">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+          <input class="mdl-textfield__input lfa-week-2-input" type="text" id="lfa-week-2-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" value="<%= set_stubs(data[:week_two_lfa], 'week_two_lfa') %>" tabIndex="-1" readonly <%= admin? == false ? "disabled" : "" %>>
+          <label for="lfa-week-2-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" value="<%= set_stubs(data[:week_two_lfa], 'week_two_lfa') %>">
+            <i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+          </label>
+          <ul for="lfa-week-2-<%= data[:camper_id] %>-<%= data[:learner_program_id] %>" class="mdl-menu mdl-menu--bottom-left mdl-js-menu lfa-week-2-dropdown">
+              <% get_lfas(data[:center], data[:cycle]).each do |value| %>
+                <li class="mdl-menu__item lfa-2-item" data-value="<%= value[:email] %>" data-id="<%= data[:learner_program_id] %>" data-lfa="lfa-2">
+                  <%= value[:name] %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+      </td>
+      <td class="cycle">
+        <%= data[:cycle] %>
+      </td>
+      <td class="location">
+        <%= data[:center] %>
+      </td>
+    </tr>
+    <% end %>

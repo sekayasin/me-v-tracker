@@ -1,0 +1,125 @@
+<table class="mdl-data-table mdl-js-data-table campers-data-table <%= 'hidden' if @campers.empty? %>">
+  <thead>
+    <tr>
+      <th class="status-color filter">
+        <i class="fa fa-plus" id="demo-menu-lower-left" ></i>
+        <div class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" name="multi_filter" for="demo-menu-lower-left">
+          <div class="column-filter-wrapper">
+            <ul class="colum-filter-list">
+              <li>
+                <label class="mdl-checkbox  mdl-js-checkbox" value="Learner" for="select-learner">
+                  <input type="checkbox" name="learner" id="select-learner" class="mdl-checkbox__input mdl-checkbox__input-mts" disabled checked/> <span class="mdl-checkbox__label">Learner</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Learner Email" for="select-email">
+                  <input type="checkbox" name="email" id="select-email" class="mdl-checkbox__input mdl-checkbox__input-mts" /> <span class="mdl-checkbox__label">Learner Email</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Output Expectations Average" for="select-overall-avg">
+                  <input type="checkbox" name="overall-avg" id="select-overall-avg" class="mdl-checkbox__input mdl-checkbox__input-mts" checked/> <span class="mdl-checkbox__label">Output Expectations Average</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Outputs Scored (#)" for="select-outputs-scored">
+                  <input type="checkbox" name="outputs-scored" id="select-outputs-scored" class="mdl-checkbox__input mdl-checkbox__input-mts" checked/> <span class="mdl-checkbox__label">Outputs Scored (#)</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Feedback Average (#)" for="select-feedback-average">
+                  <input type="checkbox" name="feedback-average" id="select-feedback-average" class="mdl-checkbox__input mdl-checkbox__input-mts" /> <span class="mdl-checkbox__label">Feedback Average (#)</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Outputs Average (#)" for="select-outputs-average">
+                  <input type="checkbox" name="outputs-average" id="select-outputs-average" class="mdl-checkbox__input mdl-checkbox__input-mts" /> <span class="mdl-checkbox__label">Outputs Average (#)</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Values Average (#)" for="select-values-average">
+                  <input type="checkbox" name="values-average" id="select-values-average" class="mdl-checkbox__input mdl-checkbox__input-mts" /> <span class="mdl-checkbox__label">Values Average (#)</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Output Progress (%)" for="select-output-progress">
+                  <input type="checkbox" name="output-progress" id="select-output-progress" class="mdl-checkbox__input mdl-checkbox__input-mts" /> <span class="mdl-checkbox__label">Output Progress (%)</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Holistic Evaluation Average" for="select-holistic-eval-avg">
+                  <input type="checkbox" name="holistic-eval-avg" id="select-holistic-eval-avg" class="mdl-checkbox__input mdl-checkbox__input-mts" checked/> <span class="mdl-checkbox__label">Holistic Evaluation Average</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Holistic Evaluations (#)" for="select-holistic-evaluations">
+                  <input type="checkbox" name="holistic-evaluations" id="select-holistic-evaluations" class="mdl-checkbox__input mdl-checkbox__input-mts" checked/> <span class="mdl-checkbox__label">Holistic Evaluations (#)</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Dev Framework Average" for="select-dev-framework-avg">
+                  <input type="checkbox" name="dev-framework-avg" id="select-dev-framework-avg" class="mdl-checkbox__input mdl-checkbox__input-mts" /> <span class="mdl-checkbox__label">Dev Framework Average</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Decision-one" for="select-decision-one">
+                  <input type="checkbox" name="decision-one" id="select-decision-one" class="mdl-checkbox__input mdl-checkbox__input-mts" checked/> <span class="mdl-checkbox__label">Decision 1</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Decision-two" for="select-decision-two">
+                  <input type="checkbox" name="decision-two" id="select-decision-two" class="mdl-checkbox__input mdl-checkbox__input-mts" checked/> <span class="mdl-checkbox__label">Decision 2</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="lfa-week-1" for="select-lfa-week-1">
+                  <input type="checkbox" name="lfa-week-1" id="select-lfa-week-1" class="mdl-checkbox__input mdl-checkbox__input-mts"/> <span class="mdl-checkbox__label">LFA 1</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="lfa-week-2" for="select-lfa-week-2">
+                  <input type="checkbox" name="lfa-week-2" id="select-lfa-week-2" class="mdl-checkbox__input mdl-checkbox__input-mts"/> <span class="mdl-checkbox__label">LFA 2</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Cycle" for="select-cycle">
+                  <input type="checkbox" name="cycle" id="select-cycle" class="mdl-checkbox__input mdl-checkbox__input-mts" checked/> <span class="mdl-checkbox__label">Cycle</span>
+                </label>
+              </li>
+              <li>
+                <label class="mdl-checkbox mdl-js-checkbox" value="Location" for="select-location">
+                  <input type="checkbox" name="location" id="select-location" class="mdl-checkbox__input mdl-checkbox__input-mts" checked/> <span class="mdl-checkbox__label">Location</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </th>
+      <th class="learner learner-head">Learner</th>
+      <th class="email email-head">Learner Email</th>
+      <th class="overall-avg overall-head">Output Expectations Avg.</th>
+      <th class="outputs-scored outputs-scored-head">Outputs Scored (#)</th>
+      <th class="feedback-average feedback-average-head">Feedback Average (#)</th>
+      <th class="outputs-average outputs-average-head">Outputs Average (#)</th>
+      <th class="values-average values-average-head">Values Average (#)</th>
+      <th class="output-progress output-progress-head">Output Progress (%)</th>
+      <th class="holistic-eval-avg holistic-head">Holistic Evaluation Avg.</th>
+      <th class="holistic-evaluations holistic-evaluations-head">Holistic Evaluations (#)</th>
+      <th class="dev-framework-avg dev-framework-head">Dev Framework Avg.</th>
+      <th class="decision-one decision-one-head">Decision 1</th>
+      <th class="decision-two decision-two-head">Decision 2</th>
+      <th class="lfa-week-1 lfa-week-1-head">LFA 1</th>
+      <th class="lfa-week-2 lfa-week-2-head">LFA 2</th>
+      <th class="cycle cycle-head">Cycle</th>
+      <th class="location location-head">Location</th>
+    </tr>
+  </thead>
+</table>
+<div class="pane-vScroll">
+  <table class="mdl-data-table mdl-js-data-table campers-data-table">
+    <tbody class="campers-table-body" id="campers-table-records">
+      <%= render partial: 'campers_table', locals: { campers: @campers } %>
+    </tbody>
+  </table>
+  <div id="loader"></div>
+</div>

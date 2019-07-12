@@ -1,0 +1,71 @@
+video_1:
+  title: Add learners
+  subtitle: How to Add Learners to the Application
+  video: https://player.vimeo.com/video/342061900
+  image: add_learner.jpeg
+
+video_2:
+  title: Add LFA
+  subtitle: How to Add LFAs to the Application
+  video: https://player.vimeo.com/video/342061937
+  image: add_lfa.jpg
+
+video_3:
+  title: filter learners
+  subtitle: How to Filter learners
+  video: https://player.vimeo.com/video/342061826
+  image: filter_learner.jpg
+
+video_4:
+  title: create survey
+  subtitle: How to Create a Survey
+  video: https://player.vimeo.com/video/342061974
+  image: create_survey.jpg
+
+video_5:
+  title: share survey
+  subtitle: How to Share a Survey
+  video: https://player.vimeo.com/video/342062148
+  image: share_survey.jpg
+
+video_6:
+  title: Survey responses
+  subtitle: View Responses of a Survey
+  video: https://player.vimeo.com/video/342062180
+  image: first.jpg
+
+video_7:
+  title: Create Program
+  subtitle: How to Create a Program
+  video: https://player.vimeo.com/video/342061956
+  image: create_program.jpg
+
+video_8:
+  title: Modify program
+  subtitle: How to Modify a Program
+  video: https://player.vimeo.com/video/342062071
+  image: modify_program.jpg
+
+video_9:
+  title: setup learning outcome
+  subtitle: How to Setup Learnng Outcome
+  video: https://player.vimeo.com/video/342375001
+  image: generic.jpeg
+
+video_10:
+  title: Make end of week decision
+  subtitle: How to Make an end of week decision
+  video: https://player.vimeo.com/video/342061861
+  image: decision.jpg
+
+video_11:
+  title: Export learner's decision,
+  subtitle: How to Export Learner's Decision
+  video: https://player.vimeo.com/video/342062046
+  image: generic.jpg
+  
+video_12:
+  title: Schedule NPS Feedback
+  subtitle: How to Schedule NPS Feedback
+  video: https://player.vimeo.com/video/342062127
+  image: first.jpg

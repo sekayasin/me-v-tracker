@@ -1,0 +1,80 @@
+@import 'base';
+
+.criterion-tooltip-modal {
+  display: none;
+
+  .modal {
+    margin: 0 8%;
+
+    .modal-top {
+      margin: px-to-rem(32px) 0 px-to-rem(3px) 0;
+
+      .criterion-tooltip-header {
+        height: px-to-rem(65px);
+        
+        .title {
+          font-family: $font-family-regular;
+          font-weight: bold;
+        }
+    
+        .line {
+          width: fit-content;
+          margin-top: px-to-rem(-8px);
+    
+          .long {
+            @include blue-line(px-to-rem(57px), px-to-rem(11px));
+    
+            @include respond-to(handhelds) {
+              @include blue-line(px-to-rem(34px), px-to-rem(6px));
+            }
+          }
+    
+          .short {
+            @include blue-line(px-to-rem(11px), null);
+          }
+        }    
+      }
+    }
+  
+    .modal-content {
+      padding-bottom: px-to-rem(16px);
+      max-height: 50vh;
+      overflow-y: auto;
+  
+      @include respond-to(handhelds) {
+        max-height: 40vh;
+      }
+
+      .criterion-tooltip-body {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+        font-family: $font-family-regular;
+  
+        h6 {
+          font-weight: bold;
+          margin-top: 0;
+        }
+
+        table {
+          thead {
+            font-size: 1rem;
+            text-align: left;
+      
+            th {
+              &:first-child {
+                padding-right: 2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .criterion-tooltip-footer {
+    box-shadow: 0 -0.13rem 0.32rem 0 rgba(0, 0, 0, 0.1);
+    text-align: right;
+    padding: 1.8rem 1rem;
+  }
+}

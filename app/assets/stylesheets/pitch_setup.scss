@@ -1,0 +1,603 @@
+@import "base";
+
+.pitch-setup-container {
+  margin: px-to-rem(150px) auto 0;
+  flex: 7;
+  padding: px-to-rem(36px);
+  width: 75%;
+  min-height: px-to-rem(623px);
+  border-radius: px-to-rem(6px);
+  background-color: $background-white;
+  box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.05);
+
+  .pitch-setup-content {
+    max-width: px-to-rem(500px);
+    height: px-to-rem(500px);
+    margin: 0 auto;
+
+    .tab-btn-back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &-icon {
+        cursor: pointer;
+        margin-right: px-to-rem(10px);
+      }
+
+      &-text {
+        color: $btn-blue;
+        font-size: px-to-rem(24px);
+        font-weight: 500;
+        line-height: 0.8;
+      }
+    }
+
+    .pitch-tab {
+      display: none;
+
+      .pitch-tab-header {
+        text-align: center;
+
+        .pitch-tab-header-text {
+          color: $learning-ecosystem-text-color;
+          font-size: px-to-rem(18px);
+          line-height: px-to-rem(23px);
+          margin-top: px-to-rem(8px) !important;
+        }
+
+        .invitee-header,
+        .demo-date-header {
+          font-size: px-to-rem(14px);
+          color: $pitch-invite-learner;
+        }
+      }
+
+      .pitch-tab-body {
+        padding-top: px-to-rem(70px);
+
+        .pitch-item-container {
+          max-width: px-to-rem(350px);
+          margin: px-to-rem(10px) auto;
+
+          .select-shelter {
+            position: relative;
+
+            .select-question {
+              width: 100%;
+              cursor: pointer;
+              box-sizing: border-box;
+              height: px-to-rem(40px);
+              text-align: left;
+              border: none;
+              border-radius: px-to-rem(5px);
+              background-color: $background-light-grey;
+              font-size: px-to-rem(14px);
+              line-height: px-to-rem(34px);
+              outline: none;
+              padding-left: px-to-rem(16px);
+              color: $top-section-black;
+              font-family: $font-family-regular;
+
+              p {
+                padding: px-to-rem(8px) 0 px-to-rem(10px) 0;
+                margin-bottom: 0;
+                color: #333;
+
+                &.with-icon {
+                  padding-left: px-to-rem(35px);
+                }
+              }
+
+              .down-arrow {
+                pointer-events: none;
+                position: absolute;
+                top: px-to-rem(15px);
+                right: px-to-rem(10px);
+                bottom: 0;
+                padding: 0 1em;
+                background: url("down.svg") no-repeat;
+                pointer-events: none;
+              }
+
+              .option-icon {
+                bottom: 0;
+                z-index: 100;
+                pointer-events: none;
+                position: absolute;
+                top: px-to-rem(12px);
+                left: px-to-rem(20px);
+                padding: 0 1em;
+                background-size: px-to-rem(20px);
+              }
+            }
+
+            .options-wrapper {
+              width: 100%;
+              display: none;
+              z-index: 1000;
+              overflow-y: scroll;
+              position: absolute;
+              background: $background-white;
+              box-shadow: 0 0.25rem 0.375rem 0 rgba(0, 0, 0, 0.05),
+                0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+
+              .options-list {
+                cursor: pointer;
+                text-align: left;
+                font-size: px-to-rem(14px);
+                padding: px-to-rem(5px) px-to-rem(20px);
+
+                .option,
+                .collaborators-option {
+                  width: 100%;
+                  position: relative;
+                  transition: 0.05s all;
+
+                  p {
+                    display: inline-block;
+                    margin-bottom: 0;
+                    color: rgba(0, 0, 0, 0.87);
+
+                    &.with-icon {
+                      padding-left: px-to-rem(10px);
+                    }
+                  }
+
+                  &:hover {
+                    padding-left: px-to-rem(1px);
+
+                    p {
+                      color: $background-blue;
+                    }
+                  }
+
+                  .option-icon {
+                    bottom: 0;
+                    min-width: px-to-rem(20px);
+                    min-height: px-to-rem(20px);
+                    pointer-events: none;
+                    display: inline-block;
+                    background-size: px-to-rem(20px);
+                  }
+                }
+              }
+            }
+          }
+
+          .invitee-input {
+            position: relative;
+            width: 96%;
+
+            label {
+              color: $learning-ecosystem-btn-text;
+              font-size: px-to-rem(14px);
+              line-height: px-to-rem(20px);
+              cursor: pointer;
+            }
+
+            input {
+              height: px-to-rem(36px);
+              width: 100%;
+              border: 1px solid $pitch-invite-learner-input;
+              border-radius: px-to-rem(3px);
+              background-color: $pitch-invite-learner-input-color;
+              font-size: px-to-rem(14px);
+              line-height: px-to-rem(20px);
+              padding-left: px-to-rem(13px);
+              position: relative;
+
+              &::placeholder {
+                color: $pitch-invite-learner;
+              }
+            }
+
+            .add-invitee-icon {
+              position: absolute;
+              top: px-to-rem(30px);
+              right: px-to-rem(-8px);
+              cursor: pointer;
+
+              img {
+                height: px-to-rem(35px);
+                width: px-to-rem(35px);
+              }
+            }
+          }
+
+          .pitch-divider {
+            margin: px-to-rem(30px) auto px-to-rem(10px) auto;
+            width: 100%;
+          }
+
+          .invitee-list {
+            color: $pitch-invite-learner;
+
+            p {
+              font-size: px-to-rem(12px);
+              line-height: px-to-rem(20px);
+            }
+
+            .invitee-list-items {
+              height: px-to-rem(110px);
+              overflow-y: auto;
+
+              .invitee-list-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                span {
+                  margin-bottom: px-to-rem(7px);
+                }
+              }
+
+              .close-btn {
+                background-image: url(close.svg);
+                height: px-to-rem(20px);
+                width: px-to-rem(20px);
+                display: inline-block;
+                background-repeat: no-repeat;
+                cursor: pointer;
+              }
+
+              .invitee-initials {
+                display: inline-block;
+                width: px-to-rem(29px);
+                height: px-to-rem(29px);
+                text-align: center;
+                border: px-to-rem(1px) solid $pitch-invite-learner-input;
+                border-radius: 50%;
+                text-transform: uppercase;
+                margin-right: px-to-rem(5px);
+                font-size: px-to-rem(12px);
+              }
+
+              .invitee-email {
+                font-size: px-to-rem(14px);
+              }
+            }
+          }
+
+          .invitee-list-footer {
+            p {
+              text-align: center;
+              font-size: px-to-rem(12px);
+              margin-top: px-to-rem(65px);
+            }
+          }
+
+          .select-demo-date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .ui-widget-content {
+              padding: px-to-rem(27px) px-to-rem(52px);
+              box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.05);
+              border-radius: px-to-rem(22px);
+              border: px-to-rem(1px) solid $border-grey !important;
+              font-family: $font-family-light;
+            }
+
+            .ui-datepicker-title {
+              color: $background-blue;
+              font-size: px-to-rem(14px);
+              line-height: px-to-rem(34px);
+            }
+
+            .ui-datepicker {
+              table {
+                border-top: none;
+              }
+
+              .ui-datepicker-next,
+              .ui-datepicker-prev {
+                top: px-to-rem(7px);
+                border: px-to-rem(1px) solid $background-blue;
+                border-radius: 50%;
+                height: px-to-rem(24.8px);
+                width: px-to-rem(24.8px);
+              }
+
+              .ui-datepicker-prev span,
+              .ui-datepicker-next span {
+                background-image: none !important;
+              }
+
+              .ui-datepicker-prev:before,
+              .ui-datepicker-next:before {
+                font-family: "Material Icons";
+                position: absolute;
+                top: px-to-rem(2px);
+                bottom: 0;
+                display: flex;
+                font-weight: normal;
+                align-items: center;
+                justify-content: center;
+                color: $background-blue;
+              }
+
+              .ui-datepicker-next:before {
+                right: px-to-rem(3px);
+              }
+
+              .ui-datepicker-prev:before {
+                left: px-to-rem(3px);
+              }
+
+              .ui-datepicker-prev:before {
+                content: "chevron_left";
+              }
+
+              .ui-datepicker-next:before {
+                content: "chevron_right";
+              }
+
+              .ui-datepicker-next-hover,
+              .ui-datepicker-prev-hover {
+                margin-top: 0 !important;
+                padding-left: 0 !important;
+              }
+            }
+
+            .ui-datepicker-calendar {
+              thead th {
+                color: $pitch-invite-learner;
+              }
+
+              .ui-state-default {
+                color: $top-section-black;
+                font-size: px-to-rem(14px);
+                height: px-to-rem(28px);
+                width: px-to-rem(28px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+              .ui-state-hover {
+                border-radius: 50%;
+                color: #333e44 !important
+              }
+
+              .ui-state-active {
+                color: $background-white !important;
+                font-family: $font-family-bold;
+                background-color: $background-blue !important;
+              }
+            }
+          }
+        }
+      }
+
+      .program-cycle-tab-body {
+        .pitch-item-container:nth-child(2) {
+          margin-top: px-to-rem(70px);
+        }
+      }
+
+      .demo-date-tab-body {
+        padding-top: px-to-rem(29px);
+      }
+    }
+  }
+
+  .pitch-setup-next-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .next-btn {
+      height: px-to-rem(36px);
+      width: px-to-rem(128px);
+      border-radius: px-to-rem(4px);
+      background-color: $pitch-green;
+      font-size: px-to-rem(14px);
+      font-weight: bold;
+      line-height: px-to-rem(18px);
+      text-align: center;
+      color: $background-white;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.pitch-select-shelter {
+  position: relative;
+
+  .pitch-select-option {
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: px-to-rem(40px);
+    text-align: left;
+    border: none;
+    border-radius: px-to-rem(5px);
+    background-color: $background-light-grey;
+    font-size: px-to-rem(14px);
+    line-height: px-to-rem(34px);
+    outline: none;
+    padding-left: px-to-rem(16px);
+    color: $top-section-black;
+    font-family: $font-family-regular;
+
+    p {
+      padding: px-to-rem(8px) 0 px-to-rem(10px) 0;
+      margin-bottom: 0;
+      color: #333;
+
+      &.with-icon {
+        padding-left: px-to-rem(35px);
+      }
+    }
+
+    .down-arrow {
+      pointer-events: none;
+      position: absolute;
+      top: px-to-rem(15px);
+      right: px-to-rem(10px);
+      bottom: 0;
+      padding: 0 1em;
+      background: url("down.svg") no-repeat;
+      pointer-events: none;
+    }
+
+    .option-icon {
+      bottom: 0;
+      z-index: 100;
+      pointer-events: none;
+      position: absolute;
+      top: px-to-rem(12px);
+      left: px-to-rem(20px);
+      padding: 0 1em;
+      background-size: px-to-rem(20px);
+    }
+  }
+
+  .pitch-options-wrapper {
+    width: 100%;
+    display: none;
+    z-index: 1000;
+    overflow-y: scroll;
+    position: absolute;
+    background: $background-white;
+    box-shadow: 0 0.25rem 0.375rem 0 rgba(0, 0, 0, 0.05),
+      0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+
+    .pitch-options-list {
+      cursor: pointer;
+      text-align: left;
+      font-size: px-to-rem(14px);
+      padding: px-to-rem(5px) px-to-rem(20px);
+
+      .pitch-option,
+      .collaborators-option {
+        width: 100%;
+        position: relative;
+        transition: 0.05s all;
+
+        p {
+          display: inline-block;
+          margin-bottom: 0;
+          color: rgba(0, 0, 0, 0.87);
+
+          &.with-icon {
+            padding-left: px-to-rem(10px);
+          }
+        }
+
+        &:hover {
+          padding-left: px-to-rem(1px);
+
+          p {
+            color: $background-blue;
+          }
+        }
+
+        .option-icon {
+          bottom: 0;
+          min-width: px-to-rem(20px);
+          min-height: px-to-rem(20px);
+          pointer-events: none;
+          display: inline-block;
+          background-size: px-to-rem(20px);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: px-to-rem(900px)) {
+  .pitch-setup-container {
+    margin: px-to-rem(20px) auto 0;
+  }
+}
+
+@media only screen and (max-width: px-to-rem(469px)) {
+  .pitch-setup-container .pitch-setup-content {
+    .tab-btn-back-text {
+      font-size: px-to-rem(17px);
+    }
+
+    .ui-widget-content {
+      padding: px-to-rem(20px) !important;
+    }
+  }
+
+  .pitch-tab-header-text {
+    font-size: px-to-rem(15px);
+  }
+}
+
+
+.invitee-list-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#pitch_selected_program, #select_pitch_cycle {
+  color: #919eab;
+  margin-bottom: unset;
+}
+
+.pitch-setup-link{
+  text-decoration: none;
+}
+
+@keyframes blink {
+ 
+  0% {
+    opacity: .2;
+  }
+  /**
+   * At 20% the dot is fully visible and
+   * then fades out slowly
+   */
+  20% {
+    opacity: 1;
+  }
+  /**
+   * Until it reaches an opacity of .2 and
+   * the animation can start again
+   */
+  100% {
+    opacity: .2;
+  }
+}
+
+.saving span, 
+.updating span {
+  height: 2.25rem;
+  width: 8rem;
+  border-radius: 0.25rem;
+  line-height: unset;
+  text-align: center;
+  padding-left: px-to-rem(5px); 
+  color: #fff;
+  animation-name: blink;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.updating span:nth-child(2),
+.saving span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.updating span:nth-child(3),
+.saving span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+.pitch-setup-next-btn p {
+  padding: px-to-rem(10px);
+}
+
+.next-btn.updating,
+.next-btn.saving {
+  width: px-to-rem(160px) !important;
+}

@@ -1,0 +1,233 @@
+<%= form_tag "#", id: "rateLearnerspitch", method: "post", multipart: true do %>
+<div class="learner_rating">
+  <div class="learner_rating-container">
+    <div class="learner_rating-container--title">
+      <span class='back_image'><%= image_tag('arrow.svg')%></span>
+      <span class="primary">Rate <%=@first_name%> <%=@last_name%>'s Demo</span>
+      <span class="instructions">View Instructions</span>
+    </div>
+    <div class="learner_rating-container--main">
+      <div class="question" id="rate-presentation">
+        <span class="question--no">1</span>
+        <span class="question--title">How would you rate the learner's presentation?</span>
+
+        <div class="question--option" data-panelist-status="<%= @panellist_visit_status %>">
+          <div class="table-responsive">
+            <table class="table" id="learner_rating_table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>1-No</th>
+                    <th>2-Poor</th>
+                    <th>3-Average</th>
+                    <th>4-Good</th>
+                    <th>5-TIA!</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="tr_row">
+                    <td>UI/UX Design</td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-0" value="1" >
+                        <span class="radio-mark" id="ui"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-0" value="2">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-0" value="3">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-0" value="4">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-0" value="5">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr class="tr_row">
+                    <td>API Functionality</td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-1" value="1">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-1" value="2">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-1" value="3">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-1" value="4">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-1" value="5" id="api">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr class="tr_row">
+                    <td>Error Handling</td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-2" value="1">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-2" value="2">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-2" value="3">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-2" value="4">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-2" value="5" id="error">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr class="tr_row">
+                    <td>Project Understanding</td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-3" value="1">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-3" value="2">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-3" value="3">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-3" value="4">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-3" value="5" id="project">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                  </tr>
+                  <tr class="tr_row">
+                    <td>Presentation Skills</td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-4" value="1">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-4" value="2">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-4" value="3">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-4" value="4">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                    <td>
+                      <label class="radio-container">
+                        <input type="radio" name="name-4" value="5">
+                        <span class="radio-mark"></span>
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+      <div class="question" id="rate-decision">
+        <span class="question--no">2</span>
+        <span class="question--title">Would you want to work with this person on your team?</span>
+        <div class="question--option">
+          <div class="answer">
+            <input type="radio" name="option" value="Yes" id="yes">
+            <span class="item-option">Yes</span>
+            <div class="custom-radio"></div>
+          </div>
+          <div class="answer">
+            <input type="radio" name="option" value="No">
+            <span class="item-option">No</span>
+            <div class="custom-radio"></div>
+          </div>
+          <div class="answer">
+            <input type="radio" name="option" value="Maybe">
+            <span class="item-option">Maybe</span>
+            <div class="custom-radio"></div>
+          </div>
+        </div>
+      </div>
+      <div class="question" id="rate-comment">
+          <span class="question--no">3</span>
+          <span class="question--title">Any additional comments?</span>
+          <div class="question--option">
+          <span>
+              <textarea placeholder="Enter Comments" rows="3" cols="50" class="answer-body pitch-score-feedback" id="comment"></textarea>
+          </span>
+      </div>
+    </div>
+    <button class="submit-btn" id="learner_rating-container--submit-btn">SUBMIT</button>
+  </div>
+</div>
+<% end %>
+<%= render(partial: "rating_instructions_modal.html") %>
+<%= render partial: 'pitch_rating_preview_modal' %>

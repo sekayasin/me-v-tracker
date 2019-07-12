@@ -1,0 +1,70 @@
+{
+  "pitchSetupHints": [
+    {
+      "element": ".more-icon",
+      "hint": "<span class='intro-title'>More Options icon</span><br><p>The More Options icon allows you to view the actions that can be performed on the pitch.</p>",
+      "hintPosition": "middle-middle"
+    }
+  ],
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+  "pitchSetupSteps": [
+    {
+      "intro": "<span class='intro-title'>Welcome to the Pitch Setup Page</span><br><p> This page contains all the pitches you have created.</p>",
+      "role": "Admin"
+    },
+    {
+      "intro": "<span class='intro-title'>Pitches for You</span><br><p> This page will have pitches that you have been invited to as a panelist to rate learners.</p>",
+      "role": "Non-LFA"
+    },
+    {
+      "element": ".btn-card",
+      "intro": "<span>This tab shows the number of pitches you have created.</span>",
+      "role": "Admin"
+    },
+    {
+      "element": ".btn-card",
+      "intro": "<span>This tab shows the number of pitches you have been invited to.</span>",
+      "role": "Non-LFA"
+    },
+    {
+      "element": ".dashboard-main-section",
+      "intro": "This contains all the pitches you have been invited to as a panelist.",
+      "role": "Non-LFA"
+    },
+    {
+      "element": ".dashboard-main-section",
+      "intro": "This contains all the pitches you have created.",
+      "role": "Admin"
+    },
+    {
+      "element": "#new-pitch-btn",
+      "intro": "You can create a new pitch by clicking on this button",
+      "role": "Admin"
+    },
+    {
+      "element": ".pitch-card",
+      "intro": "This is a pitch card. Clicking on it allows you to view the learners and panelists of this particular pitch.",
+      "role": "Admin"
+    },
+    {
+      "element": ".pitch-card",
+      "intro": "<span>This is a pitch card. Clicking on it takes you to the page where you can rate the learners of this particular pitch.</span>",
+      "role": "Non-LFA"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+  "moreOptionsSteps": [
+    {
+      "element": ".more-icon",
+      "intro": "Hover on the icon to see more options for editing, closing and deleting a pitch.",
+      "role": "Admin"
+    }
+  ]
+}

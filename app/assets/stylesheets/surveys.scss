@@ -1,0 +1,950 @@
+@import 'base';
+
+$new-survey-btn-style: ($background-blue,
+$background-white,
+px-to-rem(7px) px-to-rem(9px) px-to-rem(9px) px-to-rem(16px),
+px-to-rem(14px),
+null);
+
+$surveys-v2-btn-style: ($background-yellow,
+$background-white,
+px-to-rem(7px) px-to-rem(25px) px-to-rem(9px) px-to-rem(16px),
+px-to-rem(14px),
+null);
+
+$mobile-add-survey: ($background-blue,
+$background-white,
+px-to-rem(7px) px-to-rem(10px) px-to-rem(7px) px-to-rem(11px),
+px-to-rem(12px),
+null);
+
+$schedule-feedback-btn: ($background-white,
+$background-blue,
+px-to-rem(7px) px-to-rem(9px) px-to-rem(9px) px-to-rem(14px),
+px-to-rem(14px),
+null);
+
+$mobile-schedule-feedback-btn: ($background-white,
+$background-blue,
+px-to-rem(7px) px-to-rem(10px) px-to-rem(7px) px-to-rem(11px),
+px-to-rem(12px),
+null);
+
+$mobile-surveys-v2-btn-style: ($background-yellow,
+$background-white,
+px-to-rem(7px) px-to-rem(10px) px-to-rem(7px) px-to-rem(11px),
+px-to-rem(12px),
+null);
+
+#schedule-feedback-btn {
+  @include respond-to(handhelds) {
+    float: none;
+  }
+
+  .schedule-feedback-btn {
+    @include buttons($schedule-feedback-btn...);
+    box-shadow: 0 px-to-rem(4px) px-to-rem(10px) 0 rgba(199, 218, 255, 0.5);
+
+    @include respond-to(handhelds) {
+      @include buttons($mobile-schedule-feedback-btn...);
+    }
+
+    .icon {
+      vertical-align: -30%;
+    }
+  }
+}
+
+#schedule-feedback {
+
+  .modal-header {
+    margin: px-to-rem(40px) px-to-rem(10px) px-to-rem(10px);
+    font-size: px-to-rem(20px);
+    font-family: $font-family-regular;
+  }
+
+  .modal-content {
+    font-family: $font-family-regular;
+    font-size: px-to-rem(14px);
+    line-height: px-to-rem(34px);
+    padding: 0 px-to-rem(24px) px-to-rem(32px);
+    color: #5A5A5A;
+
+    .schedule-feedback-form {
+
+      .select-popup-time {
+        width: 50% !important;
+      }
+
+      padding-bottom: px-to-rem(30px);
+
+      .survey-item-container {
+        .input-group {
+          font-size: px-to-rem(14px);
+          padding-right: px-to-rem(10px) !important;
+        }
+        margin-bottom: px-to-rem(20px);
+      }
+
+      #link, #title, #select-recipient {
+        width: 100%;
+        height: px-to-rem(40px);
+        border: px-to-rem(1px) solid #bcbcbc;
+        border-radius: px-to-rem(5px);
+      }
+
+      .ui-selectmenu-button {
+        width: 100% !important;
+        border: px-to-rem(1px) solid #bcbcbc !important;
+      }
+    }
+
+  }
+
+  .modal-bottom {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 px-to-rem(-2px) px-to-rem(5px) 0 rgba(0, 0, 0, 0.1);
+    padding: px-to-rem(20px) px-to-rem(40px);
+    box-sizing: border-box;
+    height: px-to-rem(70px);
+
+    .left-btn {
+      display: inline-block;
+    }
+
+    .btn-wrapper {
+      float: right;
+    }
+
+    .schedule-feedback-btn, .update-schedule-feedback-btn {
+      background-color: #3359db;
+      color: #fff !important;
+      padding: px-to-rem(7px) px-to-rem(18px);
+      font-size: px-to-rem(15px) !important;
+      border: px-to-rem(1px) solid #3359db;
+      font-family: $font-family-regular;
+      border-radius: px-to-rem(2px);
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  #schedule-feedback, #update-schedule-feedback {
+    .modal-bottom {
+      .schedule-feedback-btn {
+        font-size: px-to-rem(5px) !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+
+  #schedule-feedback, #update-schedule-feedback {
+    min-height: px-to-rem(680px) !important;
+
+    .top-section {
+      width: px-to-rem(150px);
+      margin: 0;
+      height: px-to-rem(60px);
+    }
+
+    .modal-header {
+      margin: px-to-rem(20px) px-to-rem(10px) px-to-rem(10px);
+      font-size: px-to-rem(16px);
+    }
+
+    .modal-content {
+      padding: 0 px-to-rem(8px);
+
+      .schedule-feedback-form {
+        width: 100%;
+        padding-bottom: px-to-rem(10px);
+      }
+
+    }
+
+    .modal-bottom {
+      padding: px-to-rem(8px) px-to-rem(24px);
+      position: absolute;
+      bottom: 0;
+      height: px-to-rem(50px);
+
+      .schedule-feedback-btn {
+        padding: px-to-rem(7px) px-to-rem(8px);
+        font-size: px-to-rem(12px) !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) and (min-height: 657px) {
+
+  #schedule-feedback, #update-schedule-feedback {
+    min-height: px-to-rem(680px) !important;
+
+    .modal-bottom {
+      bottom: 0;
+      padding: px-to-rem(8px) px-to-rem(54px);
+    }
+
+    .modal-top {
+      margin: px-to-rem(45px) px-to-rem(45px) 0 px-to-rem(45px);
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) and (min-height: 700px) {
+
+  #schedule-feedback, #update-schedule-feedback {
+    min-height: px-to-rem(680px) !important;
+
+    .modal-bottom {
+      bottom: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 890px) and (min-width: 481px) {
+
+  #schedule-feedback, #update-schedule-feedback {
+    min-height: px-to-rem(680px) !important;
+
+    .top-section {
+      height: px-to-rem(60px);
+    }
+  }
+}
+
+@media only screen and (min-width: 750px) {
+
+  #schedule-feedback, #update-schedule-feedback {
+    min-height: 0;
+  }
+}
+
+#main-survey-section {
+  @include main-content-margin;
+
+  @include respond-to(handhelds) {
+    margin-top: -7.5em;
+    width: 90%;
+
+    .line {
+      margin-bottom: px-to-rem(10px);
+    }
+  }
+
+  @include respond-to(tablets) {
+    margin-top: -5.5em;
+    width: 90%;
+  }
+
+  a {
+    color: $background-blue;
+    margin-left: px-to-rem(15px);
+  }
+
+  .btn-wrapper {
+    text-align: right;
+    right: px-to-rem(-12px);
+    margin-right: 5%;
+    margin-top: px-to-rem(10px);
+
+    @media only screen and (max-width: 828px) {
+      & {
+        text-align: left;
+        margin-top: px-to-rem(15px);
+      }
+    }
+
+    @include respond-to(tablets) {
+      margin-top: px-to-rem(18px);
+    }
+  }
+
+}
+
+#new-survey-btn {
+
+  @include respond-to(handhelds) {
+    float: none;
+  }
+
+  .new-survey-btn {
+    @include buttons($new-survey-btn-style...);
+    box-shadow: 0 px-to-rem(4px) px-to-rem(10px) 0 rgba(199, 218, 255, 0.5);
+
+    @include respond-to(handhelds) {
+      @include buttons($mobile-add-survey...);
+    }
+
+    .icon {
+      vertical-align: -30%;
+    }
+  }
+}
+
+
+#surveys-v2-btn {
+  text-decoration: none;
+
+  @include respond-to(handhelds) {
+    float: none;
+  }
+
+  .surveys-v2-btn {
+    box-shadow: 0 px-to-rem(4px) px-to-rem(10px) 0 rgba(199, 218, 255, 0.5);
+    @include buttons($surveys-v2-btn-style...);
+
+    @include respond-to(handhelds) {
+      @include buttons($mobile-surveys-v2-btn-style...);
+    }
+  }
+}
+
+
+.survey-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  @include respond-to(handhelds) {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .survey-header-table {
+    margin: 0 2%;
+    min-width: 95%;
+    white-space: nowrap;
+    table-layout: fixed;
+    width: 95% !important;
+  }
+
+  .survey-table-header {
+    color: $light-grey;
+    text-align: center;
+    font-family: $font-family-light;
+    display: flex;
+    align-items: center;
+    padding: 1em 0 0 1.2em;
+  }
+}
+
+.survey-table-body-wrapper {
+  width: 100%;
+  overflow-y: hidden;
+
+  th {
+    @include respond-to(handhelds) {
+      padding: 0em 0.21em 0em 0.21em;
+    }
+  }
+
+  .survey-table-header-wrapper {
+    width: 100%;
+    font-size: px-to-rem(15px);
+
+    .title-header {
+      width: px-to-rem(210px);
+    }
+
+    .status-header {
+      width: px-to-rem(120px);
+
+      @include respond-to(handhelds) {
+        width: px-to-rem(160px);
+      }
+
+      @include respond-to(tablets) {
+        width: px-to-rem(160px);
+      }
+    }
+
+    .duration-header {
+      width: px-to-rem(100px);
+
+      @include respond-to(handhelds) {
+        width: px-to-rem(120px);
+      }
+
+      @include respond-to(tablets) {
+        width: px-to-rem(120px);
+      }
+    }
+
+    .date-header {
+      width: px-to-rem(100px);
+
+      @include respond-to(handhelds) {
+        width: px-to-rem(160px);
+      }
+
+      @include respond-to(tablets) {
+        width: px-to-rem(140px);
+      }
+    }
+
+    .action-header {
+      width: px-to-rem(100px);
+      padding-left: px-to-rem(30px);
+
+      @include respond-to(handhelds) {
+        width: px-to-rem(160px);
+      }
+
+      @include respond-to(tablets) {
+        width: px-to-rem(160px);
+      }
+    }
+  }
+
+  .no-data {
+    top: px-to-rem(200px);
+
+    @include respond-to(handhelds) {
+      font-size: smaller;
+    }
+  }
+
+  .survey-table {
+    margin: 0 2%;
+    border: 0;
+    border-spacing: 0 0.5em;
+    table-layout: fixed;
+    width: 95% !important;
+  }
+
+  .survey-row-wrapper {
+    height: auto;
+    min-height: 3em;
+    width: 100%;
+    background-color: $background-white;
+    border-radius: 5%;
+
+    td {
+      font-weight: normal;
+      padding: 1em 0 1em 1.2em;
+      border-radius: 1%;
+      word-wrap: break-word;
+      line-height: normal;
+      vertical-align: top;
+      font-size: px-to-rem(15px);
+      @include respond-to(handhelds) {
+        padding: 1em 0.21em 1em 1.21em;
+      }
+    }
+  }
+
+  .edit-icon {
+    background-image: image-url("edit.svg");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: px-to-rem(23px);
+    width: px-to-rem(25px);
+    margin-right: px-to-rem(10px) !important;
+    margin-left: px-to-rem(20px) !important;
+    cursor: pointer;
+  }
+}
+ .custom-tooltip-styling {
+   font-size: px-to-rem(10px);
+ }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: px-to-rem(60px);
+  height: px-to-rem(30px);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: px-to-rem(26px);
+  width: px-to-rem(26px);
+  left: px-to-rem(4px);
+  bottom: px-to-rem(3px);
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #3359DB;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 px-to-rem(1px) #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(px-to-rem(26px));
+  -ms-transform: translateX(px-to-rem(26px));
+  transform: translateX(px-to-rem(26px));
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: px-to-rem(30px);
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.copy-icon {
+  font-size: px-to-rem(25px) !important;
+  margin-left: px-to-rem(25px) !important;
+}
+
+.duplicate {
+  padding-left: px-to-rem(3px);
+}
+
+.trash-icon {
+  font-size: px-to-rem(30px) !important;
+  margin-left: px-to-rem(5px) !important;
+  color: #FF0000 !important;
+}
+
+#create-survey {
+
+  .modal-header {
+    margin: px-to-rem(40px) px-to-rem(10px) px-to-rem(10px);
+    font-size: px-to-rem(20px);
+    font-family: $font-family-regular;
+  }
+
+  .modal-content {
+    font-family: $font-family-regular;
+    font-size: px-to-rem(14px);
+    line-height: px-to-rem(34px);
+    padding: 0 px-to-rem(24px) px-to-rem(32px);
+    color: #5A5A5A;
+
+    .create-survey-form {
+      padding-bottom: px-to-rem(30px);
+
+      .survey-item-container {
+        margin-bottom: px-to-rem(20px);
+      }
+
+      #link, #title, #select-recipient {
+        width: 100%;
+        height: px-to-rem(40px);
+        border: px-to-rem(1px) solid #bcbcbc;
+        border-radius: px-to-rem(5px);
+      }
+
+      .ui-selectmenu-button {
+        width: 100% !important;
+        border: px-to-rem(1px) solid #bcbcbc !important;
+      }
+    }
+
+  }
+
+  .modal-bottom {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 px-to-rem(-2px) px-to-rem(5px) 0 rgba(0, 0, 0, 0.1);
+    padding: px-to-rem(20px) px-to-rem(40px);
+    box-sizing: border-box;
+    height: px-to-rem(70px);
+
+    .left-btn {
+      display: inline-block;
+    }
+
+    .btn-wrapper {
+      float: right;
+    }
+
+    .create-survey-btn, .update-survey-btn {
+      background-color: #3359db;
+      color: #fff !important;
+      padding: px-to-rem(7px) px-to-rem(18px);
+      font-size: px-to-rem(15px) !important;
+      border: px-to-rem(1px) solid #3359db;
+      font-family: $font-family-regular;
+      border-radius: px-to-rem(2px);
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  #create-survey, #update-survey {
+    .modal-bottom {
+      .create-survey-btn {
+        font-size: px-to-rem(5px) !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+
+  #create-survey, #update-survey {
+    min-height: px-to-rem(680px) !important;
+
+    .top-section {
+      width: px-to-rem(150px);
+      margin: 0;
+      height: px-to-rem(60px);
+    }
+
+    .modal-header {
+      margin: px-to-rem(20px) px-to-rem(10px) px-to-rem(10px);
+      font-size: px-to-rem(16px);
+    }
+
+    .modal-content {
+      padding: 0 px-to-rem(8px);
+
+      .create-survey-form {
+        width: 100%;
+        padding-bottom: px-to-rem(10px);
+      }
+
+    }
+
+    .modal-bottom {
+      padding: px-to-rem(8px) px-to-rem(24px);
+      position: absolute;
+      bottom: 0;
+      height: px-to-rem(50px);
+
+      .create-survey-btn {
+        padding: px-to-rem(7px) px-to-rem(8px);
+        font-size: px-to-rem(12px) !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) and (min-height: 657px) {
+
+  #create-survey, #update-survey {
+    min-height: px-to-rem(680px) !important;
+
+    .modal-bottom {
+      bottom: 0;
+      padding: px-to-rem(8px) px-to-rem(54px);
+    }
+
+    .modal-top {
+      margin: px-to-rem(45px) px-to-rem(45px) 0 px-to-rem(45px);
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) and (min-height: 700px) {
+
+  #create-survey, #update-survey {
+    min-height: px-to-rem(680px) !important;
+
+    .modal-bottom {
+      bottom: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 890px) and (min-width: 481px) {
+
+  #create-survey, #update-survey {
+    min-height: px-to-rem(680px) !important;
+    width: px-to-rem(445px) !important;
+
+    .top-section {
+      height: px-to-rem(60px);
+    }
+  }
+}
+
+@media only screen and (min-width: 750px) {
+
+  #create-survey, #update-survey {
+    min-height: 0;
+    width: px-to-rem(445px) !important;
+  }
+}
+
+ul#select-recipients-menu {
+  height: px-to-rem(170px) !important;
+}
+
+#cycle-pills {
+  display: inline;
+
+  .cycle-pill {
+    display: inline-block;
+    position: relative;
+    padding: 0 px-to-rem(8px) px-to-rem(1px) px-to-rem(8px);
+    background-color: $background-grey;
+    border-radius: px-to-rem(4px);
+    margin-top: px-to-rem(5px);
+    margin-right: px-to-rem(5px);
+  }
+
+  .name-of-cycle {
+    padding: 0;
+    line-height: px-to-rem(16px);
+    margin-right: px-to-rem(4px);
+  }
+
+  .remove-cycle {
+    cursor: pointer;
+    height: px-to-rem(14px);
+    margin-bottom: px-to-rem(2px);
+    right: px-to-rem(8px);
+  }
+}
+
+#delete-survey-confirmation-modal {
+  display: none;
+  box-sizing: border-box;
+}
+
+#close-survey-confirmation-modal {
+  .close-confirmation-button {
+    background-image: image-url('close.svg');
+    height: px-to-rem(25px);
+    width: px-to-rem(32px);
+    display: inline-block;
+    background-repeat: no-repeat;
+    text-align: right;
+    position: absolute;
+    right: px-to-rem(12px);
+    cursor: pointer;
+    top: px-to-rem(28px);
+  }
+
+  p {
+    margin-top: px-to-rem(30px);
+    margin-left: px-to-rem(19px);
+    margin-right: px-to-rem(19px);
+    margin-bottom: px-to-rem(30px);
+    font-size: px-to-rem(15px);
+    font-family: $font-family-regular;
+    color: #525252;
+  }
+
+  .confirm-button-wrapper {
+    text-align: center;
+    margin-top: px-to-rem(11px);
+    margin-bottom: px-to-rem(11px);
+    font-size: px-to-rem(16px);
+  }
+
+  .confirm-modal-bottom {
+    box-shadow: 0 px-to-rem(-2px) px-to-rem(5px) 0 rgba(0, 0, 0, 0.1);
+    padding-top: px-to-rem(1px);
+    margin: 0 !important;
+    width: 100%;
+  }
+
+  .cancel-btn, .btn-submit {
+    font-size: px-to-rem(14px);
+    cursor: pointer;
+  }
+
+  .cancel-btn:focus, .btn-submit:focus {
+    outline: 0;
+  }
+
+  .modal-top {
+    margin: px-to-rem(15px) px-to-rem(15px) 0;
+  }
+}
+
+.reload-container {
+  position: absolute;
+  z-index: 45;
+  width: px-to-rem(240px);
+  background-color: #FEEFB3;
+  color: #9F6000;
+  border-radius: px-to-rem(5px);
+  height: px-to-rem(40px);
+  display: none;
+
+  div {
+    margin: px-to-rem(5px) px-to-rem(12px);
+  }
+
+  p {
+    display: inline-block;
+    margin: 0 px-to-rem(18px) 0 0;
+  }
+
+  a {
+    padding: px-to-rem(5px) px-to-rem(7px);
+    text-decoration: none;
+    color: white;
+    background-color: #3359db;
+    font-size: px-to-rem(12px);
+    border-radius: px-to-rem(3px);
+  }
+}
+
+.reload-fade-in {
+  opacity: 1;
+  animation-name: reloadFadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes reloadFadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .reload-container {
+    left: 40%;
+    top: px-to-rem(175px);
+  }
+}
+
+@media only screen and (min-width: 890px) and (max-width: 1240px) {
+  .reload-container {
+    left: 35%;
+    top: 11%;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 890px) {
+  .reload-container {
+    left: 35%;
+    top: 8%;
+  }
+}
+
+@media only screen and (max-width: 761px) {
+  .reload-container {
+    left: 20%;
+    bottom: 2%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .reload-container {
+    left: 17%;
+    bottom: 2%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .reload-container {
+    left: 13%;
+    bottom: 2%;
+  }
+}
+
+.ui_tpicker_time_label{
+  font-family: $font-family-regular !important;
+}
+
+.ui-widget select{
+  font-family: $font-family-regular !important;
+}
+
+.feedback_icon {
+  display: block;
+  width: px-to-rem(24px);
+  height: px-to-rem(24px);
+  background-repeat: no-repeat;
+  background-image: image-url("feedback.svg");
+
+  &:hover {
+    background-image: image-url("feedback-active.svg");
+  }
+}
+
+.status_completed{
+  padding: px-to-rem(5px) px-to-rem(20px);
+  border-radius: px-to-rem(70px);
+  color: $background-white;
+  background-color: $background-blue;
+}
+
+.status_in_progress{
+  padding: px-to-rem(5px) px-to-rem(20px);
+  border-radius: px-to-rem(70px);
+  color: $background-white;
+  background-color: $background-yellow;
+}
+
+.custom-tooltip-styling {
+  font-size: px-to-rem(10px);
+}
+
+.ui_tpicker_time_label{
+  font-family: DINPro-Light !important;
+}
+
+.ui-widget select{
+  font-family: DINPro-Light, sans-serif !important;
+}
+
+.ui-timepicker-select{
+  border: px-to-rem(1px) solid #555555;
+  font-weight: normal;
+  color: black;
+}
+
+.ui-timepicker-div.ui-timepicker-oneLine dl dd>div {
+  display: inline-block;
+  margin-left: px-to-rem(12px);
+}
+
+.ui-timepicker-div.ui-timepicker-oneLine dl {
+  text-align: left;
+}
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_minute:before, .ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_second:before {
+  margin-left: px-to-rem(12px);
+}
+
+#survey-duration{
+  font-weight: normal;
+  font-size: px-to-rem(12px);
+}
+
+#schedule-survey-div {
+  margin-top: px-to-rem(20px)
+}
+
+.create-survey-modal-wrapper {
+  display: none;
+}
+
+#learner-feedback-popup-modal {
+  display: none;
+}

@@ -1,0 +1,212 @@
+{
+  "learningEcosystemPageSteps": [
+    {
+      "intro": "<span class='intro-title'>Learning ecosystem </span><br><p>This page contains an overview of your progress on the program. By clicking on the phases tab, you can also view the phases of the program and it is where you will be submitting your outputs.</p>"
+    },
+    {
+      "element": "#overview-tab",
+      "intro": "<span class='intro-title'>Progress Overview </span><br><p>This shows your weekly progress in your submissions. </p>"
+    },
+    {
+      "element": "#overview-item-content",
+      "intro": "<span class='intro-title'>Weekly Outputs</span><br><p>This contains the progress you have made in the program over different the week(s).</p>"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><p><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+
+  "weeklyOutputsHints": [
+    {
+      "element": "#accordion-title-week-1 .phase-image-right",
+      "hint": "This shows the phase and the percentage in terms of submissions you have made that are required on the phase."
+    },
+    {
+      "element": "#phases-tab .tab-description",
+      "hint": "<span class='intro-title'>Program Phases</span><p> Here you find all the phases in your program and you will be able to submit your outputs through this page.</p><br /> <a target='_new' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342959993?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    },
+    {
+      "element": "#accordion-title-1 .phase-image-right",
+      "hint": "This has all the outputs that are related to the Output Quality Metric <br /> <a target='_new' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342960049?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    }
+  ],
+
+  "weeklyOutputsSteps": [
+    {
+      "intro": "Shows the weekly outputs progress and submission for a learner."
+    }
+  ],
+
+  "week1OutputSteps": [
+    {
+      "element": "#accordion-title-week-1",
+      "intro": "<span class='intro-title'>Week 1 Outputs</span></br><p>This shows the Phases, percentage Progress and number of Submissions for outputs submitted by a learner in week 1.</p>"
+    },
+    {
+      "element": ".phases",
+      "intro": "<span class='intro-title'>Phases Column</span></br><p>Phases column has different phases of a learner for week 1</p>"
+    },
+    {
+      "element": ".progress",
+      "intro": "<span class='intro-title'>Progress Column</span></br><p>Progress column shows percentage progress for a phase for week 1</p>"
+    },
+    {
+      "element": ".submissions",
+      "intro": "<span class='intro-title'>Submissions Column</span></br><p>Submission column shows the number of submission made for a phases by a learner for week 1.</p>"
+    }
+  ],
+
+  "phasesTabHints": [
+    {
+      "element": "#accordion-title-2",
+      "hint": "This has all the outputs that are related to the Values Alignment Metric"
+    },
+    {
+      "element": "#accordion-title-1",
+      "hint": "This has all the outputs that are related to the Output Quality Metric "
+    },
+    {
+      "element": "#accordion-title-3",
+      "hint": "Trying out this "
+    }
+  ],
+
+  "phasesTabTourSteps": [
+    {
+      "intro": "<span class='intro-title'>Your Program Phases</span><p>Here are all the phases that the program you are attending will have.</p>"
+    },
+    {
+      "element": "#phases-bar",
+      "intro": "<span class='intro-title'>Phases Bar</span></br><p>This is the phases bar and it shows all the outputs for all the weeks the learner submitted them. </p>"
+    },
+    {
+      "element": "#accordion-title-2",
+      "intro": "<span class='intro-title'>Values Alignment Metric</span></br><p>This shows all the outputs related to the alignment of your values against those of Andela.</p>"
+    },
+    {
+      "element": "#accordion-title-1",
+      "intro": "<span class='intro-title'>Output Quality Metric</span></br><p>This shows all the outputs related to the quality of your outputs.</p><a class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342960072?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    },
+    {
+      "element": "#accordion-title-3",
+      "intro": "<span class='intro-title'>Feedback Metric</span></br><p>This has all the outputs related to accepting and giving feedback.</p>"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><p><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+
+  "valuesAlignmentTourSteps": [
+    {
+      "element": "#accordion-title-2",
+      "intro": "<span class='intro-title'>Values Alignment Table</span></br>This is Values Alignment Table. It displays the submission's related to Expected learning outcome, Description, Outputs, Due Date, Action and LFA Feedback."
+    },
+    {
+      "element": ".output-table .learning-outcome",
+      "intro": "<span class='intro-title'>Learning Outcomes Column</span></br><p>This column displays all expected learning outcomes on Values Alignment Metric.</p>"
+    },
+    {
+      "element": ".output-table .description-column",
+      "intro": "<span class='intro-title'>Description Column</span><br><p>This column displays the description of an expected learning outcome. </p>"
+    },
+    {
+      "element": ".output-table .output-column",
+      "intro": "<span class='intro-title'>Output Column</span></br><p>This column holds the task description of an expected learning outcome.</p>"
+    },
+    {
+      "element": ".output-table .due-date-column",
+      "intro": "<span class='intro-title'>Due Date Column</span></br><p>This column displays the due date of an expected learning outcome.</p>"
+    },
+    {
+      "element": ".output-table .action-column",
+      "intro": "<span class='intro-title'>Action Column</span></br><p>This column displays the action that you are supposed to take on the given learning outcome</p>"
+    },
+    {
+      "element": ".output-table .lfa-column",
+      "intro": "<span class='intro-title'>LFA Column</span></br><p>This column displays the buttons that pops up the view feedback modal of a given learning outcome</p>"
+    },
+    {
+      "element": ".show-more-link",
+      "intro": "<span class='intro-title'>Show More Link</span></br><p>On clicking this link, you will be able to see more description of an expected learning outcome</p>"
+    },
+    {
+      "element": ".view-lfa-btn",
+      "intro": "Upon clicking  this button, a view Feedback/Submission modal will pop up."
+    }
+  ],
+
+  "outPutQualityTourSteps": [
+    {
+      "element": "#accordion-title-1 .output-table",
+      "intro": "<span class='intro-title'>Output Quality Table</span></br>This is Values Alignment Table. It displays the submission's related to Expected learning outcome, Description, Outputs, Due Date, Action and LFA Feedback."
+    },
+    {
+      "element": "#framework-accordion-1 .show-more-link",
+      "intro": "<span class='intro-title'>Learning Outcomes Column</span></br><p>This column displays all expected learning outcomes on Values Alignment Metric.</p>"
+    },
+    {
+      "element": "#framework-accordion-1 #submit-for-1",
+      "intro": "Upon clicking  this button, a view Feedback/Submission modal will pop up. <a class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342960026?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    }
+  ],
+
+  "feedbackTourSteps": [
+    {
+      "element": "#framework-accordion-3 .outputs-column",
+      "intro": "<span class='intro-title'>Values Alignment Table</span></br>This is Values Alignment Table. It displays the submission's related to Expected learning outcome, Description, Outputs, Due Date, Action and LFA Feedback."
+    },
+    {
+      "element": "#framework-accordion-1 .show-more-link",
+      "intro": "<span class='intro-title'>Learning Outcomes Column</span></br><p>This column displays all expected learning outcomes on Values Alignment Metric.</p>"
+    },
+    {
+      "element": "#framework-accordion-1 #submit-for-1",
+      "intro": "Upon clicking  this button, a view Feedback modal will pop up."
+    },
+    {
+      "element": "#framework-accordion-1 .view-lfa-btn",
+      "intro": "<span class='intro-title'>Feedback Modal</span></br><p>Upon clicking  this button, a view Feedback/Submission modal will pop up.</p>"
+    }
+  ],
+
+  "feedbackModalSteps": [
+    {
+      "element": "#learner-feedback-view",
+      "intro": "<span class='intro-title'>View Feedback Modal</span></br><p>This is the View Feedback Modal.</p>"
+    },
+    {
+      "element": ".feedback-criteria-container",
+      "intro": "<span class='intro-title'>Feedback Criteria Container</span></br><p>This has Phases, Framework, Output and All Feedback for a learner.</p>"
+    },
+    {
+      "element": ".feedback-content",
+      "intro": "<span class='intro-title'>Feedback Content</span></br><p>This has the Feedback Impression and Feedback Details. </p>"
+    },
+    {
+      "element": ".btn-cancel.close-learner-feedback-modal",
+      "intro": "<span class='intro-title'>Close Button</span></br><p>This button closes the Learner Feedback Modal.</p>"
+    }
+  ],
+
+  "submissionModalSteps": [
+    {
+      "element": ".modal #learner-output-submission-modal",
+      "intro": "<span class='intro-title'>Learner Output Submission Modal</span></br><p>This is the Learner Output Submission Modal.</p>"
+    },
+    {
+      "element": "#learner-output-submission-modal-content #learner-submission-form",
+      "intro": "<span class='intro-title'>Learner Submission Form</span></br><p>Has a link for a learner to enter file URL , click to upload a file holder and a description input for describing the file submitted.</p>"
+    },
+    {
+      "element": ".btn-wrapper #save-learner-submission",
+      "intro": "<span class='intro-title'>Save Button</span></br><p>Saves learner submission</p>"
+    }
+  ],
+
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ]
+}

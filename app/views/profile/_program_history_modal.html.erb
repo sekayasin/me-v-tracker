@@ -1,0 +1,44 @@
+<div class="program-history-modal">
+  <div class="modal">
+    <div class="program-history-top modal-top">
+      <div class="modal-header">
+        <span class="close-button" id="close-button"></span>
+        <div class="program-history-top-section">
+          <div class="program-history-header">
+              Program History
+          </div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-history-modal-content modal-content">
+      <div class="program-links-section">
+        <% if @learner_details[:learner_programs].length > 1 %>
+          <% @learner_details[:learner_programs].each do |program| %>
+              <div>
+                  <% if program[:id] == @learner_details[:learner].id %>
+                    <span class="current-program">
+                      <%= program[:name] %> - Cycle <%= program[:cycle] %> - <%= program[:city] %> - <%= program[:country] %>
+                    </span>
+
+                  <% else %>
+                    <a href="/learners/<%= @learner_details[:learner].camper_id %>/<%= program[:id] %>/scores" class="program-link">
+                      <%= program[:name] %> - Cycle <%= program[:cycle] %> - <%= program[:city] %> - <%= program[:country] %>
+                    </a>
+                  <% end %>
+              </div>
+          <% end %>
+        <% else %>
+          <h5 class="center-blank-state-text">No data to show :(</h5>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="program-history-modal-bottom">
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div id="learner-feedback-view">
+  <div class="modal">
+    <div class="modal-top">
+      <span class="close-button close-learner-feedback-modal"></span>
+      <div class="learner-feedback-header">View Feedback</div>
+      <div class="line">
+        <span class="long"></span>
+        <span class="short"></span>
+      </div>
+    </div>
+
+    <div class="modal-content">
+
+      <div class="feedback-criteria-container">
+        <div class="feedback-dropdown-wrapper">
+          <label for='phase'>Phase</label><br>
+          <select name="phase" id="learner-feedback-phase" class="learner-select-menu"></select>
+        </div>
+        <div class="feedback-dropdown-wrapper">
+          <label for='learner'>Framework</label><br>
+          <select name="framework" id="learner-feedback-framework" class="learner-select-menu"></select>
+        </div>
+        <div class="feedback-dropdown-wrapper">
+          <label for='learner'>Output</label><br>
+          <select name="output" id="learner-feedback-output" class="learner-select-menu"></select>
+        </div>
+        <div class="feedback-dropdown-wrapper">
+          <label for='learner'>All Feedback</label><br>
+          <select name="output" id="learner-multiple-feedback-output" class="learner-select-menu"></select>
+        </div>
+      </div>
+
+
+      <div class="feedback-content">
+        <div class="feedback-content-header">
+          <div class="learner-feedback-header">Feedback</div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+
+        <div class="feedback-content-body">
+          <p class="feedback-content-title">Impression</p>
+          <div id="feedback-impression" class="feedback-impression"></div>
+        </div>
+
+        <div class="feedback-content-body">
+          <p class="feedback-content-title">Details</p>
+          <div id="feedback-content-text" class="feedback-content-text">
+          </div>
+        </div>
+      </div>
+
+      <div class="reflection-content-body">
+        <p class="feedback-content-title">Share a reflection with your LF(A)</p>
+        <textarea class="reflection-content-text" id="reflection" placeholder="Leave a comment"></textarea>
+      </div>
+    </div>
+
+    <div class="modal-bottom">
+      <div class="btn-wrapper">
+        <button class="btn-cancel close-learner-feedback-modal">Close</button>
+        <button class='btn-submit'>Write Reflection</button>
+        <button class='submit-refl'>Submit Reflection</button>
+      </div>
+    </div>
+  </div>
+</div>

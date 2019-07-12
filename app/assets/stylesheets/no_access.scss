@@ -1,0 +1,21 @@
+// Place all the styles related to the no_access controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./partials/functions.scss";
+@import "./partials/variables.scss";
+.not-found {
+  margin-top: 19%;
+  text-align: center;
+  &--primary {
+    color: $background-blue;
+    margin-top: px-to-rem(20px);
+    font-size: px-to-rem(24px);
+    line-height: px-to-rem(31px);
+  }
+
+  &--secondary {
+    color: $text-grey;
+    font-size: px-to-rem(18px);
+    line-height: px-to-rem(23px);
+  }
+}

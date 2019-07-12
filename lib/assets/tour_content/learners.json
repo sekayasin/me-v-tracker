@@ -1,0 +1,99 @@
+{
+  "learnerPageHints": [
+    {
+      "element": "#demo-menu-lower-left",
+      "hint": "<p>This allows you to filter the information on the table.  You can add or remove fields you don’t need by toggling them.</p>",
+      "position": "right"
+    },
+    {
+      "element": "#add-learner",
+      "hint": "<p>This allows you to add learners to a new or existing cycle. </p> <br/> <a target='_blank' rel='noopener' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342061900?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    },
+    {
+      "element": "#add-lfa",
+      "hint": "<p>This allows you to add LFAs for the learners in an ongoing cycle.</p> <br/> <a target='_blank' rel='noopener' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342061937?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    },
+    {
+      "element": "#filter-dropdown",
+      "hint": "<p>This allows you to filter the learners displayed in the table.</p> <br /><a target='_blank' rel='noopener' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342061826?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    }
+  ],
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+  "learnerTableSteps": [
+    {
+      "intro": "<span class='intro-title'>Welcome to the Learners Page</span><br><p>Everything you need to know about learners in the pre-fellowship space.</p>"
+    },
+    {
+      "element": ".bootcamper-data",
+      "intro": "<p>This table contains all the information about the learners on VOF.</p> <a class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342061861?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>",
+      "position": "top"
+    },
+    {
+      "element": ".campers-data-table",
+      "intro": "You can find information like the learner’s data, name, cycle, location e.t.c."
+    },
+    {
+      "element": ".export-btn",
+      "intro": "<p>You can export the learners’ data in CSV format by clicking on this button.</p>",
+      "role": "Admin"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+  "tableFieldSteps": [
+    {
+      "element": ".column-filter-wrapper",
+      "intro": "Go ahead, try to toggle the different fields by clicking on the checkboxes."
+    }
+  ],
+  "addLearnersSteps": [
+    {
+      "element": "#add-learner-modal",
+      "intro": "<p>It pops up this modal where you can select the resident country of the program to which you want to add learners.</p>"
+    },
+    {
+      "element": "#rightBtn",
+      "intro": "<p>Ensure you have selected a country, then click the Next Button to continue.</p>",
+      "position": "bottom"
+    },
+    {
+      "element": "#add-learner-modal",
+      "intro": "<p>Add all the cycle details here, including the program, stack, city, cycle number, start date, and end date, then upload the learners' spreadsheet following the template.</p>"
+    },
+    {
+      "element": "#rightBtn",
+      "intro": "<p>Once you’ve filled all the details, click the complete button and your learners will be uploaded.</p>",
+      "position": "bottom"
+    }
+  ],
+  "addLfasSteps": [
+    {
+      "element": "#add-facilitator-modal",
+      "intro": "<p>It pops up this modal window where you select the resident country of the program to which you want to add facilitators.</p>"
+    },
+    {
+      "element": "#right_btn_facilitator",
+      "intro": "<p>Ensure you have selected a country, then click the Next button to continue.</p>"
+    },
+    {
+      "element": "#add-facilitator-modal",
+      "intro": "<p>Add the LFA’s email, city, week of the program and select the learners you want to add the LFA for.</p>"
+    },
+    {
+      "element": "#right_btn_facilitator",
+      "intro": "<p>Once you’ve filled all the details, click the complete button and the LFA will be added for the learners.</p>"
+    }
+  ],
+  "filterSteps": [
+    {
+      "element": ".parent-dropdown",
+      "intro": "<p>Go ahead, try to select different filter options then scroll down and click apply.</p>"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<div id="evaluation-limit-modal">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="modal-header">
+        <span id="evaluation-limit-warning-modal" class="close-button btn-cancel"></span>
+        <div class="header-wrapper">
+          <span class="mark-icon"></span>
+          <span class="confirmation-header">Submission Warning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-content">
+    <% if can_edit_scores?(params[:id], @learner_details[:learner].cycle_center.id) %>
+      <p class="warning-text">Evaluations for this learner have been completed successfully,
+        close this modal to view or edit the scores.
+      </p>
+    <% else %>
+      <p class="warning-text">You have completed all required evaluations for this learner.</p>
+    <% end %>
+  </div>
+</div>

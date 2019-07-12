@@ -1,0 +1,222 @@
+<div class="top-section">
+  <div class="center-filter-container">
+    <p class="center-filter-text">Center</p>
+    <select name="center-dropdown" id="center-dropdown" class="center-dropdown">
+      <option value="Lagos">Lagos</option>
+      <option value="Nairobi">Nairobi</option>
+      <option value="Kampala">Kampala</option>
+    </select>
+  </div>
+</div>
+
+<div class="content-grid mdl-grid mdl-grid--no-spacing">
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone chart-cell">
+    <div class="mdl-card" id="performance-quality">
+      <div class="mdl-card__supporting-text card-title performance-chart-title">
+        <span class="title-text pull-left"> Performance Quality Over Time </span>
+        <div class="title-icon pull-left" id="performance-quality-icon">
+          <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--top" for="performance-quality-icon">
+          Average holistic performance and dev framework quality for accepted learners by cycle
+        </div>
+        <div class="top-legend-container pull-right" id="first-legend-container">
+          <div class="legend pull-right">
+            <span class="circle circle-color-A pull-left"></span>
+            <span class="text pull-left">Holistic Perf. </span>
+          </div>
+
+          <div class="legend pull-right">
+            <span class="circle circle-color-B pull-left"></span>
+            <span class="text pull-left">Dev Framework</span>
+          </div>
+        </div>
+      </div>
+      <div id="performanceQualityOverTimeChartContainer" class="linechart-wrapper">
+        <canvas id="performanceQualityOverTimeChart" height="230px"></canvas>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <ul id="scale-info">
+          <li class="chart-key">Satisfaction Level:</li>
+          <li>2: Very Satisfied</li>
+          <li>1: Satisfied</li>
+          <li>0: Neutral</li>
+          <li>-1: Unsatisfied</li>
+          <li>-2: Very Unsatisfied:</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone chart-cell">
+    <div class="mdl-card allow-overflow" id="output-quality">
+      <div class="mdl-card__supporting-text card-title">
+        <span class="title-text pull-left"> Output Quality Over Time </span>
+        <div class="title-icon pull-left" id="output-quality-icon">
+          <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--top" for="output-quality-icon">
+          Average output expectations ratings for accepted learners by cycle
+        </div>
+        <div class="top-legend-container pull-right">
+          <div class="legend pull-right">
+            <span class="circle circle-color-A pull-left"></span>
+            <span class="text pull-left">Target </span>
+          </div>
+          <div class="legend pull-right">
+            <span class="circle circle-color-B pull-left"></span>
+            <span class="text pull-left">Actual</span>
+          </div>
+        </div>
+      </div>
+      <div id="outputQualityOverTimeChartContainer" class="linechart-wrapper">
+        <canvas id="outputQualityOverTimeChart" height="230px"></canvas>
+      </div>
+      <div class="mdl-card__actions mdl-card--border"> 
+        <ul id="scale-info"> 
+          <li class="chart-key">Output Expectation:</li>
+          <li>3: Above Expectation</li>
+          <li>2: At Expectation</li>
+          <li>1: Below Expectation</li>
+          <li>0: Not Submitted</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone chart-cell">
+    <div class="mdl-card allow-overflow" id="learner-quantity">
+      <div class="mdl-card__supporting-text card-title">
+        <span class="title-text pull-left">Learner Quantity</span>
+        <div class="title-icon pull-left" id="learner-quantity-icon">
+          <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--top" for="learner-quantity-icon">
+          Total number of learners accepted
+        </div>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <div id="learnerQuantityChartContainer">
+          <canvas id="learnerQuantityChart" height="230px"></canvas>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<div class="top-section cycle">
+  <div class="center-filter-container">
+    <p class="center-filter-text">Cycle</p>
+    <select name="cycle-dropdown" id="cycle-dropdown" class="cycle-dropdown">
+    </select>
+  </div>
+</div>
+
+<div class="content-grid mdl-grid mdl-grid--no-spacing">
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone chart-cell">
+    <div class="mdl-card allow-overflow" id="cycle_center_program-outcome-week-one">
+      <div class="mdl-card__supporting-text card-title">
+        <span class="title-text pull-left">Program Outcome Metrics</span>
+        <div class="title-icon pull-left" id="program-outcome-metrics-icon">
+          <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--top" for="program-outcome-metrics-icon">
+          Historical numbers and percentages of learner status at the end of week 1
+        </div>
+        <span class="title-caption weeks-text">
+          Week 1
+        </span>
+      </div>
+      <div class="piechart-wrapper">
+        <div id="cycleProgramOutcomeMetricsChartWeekOneContainer" class="canvas-wrapper pull-left">
+          <canvas height="162px" id="cycleProgramOutcomeMetricsChartWeekOne"></canvas>
+        </div>
+        <div class="legends-wrapper pull-right">
+          <div class="legends-container" id="cycleProgramOutcomeMetricsWeekOneLegends"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone chart-cell">
+    <div class="mdl-card" id="cycle_center_program-outcome-week-two">
+      <div class="mdl-card__supporting-text card-title">
+        <span class="title-text pull-left">Program Outcome Metrics</span>
+        <div class="title-icon pull-left" id="program-outcome-week-two-icon">
+          <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--top" for="program-outcome-week-two-icon">
+          Historical numbers and percentages of learner status at the end of week 2
+        </div>
+        <span class="title-caption weeks-text">
+          Week 2
+        </span>
+      </div>
+      <div class="piechart-wrapper">
+        <div id="cycleProgramOutcomeMetricsChartWeekTwoContainer" class="canvas-wrapper pull-left">
+          <canvas height="162px" id="cycleProgramOutcomeMetricsChartWeekTwo"></canvas>
+        </div>
+        <div class="legends-wrapper pull-right">
+          <div class="legends-container" id="cycleProgramOutcomeMetricsWeekTwoLegends"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone chart-cell">
+    <div class="mdl-card" id="lfa-learner-ratio">
+      <div class="mdl-card__supporting-text card-title">
+        <span class="title-text pull-left"> LFA To Learner Ratio </span>
+        <div class="title-icon pull-left" id="lfa-learner-ratio-icon">
+          <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--top" for="lfa-learner-ratio-icon">
+          Historical LFA to Learner ratio (number of LFAs to number of Learners) across Week 1 and Week 2
+        </div>
+        <div class="top-legend-container pull-right">
+          <div class="legend pull-right">
+            <span class="circle circle-color-A pull-left"></span>
+            <span class="text pull-left">Learner </span>
+          </div>
+          <div class="legend pull-right">
+            <span class="circle circle-color-B pull-left"></span>
+            <span class="text pull-left">LFA</span>
+          </div>
+        </div>
+      </div>
+      <div id="cycleLfaToLearnerRatioChartContainer">
+        <canvas id="cycleLfaToLearnerRatioChart" height="230px"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone chart-cell">
+    <div class="mdl-card allow-overflow" id="gender-distribtion">
+      <div class="mdl-card__supporting-text card-title">
+        <span class="title-text pull-left">Gender Distribution</span>
+        <div class="title-icon pull-left" id="gender-distribution-icon">
+          <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+        </div>
+        <div class="mdl-tooltip mdl-tooltip--top" for="gender-distribution-icon">
+          This is the percentage of Male to Female learners.
+        </div>
+
+        <div class="center-filter-container cycle-filter-container pull-right">
+          <select class="center-dropdown pull-right" id="gender-dropdown">
+            <option value="All">All</option>
+           <option value="Accepted">Accepted</option>
+          </select>
+        </div>
+      </div>
+      <div class="piechart-wrapper">
+        <div id="cycleGenderDistributionChartContainer" class="canvas-wrapper pull-left">
+          <canvas id="cycleGenderDistributionChart" height="162px"></canvas>
+        </div>
+        <div class="legends-wrapper pull-right">
+          <div class="legends-container" id="cycleGenderDistributionChartLegends"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

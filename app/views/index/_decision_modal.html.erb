@@ -1,0 +1,65 @@
+<div>
+  <div id="modal">
+    <div class="modal">
+      <div class="modal-top decision-modal-top">
+        <div class="modal-header">
+
+          <span class="close-button"></span>
+          <div class="learner-info">
+
+            <div class="decision-header">
+              <span class="account-circle"></span>
+              <span class="decision-title">
+                Decision Details
+              </span>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-content scroll-decision">
+          <div class="learner-name stage-learner-id">
+            <label for ='learner' class="input-label"> Learner</label><br>
+            <input type ="text" id="learner-name" name="learner-name" class="learner-input" value="" readonly>
+          </div>
+          <div class="decision-info">
+            <div class="decision">
+              <label for ='learner' class="input-label"> Decision</label><br>
+              <select name="decision" id="decision-select" class="decision-select">
+                <% @dashboard.statuses.each do |value| %>
+                <option class="decision-value" value="<%= value %>"><%= value %></option>
+                <% end %>
+              </select>
+              <p id="decision-status-error" class="active-error"></p>
+            </div>
+            <div class="decision-reason">
+              <label for ='learner' class="input-label"> Decision Reason
+                <span id="reason-tip" class="icon material-icons">help</span>
+                <span class="mdl-tooltip mdl-tooltip--top" for="reason-tip">Hold Cmd/Ctrl + option to select multiple reasons</span>
+              </label>
+              <br>
+              <select name="decision-reason" id="decision-reason-select" class="decision-reason-select" multiple="multiple">
+                <option selected="selected">Select Reasons</option>
+              </select>
+              <p id="decision-reason-error" class="active-error"></p>
+            </div>
+          </div>
+          <br>
+          <div class ="comment">
+            <label for ='learner' class="input-label"> Leave Comment</label><br>
+            <textarea class="leave-comment" placeholder="Start Typing..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class ="modal-bottom">
+        <div class="decision-button">
+          <div class="btn-wrapper">
+            <a class="btns cancel">Cancel</a>
+            <a class='btns save'>Save</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

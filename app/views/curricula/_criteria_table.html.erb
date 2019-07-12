@@ -1,0 +1,42 @@
+<div class="criteria-table-wrapper">
+  <span class="no-criteria"></span>
+  <table class='criteria-header-table'>
+    <thead class="criteria-table-header-wrapper">
+    <th class="criterion-header">
+      <div class="criteria-table-header">
+        <span>Criterion</span><span data-field="criteria" id="criteria-sort" class="sort-icon sort-icon-asc"></span>
+      </div>
+    </th>
+    <th class="framework-header">
+      <div class="criteria-table-header">
+        <span>Framework</span><span data-field="frameworks" id="framework-sort" class="sort-icon sort-icon-asc"></span>
+      </div>
+    </th>
+    <th class="context-header">
+      <div class="criteria-table-header">
+        <span>Context / Metric</span>
+      </div>
+    </th>
+    <th class="description-header">
+      <div class="criteria-table-header">
+        <span>Description</span>
+      </div>
+    </th>
+    <% if admin? %>
+    <th class="action-header">
+      <div class="criteria-table-header">
+          <span>Action</span>
+      </div>
+    </th>
+    <% end %>
+    </thead>
+  </table>
+
+  <div class="criteria-body-wrapper">
+    <table class="criteria-table">
+      <tbody id="criteria-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<%= render("curricula/delete_criteria_modal") %>

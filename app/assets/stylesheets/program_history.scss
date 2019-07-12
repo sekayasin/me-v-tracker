@@ -1,0 +1,102 @@
+@import 'base';
+
+$close-btn-style: (
+  $background-white,
+  $background-blue,
+  7px 45px,
+  16px,
+  1px solid $background-blue
+);
+
+.program-history-modal {
+  padding: 0 !important;
+  display: none;
+  min-height: 50em;
+}
+
+.program-history-top {
+  padding:0 1em;
+}
+
+.program-history-top-section {
+  height: 3em;
+
+  .line {
+    width: fit-content;
+
+    @include respond-to(handhelds) {
+      margin-left: 15px;
+    }
+
+    .long {
+      @include blue-line(50px, 10px);
+
+      @include respond-to(handhelds) {
+        @include blue-line(30px, 6px);
+      }
+    }
+
+    .short {
+      @include blue-line(10px, null);
+    }
+  }
+}
+
+.program-history-modal-content {
+  margin-bottom: 1em;
+  padding-left: 1em;
+  min-height:10em;
+  max-height: 10em;
+  overflow-y: scroll;
+}
+
+.program-links-section {
+  margin:0 0.8em;
+}
+
+.program-link {
+  text-decoration: none;
+  font-size: 0.8em;
+  color: $light-grey !important;
+  font-family: $font-family-light;
+  outline: none;
+
+  &:hover {
+    color: $background-blue !important;
+    font-size: 0.9em;
+  }
+}
+
+.current-program {
+  font-size: 0.8em;
+  color: $light-grey !important;
+  font-family: $font-family-bold;
+  outline: none;
+}
+
+.program-history-modal-bottom {
+  display: flex !important;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height: 3em;
+  background-color: $background-white;
+  box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.1);
+
+  .close-modal {
+    @include buttons($close-btn-style...);
+    align-self: flex-end;
+    margin: 0 2em 0 0;
+    cursor: pointer;
+    outline:none;
+
+    @include respond-to(handhelds) {
+      padding: 3px 24px;
+      font-size: 15px;
+    }
+
+    &:hover {
+      background-color: $background-blue;
+      color: $background-white;
+    }
+  }
+}

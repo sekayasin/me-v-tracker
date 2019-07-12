@@ -1,0 +1,22 @@
+<div class="phases-tab hidden">
+  <ul class="overview-bar" id="phases-bar"></ul>
+  <% @frameworks.each do |framework| %>
+    <div class="accordion-div">
+      <div class="phase-accordion phase-tab">
+        <a class="accordion-section-title phase-title" id="accordion-title-<%= framework[0] %>" href="#framework-accordion-<%= framework[0] %>">
+          <%= render 'learning_ecosystem/image_icon' %>
+          <%= framework[1] %>
+        </a>
+        <div id="framework-accordion-<%= framework[0] %>" class="accordion-section-content phase-content"></div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="submit-loader-modal hidden" id="submit-loader-modal">
+  <div class="loader"></div>
+</div>
+
+<%= render ("learner_output_submit_modal") %>
+<%= render ("self_learning_output_submit_modal") %>
+<%= render ("view_submission_modal") %>

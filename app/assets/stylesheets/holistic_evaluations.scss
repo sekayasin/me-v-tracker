@@ -1,0 +1,390 @@
+// Place all the styles related to the HolisticEvaluations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "base";
+
+$close-btn-style: (
+  $background-white,
+  $background-blue,
+  7px 45px,
+  16px,
+  1px solid $background-blue
+);
+
+$submit-btn-style: (
+  $background-blue,
+  $background-white,
+  8px 45px 9px 45px,
+  16px,
+  null
+);
+
+$cancel-btn-style: (
+  $background-white,
+  $background-blue,
+  7px 22px,
+  15px,
+  1px solid $background-blue
+);
+
+$save-btn-style: (
+  $background-blue,
+  $background-white,
+  8px 34px 9px 34px,
+  15px,
+  null
+);
+
+.hidden-length {
+  display: none;
+}
+
+div#confirmation-modal.ui-dialog-content.ui-widget-content {
+  height: 250px !important;
+}
+
+#confirmation-modal {
+  display: none;
+  box-sizing: border-box;
+}
+
+div#holistic-performance-evaluation {
+  width: 100% !important;
+  display: none;
+}
+
+div.ui-dialog.ui-widget.ui-widget-content {
+  @include respond-to(handhelds) {
+    max-height: auto;
+    width: 350px;
+    height: auto;
+  }
+}
+
+.header-wrapper {
+  margin-top: 20px;
+  margin-left: -1px;
+
+  .mark-icon {
+    background-image: image-url("mark.svg");
+    background-size: 40px 44px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    width: 50px;
+    height: 44px;
+  }
+}
+
+.confirm-modal-bottom {
+  box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.1);
+  padding-top: 1px;
+  margin: 26px -22px 0 -22px !important;
+}
+
+.confirmation-header {
+  margin-top: 15px !important;
+  font-family: $font-family-regular;
+  color: $header-text-color;
+}
+
+.cancel-btn {
+  @include buttons($cancel-btn-style...);
+  margin-right: 14px;
+  color: $background-blue !important;
+
+  @include respond-to(handhelds) {
+    padding: 5px 12px;
+    font-size: 14px;
+    margin-right: 7px !important;
+  }
+}
+
+.btn-submit {
+  @include buttons($save-btn-style...);
+  font-family: $font-family-regular !important;
+  border: 0;
+  box-shadow: 0 4px 10px 0 rgba(199, 218, 255, 0.5);
+  outline: none !important;
+  cursor: pointer;
+
+  @include respond-to(handhelds) {
+    padding: 5px 20px 6px 20px;
+    font-size: 14px;
+  }
+}
+
+p.confirm-text {
+  margin-top: 36px !important;
+  margin-left: 19px !important;
+  font-size: 15px;
+  font-family: $font-family-light !important;
+  color: $grey-color;
+}
+
+p.warning-text {
+  margin: 5% 10% 10% 10% !important;
+  font-size: 15px;
+  font-family: $font-family-light !important;
+  color: $grey-color;
+}
+
+.confirm-btn-wrapper {
+  text-align: right;
+  margin-top: 11px !important;
+  margin-right: 34px;
+  font-size: 16px;
+}
+
+.ui-dialog {
+  z-index: 101 !important;
+}
+
+.ui-dialog .ui-dialog-content {
+  overflow: hidden;
+}
+
+.ui-selectmenu-open {
+  z-index: 102;
+}
+
+.holistic-performance-evaluation {
+  display: none;
+  padding: 0.5em 0.8em !important;
+
+  .ui-menu {
+    width: 175px !important;
+  }
+
+  .holistic-evaluation-header {
+    width: 165px;
+    height: 34px;
+    font-family: $font-family-regular;
+    font-size: 18px !important;
+    margin-bottom: -26px;
+    line-height: 0.7;
+    text-align: left;
+  }
+
+  .modal-header {
+    height: 55px;
+
+    .close-button {
+      right: 32px;
+      z-index: 1;
+    }
+  }
+
+  .modal-content {
+    display: flex;
+    -webkit-display: flex;
+    flex-direction: row;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: -10px;
+
+    .criterium-wrapper {
+      overflow-y: scroll;
+      height: 460px !important;
+
+      .criterium-card {
+        .leave-comment {
+          margin-left: 0 !important;
+
+          &.disabled {
+            background-color: #F2F2F2 !important;
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      .criterium-card:last-child {
+        margin-bottom: 60px;
+      }
+    }
+
+    .criterium-header {
+      height: 37px;
+      padding-left: 15px;
+      font-family: $font-family-regular;
+      display: inline-block;
+      box-shadow: 0 2px 5px 0 $shadow-color;
+      width: 94%;
+      margin-bottom: 13px;
+      margin-top: 5px;
+    }
+
+    .criterium-card {
+      float: left;
+      margin: 15px 10px 10px 10px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.07);
+
+      .criterium-box {
+        height: 33px;
+        margin-top: -15px;
+        margin-bottom: 13px;
+        display: inline;
+      }
+
+      .holistic-average {
+        font-family: $font-family-light;
+        font-size: 14px;
+        font-weight: 300;
+        color: #7d7d7d;
+        float: right;
+        position: relative;
+        padding-right: 15px;
+      }
+
+      .select-background {
+        padding: 0 15px;
+      }
+
+      .satisfaction-level {
+        font-family: $font-family-light;
+        cursor: pointer;
+      }
+
+      .ui-corner-top {
+        .ui-icon {
+          background: url("up.svg") no-repeat !important;
+          background-size: 13px 15px !important;
+          background-position: 10px 10px !important;
+          border-left: 1px solid $border-grey;
+          padding-left: 14px;
+          height: 50px;
+          top: 22% !important;
+          align-content: center;
+        }
+      }
+
+      .select-background {
+
+        span {
+
+          &.disabled {
+            background-color: #F2F2F2 !important;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+
+    .comment-area {
+      padding: 0 15px 10px 15px;
+    }
+
+    .leave-comment {
+      margin-top: 15px;
+      height: 75px !important;
+    }
+  }
+
+  .modal-bottom {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 0;
+    background-color: #fff;
+
+    .mandatory-comment {
+      font-size: px-to-rem(11px);
+      padding-left: px-to-rem(42px);
+      padding-top: px-to-rem(9px);
+      padding-bottom: px-to-rem(11px);
+      font-style: italic;
+      color: #a8a8a8;
+      float: left;
+    }
+
+    .score-history-btn {
+      float: left;
+      color: $background-blue;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: $font-family-light;
+      margin: 5px 0 0 46px;
+
+      @include respond-to(handhelds) {
+        margin-top: -37px;
+        margin-left: 13.5em;
+      }
+    }
+
+    .btn-wrapper {
+      text-align: right;
+      cursor: auto;
+      margin-right: 61px;
+
+      .close-scores {
+        @include buttons($close-btn-style...);
+        margin-right: 14px;
+
+        @include respond-to(handhelds) {
+          padding: 3px 24px;
+          font-size: 15px;
+        }
+      }
+
+      .submit {
+        @include buttons($submit-btn-style...);
+        border: 0;
+        cursor: pointer;
+        box-shadow: 0 4px 10px 0 rgba(199, 218, 255, 0.5);
+        border-radius: 2px;
+
+        @include respond-to(handhelds) {
+          padding: 3px 24px 4px 24px;
+          font-size: 15px;
+        }
+
+        &.disabled {
+          background-color: #F2F2F2;
+          color: #ababab;
+          box-shadow: none;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) and (min-width: 320px) {
+  .holistic-performance-evaluation {
+    .modal-content {
+      .criterium-wrapper {
+        .criterium-card:last-child {
+          margin-bottom: px-to-rem(85px);
+        }
+      }
+    }
+
+    .modal-bottom {
+      padding-top: 85px;
+      .btn-wrapper {
+        margin-right: 24%;
+        margin-top: -65px;
+        margin-bottom: 35px !important;
+      }
+
+      .mandatory-comment {
+        font-size: px-to-rem(10px);
+        margin-bottom: px-to-rem(11px);
+        float: left;
+      }
+
+      .score-history-btn {
+        margin-top: -24px;
+        margin-right: 24%;
+        float: right;
+        width: 146px;
+      }
+    }
+  }
+}

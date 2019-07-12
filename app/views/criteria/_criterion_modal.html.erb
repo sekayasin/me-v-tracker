@@ -1,0 +1,52 @@
+<div class="add-criterion-modal">
+  <div class="modal">
+    <div class="add-criterion-modal-top modal-top">
+      <div class="modal-header">
+        <span class="close-button" id="close-button"></span>
+        <div class="add-criterion-header-section">
+          <div class="add-criterion-header">
+              Add Criterion
+          </div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-content">
+      <div class="add-criterion-body-section">
+        <%= form_for :criterium, :url => url_for(:controller => 'criteria', :action => 'create'), html: {class: "add-criterion-form" }, remote: true do |f| %>
+          <div class="add-criterion__name-input">
+             <%= f.label :name %><br />
+             <%= f.text_field :name, class: "validate", required: true %>
+          </div>
+          
+          <div class="select-framework-section">
+            <span class="select-framework-header">Select Framework</span><br/>
+            
+            <div class="select-framework__checkboxes">
+              <% @frameworks.each do |framework| %>
+                  <label class="mdl-checkbox mdl-js-checkbox select-framework__checkbox-section">
+                    <%= check_box_tag "frameworks[]", framework[0] ,false, class: "mdl-checkbox__input  framework-checkbox__input" %>
+                    <span class="framework-text"><%= framework[1] %></span>
+                  </label>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="add-criterion__description-input">
+            <%= f.label :description %><br/>
+            <%= f.text_area :description, class: "validate",required: true, placeholder: "Start Typing..." %>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="add-criterion-modal-bottom">
+    <button type="button" class="btns add-criterion-cancel">Cancel</button>
+    <%= f.button "Save", type: :submit, class: "btns add-criterion-save" %>
+   </div>
+  <% end %>
+</div>

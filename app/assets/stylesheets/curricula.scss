@@ -1,0 +1,368 @@
+// Place all the styles related to the curriculum controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'base';
+
+$add-criterion-btn-style: (
+  $background-blue,
+  $background-white,
+  3px 20px 3px 20px,
+  14px,
+  null
+);
+
+$mobile-add-criterion-btn-style: (
+  $background-blue,
+  $background-white,
+  3px 15px 3px 15px,
+  12px,
+  null
+);
+
+
+body {
+  overflow: auto;
+}
+
+@media only screen and (min-width: $break-point-large-tablet + 1) {
+  .curriculum-page {
+    margin-top: $main-content-margin-top;
+  }
+}
+
+.curriculum-page .mdl-tabs__panel {
+  display: none;
+}
+
+.criterium-filter-text {
+  height: 20px;
+  font-family: $font-family-light !important;
+  font-size: 15px;
+  color: $filter-label-color;
+  margin: 0px 0px 10px 0px !important;
+}
+
+.top-criteria-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-criterion {
+  margin-right: 5%;
+  margin-left: auto;
+
+  @include respond-to(handhelds) {
+    margin-top: 2%;
+    margin-left: 5%;
+  }
+
+  .add-criterion-icon {
+    font-size: 20px;
+    margin-left: 0.3em;
+  }
+
+  .add-criterion-btn {
+    @include buttons($add-criterion-btn-style...);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.2em;
+    font-size: 0.9em;
+
+    @include respond-to(handhelds) {
+      @include buttons($mobile-add-criterion-btn-style...);
+    }
+  }
+}
+
+.framework-filter {
+  margin-left: 5%;
+
+  .ui-icon {
+    background: url('down.svg') no-repeat !important;
+    background-size: 17px 20px !important;
+    background-position: 10px 17px !important;
+    border-left: 1px solid $border-grey;
+    padding-left: 14px;
+    height: 50px;
+    top: 6% !important;
+    align-content: center;
+  }
+
+  .ui-corner-top {
+    .ui-icon {
+      background: url('up.svg') no-repeat !important;
+      background-size: 17px 20px !important;
+      background-position: 10px 17px !important;
+      border-left: 1px solid $border-grey;
+      padding-left: 14px;
+      height: 50px;
+      top: 4% !important;
+      align-content: center;
+    }
+  }
+
+  .ui-selectmenu-text {
+    font-size: 13px !important;
+    margin-top: 4px !important;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  .ui-selectmenu-button .ui-selectmenu-text {
+    font-weight: normal !important;
+    font-size: 16px !important;
+    color: $select-color;
+    padding-left: 15px;
+  }
+
+  .ui-state-hover {
+    border: 1px solid $border-off-white;
+    font-size: 14px !important;
+  }
+
+  .ui-selectmenu-button {
+    height: 40px !important;
+    align-content: center;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $border-off-white !important;
+      height: 40px !important;
+    }
+  }
+
+  .ui-selectmenu-menu .ui-menu {
+    width: 90px !important;
+  }
+
+  .ui-state-default, .ui-state-focus {
+    background: transparent;
+  }
+
+  .ui-widget {
+    font-family: $font-family-light !important;
+    width: 214px !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    border-radius: 5px;
+  }
+}
+
+.criteria-table-wrapper {
+  width: 100%;
+
+  .criteria-header-table {
+    margin: 0 5%;
+    min-width: 90%;
+
+    .criteria-table-header-wrapper {
+      width:100%;
+
+      .criterion-header,
+      .framework-header,
+      .context-header {
+        width: 20%;
+      }
+
+      .description-header {
+        width: 30%;
+      }
+
+      .action-header {
+        width: 10%;
+      }
+    }
+  }
+
+  .criteria-table-header {
+    color: $grey-text-color;
+    text-align: left;
+    font-family: $font-family-light;
+    display: flex;
+    align-items: center;
+    padding: 1em 0 0 1.2em;
+
+    @include respond-to(handhelds) {
+      font-size: 0.7em;
+      padding-left: 0.5em;
+    }
+  }
+
+  .sort-icon {
+    height: 1em;
+    width: 1em;
+    margin-left: 0.5em;
+    display: inline-block;
+
+    @include respond-to(handhelds) {
+      margin-left: 0.2em;
+      background-size: cover;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .sort-icon-asc {
+    background-image: image-url('a-z.svg');
+    background-repeat: no-repeat;
+  }
+
+  .sort-icon-desc {
+    background-image: image-url('z-a.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+.criteria-body-wrapper {
+  height: 60vh;
+  width: 100%;
+  overflow-y: scroll;
+
+  @media only screen and (min-width: 891px) {
+    height: calc(100vh - 445px);
+  }
+
+  .criteria-table {
+    margin: 0 5%;
+    min-width: 90%;
+    border: 0;
+    border-spacing: 0 1em;
+  }
+
+  .criteria-row-wrapper {
+    height: auto;
+    min-height: 3em;
+    width: 100%;
+    background-color: $background-white;
+    border-radius: 5%;
+
+    .align-up{
+      vertical-align: top;
+    }
+
+    .criteria-criterion,
+    .criteria-framework,
+    .criteria-context {
+      width: 20%;
+    }
+
+    .criteria-context {
+      .bold-text
+      {
+        font-size: px-to-rem(16px);
+        color: $border-black;
+      }
+
+      .metric-margin{
+        margin-left: px-to-rem(-38px);
+      }
+
+      .list-margin{
+        margin-left: px-to-rem(-38px);
+        list-style: none;
+      }
+    }
+
+    .criteria-description {
+      width: 30%;
+    }
+
+    .criteria-action {
+      width: 10%;
+    }
+
+    .framework-name__break {
+      line-height: 1.5em;
+    }
+
+    td {
+      padding: 1em 0 2em 1.4em;
+      border-radius: 1%;
+      word-wrap: break-word;
+      line-height: normal;
+
+      @include respond-to(handhelds) {
+        font-size: 0.6em;
+        line-height: normal;
+        padding: 1em 0 2em 1em;
+      }
+    }
+  }
+  .edit-icon {
+    background-image: image-url("edit.svg");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+    margin-right: 6px;
+    cursor: pointer;
+  }
+
+  .remove-icon {
+    background-image: image-url("delete.svg");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+    cursor: pointer;
+  }
+}
+
+.criteria-search-results {
+  margin: 0 5% 3%;
+
+  @include respond-to(tablet-and-mobile) {
+    margin: 3% 5% 3%;
+  }
+
+  .criteria-search-header {
+    color: #333e44;
+    font-family: $font-family-regular;
+    font-size: 22px;
+
+    @include respond-to(handhelds) {
+      font-size: 18px;
+    }
+  }
+
+  .line {
+    .long {
+      @include blue-line(50px, 10px);
+
+      @include respond-to(handhelds) {
+        @include blue-line(30px, 6px);
+      }
+    }
+
+    .short {
+      @include blue-line(10px, null);
+    }
+  }
+}
+
+.no-search-result {
+  width: 55%;
+  opacity: 0.8;
+  margin: 5% auto !important;
+  text-align: center;
+
+  @include respond-to(handhelds) {
+    font-size: 18px;
+  }
+}
+
+.disable {
+  pointer-events: none;
+  cursor: default;
+  background-color: #E0E0E0 !important;
+  border: 1px solid $background-white;
+}

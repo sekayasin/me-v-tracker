@@ -1,0 +1,1170 @@
+@import "base";
+
+body {
+  background-color: $main-background-color !important;
+  font-family: $font-family-regular;
+}
+
+.mdl-checkbox__tick-outline {
+  left: -0.3px;
+  width: 110%;
+}
+
+.main-section {
+  width: 95% !important;
+  margin: $main-content-margin-top auto 0;
+}
+
+// Desktop Button styles
+$add-learner-btn-style: (
+  $background-blue,
+  $background-white,
+  6px 14px 9px 16px,
+  14px,
+  null
+);
+
+$add-lfa-btn-style: (
+  $background-white,
+  $background-blue,
+  px-to-rem(6px) px-to-rem(14px) px-to-rem(9px) px-to-rem(16px),
+  px-to-rem(14px),
+  null
+);
+
+$filter-btn-style: (
+  $background-yellow,
+  $background-white,
+  6px 14px 9px 16px,
+  14px,
+  null
+);
+
+$export-btn-style: (
+  $background-white,
+  $background-blue,
+  4px 10px,
+  11px,
+  1px solid $background-blue
+);
+
+$large-export-btn-style: (
+  $background-white,
+  $background-blue,
+  5px 14px 8px 16px,
+  14px,
+  1px solid $background-blue
+);
+
+$apply-btn-style: (
+  $background-blue,
+  $background-white,
+  10px 52px,
+  14px,
+  null
+);
+
+// Mobile Button styles
+
+$mobile-add-learner: (
+  $background-blue,
+  $background-white,
+  7px 10px 7px 11px,
+  12px,
+  null
+);
+
+$mobile-add-lfa: (
+  $background-white,
+  $background-blue,
+  px-to-rem(7px) px-to-rem(10px) px-to-rem(7px) px-to-rem(11px),
+  px-to-rem(12px),
+  null
+);
+
+$mobile-filter-btn: (
+  $background-yellow,
+  $background-white,
+  5px 11px 7px 11px,
+  13px,
+  null
+);
+
+.learners-data {
+  margin-right: 7px !important;
+  margin-left: 15px !important;
+
+  .data-table-head {
+    overflow-x: scroll;
+  }
+}
+
+.top-section {
+  position: relative;
+  height: 70px;
+  margin: 0 auto;
+  width: calc(100% - 30px);
+
+  @include respond-to(handhelds) {
+    height: 90px;
+    margin-right: 10px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    width: calc(100% - 22px);
+  }
+
+  @include respond-to(tablets) {
+    height: 125px;
+  }
+
+  .btns {
+    box-shadow: $btn-shadow;
+    text-transform: capitalize !important;
+  }
+
+  .add-learner {
+    @include buttons($add-learner-btn-style...);
+    margin-right: 15px;
+
+    @include respond-to(handhelds) {
+      @include buttons($mobile-add-learner...);
+    }
+  }
+
+  .add-learner-icon,
+  .filter-icon,
+  .add-lfa-icon {
+    @include respond-to (handhelds) {
+      font-size: 14px;
+    }
+  }
+
+  .add-lfa {
+    @include buttons($add-lfa-btn-style...);
+    margin-right: px-to-rem(15px);
+
+    @include respond-to(handhelds) {
+      @include buttons($mobile-add-lfa...);
+    }
+  }
+
+  .filter-btn {
+    @include buttons($filter-btn-style...);
+    @include respond-to(handhelds) {
+      @include buttons($mobile-filter-btn...);
+    }
+    .mdl-badge {
+      display: none;
+    }
+    margin-top: px-to-rem(5px)
+  }
+
+  .export-btn,
+  .clear-filters-btn {
+    @include buttons($export-btn-style...);
+    font-weight: 500;
+    margin: 0 0 10px 20px;
+    text-decoration: none;
+
+    @include respond-to(handhelds) {
+      @include buttons(
+        $background-white,
+        $background-blue,
+        0 12px,
+        10px,
+        1px solid $background-blue
+      );
+      margin: 0 0 0 5px;
+      float: right;
+    }
+  }
+
+  .clear-filters-btn.large,
+  .export-btn.large {
+    @include buttons($large-export-btn-style...);
+    margin: 5px 15px 0 5px;
+
+    @include respond-to(handhelds) {
+      @include buttons(
+        $background-white,
+        $background-blue,
+        0 10px 1px 11px,
+        12px,
+        1px solid $background-blue
+      );
+      float: left;
+      margin: -1px 15px 0 0;
+    }
+  }
+  .hide {
+    display: none;
+  }
+
+  .apply-btn {
+    @include buttons($apply-btn-style...);
+  }
+
+  .btn-wrapper {
+    text-align: right;
+    right: -12px;
+
+    @include respond-to(handhelds) {
+      margin-top: 15px;
+      text-align: left;
+      right: 0;
+    }
+
+    @include respond-to(tablets) {
+      text-align: left;
+      margin-top: 18px;
+      right: 0;
+    }
+  }
+
+  .total-learners {
+    color: $top-section-black !important;
+    font-family: $font-family-regular !important;
+    font-size: 20px;
+    font-weight: 300;
+    float: left;
+
+    @include respond-to(handhelds) {
+      font-size: 17px;
+    }
+
+    @include respond-to(wide-screens) {
+      font-size: 22px;
+    }
+  }
+
+  .total,
+  .total-search {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: $font-family-light !important;
+
+    @include respond-to(handhelds) {
+      font-size: 14px;
+    }
+  }
+
+  .total-search {
+    color: $grey-color;
+  }
+
+  .icon {
+    vertical-align: -30%;
+  }
+
+  .line {
+    width: fit-content;
+
+    .long {
+      @include blue-line(50px, 10px);
+
+      @include respond-to(handhelds) {
+        @include blue-line(30px, 6px);
+      }
+    }
+
+    .short {
+      @include blue-line(10px, null);
+    }
+  }
+
+  .export-icon {
+    vertical-align: baseline !important;
+  }
+
+  .mdl-menu__container {
+    top: 30px !important;
+    left: -78px !important;
+
+    @include respond-to(wide-screens) {
+      left: -78px !important;
+    }
+
+    @include respond-to(handhelds) {
+      left: 10px !important;
+      top: inherit !important;
+    }
+
+    .parent-dropdown {
+      width: 185px !important;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: auto;
+      height: 400px;
+    }
+
+    .filter-label {
+      margin-top: -5px;
+      text-align: left;
+      font-family: $font-family-light !important;
+      font-size: 14px;
+      line-height: 2.43;
+      color: $filter-label-color;
+
+      @include respond-to(handhelds) {
+        font-size: 12px;
+      }
+    }
+
+    .arrow-up-icon {
+      background: #fff url("up.svg") no-repeat;
+    }
+
+    .arrow-down-icon {
+      background: #fff url("down.svg") no-repeat;
+    }
+
+    .select-box {
+      position: relative;
+      background-position: 122px 10px;
+      background-size: 14px 10px;
+      padding: 0 5px;
+      margin: -15px 0 15px;
+      border: $dropdown-border;
+      border-radius: 5px;
+      font-size: 14px;
+      color: $select-color;
+      font-family: $font-family-light !important;
+      cursor: pointer;
+      height: 30px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-right: 20px;
+      width: 120px;
+      text-transform: capitalize;
+    }
+
+    .select-box::before {
+      content: "";
+      position: absolute;
+      left: 113px;
+      bottom: 0;
+      border: $dropdown-border;
+      border-width: 0 0 2px 1px;
+      height: 28px !important;
+    }
+
+    .decision-select {
+      margin-bottom: 35px;
+    }
+  }
+
+  .filter-dropdown-options {
+    list-style-type: none !important;
+  }
+
+  .list-wrapper {
+    .mdl-menu__container {
+      top: inherit !important;
+      left: inherit !important;
+      margin-left: 0;
+      margin-top: -15px;
+    }
+
+    .mdl-menu {
+      margin-left: 10px !important;
+      cursor: pointer;
+    }
+
+    .mdl-menu--bottom-left {
+      width: 145px !important;
+      cursor: pointer;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .checkbox-list {
+      margin: 20px 0 !important;
+      font-size: 16px !important;
+    }
+  }
+
+  .mdl-menu__outline {
+    border-radius: 4px !important;
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .mdl-checkbox__input:checked + .mdl-checkbox__label {
+    color: $background-blue;
+  }
+
+  .mdl-cell--6-col {
+    @include respond-to(medium-screens) {
+      width: calc(50.9% - 16px);
+    }
+
+    @include respond-to(wide-screens) {
+      width: calc(50.6% - 16px);
+    }
+  }
+
+  .mdl-checkbox.is-checked .mld-checkbox__tick-outline {
+    background-color: $background-blue !important;
+  }
+
+  .mdl-checkbox__tick-outline {
+    height: 110%;
+    width: 110%;
+    left: -1px;
+  }
+
+  .mdl-badge {
+    margin-right: 15px !important;
+    bottom: 20px;
+  }
+
+  .mdl-badge[data-badge]::after {
+    background: $background-blue !important;
+  }
+}
+
+.select-learner-label {
+  margin-top: px-to-rem(5px);
+  text-align: left;
+  font-family: $font-family-light !important;
+  font-size: px-to-rem(14px);
+  line-height: 2.43;
+  color: $filter-label-color;
+
+  @include respond-to(handhelds) {
+    font-size: px-to-rem(12px);
+  }
+}
+
+.campers-data-table {
+  background: inherit !important;
+  border: none !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+  overflow: auto !important;
+
+  thead {
+    border: 0;
+
+    th {
+      font-size: 14px;
+      text-align: left;
+      font-weight: 300;
+    }
+  }
+
+  .mdl-wrapper {
+    padding: 5px;
+  }
+
+  .mts-checkbox {
+    color: #3359db !important;
+    font-size: 15px;
+
+    .mdl-checkbox {
+      padding-left: 0;
+      width: 20%;
+    }
+
+    .mdl-checkbox__box-outline {
+      border: solid 1px #979797 !important;
+    }
+
+    .mdl-menu__outline {
+      width: 255px !important;
+      box-shadow: $dropdown-shadow !important;
+    }
+  }
+
+  .column-filter-wrapper {
+    width: 255px;
+    padding: 0 12px;
+    height: 50vh !important;
+    max-height: 700px !important;
+    overflow-y: scroll;
+
+    @include respond-to(wide-screens) {
+      left: 50px !important;
+      max-height: 100vh;
+    }
+  }
+
+  .colum-filter-list {
+    padding: 10px;
+    list-style: none;
+
+    li {
+      padding: 8px !important;
+    }
+
+    label {
+      font-size: 16px !important;
+      font-family: $font-family-regular !important;
+      font-weight: 200;
+      color: $grey-color;
+    }
+
+    .mdl-checkbox__input:checked + .mdl-checkbox__label {
+      color: $background-blue;
+    }
+  }
+
+  .mdl-checkbox__box-outline {
+    border: solid 1px #979797;
+    width: 18px;
+    height: 18px;
+    display: block;
+    margin-right: 13px;
+  }
+
+  %status-design {
+    height: 53px;
+    display: inline-block;
+    position: absolute;
+    width: 2px;
+    left: 0;
+    top: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  .status-color {
+    padding: 1px !important;
+
+    &.filter i {
+      padding: 5px;
+      background: $background-white;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    &.status-rejected {
+      @extend %status-design;
+      background-color: $red;
+    }
+
+    &.status-droppedout {
+      @extend %status-design;
+      background-color: $border-black;
+    }
+
+    &.status-notapplicable {
+      @extend %status-design;
+      background-color: $off-grey;
+    }
+
+    &.status-accepted {
+      @extend %status-design;
+      background-color: $green;
+    }
+
+    &.status-tryagain {
+      @extend %status-design;
+      background-color: $off-grey;
+    }
+
+    &.status-levelup {
+      @extend %status-design;
+      background-color: $background-yellow;
+    }
+
+    &.status-inprogress {
+      @extend %status-design;
+      background-color: $off-grey;
+    }
+
+    &.status-advanced {
+      @extend %status-design;
+      background-color: $background-blue;
+    }
+  }
+
+  .getmdl-select .mdl-icon-toggle__label {
+    float: right;
+    margin-top: -24px;
+    margin-right: -24px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.campers-data-table:first-child {
+  margin-left: 0;
+}
+
+.campers-data-table:nth-child(2) {
+  margin-top: 5%;
+}
+
+.pane-hScroll.scrollable > table {
+  margin-left: 1rem;
+}
+
+.bootcamper-data {
+  width: 100% !important;
+
+  .pane-vScroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+
+    @include respond-to(wide-screens) {
+      height: 100%;
+    }
+
+    @media only screen and (max-width: $break-point-large) {
+      height: 100%;
+    }
+  }
+  .pane-vScroll::-webkit-scrollbar {
+    width: 0 !important;
+  }
+
+  table {
+    table-layout: fixed;
+
+    th,
+    td {
+      width: 180px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .scrollable {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 60vh;
+    margin-left: -10px;
+    display: block;
+
+    @include respond-to(handhelds) {
+      margin-left: 0;
+    }
+
+    .table-body {
+      width: fit-content;
+      overflow-y: scroll;
+      flex: 1;
+      -webkit-flex: 1;
+    }
+  }
+
+  .scrollable::-webkit-scrollbar {
+    width: 0 !important;
+  }
+}
+
+.campers-table-body {
+  tr {
+    margin-bottom: 10px !important;
+    border: 10px solid #f4f8f9;
+    height: 50px !important;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .mdl-checkbox.is-upgraded {
+    padding-left: 0 !important;
+  }
+
+  td {
+    background: #fff;
+    font-size: 15px;
+    text-align: left;
+
+    &.campers-check {
+      width: 10px;
+    }
+
+    .learner-name {
+      text-decoration: none;
+      color: $grey-color;
+      cursor: pointer;
+    }
+
+    .mdl-checkbox__box-outline {
+      border: 1px solid #e0e0e0;
+    }
+
+    .mdl-menu__item {
+      width: 8vw !important;
+
+      @media screen and (min-width: $break-point-large) {
+        width: 7vw !important;
+      }
+
+      @include respond-to(handhelds) {
+        width: unset !important;
+      }
+    }
+
+    .mdl-menu__item:focus {
+      background-color: transparent !important;
+    }
+
+    .mdl-menu__item:hover {
+      background-color: transparent !important;
+    }
+
+    .mdl-menu__item:active {
+      background-color: transparent !important;
+    }
+
+    .mdl-menu__item:visited {
+      background-color: transparent !important;
+    }
+  }
+
+  .mdl-textfield {
+    width: 6em;
+    padding: 0;
+
+    input {
+      border: 0;
+      height: inherit;
+      margin: 0;
+      font-family: $font-family-regular;
+      font-size: 14px;
+      cursor: pointer;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.mdl-tooltip {
+  background-color: $disable-background-color;
+  border-radius: 0.625rem;
+  color: $border-black;
+  font-family: $font-family-light;
+  font-size: 0.8rem;
+  max-width: px-to-rem(220px);
+}
+
+.mdl-menu__container {
+  margin-top: 15px;
+  margin-left: -10%;
+  height: 124px;
+
+  @media screen and (min-width: $break-point-large) {
+    left: 10px;
+  }
+
+  .mdl-menu__outline {
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.12) !important;
+  }
+}
+
+.mdl-tooltip {
+  background-color: $disable-background-color;
+  border-radius: 0.625rem;
+  color: $border-black;
+  font-family: $font-family-light;
+  font-size: 0.8rem;
+}
+
+.loader {
+  display:block;
+  border: 6px solid $loader-border;
+  border-radius: 50%;
+  border-top: 6px solid $background-blue;
+  width: 25px;
+  height: 25px;
+  margin: 0.8em auto 1.5em;
+  -webkit-animation: spin 5s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+.scroll-end {
+  text-align: center;
+  color: $background-blue;
+  display: none;
+  opacity: 0.7;
+  font-family: $font-family-regular;
+  font-size: 20px;
+  margin-top: 1.8em;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pagination-container {
+  visibility: hidden;
+  text-align: center;
+  margin-top: 30px;
+
+  .pagination {
+    display: inline-flex;
+    list-style: none;
+
+    .first {
+      padding: 0;
+      float: none;
+      border: 0;
+    }
+
+    .prev {
+      padding: 0;
+      float: none;
+      border: 0;
+    }
+
+    .page {
+      padding: 0;
+      float: none;
+      border: 0;
+    }
+
+    .next {
+      padding: 0;
+      float: none;
+      border: 0;
+    }
+
+    .last {
+      padding: 0;
+      float: none;
+      border: 0;
+    }
+  }
+
+  .pagination a {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: #fff;
+    border-left-width: 0;
+    color: #3359db;
+  }
+}
+
+.all-campers-no-data {
+  color: #000000;
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.loader-modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  background-color: #8080803d;
+  z-index: 999;
+  top: 0;
+
+  .loader {
+    border: 6px solid #c5d1f9;
+    border-radius: 50%;
+    border-top: 6px solid $andela-blue;
+    width: 40px;
+    height: 40px;
+    margin: 40px auto;
+    -webkit-animation: spin 5s linear infinite;
+    animation: spin 1s linear infinite;
+    position: relative;
+    top: 40%;
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+#lfas-1-dropdown .mdl-checkbox__label,
+#lfas-2-dropdown .mdl-checkbox__label {
+  text-transform: capitalize;
+}
+
+.lfa-filter-item {
+  display: inline-block;
+  word-break: break-word;
+  line-height: 0.9rem;
+  font-size: 15px;
+}
+
+#program-select-error,
+#redirect-error {
+  p {
+    font-size: 15px;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: $red;
+    margin-bottom: 0;
+    margin-left: 12%;
+    top: -0.9rem;
+    position: relative;
+  }
+}
+
+#program-select-error + p {
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: $red;
+  margin-bottom: 0;
+  margin-left: 12%;
+  top: -0.9rem;
+  position: relative;
+}
+
+@include respond-to(wide-screens) {
+  #program-select {
+    .dropdown-content {
+      left: 0;
+    }
+  }
+}
+
+@include respond-to(handhelds) {
+  .top-section {
+    .icon {
+      vertical-align: -23%;
+    }
+  }
+}
+
+.disable-scroll {
+  position: fixed;
+  right: 1.5%;
+  left: 1.5%;
+}
+
+// Declearing mixins for filter box
+
+@mixin filter-box-left {
+  left: unset !important;
+  margin-left: unset !important;
+  right: 0 !important;
+}
+
+@mixin filter-box-right {
+  margin-left: -10% !important;
+  right: unset !important;
+  left: 10px !important;
+  .list-wrapper {
+    .mdl-menu__container {
+      left: 38px !important;
+    }
+  }
+}
+
+// Writing styles for page
+
+.learners-page-main-container{
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.learners-page-parents {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.learners-page-main-section {
+  display: block;
+  position: relative;
+  height: 50vh;
+  flex: none;
+  overflow: hidden;
+}
+
+.learners-page-main-section::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+.learners-page-filter-container {
+  display: inline-block;
+  position: relative;
+
+  .mdl-menu__container {
+    @include filter-box-left;
+  }
+}
+
+.learners-page-footer {
+  height: 30px;
+  overflow: hidden;
+}
+
+.learners-page-pane-hScroll {
+  max-height: none !important;
+  height: none !important;
+}
+
+.learners-page-top-section {
+  height: auto;
+  margin: 35px auto 13px;
+  width: 97.5%;
+
+  .add-learner,
+  .filter-btn {
+    display: inline-block;
+    padding: 1px 11px 2px 10px !important;
+  }
+
+  .learners-page-filter-container {
+    .mdl-menu__container {
+      text-align: left;
+    }
+
+    .list-wrapper {
+      .mdl-menu__container {
+        left: 20px !important;
+      }
+    }
+  }
+
+  .filter-box-sm-pos {
+    @include filter-box-right;
+  }
+
+  .filter-box-lg-pos {
+    @include filter-box-left;
+  }
+
+  @include respond-to(handhelds) {
+    width: 93.8%;
+    margin: 17px auto 13px;
+
+    .mdl-menu__container {
+      @include filter-box-right();
+    }
+  }
+
+  @include respond-to(tablets) {
+    .mdl-menu__container {
+      @include filter-box-right();
+    }
+  }
+
+  @include respond-to(medium-screens) {
+    .add-learner,
+    .filter-btn {
+      padding: 1px 14px 3px 16px !important;
+    }
+  }
+
+  @include respond-to(wide-screens) {
+    .add-learner,
+    .filter-btn {
+      padding: 1px 14px 3px 16px !important;
+    }
+  }
+
+}
+
+.lfa-week-1 ul,
+.lfa-week-2 ul,
+.decision-one ul,
+.decision-two ul {
+  @include lfa-decision-scrollbar;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.show-more-link {
+  text-decoration: none;
+  outline: none;
+  color: $andela-blue !important;
+}
+
+.more-text span {
+  display: none;
+}
+
+// Caution modal
+.caution-modal--overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: px-to-rem(67px);
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.6);
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media only screen and (max-width: px-to-rem(823px)) and (orientation: landscape) {
+    height: px-to-rem(550px);
+  }
+  @media only screen and (max-width: px-to-rem(414px)) and (orientation: landscape) {
+    height: px-to-rem(550px);
+  }
+  @media only screen and (max-width: px-to-rem(414px)) and (orientation: portrait) {
+    height: px-to-rem(1000px);
+  }
+}
+.caution-modal--caution-holder {
+  width: 100%;
+  height: 20%;
+  margin-top: 10%;
+}
+.caution-modal--caution-text-holder {
+  width: 100%;
+  height: 20%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.caution-modal--caution-text-holder p {
+  font-family: $font-family-regular;
+  color: $background-white;
+  font-size: px-to-rem(24px);
+  text-align: center;
+}
+.caution-modal--caution {
+  height: 100%;
+  width: 100%;
+  background: image-url("caution.png") no-repeat center;
+}
+.caution-modal--background-blur {
+  filter: blur(4px);
+}
+
+@media screen and (max-width: $break-point-samsung-galaxy) {
+  .mobile-responsive{
+    margin-top: px-to-rem(30px)
+  }
+}

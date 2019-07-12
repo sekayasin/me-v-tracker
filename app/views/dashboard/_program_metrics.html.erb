@@ -1,0 +1,241 @@
+<div id="program-metric-ui">
+  <div class="date-select">
+    <span>
+        <label for="select_start_date">Start Date</label>
+        </br>
+        <%= text_field_tag("select_starting_date", nil, {id: "select_start_date", placeholder: "yyyy-mm-dd", class: "select-start-date", type: "text", value: "", readonly: true, autocomplete: "off"}) %>
+    </span>
+    <span>
+        <label for="select_end_date">End Date </label>
+        </br>
+        <%= text_field_tag("select_end_date", nil, {id: "select_end_date", placeholder: "yyyy-mm-dd", class: "select-end-date", type: "text", value: "", readonly: true, autocomplete: "off"}) %>
+    </span>
+    <span class="calendar-icon">
+        <span class="icon"></span>
+    </span>
+  </div>
+
+ <div id="cycle-per-center-title">
+    <label>Cycles per center</label>
+  </div>
+  <div class="content-grid mdl-grid mdl-grid--no-spacing cycle-per-center-container">
+    <div class="center-per-cycle" id="center-per-cycle" style="display:block">
+      <div class="center">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="content-grid mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone horizontalbarchart-responsive">
+      <div class="mdl-card" id="historical-center">
+        <div class="mdl-card__supporting-text card-title">
+          <span class="title-text pull-left">Historical Center &amp; Gender Distribution</span>
+          <div class="title-icon pull-left" id="gender-distribution-program-metrics-icon">
+            <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+          </div>
+          <div class="mdl-tooltip mdl-tooltip--top"
+               for="gender-distribution-program-metrics-icon">
+            Historical numbers and percentages of learners by centre and gender
+          </div>
+          <div class="top-legend-container pull-right">
+            <div class="legend pull-right">
+              <span class="circle circle-color-A pull-left"></span>
+              <span class="text pull-left">Female</span>
+            </div>
+            <div class="legend pull-right">
+              <span class="circle circle-color-B pull-left"></span>
+              <span class="text pull-left">Male</span>
+            </div>
+          </div>
+        </div>
+        <div class="horizontalbarchart-wrapper">
+          <div id="historicalCenterAndGenderDistributionChartContainer">
+            <canvas height="300px" id="historicalCenterAndGenderDistributionChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet  mdl-cell--4-col-phone horizontalbarchart-responsive">
+      <div class="mdl-tooltip mdl-tooltip--top" for="lfa-to-learner-ratio-icon">
+        Historical LFA to Learner ratio (number of LFAs to number of Learners) across Week 1 and Week 2
+      </div>
+      <div class="mdl-card" id="lfa-to-learner">
+        <div class="mdl-card__supporting-text card-title">
+          <span class="title-text pull-left">LFA to Learner Ratio</span>
+          <div class="title-icon pull-left" id="lfa-to-learner-ratio-icon">
+            <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+          </div>
+          <div class="top-legend-container pull-right">
+            <div class="legend pull-right">
+              <span class="circle circle-color-A pull-left"></span>
+              <span class="text pull-left">Learner</span>
+            </div>
+            <div class="legend pull-right">
+              <span class="circle circle-color-B pull-left"></span>
+              <span class="text pull-left">LFA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="horizontalbarchart-wrapper">
+          <div id="lfaToLearnerRatioChartContainer">
+            <canvas height="200px" id="lfaToLearnerRatioChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-grid mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone horizontalbarchart-responsive" id="center-two">
+      <div class="mdl-card" id="historical-center">
+        <div class="mdl-card__supporting-text card-title">
+          <span class="title-text pull-left">Average Perceived Readiness in Bootcamp across Centers</span>
+          <div class="title-icon pull-left" id="average_perceived_readiness-program-metrics-icon">
+            <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+          </div>
+          <div class="mdl-tooltip mdl-tooltip--top"
+               for="average_perceived_readiness-program-metrics-icon">
+            Historical average perceived readiness in bootcamp by centre.
+          </div>
+        </div>
+
+        <div class="horizontalbarchart-wrapper">
+          <div id="readinessChartContainer">
+            <canvas min-height="300px" id="averagePerceivedReadinessinBootcampAcrossCentersChart"></canvas>
+          </div>
+          <div class="bottom-legend-container ">
+            <div class="legend">
+              <span class="square square-one"></span>
+              <span class="text">Wk 1 Ready > Wk 2 Ready</span>
+            </div>
+            <div class="legend">
+              <span class="square square-two"></span>
+              <span class="text">Wk 1 Ready > Wk 2 Not Ready</span>
+            </div>
+            <div class="legend">
+              <span class="square square-three"></span>
+              <span class="text">Wk 1 Not Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone horizontalbarchart-responsive">
+      <div class="mdl-card" id="perceived-readiness-across-genders">
+        <div class="mdl-card__supporting-text card-title">
+          <span class="title-text pull-left">Average Perceived Readiness in Bootcamp across Genders</span>
+          <div class="title-icon pull-left" id="perceived-readiness-across-genders-icon">
+            <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+          </div>
+          <div class="mdl-tooltip mdl-tooltip--top"
+               for="perceived-readiness-across-genders-icon">
+            Average perceived readiness in Bootcamp across Genders
+          </div>
+        </div>
+
+        <div class="horizontalbarchart-wrapper">
+          <div id="averagePerceivedReadinessAcrossGendersChartContainer">
+            <canvas height="250px" id="averagePerceivedReadinessAcrossGendersChart"></canvas>
+          </div>
+          <div class="bottom-legend-container ">
+            <div class="legend">
+              <span class="square square-one"></span>
+              <span class="text">Wk 1 Ready > Wk 2 Ready</span>
+            </div>
+            <div class="legend">
+              <span class="square square-two"></span>
+              <span class="text">Wk 1 Ready > Wk 2 Not Ready</span>
+            </div>
+            <div class="legend">
+              <span class="square square-three"></span>
+              <span class="text">Wk 1 Not Ready</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="content-grid mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet piechart-responsive">
+      <div class="mdl-card" id="program-outcome-week-one">
+        <div class="mdl-card__supporting-text card-title">
+          <span class="pull-left">Program Outcome Metrics</span>
+          <div class="title-icon pull-left" id="phase-one-program-metrics-icon">
+            <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+          </div>
+
+          <div class="mdl-tooltip mdl-tooltip--top" for="phase-one-program-metrics-icon">
+            Historical numbers and percentages of learner status at the end of week 1
+          </div>
+
+          <span class="title-caption">
+            Week 1
+          </span>
+        </div>
+
+        <div class="piechart-wrapper">
+          <div id="programOutcomeMetricsWeekOneChartContainer" class="canvas-wrapper pull-left">
+            <canvas height="162px" id="programOutcomeMetricsWeekOneChart"></canvas>
+          </div>
+          <div class="legends-wrapper pull-right">
+            <div class="legends-container" id="programOutcomeMetricsWeekOneLegends"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet piechart-responsive">
+      <div class="mdl-card" id="program-outcome-week-two">
+        <div class="mdl-card__supporting-text card-title">
+          <span class="pull-left">Program Outcome Metrics</span>
+          <div class="title-icon pull-left" id="week-two-metrics-icon">
+            <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+          </div>
+          <div class="mdl-tooltip mdl-tooltip--top" for="week-two-metrics-icon">
+            Historical numbers and percentages of learner status at the end of week 2
+          </div>
+          <span class="title-caption">
+            Week 2
+          </span>
+        </div>
+
+        <div class="piechart-wrapper">
+          <div id="programOutcomeMetricsWeekTwoChartContainer" class="canvas-wrapper pull-left">
+            <canvas height="162px" id="programOutcomeMetricsWeekTwoChart"></canvas>
+          </div>
+          <div class="legends-wrapper pull-right">
+            <div class="legends-container" id="programOutcomeMetricsWeekTwoLegends"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet piechart-responsive">
+      <div class="mdl-card" id="learners-dispersion">
+        <div class="mdl-card__supporting-text card-title">
+          <span class="pull-left">Learners Dispersion</span>
+          <div class="title-icon pull-left" id="learners-dispersion-icon">
+            <i class="material-icons md-18 md-dark pull-left">help_outline</i>
+          </div>
+          <div class="mdl-tooltip mdl-tooltip--top" for="learners-dispersion-icon">
+            Historical numbers and percentages of learners by centre
+          </div>
+        </div>
+
+        <div class="piechart-wrapper">
+          <div id="learnersDispersionChartContainer" class="canvas-wrapper pull-left">
+            <canvas height="162px" id="learnersDispersionChart"></canvas>
+          </div>
+          <div class="legends-wrapper pull-right">
+            <div class="legends-container" id="learnersDispersionLegends"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

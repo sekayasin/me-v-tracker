@@ -1,0 +1,51 @@
+<div id="holistic-feedback-modal" class="holistic-feedback-modal">
+  <div class="modal">
+    <div class="modal-top holistic-feedback">
+      <div class="modal-header">
+        <span class="close-button close-holistic-feedback-modal"></span>
+        <div class="top-section">
+          <div class="holistic-feedback-header">
+            Holistic Feedback
+          </div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-content">
+        <form id="holistic-feedback-form">
+          <div class="holistic-feedback-content">
+            <% if @criteria.length == 0 %>
+              <h5>No data to show :(</h5>
+            <% else %>
+              <% @criteria.each do |criterium| %>
+                <div class="criterium-card <%= criterium[:name] %>">
+                  <div class="criterium-box">
+                    <div class="criterium-header">
+                      <span id="<%= criterium[:id] %>"><%= criterium[:name] %></span>
+                      <span class="info-icon" id="<%= criterium[:name] %>"></span>
+                      <div class="mdl-tooltip mdl-tooltip--top" for="<%= criterium[:name] %>">
+                        <%= criterium[:description] %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment-area">
+                    <textarea id="<%= criterium[:id] %>" class="feedback leave-comment" placeholder="Comment" name="<%= criterium[:name].downcase.split(" ")[0] %>"></textarea>
+                    <span id="<%= criterium[:name].downcase.split(" ")[0] %>_error" class="feedback-error"></span>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-bottom holistic-feedback-bottom">
+      <div class="btn-wrapper holistic-feedback-wrapper">
+        <a class='btns submit-btn holistic-feedback-button'>Save</a>
+      </div>
+    </div>
+  </div>
+</div>

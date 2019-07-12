@@ -1,0 +1,8 @@
+<select name="<%= locals[:name] %>" id="<%= locals[:id] %>" class="<%= locals[:class] %>">
+  <option value="">Select</option>
+  <% locals[:options].each do |text, value| %>
+    <option <%= locals[:default] == value ? 'selected' : '' %> value="<%= value %>">
+      <%= text %>
+    </option>
+  <% end %>
+</select>

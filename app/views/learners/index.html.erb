@@ -1,0 +1,187 @@
+<div id="main-profile-section">
+  <div id="learner-profile-page">
+    <div class="personal-details-container">
+      <section class="smallscreen">
+        <div class="mobile-btn-wrapper">
+          <a class="edit-personal-details-modal personal-details-btn-mobile pull-right" id="edit-personal-details-button">Edit</a>
+        </div>
+      </section>
+      <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+          <div class="main-header">
+            <span>Personal Details</span>
+          </div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--2-col-tablet">
+          <a class="edit-personal-details-modal personal-details-btn pull-right" id="edit-personal-details">Edit</a>
+        </div>
+      </div>
+      <div class="scrollable-section">
+        <div id="personal-details-wrapper">
+          <div id="profile-image">
+            <img src="<%= @personal_info[:avatar] %>" alt="Profile Image">
+          </div>
+          <div id="profile-info">
+            <div id="name-wrapper">
+              <span id="view-name"><%= @personal_info[:name]%></span>
+            </div>
+            <div class="bio-text">
+              <span><%= @personal_info[:email]%></span>
+            </div>
+            <div class="bio-text">
+              <span id="view-username"><%= @personal_info[:username]%></span>
+            </div>
+            <div class="bio-text">
+              <span id="view-phone-number"><%= @personal_info[:phone_number]%></span>
+            </div>
+            <div class="bio-text">
+              <span id="view-gender"><%= @personal_info[:gender]%></span>
+            </div>
+            <div class="bio-text">
+              <span id="view-location">
+                <%= @personal_info[:location][:city] + ', ' +
+                    @personal_info[:location][:country]%>
+              </span>
+            </div>
+          </div>
+          <div id="bio-wrapper">
+            <div class="details-header">
+              <span>About Me</span>
+            </div>
+            <div id="bio-content">
+              <span id="view-about"><%= @personal_info[:about]%></span>
+            </div>
+          </div>
+          <div id="social-links-wrapper">
+            <div class="details-header">
+              <span>External Links</span>
+            </div>
+            <div id="social-links">
+              <a class="link-item" href="<%= @personal_info[:links][:github]%>">
+                <span id="github" class="link-text"></span>
+                <span id="view-github"><%= prettify_url(@personal_info[:links][:github]) %></span>
+              </a>
+              <a class="link-item" href="<%= @personal_info[:links][:linkedin] %>">
+                <span id="linkedin"></span>
+                <span class="link-text" id="view-linkedin">
+                  <%= prettify_url(@personal_info[:links][:linkedin]) %>
+                </span>
+              </a>
+
+              <% trello = @personal_info[:links][:trello] %>
+              <% if !trello.is_a?(String) || trello.strip == '-' || trello.strip == '' %>
+                <% trello_link = nil %>
+                <% trello_view = "-" %>
+              <% else %>
+                <% trello_link = "https://trello.com/#{@personal_info[:links][:trello]}" %>
+                <% trello_view = prettify_url(trello_link) %>
+              <% end %>
+
+              <a class="link-item" href="<%= trello_link %>">
+                <span id="trello"></span>
+                <span class="link-text" id="view-trello"><%= trello_view %></span>
+              </a>
+              <a class="link-item" href="<%= @personal_info[:links][:website] %>">
+                <span id="website"></span>
+                <span class="link-text" id="view-website">
+                  <%= prettify_url(@personal_info[:links][:website])%>
+                </span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="technical-details-container">
+      <section class="smallscreen">
+        <div class="mobile-btn-wrapper">
+          <a class="technical-details-btn-mobile pull-right" id="edit-technical-details-button">Edit</a>
+        </div>
+      </section>
+      <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+          <div class="main-header">
+            <span>Technical Details</span>
+          </div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--2-col-tablet">
+          <a class="technical-details-btn pull-right" id="edit-technical-details">Edit</a>
+        </div>
+      </div>
+      <div class="technical-details-wrapper" id="technical-details-section">
+        <div class="preferred-stack-wrapper">
+          <div class="stack-header">
+            <div>Preferred Language/Stack</div>
+            <div class="stacks">
+            <% unless @learner_technical_details[:preferred_languages_stacks].blank? %>
+              <% @learner_technical_details[:preferred_languages_stacks].each do |preferred_language_stack| %>
+                <span><%= preferred_language_stack[1] %></span>
+              <% end %>
+            <% else %>
+              <span><%= "N/A" %></span>
+            <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="alc-stack-wrapper">
+          <div class="stack-header">
+            <span>Language/Stack</span>
+            <div class="stacks">
+            <% @learner_technical_details[:alc_languages_stacks].each do |alc_language_stack| %>
+              <span><%= alc_language_stack %></span>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="technical-details-container">
+      <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+          <div class="main-header">
+            <span>History</span>
+          </div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+      </div>
+      <div class="technical-details-wrapper" id="history-container">
+        <div class="alc-stack-wrapper">
+          <div class="stack-header">
+            <div class="history-row">
+              <div class="history-col">Registered</div>
+              <div class="history-col">Programs</div>
+            </div>
+            <div class="stacks">
+              <% @learner_programs.each do |program| %>
+                <div class="history-row">
+                  <div class="history-col">
+                    <%= show_registered(program)%>
+                  </div>
+                  <div class="history-col">
+                    <%= show_history(program)%>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render("edit_personal_details_modal") %>
+</div>
+<%= render("edit_learner_technical_details_modal") %>
+<%= render ("tour/learners_profile_tour_modal") %>

@@ -1,0 +1,50 @@
+{
+    "learnersProfileSteps": [
+        {
+            "intro": "<span class='intro-title'>Your Profile Page</span><br><p>This is the page with your profile. Within it, you will find your personal and technical details as well as the history of the Bootcamps you have attended before.</p>"
+        },
+        {
+            "element": "#personal-details-wrapper",
+            "intro": "<span class='intro-title'>Personal Details</span><br><p>This section contains your personal details.</p>"
+        },
+        {
+            "element": "#technical-details-section",
+            "intro": "<span class='intro-title'>Technical Details</span><br><p>TThis section shows the decision history for the programs you have attended.</p>"
+        },
+        {
+            "element": "#history-container",
+            "intro": "<span class='intro-title'>This is the learners History Section.</span><br><p>This section displays all your decision history as a learner.</p>"
+        },
+        {
+            "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+        }
+    ],
+    "learnersProfileHints": [
+        {
+            "element": "#edit-personal-details",
+            "hint": "Clicking on this will allow you to edit your personal details."
+        },
+        {
+            "element": "#edit-technical-details",
+            "hint": "Clicking on this will allow you to edit your technical details."
+        }
+    ],
+    "takeThisTourAgainHint": [
+      {
+        "element": ".tour-trigger",
+        "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+      }
+    ],
+    "editPersonalDetailsSteps": [
+        {
+            "element": "#edit-personal-details-modal",
+            "intro": "It pops up this modal where you can edit all your personal details."
+        }
+    ],
+    "editTechnicalDetailsSteps": [
+        {
+            "element": "#edit-learner-technical-details-modal",
+            "intro": "It pops up this modal where you can edit all your technical details."
+        }
+    ]
+}

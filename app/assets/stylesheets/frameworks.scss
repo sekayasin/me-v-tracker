@@ -1,0 +1,261 @@
+// Place all the styles related to the frameworks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "base";
+
+$save-btn-style: (
+  $background-blue,
+  $background-white,
+  0.6em 2em 0.6em 2em,
+  14px,
+  null
+);
+
+.frameworks-tab-wrapper {
+  overflow-x: scroll;
+  
+  .frameworks-table-wrapper {
+    width: 100%;
+    min-width: 315px;
+
+    .frameworks-header-table {
+      margin: 0 5%;
+      min-width: 90%;
+
+      .frameworks-table-header-wrapper {
+        width:100%;
+
+        .framework-header {
+          width: 25%;
+        }
+
+        .description-header {
+          width: 75%;
+        }
+
+        .description-header-admin {
+          width: 60%;
+        }
+
+        .action-header {
+          width: 15%;
+        }
+      }
+    }
+
+
+    .frameworks-table-header {
+      color: $grey-text-color;
+      text-align: left;
+      font-family: $font-family-light;
+      display: flex;
+      align-items: center;
+      padding: 1em 0 0 1.2em;
+
+      .frameworks-action-header {
+        margin-left: auto;
+        margin-right: 1em;
+      }
+
+      @media only screen and (max-width: $break-point-medium-mobile) {
+        font-size: 0.8em;
+        padding-left: 1.1em;
+      }
+    }
+  }
+
+  .frameworks-body-wrapper {
+    max-height: 60vh;
+    width: 100%;
+    overflow-y: scroll;
+
+    @media only screen and (min-width: 891px) {
+      height: calc(100vh - 445px);
+    }
+
+    .no-data-text {
+      margin: 3em 0;
+    }
+
+    .frameworks-table {
+      margin: 0 5%;
+      min-width: 90%;
+      border: 0;
+      border-spacing: 0 1em;
+    }
+
+    .frameworks-row-wrapper {
+      height: auto;
+      min-height: 3em;
+      width: 100%;
+      background-color: $background-white;
+      border-radius: 5%;
+
+
+      .framework-row-name {
+        width: 25%;
+      }
+
+      .frameworks-row-description {
+        width: 75%;
+      }
+
+      .description-row-description-admin {
+        width: 60%;
+      }
+
+      .action-data {
+        width: 15%;
+        text-align: right;
+        margin-right: 1em;
+        padding: 1.5em;
+
+        .edit-framework-icon {
+          background-image: image-url("edit.svg");
+          background-repeat: no-repeat;
+          display: inline-block;
+          background-size: 80%;
+          height: 23px;
+          width: 23px;
+          margin-right: 6px;
+          cursor: pointer;
+        }
+      }
+
+      td {
+        padding: 1em 0 1.5em 1.2em;
+        border-radius: 1%;
+        word-wrap: break-word;
+        line-height: normal;
+
+        @media only screen and (max-width: $break-point-medium-mobile) {
+          font-size: 0.8em;
+          line-height: normal;
+          padding: 1em 0 1.5em 1em;
+        }
+      }
+    }
+  }
+}
+
+.edit-framework-modal {
+  display: none;
+
+  .modal {
+    margin: 0 8%;
+    height: auto;
+  }
+
+  .modal-content {
+    margin-bottom: 0.8em;
+    height: 13em;
+    overflow-y: auto;
+  }
+
+  .edit-framework-modal-top {
+    margin: 2em 0 0.2em 0;
+  }
+
+  .edit-framework-header-section {
+    height: 3em;
+    
+    .edit-framework-header {
+      font-family: $font-family-regular;
+    }
+
+    .line {
+      width: fit-content;
+      margin-top: -0.5em;
+
+      @include respond-to(handhelds) {
+        margin-left: 15px;
+      }
+
+      .long {
+        @include blue-line(50px, 10px);
+
+        @include respond-to(handhelds) {
+          @include blue-line(30px, 6px);
+        }
+      }
+
+      .short {
+        @include blue-line(10px, null);
+      }
+    }    
+  }
+
+  .edit-framework-body-section {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family-light;
+  }
+
+  .input-label {
+    font-size: 0.8em;
+    color: $faded-grey;
+  }
+
+  .edit-framework-name {
+    margin-bottom: 0.6em;
+    
+    input[type=text] {
+      width: 100%;
+      padding-top: -0.7em;
+      padding-left: 0.8em;
+      margin: 8px 0;
+      display: inline-block;
+      border: solid 1px rgba(188, 188, 188, 0.4);
+      border-radius: 0.3em;
+      box-sizing: border-box;
+      font-size: 0.8em;
+      color: $faded-grey;
+      line-height: 2.62;
+      font-family: $font-family-light;
+      margin-top: 0;
+    }
+  }
+
+  .edit-framework-description {
+    .framework-description-input {
+      width: 100%;
+      height: 5rem;
+      margin: 0;
+      padding: 0.8em;
+      box-sizing: border-box;
+      border: solid 1px rgba(188, 188, 188, 0.4);
+      border-radius: 0.3em;
+      font-size: 0.8em;
+      resize: none;
+      color: $light-grey;
+      font-family: $font-family-light;
+    }
+
+    .framework-description-input:focus {
+      outline: none;
+    }
+
+    .framework-description-error {
+      font-size: 0.75em;
+      color: $red;
+      margin: 0;
+    }
+  }
+
+  .edit-framework-modal-bottom {
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $background-white;
+    box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.1);
+
+    .edit-framework-save {
+      @include buttons($save-btn-style...);
+      border: none;
+      margin-right: 3em
+    }
+  }
+}

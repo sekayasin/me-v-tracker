@@ -1,0 +1,18 @@
+controller_enabled: true
+mailer_enabled: false
+record_enabled: false
+job_enabled: false
+view_enabled: true
+suppress_app_log: false
+production:
+  enabled: true
+  mailer_enabled: true
+  view_enabled: false
+staging:
+  enabled: true
+  mailer_enabled: true
+  view_enabled: false
+sandbox:
+  enabled: true
+  mailer_enabled: true
+  view_enabled: false

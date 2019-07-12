@@ -1,0 +1,20 @@
+<%= render 'pitch_alerts' %>
+<div class="panelist-wrapper">
+  <div class="panelist-container">
+    <div class="panelist-modal panelist-modal--has-shadow panelist-modal--has-radius">
+      <div class="panelist-content with-learners hide">
+        <%= "<h4 class='is-blue is-capitalized align-text'>Demo Ratings</h4>".html_safe if !admin? %>
+        <p class="align-text">Hi <%= session[:current_user_info][:name].split().first %>, click on a learner's profile to begin their demo.</p>
+        <div class="panelist-cards mdl-grid"></div>
+        <div class="btn-wrapper" id="learners-pagination">
+          <div class="pagination-control learners-pitch-pagination"></div>
+        </div>
+      </div>
+      <div class="panelist-content no-learners hide">
+        <h4 class="is-blue is-capitalized">Demo Ratings</h4>
+        <p class="no-learners-text">Hi <%= session[:current_user_info][:name] %>, this pitch is closed</p>
+      </div>
+    </div>
+  </div>
+</div>
+

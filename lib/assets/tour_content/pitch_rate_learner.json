@@ -1,0 +1,33 @@
+{
+    "takeThisTourAgainHint": [
+      {
+        "element": ".tour-trigger",
+        "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+      }
+    ],
+    "pitchRateLearnerSteps": [
+      {
+        "intro": "<span class='intro-title'>Welcome to the Pitch Learner Rating Page</span><br><p> This page allows you to rate a learner.</p>"
+      },
+      {
+        "element": ".instructions",
+        "intro": "<span>Click here to view the instructions on how to rate a learner</span>"
+      },
+      {
+        "element": "#rate-presentation",
+        "intro": "<span>This section allows you to choose ratings for a learner</span>"
+      },
+      {
+        "element": "#rate-decision",
+        "intro": "<span>This scetion allows you to choose if you would like the learner to join Andela</span>"
+      },
+      {
+        "element": "#rate-comment",
+        "intro": "This section allows you to add a comment about the learner you are rating"
+      },
+      {
+        "element": ".submit-btn",
+        "intro": "Click on this button to see a preview of your ratings and submit them"
+      }
+    ]
+  }

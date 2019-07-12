@@ -1,0 +1,64 @@
+<div>
+  <div id="learner-output-submission" class="learner-submission assessment-submission">
+    <div id="learner-output-submission-modal" class="modal">
+      <div class="modal-top">
+        <div class="modal-header">
+          <span class="close-button" id="close-learner-modal"></span>
+          <div class="top-section learner-submission-top-header">
+            <div class="learner-submission-header">
+                Enter Submission
+            </div>
+            <div class="lfa-view-late-submission"></div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="learner-output-submission-modal-content" class="learner-submission modal-content">
+          <div>
+            <span>Phase: <div class="phase-name"></div></span>
+            &nbsp;&nbsp;&nbsp;
+            <span>Assessment: <div class="assessment-name"></div></span>
+          </div>
+          <ul class="multiple-output-bar" id="multiple-output-bar"></ul>
+          <form class="learner-submission-form" id="learner-submission-form">
+            <label id="label-link" for="link" class="label-link">
+              Enter a link<span id="link-required" class="error-mode required-symbol link-required">*</span>
+            </label>
+            <input id="link" type="text" name="link" class="field-required" maxlength="200" placeholder="http:// or https://">
+            <label for="fileUpload" id="file-upload-area" class="file-upload">
+            <div class="drop-area">
+              <label for="fileUpload" class="drop-area-text">
+              <%= image_tag("upload-icon.svg", :class => "upload-icon")%>
+                <strong>click to upload</strong> or drop your file here
+              </label>
+              <input type='file' id="fileUpload" class="field-required fileUpload" name="file" accept=".png, .jpg, .jpeg" />
+            </div>
+            <p id="file_error" class="error file_error"></p>
+            </label>
+            <p class="uploaded-file">
+              <%= image_tag("file-icon.svg", :class => "uploaded-file-icon")%>
+              <span class="uploaded-file-name"></span>
+              <a class="file-link remove-file">Remove</a>
+            </p>
+
+            <label id="label-description" for="description">
+              Enter a description<span id="description-required" class="error-mode required-symbol">*</span>
+            </label>
+            <textarea id="description" type="text" name="description" class="field-required" maxlength="200"></textarea>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class ="modal-bottom">
+      <div class="learner-submission-export">
+        <div class= "btn-wrapper">
+          <a class='cancel-output-btn' id="cancel-learner-submission">Cancel</a>
+          <a class='save-output-btn' id="save-learner-submission">Save</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <style>
+      .pitch-invitation-container {
+        display: flex;
+        font-family: 'Montserrat', sans-serif;
+        flex-direction: column;
+        align-items: center;
+        background: #f0efef;
+        overflow: scroll;
+        padding-top: 80px;
+        padding-bottom: 90px;
+      }
+      .pitch-invitation-email-card {
+        width: 40%;
+        background: white;
+        padding: 25px;
+        margin: 20px auto;
+      }
+      .pitch-invitation-content {
+        border-bottom: 1px solid #f5f5f5;
+      }
+      .vof-email-logo {
+        text-align: center;
+        margin-top: 4rem;
+      }
+      .recipient-name {
+        color: #333e44;
+        text-align: center;
+        font-size: 1.3em;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        margin: 3rem 0 3rem 0;
+      }
+      .pitch-invitation-text {
+        font-size: .9rem;
+        width: 70%;
+        line-height: 21px;
+        color: #4f4f4f;
+        text-align: center;
+        margin: 0 auto 4rem auto;
+      }
+      .pitch-invitation-text span{
+        display: block;
+        text-align: center;
+        color: #4f4f4f;
+      }
+      .pitch-invitation-footer {
+        text-align: center;
+        border-top: 1px solid #f5f5f5;
+        padding-top: 40px;
+        font-size: .9rem;
+        line-height: 21px;
+        color: #4f4f4f;
+      }
+      .support {
+        display: block;
+        margin: 0.7rem 0 0.5rem 0;
+        color: #3259db;
+      }
+      @media only screen and (min-width: 400px) {
+        .survey-response-email-card {
+        width: 60%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pitch-invitation-container">
+      <div class="pitch-invitation-email-card">
+        <div class="pitch-invitation-content">
+          <p class="vof-email-logo">
+            <%= image_tag attachments['email-vof-logo.png'].url, alt: 'VOF logo', size: '105x28' -%>
+          </p>
+          <h2 class="recipient-name">Hi <%= @full_name %></h2>
+          <p class="pitch-invitation-text">
+            This is to inform you that <strong><%= @cycle_name %> Bootcamp Cycle <%= @cycle %></strong>
+            pitch has been rescheduled to <strong><%= @pitch_date %></strong>.<br/>
+            <span>We apologise for any inconveniences.</span><br/><br/>
+            <span>Best regards,</span>
+            <span>Pre-fellowship Team </span>
+          </p>
+        </div>
+        <div class="pitch-invitation-footer">
+          Have a question? Reach us on:
+          <span class="support">
+            <a href="https://andela.slack.com/messages/C3UUF4PUG">#vof-team</a> / <%= mail_to "vof@andela.com", "vof@andela.com" %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

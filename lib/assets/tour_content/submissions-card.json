@@ -1,0 +1,170 @@
+{
+  "learnerSubmissionsHints": [
+    {
+      "element": "#accordion-title-2 .phase-image-right",
+      "hint": "This has all the outputs that are related to the Values Alignment Metric"
+    },
+    {
+      "element": "#accordion-title-1 .phase-image-right",
+      "hint": "This has all the outputs that are related to the Output Quality Metric",
+      "position": "left"
+    }
+  ],
+
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+
+  "learnerSubmissionSteps": [
+    {
+      "intro": "<span class='intro-title'>Learner Submissions Page</span><br><p>This page has details of a single learner submission.</p>"
+    },
+    {
+      "element": "#submissions-page",
+      "intro": "<span class='intro-title'>Learner Submissions Table</span><br><p>This is the Learner submissions container. It contains all the output submissions of the learner. </p>"
+    },
+    {
+      "element": "#phases-bar",
+      "intro": "<span class='intro-title'>Phases Bar</span><br><p>This is the phases bar and it shows all the outputs for all the weeks the learner submitted them.</p>"
+    },
+    {
+      "element": "#back-to-learners",
+      "intro": "On clicking this back button, you will be redirected back to all the submissions for all your learners"
+    },
+    {
+      "element": "#accordion-title-2",
+      "intro": "This has all the outputs that are related to the Values Alignment Metric"
+    },
+    {
+      "element": "#accordion-title-1",
+      "intro": "This has all the outputs that are related to the Output Quality Metric"
+    },
+    {
+      "element": "#accordion-title-3",
+      "intro": "This has all the outputs that are related to the Feedback Metric"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><p><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+
+  "valueOutputSteps": [
+    {
+      "element": ".output-table",
+      "intro": "<span class='intro-title'>Learner Outputs Table</span><br><p>This is the output table. It displays the submission's expected Learning outcome, Description, Outputs, Due Date, Action and the LFA Feedback. </p>",
+      "position": "auto"
+    },
+    {
+      "element": ".learning-outcomes-column",
+      "intro": "<span class='intro-title'>Leaning Outcomes Column</span><br><p>This column displays all the expected learning outcomes</p>"
+    },
+    {
+      "element": ".description-column",
+      "intro": "<span class='intro-title'>Description Column</span><br><p>This column holds the description of an expected learning outcome. </p>"
+    },
+    {
+      "element": ".outputs-column",
+      "intro": "<span class='intro-title'>Outputs Column</span><br><p>This column holds the task description of an expected learning outcome. </p>"
+    },
+    {
+      "element": ".due-date-column",
+      "intro": "<span class='intro-title'>Due Date Column</span><br><p>This column displays the due date of an expected learning outcome. </p>"
+    },
+    {
+      "element": ".action-column",
+      "intro": "<span class='intro-title'>Action Column</span><br><p>This column displays the action that you are supposed to take on the given learning outcome</p>"
+    },
+    {
+      "element": ".lfa-column",
+      "intro": "<span class='intro-title'>LFA Column</span><br><p>This column displays the buttons that pops up the view feedback modal of a given learning outcome</p>"
+    },
+    {
+      "element": ".show-more-link",
+      "intro": "<span class='intro-title'>Show More Link</span><br><p>On clicking this link, you will be able to see more description of an expected learning outcome</p>"
+    },
+    {
+      "element": ".lfa-feedback-modal",
+      "intro": "Upon clicking this button, a feedback/submission modal will pop up."
+    }
+  ],
+
+  "feedbackModalSteps": [
+    {
+      "element": "#lfa-feedback-view",
+      "intro": "<span class='intro-title'>View Feedback Modal</span><br><p>This is the View Feedback Modal.</p>"
+    },
+    {
+      "element": ".details-bar",
+      "intro": "<span class='intro-title'>Details Bar</span><br><p>This bar has the submission's phase details and the learning outcome being assessed</p>"
+    },
+    {
+      "element": "#submission-and-feedback",
+      "intro": "<span class='intro-title'>Submissions and Feedback Bar</span><br><p>When this bar is active, you can be able to view a learner's submission and give feedback</p>"
+    },
+    {
+      "element": "#reflection",
+      "intro": "<span class='intro-title'>Reflection Bar</span><br><p>When this bar is active, you can be able to view a learner's reflection</p>"
+    },
+    {
+      "element": "#lfa-feedback-group",
+      "intro": "<span class='intro-title'>LFA Feedback</span><br><p>This is where the LFA gives their impression and feedback concerning the given learner output</p>"
+    },
+    {
+      "element": "#cancel-give-feedback-modal",
+      "intro": "<span class='intro-title'>Cancel Button</span><br><p>This button cancels the feedback submission</p>"
+    },
+    {
+      "element": "#post-feedback",
+      "intro": "<span class='intro-title'>Submit Feedback Button</span><br><p>This button initiates feedback submission</p>"
+    }
+  ],
+
+  "submissionModalSteps": [
+    {
+      "element": "#lfa-feedback-view",
+      "intro": "<span class='intro-title'>Submissions Modal</span><br><p>This is the Submission Modal.</p>"
+    },
+    {
+      "element": ".details-bar",
+      "intro": "<span class='intro-title'>Details Bar</span><br><p>This bar has the submission's phase details and the learning outcome being assessed</p>"
+    },
+    {
+      "element": "#submission-and-feedback",
+      "intro": "<span class='intro-title'>Submissions and Feedback Bar</span><br><p>When this bar is active, you can be able to view a learner's submission and give feedback</p>"
+    },
+    {
+      "element": "#reflection",
+      "intro": "<span class='intro-title'>Reflection Bar</span><br><p>When this bar is active, you can be able to view a learner's reflection</p>"
+    },
+    {
+      "element": "#feedback-form",
+      "intro": "<span class='intro-title'>Feedback Form</span><br><p>This is where the LFA gives their impression and feedback concerning the given learner's output</p>"
+    },
+    {
+      "element": "#cancel-give-feedback-modal",
+      "intro": "<span class='intro-title'>Cancel Button</span><br><p>This button cancels the feedback submission</p>"
+    },
+    {
+      "element": "#post-feedback",
+      "intro": "<span class='intro-title'>Submit Feedback Button</span><br><p>This button initiates feedback submission</p>"
+    }
+  ],
+
+  "outputQualitySteps": [
+    {
+      "element": "#framework-accordion-1 .output-table",
+      "intro": "<span class='intro-title'>Learner Submission Table</span><br><p>This row holds the columns of details of a learners output depending on a given learning outcome</p>"
+    },
+    {
+      "element": "#framework-accordion-1 .show-more-link",
+      "intro": "<span class='intro-title'>Show More Link</span><br><p>On clicking this link, you will be able to see more description of an expected learning outcome</p>"
+    },
+    {
+      "element": "#framework-accordion-1 .lfa-feedback-modal",
+      "intro": "Upon clicking this button, a feedback/submission modal will pop up."
+    }
+  ]
+}

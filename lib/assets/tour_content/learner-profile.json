@@ -1,0 +1,92 @@
+{
+  "learnerProfileHints": [
+    {
+      "element": "#program-history-view",
+      "hint": "This is the link to the learner's program history view"
+    },
+    {
+      "element": "#decision-history-view",
+      "hint": "This is the link to the learner's decision history view"
+    },
+    {
+      "element": ".edit-learner-icon",
+      "hint": "This is the Edit Learner's profile Icon"
+    }
+  ],
+
+  "learnerProfileSteps": [
+    {
+      "intro": "<span class='intro-title'>Learners Profile Page</span><br><p>On this page, you can see the profile of a specific learner selected and score their outputs..</p>"
+    },
+    {
+      "element": ".bio-info",
+      "intro": "<p>This shows the learners personal information</p>"
+    },
+    {
+      "element": ".program-info",
+      "intro": "This has information on the progress of the learner in the program."
+    },
+    {
+      "element": ".learner-score-section",
+      "intro": "Here, you can grade the performance of your learner under the different criteria on the program."
+    },
+    {
+      "element": "#evaluation-btn",
+      "intro": "Clicking on this button will display a modal with which you can view/edit the personal feedback and provide holistic evaluation of the learner.<br /><a class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342959944?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo</a> <br>"
+    },
+    {
+      "element": "#filter-by-phase",
+      "intro": "Here, you can filter by phase"
+    },
+    {
+      "element": "#filter-by-framework",
+      "intro": "Here, you can filter by  framework"
+    },
+    {
+      "element": "#filter-by-criteria",
+      "intro": "Here, you can filter by criteria"
+    },
+    {
+      "element": ".score-form",
+      "intro": "Here you can rate the learner's performance <a class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342959895?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>"
+    },
+    {
+      "element": "#submit-score",
+      "intro": "This button is used to submit the learners score"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+
+  "programModalSteps": [
+    {
+      "element": ".program-history-modal",
+      "intro": "This modal shows the learner's program history",
+      "position": "top"
+    }
+  ],
+
+  "decisionModalSteps": [
+    {
+      "element": "#decision-history-modal",
+      "intro": "This modal shows the learner's decision history",
+      "position": "left"
+    }
+  ],
+
+  "editProfileSteps": [
+    {
+      "element": "#edit-learner-bio-info-modal",
+      "intro": "Here, you can edit the learner's detail",
+      "position": "left"
+    }
+  ]
+}

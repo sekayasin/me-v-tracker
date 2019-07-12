@@ -1,0 +1,101 @@
+<div class="responses-page">
+<div class="survey-v2-content">
+  <div class="mdl-grid mdl-grid--no-spacing">
+    <div class="main-container">
+      <div class="setup-container">
+        <div class="question-section-container">
+          <div class="response-buttons">
+              <span class='view-btn overview-btn' id="overview-btn">
+                <b>Overview</b>
+              </span>
+              <span class='view-btn' id="single-view-btn">
+                <b>Single View</b>
+              </span>
+          </div>
+          <p class="main-paragraph">Use Arrow keys for easy navigation</p>
+          <div class="question-field">
+          </div>
+        </div>
+      </div>
+      <div class="setup-container">
+        <div class="question-section-container">
+          <div class="header-section">
+            <span id="survey-preview-title" class='survey_title_text'></span>
+            <span class="download-share">
+            <a id="share-report-btn">
+              <span class='share-report-btn'>
+                Share Report
+              </span>
+            </a>
+          </span>
+            <p class="question-responses-title"></p>
+          </div>
+          <div class="single-view-section" style="display: none;">
+            <div class="rectangle">
+              <span>
+                <img src="<%= asset_path('previous.png') %>" alt="previous" class="combined-shape previous">
+                  <select id='survey-respondents' class="survey-dropdown">
+                  <option value="0">Select a learner</option>
+                  </select>
+                <img src="<%= asset_path('next.png') %>" alt="next" class="combined-shape next">
+              </span>
+            </div>
+            <div id='single-response-dump' class="item-container">
+            </div>
+          </div>
+          <div class="overview-section">
+            <div class="piechart-wrapper">
+              <span id="optionsChartContainer" class="canvas-wrapper pull-left">
+                <canvas id="optionsDistributionChart" height="162px"></canvas>
+              </span>
+              <span class="legends-wrapper pull-right">
+                <div class="legends-container" id="optionsDistributionChartLegends"></div>
+              </span>
+            </div>
+            <div class="vertical-bar-wrapper">
+              <canvas id="optionsDistributionVerticalBar"></canvas>
+            </div>
+            <div class="horizontal-bar-wrapper">
+              <canvas id="optionsDistributionHorizontalBar"></canvas>
+            </div>
+            <div class="multichoice-bar-wrapper">
+              <canvas id="optionsDistributionMultipleChoiceBar" class="distribution-multiple-choice-bar"></canvas>
+            </div>
+            <div class="checkbox-bar-wrapper">
+              <canvas id="optionsDistributionCheckboxBar"></canvas>
+            </div>
+            <div class="picture-piechart-wrapper">
+              <span id="optionsChartContainer" class="canvas-wrapper pull-left">
+                <canvas id="pictureOptionsDistributionChart" height="162px"></canvas>
+              </span>
+              <span class="legends-wrapper pull-right">
+                <div class="legends-container" id="pictureOptionsDistributionChartLegends"></div>
+              </span>
+            </div>
+            <div class="picture-horizontal-bar-wrapper">
+              <canvas id="pictureOptionsDistributionHorizontalBar"></canvas>
+            </div>
+            <div class="responses-time-wrapper"></div>
+            <div class="responses-date-wrapper"></div>
+            <div class="responses-paragraph-wrapper"></div>
+            <div class="empty-response-wrapper">
+              <div class="empty"></div>
+            </div>
+            <div class="display-survey-picture checkbox-view-photos">
+            </div>
+          </div>
+
+          <div class="respondents">
+            <p id="survey-preview-title" class="respondent-count"></p>
+            <div class="respondents-field">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<%= render("survey_share_response_modal") %>
+<%= render("preview_survey_image_response_modal") %>

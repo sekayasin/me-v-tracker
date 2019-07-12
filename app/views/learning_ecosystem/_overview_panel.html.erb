@@ -1,0 +1,37 @@
+<div class="overview">
+  <ul class="overview-bar" id="overview-bar">
+    <li class="active"><a id="overview-item">Overview</a></li>
+  </ul>
+  <div class="overview-bar-container" id="overview-item-content">
+    <% @phases_summary.each.with_index(1) do |week, index| %>
+      <div class="phase-accordion hidden">
+        <a class="accordion-section-title phase-title" id="accordion-title-week-<%= index %>"
+        href="#accordion-week-<%= index %>">
+          <%= render 'learning_ecosystem/image_icon' %>
+          <%= week[:name] %> Outputs <%= render 'learning_ecosystem/progress_bar', completed: week[:completed], total: week[:total]%>
+          <%= week[:completed] %> of <%= week[:total] %>
+          (<%= week[:percentage] %>%)
+        </a>
+        <div id="accordion-week-<%= index %>" class="accordion-section-content phase-content">
+          <table class="output-table overview-output-table">
+            <tr class="table-head">
+              <th class="phases" align="left">Phases</th>
+              <th class="progress" align="left">Progress</th>
+              <th class="submissions" align="left">Submissions</th>
+            </tr>
+            <% week[:phases].each do |phase| %>
+              <tr class="table-cell">
+                <td class="phases-text"><%= phase[:name] %></td>
+                <td class="progress-text">
+                  <span class="output-percentage"><%= phase[:percentage] %>% completed </span><br />
+                  <%= render 'learning_ecosystem/yellow_progress_bar', completed: phase[:completed], total: phase[:total], percentage: phase[:percentage] %>
+                </td>
+                <td class="submissions-text"><%= phase[:completed]%> of <%=phase[:total] %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

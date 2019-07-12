@@ -1,0 +1,88 @@
+<div id="all-programs" aria-describedby="all-programs" class="main-section">
+  <div>
+    <div class="programs-top">
+      <div class="top-section">
+          <div class="flex flex-space-btw">
+            <h5 class="header-text">All Programs</h5>
+              <a class="button button--filled create-new-program">
+                Create Program
+                <i class="icon material-icons add-learner-icon">add</i>
+              </a>
+          </div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+      <div class="programs-content">
+        <div id="all-programs-table" class="all-programs-table-wrapper">
+          <div class="all-programs-body-wrapper">
+            <table class="all-programs-table_fixed">
+              <thead class="program-table-header-wrapper">
+              <tr><th class="name-header">
+                <div class="program-name-table-header column-title">
+                  <span>Name</span><span class="sort-icon-outcomes sort-icon-asc-outcomes name"></span>
+                </div>
+              </th>
+                <th class="description-header">
+                  <div class="description-table-header column-title">
+                    <span>Description</span>
+                  </div>
+                </th>
+                <th class="stack-header">
+                  <div class="stack-table-header column-title">
+                    <span>Language(s)/Stack(s)</span>
+                  </div>
+                </th>
+                <th class="phase-header">
+                  <div class="phase-table-header column-title">
+                    <span>Phases</span>
+                  </div>
+                </th>
+                <th class="duration-header">
+                  <div class="duration-table-header column-title">
+                    <span>Est.Length</span><span class="sort-icon-outcomes sort-icon-asc-outcomes duration"></span>
+                  </div>
+                </th>
+                <th class="action-header">
+                  <div class="action-table-header column-title">
+                    <span>Action</span>
+                  </div>
+                </th>
+              </tr></thead>
+            </table>
+            <div class="all-programs-table-container">
+              <table class="all-programs-table">
+                <thead class="program-table-header-wrapper">
+                <th class="name-header">
+                </th>
+                <th class="description-header">
+                </th>
+                <th class="stack-header">
+                </th>
+                <th class="phase-header">
+                </th>
+                <th class="duration-header">
+                </th>
+                <th class="action-header">
+                </th>
+                </thead>
+                <tbody id="all-programs-body">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="programs-bottom">
+      <div class="btn-wrapper">
+        <div class="pagination-control"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render("programs/single_program_modal") %>
+

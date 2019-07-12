@@ -1,0 +1,93 @@
+<div class="learning-outcomes">
+  <% unless params[:search] %>
+    <div class="outcome-dropdowns">
+      <div class="intro-dropdown">
+        <div class="criterium-filter-wrapper program-filter-wrapper">
+          <p class="criterium-filter-text">Filter by Program </p>
+          <select name="program-filter-dropdown" class="criteria-filter-outcome" id="program-filter-outcome">
+             <% program_options.each do |program| %>
+              <option class="program-filter-option" value="<%= program[1] %>"><%= program[0]%></a></option>
+             <% end %>
+             <option value="All" >All</option>
+          </select>
+      </div>
+      <div class="framework-filter-wrapper">
+          <p class="criterium-filter-text">Filter by Framework</p>
+          <select name="framework-filter-outcome" class="framework-filter-outcome" id="framework-filter-outcome">
+              <option> All </option>
+              <option value=<%= @frameworks[0][0]%> ><%= @frameworks[0][1] %></option>
+              <option value=<%= @frameworks[1][0]%> ><%= @frameworks[1][1] %></option>
+              <option value=<%= @frameworks[2][0]%> ><%= @frameworks[2][1] %></option>
+          </select>
+      </div>
+
+      <div class="criterium-filter-wrapper">
+          <p class="criterium-filter-text">Filter by Criteria</p>
+          <select name="criteria-filter-outcome" class="criteria-filter-outcome" id="criteria-filter-outcome">
+              <option> All </option>
+          </select>
+      </div>
+      </div>
+      <% if admin? %>
+        <div class="btn-wrapper">
+          <a class="btns add-outcome" id="add-learning-outcome">
+            Add Outcome <i class="icon material-icons add-outcome-icon">add</i>
+          </a>
+          <%= render("curricula/add_learning_outcome.html.erb") %>
+          <%= render("curricula/archive_learning_outcome_modal") %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+   <div id="learning-outcomes-table" class="learning-outcomes-table-wrapper" style="overflow-x: scroll;">
+     <table class="outcomes-header-table hide-header-table">
+       <thead class="outcomes-table-header-wrapper">
+         <th class="outcome-header">
+           <div class="outcomes-table-header">
+             <span>Outcome</span><span class="sort-icon-outcomes sort-icon-asc-outcomes"></span>
+           </div>
+         </th>
+         <th class="description-header">
+           <div class="outcomes-table-header">
+             <span>Description</span>
+           </div>
+         </th>
+         <th class="output-header">
+           <div class="outcomes-table-header">
+             <span>Output</span>
+           </div>
+         </th>
+         <th class="context-header">
+           <div class="outcomes-table-header">
+             <span>Context / Metric</span>
+           </div>
+         </th>
+         <th class="framework-header">
+           <div class="outcomes-table-header">
+             <span>Framework</span>
+           </div>
+         </th>
+         <th class="criterium-header">
+           <div class="outcomes-table-header">
+             <span>Criteria</span>
+           </div>
+         </th>
+         <% if admin? %>
+          <th class="action-header">
+            <div class="outcomes-table-header">
+                <span>Action</span>
+            </div>
+          </th>
+         <% end %>
+       </thead>
+     </table>
+
+     <div class="learning-outcomes-body-wrapper">
+       <table class="learning-outcomes-table">
+         <tbody id="learning-outcomes-body"></tbody>
+       </table>
+     </div>
+   </div>
+</div>
+<div class="pagination-control outcomes-pagination" style="bottom:0"></div>

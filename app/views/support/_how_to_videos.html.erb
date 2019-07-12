@@ -1,0 +1,82 @@
+<div class="video-page">
+
+  <section class="video-page-top">
+    <h2>Discover How To use VOF</h2>
+    <p>
+      Hi <%= session[:current_user_info][:name].split.first || 'there'%>, 
+      the videos below will equip you with everything you need to know on using VOF. Enjoy.
+    </p>
+  </section>
+  
+  <% 
+    require 'yaml'
+    # load Hash of videos for admin, LFA and learner
+    admin_videos = YAML::load_file(File.join(__dir__, 'admin_videos.yml'))
+    lfa_videos = YAML::load_file(File.join(__dir__, 'lfa_videos.yml'))
+    learner_videos = YAML::load_file(File.join(__dir__, 'learner_videos.yml'))
+  %>
+  <div class="video-card-container">
+    <% if authorized_learner? %>
+      <% learner_videos.each do |key, value_hash| %> 
+          <div class="video-page-card">
+            <a data-fancybox data-ratio="2" href="<%= value_hash['video']%>?autoplay=1" 
+              data-options='{"type" : "iframe", "iframe" : {"css" : {"width" : "881px", "height": "540px"}}}'>
+              <div class="video-panel">
+                <%= image_tag("how_to_videos/#{value_hash['image']}", class: 'video-image') %>
+                <div class="play-icon">
+                  <i class="fa fa-play fa-2x"></i>
+                </div>
+              </div>
+
+              <div class="video-text-section">
+                <p class="video-title"><%= value_hash['title'] %> </p>
+                <p class="video-text"><%= value_hash['subtitle']%></p>
+              </div>
+            </a>
+          </div>
+        <% end %>
+
+    <% else  %>
+
+      <% if( admin? && admin_videos.any? ) %>
+        <% admin_videos.each do |key, value_hash| %> 
+          <div class="video-page-card">
+            <a data-fancybox data-ratio="2" href="<%= value_hash['video']%>?autoplay=1" 
+              data-options='{"type" : "iframe", "iframe" : {"css" : {"width" : "881px", "height": "540px"}}}'>
+              <div class="video-panel">
+                <%= image_tag("how_to_videos/#{value_hash['image']}", class: 'video-image') %>
+                <div class="play-icon">
+                  <i class="fa fa-play fa-2x"></i>
+                </div>
+              </div>
+
+              <div class="video-text-section">
+                <p class="video-title"><%= value_hash['title'] %> </p>
+                <p class="video-text"><%= value_hash['subtitle']%></p>
+              </div>
+            </a>
+          </div>
+        <% end %>
+      <% elsif lfa_videos.any? %>
+        <% lfa_videos.each do |key, value_hash| %> 
+          <div class="video-page-card">
+            <a data-fancybox data-ratio="2" href="<%= value_hash['video']%>?autoplay=1" 
+              data-options='{"type" : "iframe", "iframe" : {"css" : {"width" : "881px", "height": "540px"}}}'>
+              <div class="video-panel">
+                <%= image_tag("how_to_videos/#{value_hash['image']}", class: 'video-image') %>
+                <div class="play-icon">
+                  <i class="fa fa-play fa-2x"></i>
+                </div>
+              </div>
+              <div class="video-text-section">
+                <p class="video-title"><%= value_hash['title'] %> </p>
+                <p class="video-text"><%= value_hash['subtitle']%></p>
+              </div>
+            </a>
+          </div>
+        <% end %>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<section class="respond-page">
+  <div class="respond-container">
+    <div class="respond-page--header respond-page--header__primary">
+      <div class="respond-header">
+        <img src="<%= asset_path('logos/andela white.png') %>" alt="Andela Logo" class="respond-header--logo" />
+        <div class="respond-header--title">
+          <h4 class="respond-modal--header"><%= @new_survey.title  %></h4>
+          <p class="respond-modal--description"><%= @new_survey.description %></p>
+        </div>
+      </div>
+      <div class="respond-header--image">
+        <img src="<%= asset_path('developer-team.png') %>" alt="developer team" />
+      </div>
+    </div>
+    <div class="offset-modal">
+      <div class="respond-modal is-centered">
+        <div class="respond-modal--container">
+          <div class="respond-modal--section">
+            <div class="respond-modal--question-group survey-v2-content no-margin">
+              <div class="respond-modal--question-options">                
+                <div class="question-wrapper">
+                </div>
+                <div class="respond-modal--footer preview-next-btn">
+                  <button class="btn-primary pull-left ui-helper-hidden" id="prev-preview">Prev</button>
+                  <button class="btn-primary ui-helper-hidden" id="next-preview">Next</button>
+                  <button class="respond-submit-btn is-success ui-helper-hidden">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<%= render partial: "survey_optional_response_modal.html.erb" %>

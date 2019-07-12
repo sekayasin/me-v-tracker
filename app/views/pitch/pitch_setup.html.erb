@@ -1,0 +1,115 @@
+<div class="pitch-setup-container">
+  <div class="pitch-setup-content">
+    <div class="tab-btn-back" id="tab-btn-back">
+      <span class="tab-btn-back-icon">
+        <%= image_tag("back-icon-copy.svg") %>
+      </span>
+      <span class="tab-btn-back-text" id="tab-btn-back-text">
+      </span>
+    </div>
+    <%= form_tag "#", id: "setupPitch", method: "post", multipart: true do %>
+    <div class="pitch-tab pitch-tab-1">
+      <div class="pitch-tab-header">
+        <h4 class="pitch-tab-header-text">
+          Hi <%= session[:current_user_info][:name].split().first %>, kindly fill the details
+        </h4>
+      </div>
+      <div class="pitch-tab-body program-cycle-tab-body">
+        <div class="pitch-item-container">
+        <p id="pitch_selected_program">Select a program</p>
+          <div class="pitch-select-shelter">
+            <div class="pitch-select-option" id="program-select-option">
+              <p id="selected">Choose here</p>
+              <span class="down-arrow"></span>
+            </div>
+             <div class="pitch-options-wrapper" id="program-options-wrapper">
+              <% program_options.each do |program|%>
+              <div
+                class="pitch-options-list pitch-select-program"
+                id="options-list"
+              >
+                <div class="pitch-option">
+                  <p class="with-icon"><%= program[0]%></p>
+                  <input type='hidden' value="<%= program[1]%>" class='program-id'/>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="pitch-item-container">
+          <p id="select_pitch_cycle">Select a cycle</p>
+          <div class="pitch-select-shelter">
+            <div class="pitch-select-option" id="cycle-select-option">
+              <p id="pitch_cycle-value">Choose Here</p>
+              <span class="down-arrow"></span>
+            </div>
+            <div
+              class="pitch-options-wrapper cycle-options-wrapper"
+              id="cycle-options-wrapper"
+            >
+              <div class="pitch-options-list" id="pitch-options-list"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="pitch-tab pitch-tab-3">
+      <div class="pitch-tab-header">
+        <h4 class="pitch-tab-header-text invitee-header">
+          Add a panellist to <span class="pitch-cohort">Lagos Cycle 44</span>
+        </h4>
+      </div>
+
+      <div class="pitch-tab-body">
+        <div class="pitch-item-container invitee-container">
+          <div class="invitee-input">
+            <label for="invite-panelist">Panelist's Email Address</label>
+            <br>
+            <input type="text" placeholder="eagle.example@andela.com" id="invite-panelist" class="invitee-input-field invite-panelist">
+            <span class="add-invitee-icon">
+              <%= image_tag("plus-filled.svg") %>
+            </span>
+          </div>
+          <hr class="pitch-divider">
+          <div class="invitee-list">
+            <p class="invitee-list-header">
+              Invited Panellists
+            </p>
+             <div class="invitee-list-items list-lfa-email"></div>
+            <div class="invitee-list-footer">
+              <p class="invitee-footer-text">
+                Invited Panellists will receive an email
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pitch-tab pitch-tab-4">
+      <div class="pitch-tab-header">
+        <h4 class="pitch-tab-header-text demo-date-header">
+          What day is
+          <span class="pitch-cohort">Lagos Cohort 44</span>
+          Demo holding?
+        </h4>
+      </div>
+
+      <div class="pitch-tab-body demo-date-tab-body">
+        <div class="pitch-item-container demo-date-container">
+          <div class="select-demo-date" id="select-demo-date"></div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="pitch-setup-next-btn">
+    <button class="next-btn" id="next-btn">Next</button>
+    <button class="next-btn submit-next" id="submit-btn" style="display: none;">Submit</button>
+    <button class="saving next-btn" style="display: none;">Submitting<span>.</span><span>.</span><span>.</span></button>
+    <button class="next-btn update-next" id="update-btn" style="display: none;">Update</button>
+    <button class="updating next-btn" style="display: none;">Updating<span>.</span><span>.</span><span>.</span></button>
+  </div>
+</div>

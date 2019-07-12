@@ -1,0 +1,234 @@
+@import "base";
+
+::placeholder {
+  opacity: 0.8;
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable {
+  height: 750px;
+  max-height: 750px;
+
+  @include respond-to(tablets) {
+    height: 750px;
+    max-height: 750px;
+    margin-top: px-to-rem(130px);
+    width: 450px;
+  }
+
+  @media all and (max-width: 839px) {
+    left: 160px;
+  }
+
+  @media all and (max-width: 480px) {
+    left: 18px !important;
+  }
+}
+
+#add-learner-outcome {
+  font-family: $font-family-light;
+  display: none;
+
+  .modal {
+    position: relative;
+    overflow: hidden;
+    height: px-to-rem(710px);
+
+    @media only screen and (max-width: 768px) {
+      height: 550px;
+    }
+
+    @media only screen and (min-width: 769px) and (max-width: 1027px) {
+      height: 730px;
+    }
+
+    .modal-top {
+      height: 500px;
+      margin-right: 40px !important;
+      margin-left: 40px !important;
+
+      .top-section {
+        margin-left: 0 !important;
+        font-family: $font-family-regular;
+        height: auto !important;
+        z-index: 300;
+      }
+
+      .add-learner-outcome-modal-content {
+        padding-top: 64px;
+        margin-bottom: 80px;
+        font-size: 14px;
+        height: 110%;
+        overflow-y: auto;
+        color: rgba(0, 0, 0, 0.4);
+
+        @media only screen and (max-width: 768px) {
+          height: 70%;
+        }
+
+        .ui-selectmenu-text {
+          font-size: 13px !important;
+          color: rgba(0, 0, 0, 0.55);
+        }
+
+        #label-color {
+          text-transform: capitalize;
+        }
+
+        .ui-corner-top {
+          .ui-icon {
+            background: url('up.svg') no-repeat !important;
+            background-size: 13px 15px !important;
+            background-position: 10px 10px !important;
+            border-left: 1px solid $border-grey;
+            padding-left: 14px;
+            height: 50px;
+            top: 22% !important;
+            align-content: center;
+          }
+        }
+
+        .learner-outcome-info-and-filter {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          .ui-state-default {
+            width: px-to-rem(238px) !important;
+
+            @media only screen and (max-width: px-to-rem(570px)){
+              width: 100% !important;
+              box-sizing: border-box;
+            }
+          }
+
+          .learner-outcome-name,
+          .learner-outcome-framework,
+          .learner-outcome-criteria {
+            display: flex;
+            flex-direction: column;
+            width: px-to-rem(240px);
+
+            @media only screen and (max-width: 570px){
+              width: 100%;
+            }
+          }
+        }
+
+        .learner-outcome-output {
+          textarea {
+            height: px-to-rem(93px);
+          }
+        }
+
+        #assessment-description,
+        #assessment-output,
+        #context {
+          @media only screen and (min-width: 1500px) {
+            margin-left: 0 !important;
+          }
+        }
+
+        .learner-outcome-requires-submission {
+          width: px-to-rem(230px);
+          float: left;
+          .mdl-checkbox {
+            display: inline;
+            vertical-align: top;
+            top: px-to-rem(-7px);
+
+            #requires-submission-label {
+              font-size: 0.75rem;
+              color: $dropdown-text-color;
+              font-weight: 900;
+            }
+          }
+        }
+        
+        .submission-types {
+          width: px-to-rem(460px);
+          label {
+            margin-right: px-to-rem(30px)
+          }
+        }
+
+        .learner-outcome-context{
+          clear: both;
+        }
+
+        .learner-outcome-metrics {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          .metric {
+            display: flex;
+            flex-direction: column;
+
+            @media only screen and (max-width: 570px){
+              width: 100%;
+            }
+
+            input[type=text] {
+              width: 180px;
+
+              @media only screen and (max-width: 570px){
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .top-section {
+        position: absolute;
+        background-color: $background-white;
+      }
+
+      .close-button.close-add-learner-outcome-modal {
+        z-index: 400;
+      }
+    }
+
+    .modal-bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: $background-white;
+      height: 75px;
+      box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.1);
+      left: 0;
+
+      .modal-btn-wrapper {
+        float: right;
+        margin-right: 40px;
+        margin-top: 18px;
+
+        .btn {
+          background: none;
+          color: inherit;
+          border: none;
+          padding: 10px 23px;
+          font-family: $font-family-regular;
+          cursor: pointer;
+          border-radius: 2px;
+          font-size: 14px;
+        }
+
+        .btn.close-modal {
+          background-color: $background-white;
+          border: 1px solid $andela-blue;
+          color: $andela-blue;
+        }
+
+        .btn.submit {
+          background-color: $andela-blue;
+          color: $background-white;
+          border: 1px solid $andela-blue;
+          padding-right: 26px;
+          padding-left: 26px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

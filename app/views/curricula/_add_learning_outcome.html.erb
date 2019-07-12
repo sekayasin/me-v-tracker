@@ -1,0 +1,111 @@
+<div id="add-learner-outcome" class="add-learner-outcome">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="modal-header">
+        <span class="close-button close-add-learner-outcome-modal"></span>
+        <div class="top-section">
+          <div class="learner-outcome-modal-header"></div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="add-learner-outcome-modal-content" class="modal-content add-learner-outcome-modal-content">
+        <%= form_for(@assessment, url: "/assessments", remote: true, html: {class: 'learning-outcome-form'}) do |f| %>
+          <div class="learner-outcome-info-and-filter">
+            <div class="learner-outcome-name">
+              <%= f.label :name, "Learning Outcome" %>
+              <%= f.text_field :name, id: "assessment-name-id", required: "true" %>
+            </div>
+            <div class="learner-outcome-framework learner-dropdown-box">
+              <%= f.label :name, "Filter by Framework", class: "select-label criteria-label" %>
+              <%= select("framework_criterium", "framework_id",
+                         ['Select Framework'] + framework_collection.collect {|framework| [framework.name, framework.id]},
+                         options = {},
+                         html_options = {
+                             class: "framework-filter-outcome-modal"})
+              %>
+            </div>
+            <div class="learner-outcome-criteria learner-dropdown-box">
+              <%= f.label :name, "Criterion", class: "select-label criteria-label" %>
+              <%= select("framework_criterium", "criterium_id", {},
+                         options = {},
+                         html_options = {
+                             :class => "criteria-filter-outcome-modal"}) %>
+              <%= f.hidden_field :framework_criterium_id, id: "framework-criterium-id", class: "validate" %>
+            </div>
+          </div>
+          <div class="learner-outcome-output">
+            <%= f.label :expectation, "Output" %>
+            <%= f.text_area(:expectation, id: "assessment-expectation", class: "leave-comment", required: "true", placeholder: "Start Typing...") %>
+          </div>
+          <div class="learner-outcome-description">
+            <%= f.label(:description, "Description", for: "description") %>
+            <%= f.text_area(:description, id: "assessment-description", class: "leave-comment", required: "true", placeholder: "Start Typing...") %>
+          </div>
+          <div class="outcome-details-holder">
+          <div class='learner-outcome-requires-submission specify-submission-types'>
+            <%= f.label :name, "Submission" %>
+            <div>
+              <label class="mdl-checkbox mdl-js-checkbox requires-submission" for='requires_submission'>
+								<%= check_box_tag  "assessment[requires_submission]", nil, false, class: "mdl-checkbox__input", id: "requires_submission"%>
+                <span id="requires-submission-label"> Output Requires Submission </span>
+							</label>
+            </div>
+          </div>
+            <div class='learner-outcome-requires-submission multiple-submissions-holder'>
+            <%= f.label :name, "Multiple submissions?" %>
+             <select id="multiple_submissions" name="multiple_submissions" class="multiple-submission-outcome-modal">
+             <option>Select Option</option>
+             <option value="Yes">Yes</option>
+             <option value="No">No</option>
+             </select>
+            </div>
+            <div class="learner-outcome-requires-submission learner-outcome-framework assessment-phases-dropdown hidden"></div>
+            </div>
+           <div class='learner-outcome-requires-submission submission-types'>
+            <%= f.label :name, "Submission Types" %>
+            <div>
+              <%= f.hidden_field :submission_types, id: "submission_types" %>
+              <label class="mdl-checkbox mdl-js-checkbox submission-types-label" for='file-upload-submission' label-value="file">
+								<%= check_box_tag "file-upload-submission", "file" ,false, class: "mdl-checkbox__input submission-types__input" %>
+                <span id="requires-submission-label"> File Upload </span>
+							</label>
+              <label class="mdl-checkbox mdl-js-checkbox submission-types-label" for='link-submission' label-value="link">
+								<%= check_box_tag "link-submission", "link" ,false, class: "mdl-checkbox__input submission-types__input" %>
+                <span id="requires-submission-label"> Link </span>
+							</label>
+            </div>
+          </div>
+          <div  class='multiple-submissions-input-holder' id='multiple-submissions-input-holder'></div>
+          <div class="learner-outcome-context">
+            <%= f.label :context, "Metrics - Context" %>
+            <%= f.text_area :context, id: "context", class: "leave-comment", required: "true", placeholder: "Start Typing..." %>
+          </div>
+          <div class="learner-outcome-metrics">
+            <%= f.fields_for :metrics do |ff| %>
+              <div class="metric">
+                <div class="metric-label">
+                  <%= ff.label ff.object.point.context + " - " + (ff.object.point.value.to_s), id: "label-color" %>
+                </div>
+                <div class="metric-info">
+                  <%= ff.text_field :description, id: ff.object.point.context, class: "validate", required: "true" %>
+                  <%= ff.hidden_field :point_id, id: ff.object.point.id %>
+                  <%= ff.hidden_field :id, id: "metric_" + ff.object.point.context %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-btn-wrapper">
+              <input class="btn close-modal close-add-learner-outcome-modal" type="button" value="Cancel"/>
+              <input class="btn submit learning-outcome-btn add" id="confirm-submission" type="submit" value="Save"/>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

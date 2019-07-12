@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg style="cursor:pointer;" width="15px" height="11px" viewBox="0 0 15 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>EC17A7B4-040B-497D-8787-E6106F180953</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Surveys" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g fill="#3359DB" id="mail-icon-svg" transform="translate(-578.000000, -243.000000)" stroke="#FFFFFF">
+            <g id="Modal" transform="translate(402.000000, 103.000000)">
+                <g id="Options" transform="translate(150.000000, 125.000000)">
+                    <g id="Button">
+                        <g id="ic_message" transform="translate(25.000000, 12.000000)">
+                            <g id="message">
+                                <g transform="translate(2.100000, 4.200000)" stroke-width="1.4">
+                                    <rect class="mail-icon-rect" id="Rectangle-3" x="0" y="0" width="12.6" height="9.1" style="cursor:pointer;"></rect>
+                                    <path class="mail-icon-rect" d="M0,0 L6.3,4.2" id="Line" style="cursor:pointer;"></path>
+                                    <path class="mail-icon-rect" d="M6.3,4.2 L12.6,0" id="Line" style="cursor:pointer;"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,462 @@
+{
+  "Growth Mindset": {
+    "assessmentDescription": "Aspiring Andelans recognize that skill deficits they have are not a limitation but an opportunity for growth. They demonstrate an eagerness and willingness to leverage on the resources around them in order to develop holistically as a developer to take on tasks.",
+    "assessmentContext": "When faced with a learning challenge...",
+    "assessmentExpectation": "A blog post about my most recent challenging learning experience.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Does Nothing"
+      },
+      {
+        "type": 2,
+        "description": "Takes Action"
+      },
+      {
+        "type": 3,
+        "description": "Seeks Help"
+      }
+    ]
+  },
+  "Seeks Feedback": {
+    "assessmentDescription": "Aspiring Andelans value receiving feedback and are able to apply feedback they receive to improve on their performance.",
+    "assessmentContext": "When given feedback verbally or in writing...",
+    "assessmentExpectation": "Screenshot of conversations showing when I requested feedback during Bootcamp. A report on an example of an experience where I benefitted from getting feedback about my work during Bootcamp",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Ignores or Rejects"
+      },
+      {
+        "type": 2,
+        "description": "Receives Positively"
+      },
+      {
+        "type": 3,
+        "description": "Takes Action"
+      }
+    ]
+  },
+  "Programming Logic": {
+    "assessmentDescription": "Aspiring Andelans understand the fundamentals of how to break down problems into programmable logic, and be able to write reusable functions. Additionally, they will be able to identify common problem areas where the performance of a program might be affected.",
+    "assessmentContext": "When solving a challenge by writing logic that is repeated...",
+    "assessmentExpectation": "7 Andelabs exercises from the Bootcamp category within the first week of Bootcamp. A function to generate prime numbers from 0 to n with asymptotic analysis. A function to generate Fibonacci sequence from 0 to n with asymptotic analysis",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Fails to write a function that returns a value"
+      },
+      {
+        "type": 2,
+        "description": "Translates requirements into working functions"
+      },
+      {
+        "type": 3,
+        "description": "Incorporates best practices and code optimization"
+      }
+    ]
+  },
+  "Version Control": {
+    "assessmentDescription": "Aspiring Andelans understand what version control is and how using it can collaboration on projects more effective.",
+    "assessmentContext": "When working on a software project (Version Control Behaviors)...",
+    "assessmentExpectation":"A list of contexts where version control is useful and why",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Doesn't setup Git repo to track project progress"
+      },
+      {
+        "type": 2,
+        "description": "Makes commits to head with commit message"
+      },
+      {
+        "type": 3,
+        "description": "Utilizes branching (commits, push to repo, pull requests and merges to master)"
+      }
+    ]
+  },
+  "Test-Driven Development": {
+    "assessmentDescription": "Aspiring Andelans know what tests are, how to write them, and how the TDD approach can be beneficial in development.",
+    "assessmentContext": "When writing code for an application or feature...",
+    "assessmentExpectation": "GitHub repository with at least 10 test cases for one of factorial, Fibonacci or FizzBuzz function. GitHub repository with at least 20 test cases for OOP assignment.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Unable to write tests"
+      },
+      {
+        "type": 2,
+        "description": "Writes tests that fail"
+      },
+      {
+        "type": 3,
+        "description": "Writes tests that pass"
+      }
+    ]
+  },
+  "Writing Professionally": {
+    "assessmentDescription": "Aspiring Andelans are able to recognize and describe several important differences between quality (7Cs) writing and low-quality writing. Their writing consistently shows demonstration of 5 or more of the 7 Cs. The fellow is able to recognize the appropriate tone or style for specific mediums",
+    "assessmentContext": "When writing a message or blog post...",
+    "assessmentExpectation":"A blog post that is easy to understand, uses correct grammar and that communicates the desired message.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Writing fails 7 C's"
+      },
+      {
+        "type": 2,
+        "description": "Writing passes 7 C's"
+      },
+      {
+        "type": 3,
+        "description": "Improves on Feedback Given"
+      }
+    ]
+  },
+  "Object Oriented Programming": {
+    "assessmentDescription": "Aspiring Andelans understand what classes and objects are, how to design simple data models, and how to apply object-oriented programming principles to solve basic problems.",
+    "assessmentContext": "When writing code to solve a complex problem...",
+    "assessmentExpectation": "GitHub repo containing a real-world problem modeled using OOP while taking advantage of inheritance, encapsulation, polymorphism and the other OOP concepts.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Fails to write classes that incorporate basics of OOP"
+      },
+      {
+        "type": 2,
+        "description": "Writes classes with attributes and methods"
+      },
+      {
+        "type": 3,
+        "description": "Reuses code via class inheritance"
+      }
+    ]
+  },
+  "HTTP & Web Services": {
+    "assessmentDescription": "Aspiring Andelans know what the Request-Response Cycle is, the difference between clients and servers, and how APIs and web services operate.",
+    "assessmentContext": "When leveraging on 3rd party API...",
+    "assessmentExpectation": "A simple command line application that consumes a Public API using a HTTP client library.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Fails to consume API"
+      },
+      {
+        "type": 2,
+        "description": "Successfully consumes API"
+      },
+      {
+        "type": 3,
+        "description": "Resolves API request errors"
+      }
+    ]
+  },
+  "Front-End Development": {
+    "assessmentDescription": "Aspiring Andelans are able to demonstrate effective use of HTML and CSS in designing user interfaces.",
+    "assessmentContext": "When creating a webpage...",
+    "assessmentExpectation": "GitHub repo containing a clone of a simple user interface created using HTML and CSS.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Fails to develop HTML/CSS webpage"
+      },
+      {
+        "type": 2,
+        "description": "Successfully develops HTML/CSS webpage"
+      },
+      {
+        "type": 3,
+        "description": "Reuses style information via classes"
+      }
+    ]
+  },
+  "Relationship Building": {
+    "assessmentDescription": "Aspiring Andelans are able to identify, approach and comfortably build rapport with Bootcampers, Fellows, Trainers, and Staff members at Andela. They understand that establishing and strengthening relationships is valuable.",
+    "assessmentContext": "When creating rapport with others...",
+    "assessmentExpectation": "Comprehensive/Informative verbal self introduction. A blog post on interesting attributes of four fellows and one member of staff I proactively interacted with within one week",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Doesn't even try"
+      },
+      {
+        "type": 2,
+        "description": "Shows interest in others"
+      },
+      {
+        "type": 3,
+        "description": "Takes initiative, Supports others & Manages conflict well"
+      }
+    ]
+  },
+  "Asks Questions": {
+    "assessmentDescription": "Aspiring Andelans see asking questions as important, and show a readiness to ask many questions in multiple situations.",
+    "assessmentContext": "When opportunity for asking questions arises...",
+    "assessmentExpectation": "A screenshot of slack conversations showing inquiry about something new.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Doesn't bother"
+      },
+      {
+        "type": 2,
+        "description": "Asks concise and effective questions in team setting"
+      },
+      {
+        "type": 3,
+        "description": "Publicly asks open-ended questions"
+      }
+    ]
+  },
+  "Agile Methodology": {
+    "assessmentDescription": "Aspiring Andelans are able to make use of the Scrum framework to manage small- to mid-sized projects with a knowledge of all the necessary terms and concepts used.",
+    "assessmentContext": "When working on a software project...",
+    "assessmentExpectation": "A link to an active Trello board for Bootcamp project developed using Scrum framework. Project plan for a short project that can be executed in 30 min. To be presented in class.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Doesnt break down project into tasks"
+      },
+      {
+        "type": 2,
+        "description": "Assigns points and prioritizes tasks"
+      },
+      {
+        "type": 3,
+        "description": "Runs effective standups and sprint reviews"
+      }
+    ]
+  },
+  "Adaptability": {
+    "assessmentDescription": "Aspiring Andelans understand that they will encounter changes in their work environment and are able to perform at a high level in the face of change.",
+    "assessmentContext": "When faced with change...",
+    "assessmentExpectation": "Blog post reflecting on a change-focused improv exercise and Bootcamp events that posed great changes.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Responds negatively"
+      },
+      {
+        "type": 2,
+        "description": "Remains calm"
+      },
+      {
+        "type": 3,
+        "description": "Responds with positive action"
+      }
+    ]
+  },
+  "Motivation and Commitment": {
+    "assessmentDescription": "Aspiring Andelans see high levels of motivation and commitment to objectives as good and desirable, and strive to maintain drive and determination in the face of challenges.",
+    "assessmentContext": "When faced with a challenge...",
+    "assessmentExpectation": "A set objective for time and scope of delivery of Bootcamp project. Complete Bootcamp project and presentation, meeting with expectations set above",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Easily demotivated"
+      },
+      {
+        "type": 2,
+        "description": "Consistently manages motivation"
+      },
+      {
+        "type": 3,
+        "description": "Motivates others"
+      }
+    ]
+  },
+  "Databases": {
+    "assessmentDescription": "Aspiring Andelans know what SQL is, the different types of databases, examples of databases and how to design basic database tables.",
+    "assessmentContext": "When setting up a database...",
+    "assessmentExpectation": "SQL database design for a simple database problem involving at least two tables with relationships. Screenshots showing results for at least 5 reports generated from the data within the database using SQL.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Unable to model simple database problems"
+      },
+      {
+        "type": 2,
+        "description": "Stores data types in table fields and queries tables"
+      },
+      {
+        "type": 3,
+        "description": "Creates table relationships"
+      }
+    ]
+  },
+  "GIT": {
+    "assessmentDescription": "Aspiring Andelans are able to build and manage personal and shared repos using conventional Git workflows and GitHub.",
+    "assessmentContext": "When working on a software project (Version Control Behaviors)...",
+    "assessmentExpectation": "A blog post on what the HEAD is and how it is important. A personal Git repo with at least 5 commits. A shared Git repo with commits.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Doesn't setup Git repo to track project progress"
+      },
+      {
+        "type": 2,
+        "description": "Makes commits to head with commit message"
+      },
+      {
+        "type": 3,
+        "description": "Utilizes branching (commits, push to repo, pull requests and merges to master)"
+      }
+    ]
+  },
+  "Github Repository": {
+    "assessmentDescription": "Aspriing Andelans with this skill create Github repositories that are fully documented with a description, a link where necessary and a descriptive README file",
+    "assessmentContext": "When creating a GitHub repository...",
+    "assessmentExpectation": "N/A",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "The repository lacks a description,  a fully documented README file for the project and or an appropriate project structure."
+      },
+      {
+        "type": 2,
+        "description": "The repository is fully documented with a description, links where necessary, and a descriptive README file"
+      },
+      {
+        "type": 3,
+        "description": "The repository README includes test badges and or setup guidelines, a demo video where applicable, a guide on how to run tests and a list of documented dependencies"
+      }
+    ]
+  },
+  "Code Syntax Norms": {
+    "assessmentDescription": "Aspiring Andelans with this kill practive & write code that abide by industry standards (e.g. PEP8, AirBnB style guide)",
+    "assessmentContext": "When writing code...",
+    "assessmentExpectation": "N/A",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Does not attempt to follow Python's PEP8 or JavaScript's AirBnB syntax norms and/or the codebase is dis-organised (e.g. absense of comments) and thus is not easily understandable/naming conventions are not clear."
+      },
+      {
+        "type": 2,
+        "description": "The code follows Python's PEP8 or JavaScript's AirBnB syntax norms, is organized appropriately (i.e. has comments to aid understanding), simple to understand and handles all edge cases."
+      },
+      {
+        "type": 3,
+        "description": "The code follows Python's PEP8 or JavaScript's AirBnB syntax norms, is heavily commented and adheres to best practices (e.g. proper naming conventions)"
+      }
+    ]
+  },
+  "Project Management": {
+    "assessmentDescription": "Aspiring Andelans with this skill knows how to view current, backlog and iceboxed stories, see which stories have been assigned to them, be able to update stories with an estimate and with activity undertaken on the story, and create their own stories for work that has been assigned to them outside of the tool.",
+    "assessmentContext": "When using a project management tool...",
+    "assessmentExpectation": "N/A",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Does not break down the project into manageable tasks"
+      },
+      {
+        "type": 2,
+        "description": "Breaks down project into incremental stories and puts them into the appropriate categories (e.g. icebox, backlog)"
+      },
+      {
+        "type": 3,
+        "description": "Updates the tool with time/effort estimates for each assigned task, updates story cards with activity taken"
+      }
+    ]
+  },
+  "Code Understanding": {
+    "assessmentDescription": "Aspiring Andelans with this skill are able to explain his or her codebase upon query, which also emphasizes integrity in the code written",
+    "assessmentContext": "When asked questions about code written...",
+    "assessmentExpectation": "N/A",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Is not able to explain his or her code and reasons why certain logic was applied on the codebase and or The camper uses code from other codebases without clearly understanding the reason behind the logic used."
+      },
+      {
+        "type": 2,
+        "description": "Is able to explain his/her code and why certain logic was explained"
+      },
+      {
+        "type": 3,
+        "description": "Explains how (s)he came up with code and asks for feedback and or provides further examples to justify how (s)he came up with logic. * Truthful and open about challenges and blockers they could not overcome."
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+<div id="main-survey-section">
+  <div class="main-survey-header">
+    <div class="mdl-grid mdl-grid--no-spacing">
+      <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-phone mdl-cell--2-col-tablet">
+        <div class="main-header">
+          <span>Surveys</span>
+        </div>
+        <div class="line">
+          <span class="long"></span>
+          <span class="short"></span>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--9-col mdl-cell--12-col-phone mdl-cell--8-col-tablet">
+        <div class="btn-wrapper">
+          <% if admin? %>
+            <a id="new-survey-btn">
+              <span class='new-survey-btn'>
+                New Survey <i class="icon material-icons">add</i>
+              </span>
+            </a>
+            <a id="schedule-feedback-btn">
+              <span class="schedule-feedback-btn">
+                Schedule Feedback <i class="icon material-icons">add</i>
+              </span>
+            </a>
+          <% end %>
+          <a id="surveys-v2-btn" href="/surveys-v2">
+              <span class='surveys-v2-btn'>
+                Survey 2.0
+              </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="survey-table" class="survey-table-wrapper" >
+     <div class="survey-table-body-wrapper">
+        <table class="survey-table">
+          <thead class="survey-table-header-wrapper">
+            <% if authorized_learner? %>
+              <th class="title-header" colspan="1">
+            <% else %>
+              <th class="title-header">
+            <% end %>
+                <div class="survey-table-header">
+                  <span>Title</span>
+                </div>
+              </th>
+
+            <% if admin? %>
+              <th class="date-header">
+              <div class="survey-table-header">
+                <span>
+                    Date sent out
+                </span>
+              </div>
+            </th>
+            <% end %>
+            <% if authorized_learner? %>
+              <th class="duration-header">
+                <div class="survey-table-header">
+                  <span>Time to Completion</span>
+                </div>
+              </th>
+            <th class="status-header">
+              <div class="survey-table-header">
+                <span>Action</span>
+              </div>
+            </th>
+
+            <th class="status-header">
+              <div class="survey-table-header">
+                <span>Status</span>
+              </div>
+            </th>
+
+            <%end %>
+
+              <% if admin? %>
+               <th class="duration-header">
+                <div class="survey-table-header">
+                  <span>Duration</span>
+                </div>
+              </th>
+
+            <th class="status-header">
+              <div class="survey-table-header">
+                <span>Status</span>
+              </div>
+            </th>
+
+            <th class="action-header">
+              <div class="survey-table-header">
+                <span>Action</span>
+              </div>
+            </th>
+            <% end %>
+
+          </thead>
+          <tbody id="survey-body">
+          </tbody>
+        </table>
+     </div>
+    <div class="btn-wrapper">
+      <div class="pagination-control surveys-pagination"></div>
+    </div>
+   </div>
+</div>
+
+<%= render ("confirm_close_survey_modal") %>
+<%= render ("survey_modal") %>
+<%= render ("delete_survey_confirmation_modal") %>
+<%= render ("schedule_feedback_modal") %>

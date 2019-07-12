@@ -1,0 +1,93 @@
+{
+  "surveyTableHints": [
+    {
+      "element": ".more-icon",
+      "hint": "<span class='intro-title'>More Options icon</span><br><p>The More Options icon allows you to view the actions that can be performed on the survey.</p>",
+      "hintPosition": "middle-middle"
+    },
+    {
+      "element": ".survey-card-body",
+      "hint": "<span class='intro-title'>This is a survey card</span><br><p>Clicking on it allows you to preview the contents of this particular survey.</p>",
+      "hintPosition": "middle-middle"
+    }
+  ],
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+  "surveyTableSteps": [
+    {
+      "intro": "<span class='intro-title'>Welcome to the Surveys Page</span><br><p> This page contains all the surveys you have created or have been invited to as a collaborator.</p>",
+      "role":"Admin"
+    },
+    {
+      "intro": "<span class='intro-title'>Surveys for You</span><br><p> This page will have surveys that you might be invited to fill during your program.</p>",
+      "role": "Learner"
+    },
+    {
+      "element": ".admin-surveys-v2-forms",
+      "intro": "<span>This tab shows the number of surveys you have created.</span>",
+      "role": "Admin"
+    },
+    {
+      "element": ".learner-surveys-v2-forms",
+      "intro": "<span>This contains the surveys that you are yet to respond to.</span>",
+      "role": "Learner"
+    },
+    {
+      "element": ".dash-main",
+      "intro": "This section will contain all your surveys.",
+      "role": "Learner"
+    },
+    {
+      "element": ".dash-main",
+      "intro": "This contains all the surveys you have created or have been invited to as a collaborator.",
+      "role": "Admin"
+    },
+    {
+      "element": "#new-survey-btn",
+      "intro": "You can create a new survey by clicking on this tab or button <br /> <a target='_new' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342061974?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>",
+      "role": "Admin"
+    },
+    {
+      "element": ".survey-card",
+      "intro": "You can view a preview of the survey created by clicking on this tab. <br /><a target='_new' class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342062180?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>",
+      "role": "Admin"
+    },
+    {
+      "element": ".learners-survey-card",
+      "intro": "<span>This card shows one of the surveys you’re invited to fill and has a link to that survey.</span> <br /><a class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342062101?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>",
+      "role": "Learner"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>",
+      "role": "Admin"
+    }
+  ],
+  "moreOptionsSteps": [
+    {
+      "element": ".more-icon",
+      "intro": "Hover on the icon to see more options for editing, duplicating and deleting a survey. "
+    }
+  ],
+  "surveyPreviewModalSteps": [
+    {
+      "element": ".ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable",
+      "intro": "This is a modal that allows you to preview a particular survey"
+    },
+    {
+      "element": "#edit_form",
+      "intro": "You can edit the survey by clicking on this button"
+    },
+    {
+      "element": "#view_responses",
+      "intro": "You can view the responses on this survey by clicking on this button"
+    },
+    {
+      "element": "#section-1",
+      "intro": "This area will show all your survey questions. It is scrollable."
+    }
+  ]
+}

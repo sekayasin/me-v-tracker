@@ -1,0 +1,296 @@
+@import "base";
+
+#main-pitch-section {
+  @include main-content-margin;
+
+  @include respond-to(handhelds) {
+    margin-top: -7.5em;
+    width: 90%;
+
+    .line {
+      margin-bottom: px-to-rem(10px);
+    }
+  }
+}
+
+.dashboard {
+  display: flex;
+
+  .add-icon {
+    background-image: image-url("add.svg");
+    height: px-to-rem(42px);
+    width: px-to-rem(42px);
+    margin: px-to-rem(45px) auto px-to-rem(18px) auto;
+  }
+
+  .dashboard-side-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: px-to-rem(20px);
+    margin: px-to-rem(10px) px-to-rem(20px);
+
+    .btn-card {
+      display: block;
+      box-sizing: border-box;
+      height: px-to-rem(109px);
+      width: px-to-rem(221px);
+      border: px-to-rem(1px) solid $background-blue;
+      border-radius: px-to-rem(4px);
+      background-color: #ffffff;
+      box-shadow: px-to-rem(2px) px-to-rem(4px) px-to-rem(10px) 0
+        rgba(51, 89, 219, 0.1);
+      padding: px-to-rem(20px);
+      cursor: pointer;
+      margin: px-to-rem(20px);
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: px-to-rem(2px) px-to-rem(4px) px-to-rem(10px) px-to-rem(5px)
+          rgba(51, 89, 219, 0.1);
+      }
+
+      .title {
+        display: block;
+        color: $background-blue;
+        font-size: px-to-rem(18px);
+        font-weight: bold;
+        line-height: px-to-rem(23px);
+        margin: px-to-rem(5px);
+      }
+
+      .body {
+        display: block;
+        color: #333e44;
+        font-size: px-to-rem(16px);
+        line-height: px-to-rem(21px);
+        margin: px-to-rem(5px);
+      }
+    }
+  }
+
+  .dashboard-main-section {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    padding: px-to-rem(36px);
+    margin: px-to-rem(10px);
+    min-height: px-to-rem(623px);
+    border-radius: px-to-rem(6px);
+    background-color: #fff;
+    box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.05);
+
+    .pitches-grid {
+      margin: 0 auto auto;
+      width: 100%;
+      display: grid;
+      grid-gap: px-to-rem(30px);
+      grid-template-columns: repeat(auto-fill, minmax(px-to-rem(145px), 1fr));
+
+      .add-new-pitch-card {
+        height: px-to-rem(178px);
+        width: px-to-rem(145px);
+        border: px-to-rem(1px) solid #10a36d;
+        border-radius: px-to-rem(4px);
+        background-color: #e7f6f0;
+        box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.13);
+        cursor: pointer;
+        margin: 0 auto;
+
+        a {
+          text-decoration: none;
+        }
+
+        p {
+          color: #10a36d;
+          font-size: px-to-rem(16px);
+          font-weight: bold;
+          line-height: px-to-rem(21px);
+          text-align: center;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      .pitch-card {
+        box-sizing: border-box;
+        height: px-to-rem(179px);
+        width: px-to-rem(146px);
+        border: px-to-rem(1px) solid rgba(178, 187, 198, 0.31);
+        border-radius: px-to-rem(4px);
+        background-color: #ffffff;
+        box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.05);
+        padding: px-to-rem(15px);
+        cursor: pointer;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        .eye-icon {
+          background-image: image-url("view.svg");
+          height: px-to-rem(14px);
+          width: px-to-rem(14px);
+          background-repeat: no-repeat;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .status {
+          height: px-to-rem(14px);
+          width: px-to-rem(20px);
+          color: #888888;
+          font-size: px-to-rem(15px);
+          font-style: italic;
+          line-height: px-to-rem(14px);
+          display: inline-block;
+        }
+
+        &:hover {
+          box-shadow: 0 px-to-rem(4px) px-to-rem(9px) 0 rgba(0, 0, 0, 0.15);
+          transform: scale(1.05);
+        }
+
+        .body {
+          height: 85%;
+
+          .title {
+            color: #333e44;
+            font-size: px-to-rem(14px);
+            font-weight: bold;
+            min-height: 30px;
+          }
+
+          .time {
+            .eye-icon {
+              background-image: image-url("view.svg");
+              height: px-to-rem(14px);
+              width: px-to-rem(14px);
+              background-repeat: no-repeat;
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            #remaining-time {
+              height: px-to-rem(23px);
+              width: px-to-rem(68px);
+              color: $border-off-white;
+              font-size: px-to-rem(14px);
+              font-style: italic;
+              line-height: px-to-rem(18px);
+            }
+          }
+        }
+
+        .pitch-card-footer {
+          height: 15%;
+          display: flex;
+          width: 100%;
+
+          .learners {
+            float: left;
+            color: $border-off-white;
+            font-size: px-to-rem(14px);
+            line-height: px-to-rem(18px);
+          }
+
+          .more-icon {
+            background-image: image-url("More.svg");
+            height: px-to-rem(20px);
+            width: px-to-rem(7px);
+            background-repeat: no-repeat;
+            align-self: center;
+            margin: 0 0 0 auto;
+            cursor: pointer;
+
+            &:hover,
+            &:active {
+              background-image: image-url("More-active.svg");
+              background-repeat: no-repeat;
+            }
+
+            &:hover > .dropdown-option {
+              display: block;
+            }
+
+            .dropdown-option {
+              display: none;
+              position: relative;
+              border: 1px solid #e8e8e8;
+              list-style: none;
+              background-color: #fff;
+              box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.05);
+              left: px-to-rem(-158px / 2);
+              padding: px-to-rem(10px);
+              top: px-to-rem(10px);
+              width: px-to-rem(137px);
+              border-radius: px-to-rem(2px);
+
+              &:after,
+              &:before {
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid #fff;
+                top: -10px;
+                content: "";
+                left: 57%;
+                margin-left: -17px;
+                position: absolute;
+              }
+
+              &:before {
+                border-left: 11px solid transparent;
+                border-right: 11px solid transparent;
+                border-bottom: 11px solid;
+                border-bottom-color: inherit;
+                top: -11px;
+                margin-left: -18px;
+              }
+
+              .dropdown-item {
+                width: 100%;
+                font-size: px-to-rem(14px);
+                padding: px-to-rem(10px);
+
+                a {
+                  color: #333e44 !important;
+                  text-decoration: none;
+                  margin: 0 !important;
+
+                  &:hover {
+                    color: $background-blue !important;
+                  }
+                }
+
+                .delete {
+                  color: #e40404 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to(tablet-and-mobile) {
+    flex-direction: column;
+    margin-top: px-to-rem(100px);
+
+    .dashboard-side-section {
+      flex-direction: row;
+      margin: 0 auto;
+
+      @include respond-to(handhelds) {
+        flex-direction: column;
+      }
+    }
+
+    .pitch-card {
+      width: 9.0625rem;
+    }
+
+    .add-new-pitch-card {
+      margin: 0 auto !important;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import 'base';
+
+.main-body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+.main-content {
+    flex: 1;
+    overflow-y: scroll;
+}
+
+
+.mdl-mini-footer {
+    padding-top:  px-to-rem(18px);
+    padding-bottom:  px-to-rem(16px);
+    @include respond-to(handhelds) {
+        width: 94%;
+    }
+}
+
+
+footer {
+    background-color: $background-white !important;
+    margin-top:  px-to-rem(10px) !important;
+    z-index: 1;
+
+    .brand-logo-on-footer {
+        background-image: image-url('vof-logo.png');
+        width: px-to-rem(120px);
+        height:  px-to-rem(40px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: center;
+        margin-left:  px-to-rem(40px);
+        @include respond-to(handhelds) {
+            margin-left: unset;
+            width:  px-to-rem(90px);
+            height:  px-to-rem(40px);
+        }
+        @include respond-to(tablets) {
+            margin-left: unset;
+            width:  px-to-rem(120px);
+            height:  px-to-rem(37px);
+          }
+    }
+
+    .copyright {
+        margin-right:  px-to-rem(40px);
+        font-family: $font-family-light !important;
+        margin-top:  px-to-rem(8px);
+        @include respond-to(handhelds) {
+            margin-right: unset;
+            font-size:  px-to-rem(14px);
+        }
+        @include respond-to(tablets) {
+            margin-right: unset;;
+            font-size:  px-to-rem(18px);
+          }
+    }
+}

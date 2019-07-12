@@ -1,0 +1,18 @@
+engines:
+  rubocop:
+    enabled: true
+    config:
+      file: .rubocop.yml
+    exclude_paths:
+      - 'vendor/'
+      - 'db/'
+
+exclude_paths:
+  - 'public/assets/'
+  - 'db/'
+
+ratings:
+  paths:
+    - 'app/**/*'
+    - 'lib/**/*'
+    - '**.rb'

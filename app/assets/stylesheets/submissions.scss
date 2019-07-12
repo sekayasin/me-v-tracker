@@ -1,0 +1,166 @@
+@import "base";
+.submission-learner-name {
+  height:  px-to-rem(28px);
+  width:  px-to-rem(123px);
+  margin-left: px-to-rem(20px);
+  color: $top-section-black;
+  font-size:  px-to-rem(20px);
+  font-weight: 500;
+  line-height:  px-to-rem(28px);
+}
+
+.img-circled-left {
+  height:  px-to-rem(32px);	
+  width:  px-to-rem(32px);
+}
+
+#submissions-page-container * {
+    box-sizing: border-box;
+}
+
+.display-filter-pane {
+  float: left;
+  width: 83%;
+  @include respond-to(tablets) {
+    width: 70%;
+  }
+  @media only screen and (min-width: $break-point-large-tablet) and (max-width: $break-point-desktop) {
+    width: 77%;
+  }
+  @include respond-to(handhelds) {
+    float: none;
+    margin-top: px-to-rem(10px);
+    padding: 0.5rem;
+    width: 100%;
+  }
+ }
+
+.clear {
+  clear: both;
+}
+
+.learners-submissions-cards {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 70vh;
+  padding: px-to-rem(16px) px-to-rem(11px) 0 px-to-rem(11px);
+  
+  #learner-overview-container {
+    width: 20%;
+    @media only screen and (min-width: $break-point-large-tablet) and (max-width: $break-point-desktop) {
+      width: 24.5%;
+    }
+    @include respond-to(tablets) {
+      width: 32.5%;
+    }
+    @include respond-to(handhelds) {
+      padding: 0.5rem;
+      width: 65%;
+      float: right;
+      margin: 0 auto;
+    }
+  }
+
+  .learner-overview-container {
+    display: flex;
+    padding: 0.7rem;
+    width: 16.6667%;
+    color: rgba(0,0,0,0.87);
+    text-decoration: none;
+
+    @media only screen and (min-width: $break-point-large-tablet) and (max-width: $break-point-desktop) {
+      width: 20%;
+    }
+
+    @include respond-to(tablets) {
+      padding: 0.5rem;
+      width: 25%;
+    }
+
+    @include respond-to(handhelds) {
+      padding: 0.5rem;
+      width: 50%;
+    }
+    
+    .learner-submission-overview {
+      background-color: $background-white;
+      cursor: pointer;
+      height: px-to-rem(220px);
+      line-height: px-to-rem(23px);
+      padding-top: px-to-rem(20px);
+      padding-bottom: px-to-rem(26px);
+      position: relative;
+      text-align: center;
+      width: 100%;
+
+      border: px-to-rem(0.5px) solid rgba(0,0,0,0.05);
+      border-radius: px-to-rem(5px);
+      box-shadow: 0 px-to-rem(4px) px-to-rem(6px) 0 rgba(0,0,0,0.05),
+                  0 px-to-rem(2px) px-to-rem(2px) 0 rgba(0,0,0,0.05);
+
+      .blue-dot {
+        background-color: $learning-ecosystem-active;
+        border-radius: 50%;
+        width: px-to-rem(9px);
+        height: px-to-rem(9px);
+        position: absolute;
+        top: px-to-rem(5px);
+        right: px-to-rem(5px);
+      }
+
+      .learner-submission-image {
+        border-radius: 50%;
+        height: px-to-rem(75px);
+        width: px-to-rem(75px);
+        object-fit: cover;
+      }
+
+      .learner-submission-name {
+        margin-bottom: px-to-rem(10px);
+        margin-top: px-to-rem(20px);
+      }
+
+      .learner-submission-count {
+        color: $learning-ecosystem-btn-text;
+        font-family: DINPro-Light;
+      }
+    }
+  }
+}
+
+.submission-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-top: auto;
+  height: px-to-rem(50px);
+  .btn-wrapper {
+    text-align: center;
+    margin-right: px-to-rem(14px);
+    padding: px-to-rem(9px) px-to-rem(14px);
+  }
+}
+#authorised-lfa-error {
+  #puffly {
+  background-color: #000 !important;
+  position: absolute !important;
+  right: 5% !important;
+  top: 5% !important;
+  width: px-to-rem(300px);
+  height: px-to-rem(100px);
+  font-size: 1em !important;
+
+  @media screen and (min-width: $break-point-large) {
+    right: 5% !important;
+    top: 10% !important;
+  }
+}
+}
+
+.phase-name, .assessment-name{
+  display: inline-block;
+  padding: px-to-rem(4px);
+  color: #808080;
+  font-family: DINPro-Light;
+}

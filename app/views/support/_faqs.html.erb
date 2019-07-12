@@ -1,0 +1,17 @@
+
+<% unless @faqs.nil? %>
+  <% @faqs.each_with_index do |faq, index| %>
+      <a class="faq-question accordion-section-title" href="#accordion-<%= index %>"><%= raw faq['question'] %></a>
+      <div id="accordion-<%= index %>" class="accordion-section-content">
+        <p class="faq-answer"><%= raw faq['answer'] %></p>
+        <div class="feedback">
+          <p>Was this helpful? 
+            <span class="feedback-icon yes-icon" data-feedback="yes"></span> or 
+            <span class="feedback-icon no-icon" data-feedback="no"></span>
+            <span class="appreciation">Thanks for your feedback!</span>
+          </p>
+        </div>
+      </div>
+      <hr>
+  <% end %>
+<% end %>

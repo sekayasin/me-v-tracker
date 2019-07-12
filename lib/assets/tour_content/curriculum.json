@@ -1,0 +1,101 @@
+{
+  "curriculumPageHints": [
+    {
+      "element": ".learning-outcomes-panel",
+      "hint": "<span class='intro-title'>The Learning Outcomes Tab</span><br> Clicking on this will take you to a page with learning outcomes of the selected program"
+    },
+    {
+      "element": ".criteria",
+      "hint": "<span class='intro-title'>The Criteria Tab</span><br> Clicking on this tab will take you to a page with details on the criteria on the selected program."
+    },
+    {
+      "element": ".framework-tab",
+      "hint": "<span class='intro-title'>The Frameworks Tab</span><br> Clicking on this tab will take you to a page with details on the framework."
+    }
+  ],
+  "takeThisTourAgainHint": [
+    {
+      "element": ".tour-trigger",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+  "learningOutcomesSteps": [
+    {
+      "element": ".learning-outcomes-panel",
+      "intro": "This tab will help you navigate to a page with learning outcome details "
+    },
+    {
+      "element": ".intro-dropdown",
+      "intro": "You can use this to filter the learning outcomes by Program, Framework, and Criteria."
+    },
+    {
+      "element": ".add-outcome",
+      "intro": "<p>Clicking on this button will pop up a modal with which you can add learning outcomes.</p> <a class='tour-video' data-fancybox data-ratio='2' href='https://player.vimeo.com/video/342375001?autoplay=1' data-options='{\"type\" : \"iframe\", \"iframe\" : {\"css\" : {\"width\" : \"881px\", \"height\": \"540px\"}}}'><img src='/assets/video-icon.svg' /> Watch Demo </a>",
+      "role": "Admin"
+    },
+    {
+      "element": ".learning-outcomes-table",
+      "intro": "This table shows the details of the learning outcomes."
+    }
+  ],
+  "programDetailsSteps": [
+    {
+      "intro": "<span class='intro-title'>Welcome to the Curriculum Page.</span><br><p>Here, you can view all the details of the selected program including the frameworks, their criteria, and their learning outcomes.</p>"
+    },
+    {
+      "element": ".program-phases-wrapper",
+      "intro": "You can view the respective program phases details by clicking on any of the numbers."
+    },
+    {
+      "element": ".program-details-table",
+      "intro": "This will show you the specific details of the program phase that has been selected based on Values Alignment, Output Quality and Feedback."
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+  "criteriaSteps": [
+    {
+      "element": ".criteria",
+      "intro": "This tab will help you navigate to a page with Criteria details"
+    },
+    {
+      "element": ".framework-filter",
+      "intro": "You can use this to filter the criteria for a given framework."
+    },
+    {
+      "element": ".add-criterion",
+      "intro": "Clicking this will pop up a modal with which you can add a criterion.",
+      "role": "Admin"
+    },
+    {
+      "element": ".edit-icon",
+      "intro": "Clicking on this will allow you to edit a criterion.",
+      "role": "Admin"
+    },
+    {
+      "element": ".archive-icon",
+      "intro": "This will archive a criterion. Note that clicking on this will render the criterion inaccessible in areas previously used.",
+      "role": "Admin"
+    },
+    {
+      "element": ".criteria-table-wrapper",
+      "intro": "This is the criteria table. It displays a list Criterion"
+    }
+  ],
+  "frameworkSteps": [
+    {
+      "element": ".framework-tab",
+      "intro": "This tab will help you navigate to a page that has framework details"
+    },
+    {
+      "element": ".frameworks-table",
+      "intro": " This table shows the three frameworks captured on VOF, i.e. Values Alignment, Output Quality and Feedback and their description."
+    },
+    {
+      "element": ".edit-framework-icon",
+      "intro": "Clicking on this will pop up a modal with which you can edit the framework.",
+      "role": "Admin"
+    }
+  ]
+}

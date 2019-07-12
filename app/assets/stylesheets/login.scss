@@ -1,0 +1,333 @@
+@import 'puffly';
+@import 'base';
+.forgot-password {
+  text-decoration: none !important;
+  color: $google-btn-blue !important;
+  font-size: 0.75rem;
+  float: right;
+  margin-top: .3rem;
+}
+
+.right {
+  width: calc(100% - 1.0625rem) !important;
+  margin-bottom: 2.6rem;
+}
+
+#login {
+  margin-left: 9.6%;
+  width: 70% !important;
+  form {
+    fieldset {
+      margin: px-to-rem(7px);
+      input[type="email"],
+      input[type="password"],
+      input[type="submit"] {
+        line-height: 1.5;
+        color: $input-color;
+        background-color: $background-white;
+        background-clip: padding-box;
+        border: px-to-rem(1px) solid $border-color;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        font-family: inherit;
+        font-size: px-to-rem(14px);
+        height: px-to-rem(36px);
+        outline: none;
+        padding: 0 px-to-rem(10px);
+        width: calc(100% - 2.0625rem) !important;
+        appearance: none;
+      }
+      input[type="submit"] {
+        background-color: $google-btn-blue;
+        color: $background-white;
+        cursor: pointer;
+        text-transform: uppercase;
+        width: calc(100% - 0.84375rem) !important;
+        border: none !important;
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+      .grey-text {
+        color: $grey-text-color !important;
+        font-size: px-to-rem(14px) !important;
+      }
+      label.error {
+        font-size: 13px;
+        line-height: normal;
+        letter-spacing: -0.2px;
+        color: $red;
+        margin-bottom: 0;
+        top: -0.1rem;
+        position: relative;
+      }
+    }
+  }
+}
+
+.or-divider {
+  position: relative;
+  border-bottom: px-to-rem(1px) solid $border-grey;
+  margin: px-to-rem(31px) 0 px-to-rem(27px) 3rem;
+  width: calc(100% - 10rem);
+  .or-text {
+    background: $background-white;
+    color: $answer-color;
+    display: block;
+    font-size: px-to-rem(13px);
+    padding: 0 px-to-rem(9px);
+    position: absolute;
+    left: 50%;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  }
+}
+
+.login-section {
+  background-color: $background-white;
+
+  @media screen and (max-width: $break-point-mobile){
+    width: 100%;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: $break-point-tablet) {
+    width: 100%;
+  }
+
+  .login-container {
+    height: 100vh;
+    margin-left: 1%;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .login-btn {
+    margin-left: 9.6%;
+    width: 70% !important;
+
+    @media screen and (min-width: 481px) and (max-width: $break-point-large-tablet) {
+      width: 50% !important;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    @media screen and (min-width: $break-point-large) {
+      margin-top: 50px;
+    }
+  }
+
+  .brand-logo {
+    background-image: image-url('logos/home-vof-logo.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 74% 15.5%;
+    height: px-to-rem(45px);
+    object-fit: contain;
+    padding-top: 36%;
+    position: relative;
+    margin-left: 11%;
+    width: 35%;
+
+    @media screen and (min-width: $break-point-large) {
+      padding-top: 300px;
+      background-size: 100% 14%;
+    }
+  }
+
+  .welcome-text-wrapper {
+    height: 15%;
+    margin-left: 12%;
+    text-align: left;
+    color: $grey-color;
+    font-family: $font-family-light !important;
+    font-size: 1.65em;
+    font-weight: 100;
+    line-height: 130%;
+    margin-top: -8%;
+
+    @media screen and (max-width: $break-point-mobile){
+      font-size: 1.18em;
+    }
+
+    @media screen and (min-width: 481px) and (max-width: $break-point-large-tablet) {
+      font-size: 1.8em;
+    }
+
+    @media screen and (min-width: $break-point-large) {
+      font-size: 2.2em;
+      font-weight: 100;
+      margin-bottom: 5%;
+    }
+
+    @media screen and (min-width: $break-point-large) {
+      width: 422px;
+      font-size: 35px;
+      line-height: 45px;
+      font-weight: 100;
+    }
+  }
+
+  .content {
+    display: block;
+
+    .flash-message {
+      width: 35em;
+      font-weight: 300;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  // overrides puffly's default styles
+  #puffly {
+    background-color: #000 !important;
+    position: absolute !important;
+    left: 13% !important;
+    bottom: 25% !important;
+    transform: translate(-50%, 0);
+    font-size: 1em !important;
+
+    @media screen and (min-width: $break-point-large) {
+      left: 10% !important;
+      bottom: 26% !important;
+    }
+  }
+}
+
+@media screen and (min-width: $break-point-large) {
+  .mdl-cell--4-col {
+    width: 28%;
+  }
+}
+
+body {
+  font-size: calc(1em + 1vw);
+}
+
+.mdl-cell--8-col {
+  flex: 1;
+}
+
+.image-slide {
+  height: 100vh;
+  width: 100%;
+}
+
+.slide-display {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+}
+
+.slider-container {
+  height: 100vh;
+
+  .slides {
+    display: none;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    .caption {
+      @include alignment;
+      padding-bottom: 1rem;
+      position: relative;
+      font-family: $font-family-bold !important;
+      font-size: 2.6rem;
+      font-weight: bold;
+      text-align: left;
+      color: #fff;
+      top: 68%;
+      margin-bottom: 0.8em;
+
+      @media screen and (min-width: $break-point-large) {
+        font-size: 3.8rem;
+      }
+    }
+
+    .description {
+      @include alignment;
+      font-family: $font-family-light !important;
+      font-size: 1.6rem;
+      color: #fff;
+      position: relative;
+      top: 65%;
+
+      @media screen and (min-width: $break-point-large) {
+        top: 66%;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .slider-control-group {
+    position: relative;
+    margin-left: 4%;
+    z-index: 10;
+    bottom: 19%;
+    margin-right: 10px;
+
+    @media screen and (min-width: $break-point-large) {
+      bottom: 19%;
+    }
+
+    .slider-control {
+      width: 40px;
+      height: 2px;
+      margin-top: -10px;
+      background-color: #bbb;
+      object-fit: contain;
+      border-radius: 2px;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+      margin-right: 6px;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: #3359db;
+    }
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@media only screen and (max-width: 300px) {
+  .caption {
+    font-size: 1em;
+  }
+}

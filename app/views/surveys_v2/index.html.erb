@@ -1,0 +1,46 @@
+<div id="main-survey-section">
+  <%if admin? %>
+    <div class="dashboard">
+      <div class="dash-side" >
+        <div class="btn-card" id="surveys-v1-btn" onclick="window.location.replace('/surveys')" style="background-color: #ffaf30" hidden>
+          <span class="title" style="color:#fff">Survey 1.0</span>
+          <span class="body" style="color:#fff">The old dashboard</span>
+        </div>
+
+        <div class="btn-card admin-surveys-v2-forms">
+          <span class="title">Survey Forms</span>
+          <span class="body">You have <span id="surveys-count"></span></span>
+        </div>
+      </div>
+      <div class="dash-main">
+        <div class="surveys-grid">
+        </div>
+        <div class="btn-wrapper">
+          <div class="pagination-control surveys-two-pagination"></div>
+        </div>
+      </div>
+    </div>
+  <%end %>
+  <%unless admin? %>
+    <div class="dashboard">
+      <div class="dash-side" >
+        <div class="btn-card learner-surveys-v2-forms">
+          <span class="title">Survey Forms</span>
+          <span class="body"><span id="surveys-count"></span></span>
+        </div>
+      </div>
+
+      <div class="dash-main">
+        <div class="surveys-grid" id="learner-surveys"></div>
+        <div class="btn-wrapper">
+          <div class="pagination-control surveys-two-pagination"></div>
+        </div>
+      </div>
+    </div>
+  <%end %>
+</div>
+
+<%= render ("image_preview_modal") %>
+<%= render ("survey_preview_modal") %>
+<%= render ("survey_delete_modal") %>
+<%= render ("survey_edit_modal") %>

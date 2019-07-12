@@ -1,0 +1,178 @@
+@import 'base';
+
+.introjs-tooltip {
+  border-radius: px-to-rem(12px);
+  padding: px-to-rem(30px, 36px, 20px);
+  min-width: px-to-rem(300px);
+
+  .introjs-tooltiptext {
+    font-family: $font-family-light;
+    text-align: center;
+    font-size: px-to-rem(15px);
+    color: $profile-text-color;
+
+    .intro-title {
+      font-size: px-to-rem(24px);
+    }
+
+    p {
+      font-family: $font-family-light;
+      margin: px-to-rem(10px, 0px, 0px);
+    }
+    .introjs-button {
+      background: $andela-blue;
+      border: 0;
+      border-radius: px-to-rem(6px);
+      color: $background-white;
+      font-size: px-to-rem(12px);
+      line-height: px-to-rem(25px);
+      text-shadow: none;
+      text-align: center;
+      width: px-to-rem(50px);
+    }
+  }
+
+  .introjs-tooltipbuttons {
+    position: relative;
+    padding-bottom: px-to-rem(40px);
+    text-align: center;
+
+    .introjs-disabled {
+      opacity: 0.5;
+    }
+
+    .introjs-button {
+      background: $andela-blue;
+      border: 0;
+      border-radius: px-to-rem(6px);
+      color: $background-white;
+      font-size: px-to-rem(12px);
+      line-height: px-to-rem(25px);
+      text-shadow: none;
+      text-align: center;
+      width: px-to-rem(50px);
+    }
+
+    .introjs-prevbutton {
+      margin: px-to-rem(0px, 7px, 0px, 0px);
+    }
+    .introjs-skipbutton {
+      background: none;
+      bottom: 0;
+      color: rgba(51, 62, 68, 0.48);
+      font-size: px-to-rem(11px);
+      left: 39%;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      text-decoration: underline;
+      width: px-to-rem(70px);
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.introjs-hint-dot {
+  background-color: rgba(25, 194, 35, 1);
+}
+
+.introjs-hint-pulse {
+  border: px-to-rem(5px) solid rgb(134, 222, 140);
+  background-color: rgba(25, 194, 35, 1);
+}
+
+.introjs-helperLayer {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tour-video {
+  text-decoration: none;
+  font-family: $font-family-regular;
+  font-size: px-to-rem(12px);
+  display: inline-block;
+  background-color: rgb(229, 245, 239);
+  color: rgb(17, 163, 108);
+  padding: 0.25em 1em;
+  border-radius: px-to-rem(5px);
+}
+
+.analyticsTour-image {
+  background: url('../images/tour/laptop.svg');
+  min-width: 30%;
+}
+
+#analytics-tour-modal,
+#learners-profile-tour-modal,
+#pitch-setup-tour-modal,
+#pitch-page-tour-modal {
+  font-family: $font-family-regular, Sans-Serif, Serif;
+  display: none;
+  overflow: visible;
+  text-align: center;
+
+  .modal-header {
+    text-align: center;
+    padding: px-to-rem(49px, 0px, 20px);
+
+    span {
+      color: $top-section-black;
+      font-size: px-to-rem(24px);
+      font-weight: bold;
+    }
+  }
+
+  .modal-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .option-container {
+      width: px-to-rem(360px);
+      margin: px-to-rem(18px, 0px);
+    }
+  }
+
+  .modal-footer {
+    font-family: inherit;
+    margin: px-to-rem(32px);
+
+    .link-confirm-btn {
+      background-color: $respond-success-btn;
+      border: 0;
+      border-radius: px-to-rem(4px);
+      color: $background-white;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: px-to-rem(14px);
+      padding: px-to-rem(10px, 24px);
+      display: block;
+      margin: 0 auto;
+
+      &:hover {
+        box-shadow: px-to-rem(0px, 2px, 2px, 1px) $section-drop-box-shadow;
+      }
+
+      &:active {
+        box-shadow: none;
+      }
+    }
+
+    a {
+      font-size: px-to-rem(10px);
+      color: $filter-label-color;
+    }
+  }
+}
+.tour-bold-text {
+  font-weight: bold;
+}
+.introjs-overlay {
+  z-index: 100 !important;
+  opacity: 0.5 !important;
+}
+.introjs-helperLayer {
+  background-color: rgba(255, 255, 255, 0.2);
+}

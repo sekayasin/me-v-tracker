@@ -1,0 +1,2 @@
+class AverageRatings < ApplicationRecord
+end

@@ -1,0 +1,9 @@
+var message = "<%= flash[:notice] == 'program-success' ? 'Program Successfully Created' : flash[:error] %>";
+
+$('.main-content').removeClass('loading')
+<% if flash[:notice] == 'program-success' %>
+  $(".toast").messageToast.start(message, "success")
+  $(".close-button").click()
+<% else %>
+  $(".toast").messageToast.start(message, "error")
+<% end %>

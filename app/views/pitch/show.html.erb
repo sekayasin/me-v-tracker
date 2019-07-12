@@ -1,0 +1,88 @@
+<%= render 'pitch_alerts' %>
+<div id="main-pitch-section">
+  <% if admin? %>
+    <% campers_details = @campers_details[:paginated_data] %>
+    <div class="dashboard">
+      <div class="dash-main">
+        <div class="mdl-tabs mdl-js-tabs">
+          <div class="mdl-tabs__tab-bar switching-tabs">
+              <a id="learners-tab" href="#learners-panel" class="mdl-tabs__tab is-active">
+              Learners
+              </a>
+              <a id="panellists-tab" href="#panellists-panel" class="mdl-tabs__tab">
+                Panellists
+              </a>
+            <% if !!fetch_pitch_panellist %>
+              <a id="ratings-tab" href="#ratings-panel" class="mdl-tabs__tab">
+                My Learners
+              </a>
+            <% end %>
+            <a id="summary-tab" href="#summary-panel" class="mdl-tabs__tab summary-tab">
+              Summary
+            </a>
+          </div>
+          <div class="mdl-tabs__panel is-active" id="learners-panel">
+            <p class="invite-report"><%= campers_details.select {|eachLearner| eachLearner[:is_graded] == true }.length %> of 
+            <%= campers_details.length %>
+             Learners have been rated for the <%= @center_details[0] %> Cycle <%= @center_details[1] %> Demo</p>
+            <div class="pitch-grid" id="learners-pitch-grid">
+              <% campers_details.map do |learner| %>
+                <div class="pitch-persona-card learner-pitch-tab-card">
+                  <div class="persona-card-body"  id="<%= learner[:id] %>" >
+                    <div class="persona-img">
+                    <img src="https://ui-avatars.com/api/?name=<%= learner[:first_name] %>+%20<%= learner[:last_name] %>&background=195BDC&color=fff&size=128" alt="learner image">
+                    </div>
+                    <div class="persona-name"> <%= learner[:first_name] %>  <%= learner[:last_name] %></div>
+                    <div class="persona-mail"><%= learner[:email] %></div>
+                    <div class="persona-invite-time">Invited 
+                    <%= time_ago_in_words(learner[:created_at]) %>
+                    ago
+                    </div>
+                    <div class="<%=  learner[:is_graded] ?  'persona-badge-active' : 'persona-badge' %>">
+                      <%=  learner[:is_graded] ?  'Graded' : 'Not yet graded' %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="mdl-tabs__panel" id="panellists-panel">
+            <p class="invite-report"> <%= @panelist.select {|eachpanelist| eachpanelist[1] == 'True' }.length %>  of
+            <%= @panelist.length %>
+            <%=  @panelist.length > 1 ?  'Panellists': 'Panellist' %>
+            have accepted the invite for the <%= @center_details[0] %> Cycle <%= @center_details[1] %> Demo</p>
+            <div class="pitch-grid"  id="panellists-pitch-grid">
+            <%  @panelist.map do |panelist|%>
+                <div class="pitch-persona-card">
+                  <div class="persona-card-body">
+                    <div class="persona-img"><%= image_tag 'user.svg' %></div>
+                    <div class="persona-name"><%= panelist[0].split(".")[0] %> 
+                    <%= panelist[0].split(".")[1].split('@')[0] %>
+                    </div>
+                    <div class="persona-mail"><%= panelist[0] %></div>
+                    <div class="persona-invite-time">Invited
+                  <%= time_ago_in_words(panelist[2]) %>
+                    ago
+                    </div>
+                    <div class="<%=  panelist[1] == 'False' ? 'persona-badge' : 'persona-badge-active'%>">
+                    <%=  panelist[1] == 'False' ?  'Pending Confirmation' : 'Invitation Accepted'%>
+                    </div>
+                  </div>
+                </div>
+              <%end %>
+            </div>
+          </div>
+          <div class="mdl-tabs__panel" id="ratings-panel">
+            <%= render(partial: "pitch_learners") if pitch_panelist? %>
+          </div>
+          <%= render(partial: "summary_pitch_learners") %>
+          
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= render  "learner_rating_modal" %>
+<%= render(partial: "pitch_learners") if (pitch_panelist? && !admin?) %>
+<%= render 'tour/pitch_page_tour_modal' %>

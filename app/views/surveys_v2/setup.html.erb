@@ -1,0 +1,327 @@
+<div class="survey-v2-content">
+  <div class="view-buttons">
+      <span class='view-btn-1 form-btn' id="form-btn">
+        <b>Form</b>
+      </span>
+      <span class='view-btn-1' id="preview-btn">
+        <b>Preview</b>
+      </span>
+  </div>
+  <div class="mdl-grid mdl-grid--no-spacing" id="survey-preview--content">
+    <div class="setup-container form">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+        <div class="wrapper">
+          <div class="survey-builder" id="survey-builder">
+            <div class="maximize" id="maximize">&nbsp;</div>
+            <div class="toggle" id="toggleSurvey">&nbsp;</div>
+            <div class='untoggle hidden' id="untoggle">&nbsp;</div>
+            <div class='minimize hidden' id="minimize">&nbsp;</div>
+            <div class="mdl-tooltip mdl-tooltip--top fullscreen-buttons" style="display: block" for="maximize">
+              Maximize survey builder
+            </div>
+            <div class="mdl-tooltip mdl-tooltip--top fullscreen-buttons" style="display: block" for="toggleSurvey">
+              Toggle survey
+            </div>
+          </div>
+          <br>
+          <p><span class="card-title">Create a Survey</span></p>
+          <div class="survey-content">
+            <div class="question-description">
+              <input id="survey-2-title" type="text" placeholder="Enter Title" autocomplete='off'/>
+              <span class="edit-icon"></span>
+            </div>
+            <p id="add-survey-description-btn" class="add-description"><span>Add description</span></p>
+            <div class="survey-description-content">
+              <img class="description-toggle" src="<%= asset_path('waste-bin.svg') %>"/>
+              <input class="survey-description" type="text" name="question" id="survey-description" placeholder="Enter your description">
+            </div>
+
+            <div id="sortable-questions">
+              <div class="parent-section hidden">
+                <div class="section-break-ctx">
+                  <hr class="section-break-line">
+                  <div class="section-title">
+                    <span class="section-title-text">Section 1</span>
+                    <div class="section-options">
+                      <img src="/assets/ellipsis.svg" alt="more" class="more-icon" />
+                      <ul class="drop-options">
+                        <li class="drop-item sorter" id="re-order-up">Re-order Up</li>
+                        <li class="drop-item sorter" id="re-order-down">Re-order Down</li>
+                        <li class="drop-item" id="duplicate-section">Duplicate Section</li>
+                        <li class="drop-item" id="link-question">Link to Question</li>
+                        <li class="drop-item" id="remove-section">Remove Section</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="survey-question-body hidden">
+                <div class="mdl-grid mdl-grid--no-spacing">
+                  <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet question-number">
+                    <div class="linked-icon"></div>
+                    <div class="survey-icon ordering-icon"></div>
+                    <div class="list-no bg-black question-no"><span>1</span></div>
+                  </div>
+                  <div class="mdl-cell mdl-cell--11-col mdl-cell--11-col-phone mdl-cell--11-col-tablet survey-section">
+                    <div class="survey-container">
+                      <div class="survey-item-container">
+                        <div class="select-shelter">
+                          <div class="select-question" id="select-question">
+                            <p>Select Question Type</p>
+                            <span class="down-arrow"></span>
+                          </div>
+                          <div class="options-wrapper" id="options-wrapper">
+                            <div class="options-list" id="options-list"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="survey-item-container">
+                        <input class="questionIdUniq" type="hidden" name="questionIdUniq"/>
+                        <input class="question-body" type="text" name="question" id="question-body" placeholder="Type Your Question..." autocomplete='off'>
+                        <p class="add-description-question question-description-options" id="question-description-options">
+                        <span>
+                          <img class="text-description-option" src="<%= asset_path('font-size.svg') %>" />
+                          <img class="image-description-option" src="<%= asset_path('landscape.svg') %>" />
+                          <img class="video-description-option" src="<%= asset_path('youtube.svg') %>" />
+                        </span>
+                        </p>
+                        <p class="add-description-question toggle-question-description" id="add-description-question"><span id="question-description">Add description</span></p>
+                      </div>
+
+                      <div class="survey-item-container">
+                        <div class="text-description-content">
+                          <input id="question-description" type="text" class="text-description" placeholder="Enter Question Description">
+                          <div class="close"></div>
+                        </div>
+                      </div>
+
+                      <div class="survey-item-container image-description">
+                        <div class="description-answer">
+                          <div key="" id="media-close" class="media-close"></div>
+                            <div class="media-size">
+                              <span class="file-image-name">File name</span>
+                              <span class="file-image-size">[100MB]</span>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="survey-item-container video-description">
+                        <div class="description-answer">
+                          <div key="" id="media-close" class="media-close"></div>
+                            <div class="video-size">
+                              <span class="file-video-name">File name</span>
+                              <span class="file-video-size">[100MB]</span>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="survey-item-container picture-description">
+                        <div class="image-description-content">
+                          <label for="add-image-file"><i class="fa fa-image"></i>&nbsp; UPLOAD PHOTO</label>
+                          <input accept="image/*" type="file" name="image-file" class="add-image-file-input" id="add-image-file">
+                          <div class="close"></div>
+                          <div class="media-size" id="media-size">
+                            <span class="file-image-name"></span>
+                            <span class="file-image-size"></span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="survey-item-container">
+                        <div class="media-input video-description-content">
+                          <label for="add-video-file"><i class="fa fa-file-video-o video-file-upload"></i>&nbsp; UPLOAD VIDEO</label>
+                          <input accept="video/*" type="file" name="file" class="add-video-file" id="add-video-file">
+                          <div class="close"></div>
+                          <div class="video-size" id="video-size">
+                            <span class="file-video-name"></span>
+                            <span class="file-video-size"></span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="survey-item-container">
+                        <div class="main-slider-div">
+                          <div class="slider-div">
+                            <label>Steps</label>
+                            <input  class="mdl-slider mdl-js-slider" id="slider-input" type="range" min="1" max="10" value="3" tabindex="0" data-original-value="3" />
+                            <div class="slider-message" id="message">3</div>
+                          </div>
+                          <div class="checkbox-div">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect slider-checkbox" id="sliderCheckBox">
+                              <input type="checkbox" class="mdl-checkbox__input">
+                              <span class="mdl-checkbox__label" style="float: left">Start From 0</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="answer-field checkbox-answers">
+                      </div>
+
+                      <div class="answer-field checkbox-picture-answers">
+                      </div>
+
+                      <div class="answer-field option-picture-answers">
+                      </div>
+
+                      <div class="date-input">
+                        <div class="survey-item-container">
+                          <small>Set date limits (optional)</small>
+                          <div class="calendar-item-container">
+                            <input class="cal min-date" type="text" placeholder="Min date" autocomplete="off"/> <input class="cal max-date" type="text" placeholder="Max date" autocomplete="off"/>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="time-input">
+                      <div class="survey-item-container">
+                        <div class="time-item-container">
+                          <input disabled type="text" placeholder="00:00 AM"/>
+                        </div>
+                      </div>
+                    </div>
+
+                      <div class="answer-field multiple-choice-answers">
+                      </div>
+
+                      <div class="answer-field dropdown-choice-answers">
+                      </div>
+
+                      <div class="answer-field scale-answers">
+                      </div>
+
+                      <div class="multi-choice-grid-container">
+                        <div class="multi-choice-grid-answers">
+                        </div>
+                      </div>
+
+                      <div class="checkbox-grid-container">
+                        <div class="checkbox-grid-answers">
+                        </div>
+                      </div>
+
+                      <table class="table table-borderless checkbox-grid-table multi-choice-table">
+                        <tr>
+                          <td class="table-width"><input class="row-addon" id="row-addon" placeholder="Add A Row" /></td>
+                          <td class="table-width "><input class="column-addon" id="column-addon" placeholder="Add A Column" /></td>
+                        </tr>
+                      </table>
+
+                      <div class="picture-uploads">
+                        <div class="survey-item-container" id="upload-with-close">
+                          <div class="media-input image-upload-content" style="display: block;">
+                            <div class="photo-upload">
+                              <div class="close"></div>
+                              <label for="add-file"><i class="fa fa-image"></i>&nbsp; UPLOAD PHOTO</label>
+                              <input accept="image/*" type="file" name="file" class="add-file-input" id="add-file"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="survey-item-container">
+                        <input id="add-choice" class="add-choice" placeholder="Add A Choice">
+                      </div>
+
+                      <div class="survey-item-container">
+                        <div class="add-option">Add An Option</div>
+                      </div>
+
+                      <div class="survey-footer">
+                        <div class="mdl-grid mdl-grid--no-spacing">
+                          <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+                              <input type="checkbox" class="mdl-switch__input">
+                              <span class="mdl-switch__label not-required">Not&nbsp;Required</span>
+                              <span class="mdl-switch__label required"><span class="asterisk">*</span>&nbsp;Required</span>
+                            </label>
+                          </div>
+                          <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+                            <span class="copy-delete">
+                              <a class='fa fa-clone footer-icon duplicate-question' title='Duplicate Question' id=''></a>
+                              <a class='fa fa-trash footer-icon delete-question' title='Delete Question' id='delete-question'></a>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mdl-grid mdl-grid--no-spacing add-question-section-buttons hidden">
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet add-icon">
+              <div class="list-no">
+                <i class="icon material-icons">add</i>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--11-col mdl-cell--11-col-phone mdl-cell--11-col-tablet add-button">
+              <div class="button-wrapper  add-question-btn" id="add-question-btn">
+                Add Question
+              </div>
+              <br>
+              <div class="button-wrapper add-section-btn" id="add-section-btn">
+                Add a Section
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="setup-container preview">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+        <button id="survey-share-btn" class="btn-survey-share">Share</button>
+        <div class="wrapper">
+          <br>
+          <p><span class="card-title preview-title">Survey Preview</span></p>
+          <div class="survey-title">
+            <h4 id="survey-preview-title">VOF Questionnaire 1</h4>
+            <p id="survey-preview-description">Enter your description</p>
+          </div>
+          <div class="section-preview-title">
+            <span>section 1</span>
+          </div>
+          <div class="preview-content">
+            <span class="empty"></span> <p>No Questions have been created</p>
+          </div>
+        </div>
+
+        <div class="paragraph">
+          <div class="paragraph-wrapper">
+            <div class="mdl-grid mdl-grid--no-spacing paragraph-txt">
+              <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+                <div class="list-no">1</div>
+              </div>
+              <div class="mdl-cell mdl-cell--11-col mdl-cell--11-col-phone mdl-cell--11-col-tablet">
+                <p>What is the answer to this question?</p>
+                <textarea class="txt" rows="7" cols="39">  01</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="question-wrapper" id="questions-preview-wrapper"></div>
+
+        <div class="section-preview-control">
+          <button class="btn-secondary" id="previous-section">Previous</button>
+          <button class="btn-primary" id="next-section">Next</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render partial: "image_preview_modal" %>
+<%= render partial: "survey_share_modal" %>
+<%= render partial: "survey_question_delete_modal" %>
+<%= render partial: "survey_link_question_delete_modal"%>
+<%= render partial: "survey_link_question_delete_modal" %>
+<%= render partial: "survey_section_delete_modal" %>
+<%= render partial: "survey_link_section_delete_modal" %>
+<%= render partial: "survey_preview_modal" %>
+<%= render partial: "section_question_link_modal" %>

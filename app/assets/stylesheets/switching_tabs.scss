@@ -1,0 +1,120 @@
+@import 'base';
+
+.no-data-text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  h5 {
+    color: $light-grey;
+    opacity: 0.7;
+  }
+}
+
+.switching-tabs {
+  border-bottom: 0;
+  margin-top: 0;
+  margin-right: 4%;
+  margin-bottom: px-to-rem(90px);
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media only screen and (min-width: 500px) and (max-width: 868px) {
+    flex-wrap: wrap;
+    margin-bottom: 210px;
+    justify-content: space-around;
+    width: auto;
+  }
+
+  @media only screen and (max-width: 890px) {
+    margin-top: 15px;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 499px) {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 30px;
+    width: auto;
+  }
+
+  .mdl-tabs__tab {
+    text-transform: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    line-height: 30px;
+    width: 25%;
+    box-sizing: border-box;
+    margin: 0 20px;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(221, 221, 221, 0.6);
+
+    @media only screen and (min-width: 869px) and (max-width: 1183px) {
+      margin: 0 10px;
+      font-size: 14px;
+      padding: 0 12px;
+    }
+
+    @media only screen and (min-width: 500px) and (max-width: 868px) {
+      margin: 10px;
+      font-size: 14px;
+      padding: 0 12px;
+      width: calc(50% - 10px);
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+
+      &:nth-child(3) {
+        margin-left: 0;
+      }
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 499px) {
+      margin-left: 0;
+      margin-top: 15px;
+      width: 100%;
+      font-size: 15px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &.is-active {
+      color: rgba(0, 0, 0, 0.54) !important;
+      border: solid 1px $andela-blue;
+
+      &::after {
+        background: none !important;
+      }
+
+      b {
+        color: $andela-blue;
+      }
+    }
+
+    .tab-description {
+      display: block;
+      font-size: 14px;
+      line-height: 23px;
+      font-family: $font-family-light;
+
+      @media only screen and (min-width: 878px) and (max-width: 1183px) {
+        font-size: 13px;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 499px) {
+        font-size: 14px;
+      }
+    }
+  }
+}

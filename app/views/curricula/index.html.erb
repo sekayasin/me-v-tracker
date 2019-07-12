@@ -1,0 +1,73 @@
+<div class="curriculum-page">
+  <div class="mdl-tabs mdl-js-tabs">
+
+    <% if params[:search] %>
+      <div class="criteria-search-results">
+        <span class="criteria-search-header">Showing <span id="search-length"></span> for "<%= params[:search] %>"</span>
+        <div class="line">
+          <span class="long"></span>
+          <span class="short"></span>
+        </div>
+      </div>
+      <div class="mdl-tabs__tab-bar switching-tabs">
+        <a href="#framework-panel" class="mdl-tabs__tab framework-tab"><b>Framework</b><span class="tab-description"><%= @frameworks.size %> Frameworks</span></a>
+        <a href="#criteria-panel" class="mdl-tabs__tab criteria-tab"><b>Criteria</b><span class="tab-description"><span id="criteria"></span></span></a>
+        <a href="#learning-outcomes-panel" class="mdl-tabs__tab learning-outcomes-panel learning-outcome-tab"><b>Learning Outcomes</b><span class="tab-description"><span id="outcomes"></span></span></a>
+      </div>
+      <div class="mdl-tabs__panel" id="framework-panel">
+        <%= render("frameworks") %>
+      </div>
+      <div class="mdl-tabs__panel criteria-panel" id="criteria-panel">
+        <%= render("criteria_table") %>
+      </div>
+      <div class="mdl-tabs__panel learning-outcome-panel" id="learning-outcomes-panel">
+        <%= render("learning_outcomes") %>
+      </div>
+      <div class="mdl-tabs__panel" id="program-details-panel">
+        <%= render("program_details") %>
+      </div>
+    <% else %>
+      <div class="mdl-tabs__tab-bar switching-tabs">
+        <a href="#framework-panel" class="mdl-tabs__tab framework-tab"><b>Framework</b><span class="tab-description"><span id="frameworks-length"></span> Frameworks</span></a>
+        <a href="#criteria-panel" class="mdl-tabs__tab criteria"><b>Criteria</b><span class="tab-description"><span id="criteria"></span> Criteria</span></a>
+        <a href="#learning-outcomes-panel" class="mdl-tabs__tab learning-outcomes-panel"><b>Learning Outcomes</b><span class="tab-description"><span id="outcomes"></span> Learning Outcomes</span></a>
+        <a href="#program-details-panel" class="mdl-tabs__tab program-tab is-active"><b>Program Details</b><span class="tab-description">Details about <span id="program"></span></span></a>
+      </div>
+      <div class="mdl-tabs__panel" id="framework-panel">
+        <%= render("frameworks") %>
+      </div>
+      <div class="mdl-tabs__panel" id="criteria-panel">
+        <div class="top-criteria-section">
+          <div class="framework-filter" class="criterium-filter-container">
+            <p class="criterium-filter-text">Select Framework</p>
+            <select name="criterium-filter" class="criterium-filter">
+              <option> All </option>
+              <option value=<%= @frameworks[0][0]%> ><%= @frameworks[0][1] %></option>
+              <option value=<%= @frameworks[1][0]%> ><%= @frameworks[1][1] %></option>
+              <option value=<%= @frameworks[2][0]%> ><%= @frameworks[2][1] %></option>
+            </select>
+          </div>
+
+          <% if admin? %> 
+            <div class="add-criterion">
+              <a class="btns add-criterion-btn">
+                Add Criterion <i class="icon material-icons add-criterion-icon">add</i>
+              </a>
+            </div>
+          <% end %>
+        </div>
+        <%= render("criteria_table") %>
+      </div>
+      <div class="mdl-tabs__panel" id="learning-outcomes-panel">
+        <%= render("learning_outcomes") %>
+      </div>
+      <div class="mdl-tabs__panel is-active" id="program-details-panel">
+        <%= render("program_details") %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+<%= render("criteria/criterion_modal") %>
+<%= render("curricula/edit_framework_modal") %>
+<%= render("criteria/edit_criterion_modal") %>

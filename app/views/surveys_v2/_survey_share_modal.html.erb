@@ -1,0 +1,110 @@
+<div id="main-share-modal">
+  <div class="share-modal-container">
+    <div class="mdl-grid mdl-grid--no-spacing">
+      <div class="wrapper">
+        <span id="close-share-modal" class="close-share-modal"></span>
+        <div class="share-modal-title">
+          <span class="share-title">Share Survey</span>
+          <div class="share-title-description">
+            Hi, how would you like to share
+            <span class="strong-text"></span>
+          </div>
+        </div>
+        <div class="share-type-container">
+          <div id="mail-share" class="box is-active">
+            <div class="icon">
+              <img id="mail-icon" src="/assets/mail-icon.svg" type="image/svg+xml"></img>
+              <img id="mail-icon-active" src="/assets/mail-icon-active.svg" type="image/svg+xml"></img>
+              <span class="icon-text">Mail</span>
+            </div>
+          </div>
+          <div id="link-share" class="box">
+            <div class="icon">
+              <img id="sharelink-icon" src="/assets/sharelink-icon.svg" type="image/svg+xml"></img>
+              <img id="sharelink-icon-active" src="/assets/sharelink-icon-active.svg" type="image/svg+xml"></img>
+              <span class="icon-text">Link</span>
+            </div>
+          </div>
+          <div id="frame-share" class="box is-disabled">
+            <div class="mdl-tooltip mdl-tooltip--top" style="display: block" for="embed-share">
+              Disabled
+            </div>
+            <div class="icon" id="embed-share">
+              <img id="embed-icon" src="/assets/embed-icon.svg" type="image/svg+xml"></img>
+              <img id="embed-icon-active" src="/assets/embed-icon-active.svg" type="image/svg+xml"></img>
+              <span class="icon-text">Embed</span>
+            </div>
+          </div>
+        </div>
+        <div class="share-item-container">
+          <div class="select-recipients collaborators">
+            <div class="select-description select-collaborators-description">Invite collaborators</div>
+            <div id="copy" class="copy copy-survey-link">Copy Link</div>
+            <ul class="selected-collaborators" id="selected-collaborators"></ul>
+            <div id="select-shelter" class="select-shelter">
+              <div class="select-collaborators" id="select-collaborators">
+                <p>Select Email</p>
+                <span class="down-arrow"></span>
+              </div>
+              <div class="collaborator-options-wrapper">
+                <div class="collaborator-options-list"></div>
+              </div>
+            </div>
+            <div id="input-shelter" class="input-shelter">
+              <input type="text" id="embed-link-input" class="embed-link-input" />
+            </div>
+          </div>
+        </div>
+        <div class="share-item-container">
+          <div class="select-recipients bootcampers">
+            <div class="select-description select-recipients-description">Select Recipients</div>
+            <div id="copy-learner-link" class="copy copy-learner-link">Copy Link</div>
+            <ul class="selected-cycles"></ul>
+            <div id="select-shelter" class="select-shelter">
+              <div class="select-cycle" id="select_cycle">
+                <p>Select Cycle</p>
+                <span class="down-arrow"></span>
+              </div>
+              <div class="cycle-options-wrapper">
+                <div class="cycle-options-list"></div>
+              </div>
+            </div>
+            <div id="input-shelter" class="input-shelter">
+              <input type="text" id="embed-learner-link-input" class="embed-learner-link-input" />
+            </div>
+          </div>
+        </div>
+        <div class="share-date-content">
+          <label for="select_start_date">Schedule Survey <span id="survey-duration"></span></label>
+          <!-- fixes focus issue -->
+          <input type="text" style="transform: scale(0.001)"/>
+          <div class="share-date-wrapper">
+            <div class="date-shelter">
+              <input type="text" name="share_start_date" id ="survey_share_start_date" placeholder="From Date" class="start_date" autocomplete="off">
+            </div>
+            <div class="date-shelter">
+              <input type="text" name="share_end_date" id ="survey_share_end_date" placeholder="To Date" class="end_date" autocomplete="off">
+            </div>
+          </div>
+        </div>
+        <div class="share-submit-container">
+          <div class="checkbox-div">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect slider-checkbox" id="edit_responses">
+              <input type="checkbox" class="mdl-checkbox__input" id="edit_responses">
+              <span class="mdl-checkbox__label">Respondents can edit responses</span>
+            </label>
+          </div>
+          <div class="btns-draft-and-publish-container">
+            <button id="survey-save-progress" class="btn-survey-save-progress" value="draft">Save Draft</button>
+            <div id="send-btn-shelter" class="send-btn-shelter" name="published">
+              <span class="send-button">Publish</span>
+            </div>
+            <div id="update-btn-shelter" class="update-btn-shelter" name="published">
+              <span id="submit-btn-shelter" class="update-button">Publish</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

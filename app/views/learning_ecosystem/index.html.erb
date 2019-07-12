@@ -1,0 +1,23 @@
+<div class="learning-ecosystem-page">
+    <div class="mdl-tabs mdl-js-tabs">
+    <div class="main-section">
+      <div class="switching-tabs">
+        <a id="overview-tab" href="#overview-panel" class="mdl-tabs__tab is-active">
+          <b>Overview</b>
+          <span class="tab-description"><%= @weeks_count %> Weeks, <%= @outputs_count %>
+          Outputs</span>
+        </a>
+        <a id="phases-tab" href="#phases-panel" class="mdl-tabs__tab">
+          <b>Phases</b>
+          <span class="tab-description"><%= @phases_count %> Phases</span>
+        </a>
+      </div>
+      <div class="mdl-tabs__panel is-active" id="overview-panel">
+        <%= render 'learning_ecosystem/overview_panel' %>
+      </div>
+      <div class="mdl-tabs__panel" id="phases-panel">
+        <%= render 'learning_ecosystem/phases_panel' %>
+      </div>
+    </div>
+  </div>
+</div>

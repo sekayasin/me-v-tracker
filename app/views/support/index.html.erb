@@ -1,0 +1,69 @@
+<div class="support-page">
+  <% if params[:search] %>
+    <div class="support-search-results">
+      <span class="support-search-header">Showing results for "<%= params[:search] %>"</span>
+      <div class="line">
+        <span class="long"></span>
+        <span class="short"></span>
+      </div>
+      <% if @faqs.empty? %>
+        <h5 class='no-search-result'>We couldn't find any results :(</h5>
+      <% else %>
+        <div class="support-search-container">
+          <%= render 'support/faqs' %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    
+    <div class="mdl-grid container">
+      <% if authorized_learner? %>
+        <section class="info-section mdl-cell mdl-cell--12-col">
+          <div class="support-learner-container">
+            <%= render 'support/how_to_videos' %>
+          </div>
+        </section>
+      <% else %>
+      <section class="support-tab mdl-cell mdl-cell--2-col">
+        <ul class="tabs">
+          <li class="support-card support-card-active tab-link current" data-tab="tab-1">
+            <h6 class="tab-header active-header">Andela</h6>
+            <p>Welcome, what to note</p>
+          </li>
+          <li class="support-card tab-link" data-tab="tab-2">
+            <h6 class="tab-header">VOF</h6>
+            <p>Basics about VOF</p>
+          </li>
+          <% if admin? %>
+          <li class="support-card tab-link" data-tab="tab-3">
+            <h6 class="tab-header">Resources</h6>
+            <p>External links about VOF</p>
+          </li>
+          <% end %>
+          <li class="support-card tab-link" data-tab="tab-4">
+            <h6 class="tab-header">How-To Videos</h6>
+            <p>Videos about VOF</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="info-section mdl-cell mdl-cell--10-col">
+        <div class="tab-content-wrapper">
+          <div class="accordion tab-content current" id="tab-1">
+            <%= render 'support/faqs' %>
+          </div>
+          <div class="tab-content" id="tab-2">
+            <%= render 'support/resources' %>
+          </div>
+          <div class="tab-content" id="tab-3">
+            <%= render 'support/resources_admin' %>
+          </div>
+          <div class="tab-content" id="tab-4">
+            <%= render 'support/how_to_videos' %>
+          </div>
+        </div>
+      </section>
+    </div>
+      <% end %>
+  <% end %>
+</div>

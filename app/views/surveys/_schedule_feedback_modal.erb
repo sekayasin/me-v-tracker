@@ -1,0 +1,86 @@
+<div>
+  <div id="schedule-feedback" class="schedule-feedback">
+    <div class="modal">
+      <div class="modal-top">
+        <div class="modal-header">
+          <span class="close-button" id="close-schedule-feedback-modal"></span>
+          <div class="top-section">
+            <div class="schedule-feedback-header">
+              Schedule Feedback
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="schedule-feedback-modal-content" class="modal-content">
+          <form class="schedule-feedback-form" id="schedule-feedback-form">
+            <div class="survey-item-container mdl-grid mdl-grid--no-spacing">
+              <div class="input-group mdl-cell mdl-cell--4-col mdl--cell-12-col-phone mdl-cell--12--tablet">
+                <label id="label-link" for="link">Program</label>
+                <%= select_tag("select_program", 
+                   options_for_select(
+                    program_options.each do |program|
+                      program[0]
+                    end
+                   ), 
+                   :include_blank => 'Program', 
+                   :id => "select_program", 
+                   :class => "select-detail", 
+                   :required => true)
+                 %>
+              </div>
+              <div class="input-group mdl-cell mdl-cell--4-col mdl--cell-12-col-phone mdl-cell--12--tablet">
+                <label id="label-link" for="link">Center</label>
+                <%= select_tag("select_center",  
+                   :include_blank => 'Select Center', 
+                   :id => "select_center", 
+                   :class => "select-detail", 
+                   :required => true)
+                 %>
+              </div>
+              <div class="input-group mdl-cell mdl-cell--4-col mdl--cell-12-col-phone mdl-cell--12--tablet">
+                <label id="label-link" for="link">Cycle</label>
+                <%= select_tag("select_cycle", 
+                   :include_blank => 'Select Cycle', 
+                   :id => "select_cycle", 
+                   :class => "select-detail", 
+                   :required => true)
+                 %>
+              </div>
+            </div>
+            <div class="survey-item-container">
+              <div class="input-group">
+                <label id="label-link" for="link">Question</label>
+                <%= select_tag("select_question",
+                   :include_blank => 'Select Question', 
+                   :id => "select_question", 
+                   :class => "select-detail", 
+                   :required => true)
+                 %>
+              </div>
+
+            </div>
+            <div class="survey-item-container" id="schedule-feedback-div">
+              <label for="select_start_date">Schedule Feedback <span id="feedback-duration"></span></label>
+              <br/>
+              <span>Start Date:</span>
+              <input type="text" name="select_start_date_feedback" id ="select_start_date_feedback" class="field-required select-start-date-feedback">
+              <span>End Date:</span>
+              <input type="text" name="select_end_date_feedback" id ="select_end_date_feedback" class="field-required select-end-date-feedback" autocomplete="off">
+              <p id="select-date-error" class="active-error"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal-bottom">
+      <div class="btn-wrapper">
+        <a class='schedule-feedback-btn' id="schedule-feedback-button">Schedule</a>
+        <a class='update-schedule-feedback-btn' id="update-schedule-feedback-button">Update</a>
+      </div>
+    </div>
+  </div>
+</div>

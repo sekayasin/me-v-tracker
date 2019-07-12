@@ -1,0 +1,18 @@
+<div class="notification-box">
+  <div class="notification-box-header">
+    <span><%= notification[:group].upcase %></span>
+    <button class="clear-notification-btn">Clear All</button>
+  </div>
+  <div class="notification-group-box">
+    <div class="notification current-notification" data-id="<%= notification[:id] %>">
+      <div class="notification-content-header">
+        <span class="notif-icon" data-type="<%= notification[:priority] == 'Urgent' ? 'danger' : 'success' %>"></span>
+        <span class="notification-time" tabindex="0">Today, <%= notification[:created_at].localtime.strftime("%I:%M %p") %></span>
+        <span class="close-button" tabindex="0"></span>
+      </div>
+      <div class="notification-content" tabindex="0">
+        <%= notification[:content].html_safe %>
+      </div>
+    </div>
+  </div>
+</div>

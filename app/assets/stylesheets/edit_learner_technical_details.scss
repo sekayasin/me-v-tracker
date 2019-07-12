@@ -1,0 +1,150 @@
+@import 'base';
+
+$save-btn-style: (
+  $background-blue,
+  $background-white,
+  px-to-rem(9px) px-to-rem(32px) px-to-rem(9px) px-to-rem(32px),
+  px-to-rem(16px),
+  null
+);
+
+.edit-learner-technical-details-modal {
+  display: none;
+
+  .modal {
+    margin: 0 8%;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .edit-learner-technical-details-modal-top {
+    margin: px-to-rem(32px) 0 px-to-rem(3px) 0;
+  }
+
+  .edit-learner-technical-details-header {
+    height: px-to-rem(48px);
+    
+    .title {
+      font-family: $font-family-regular;
+    }
+
+    .line {
+      width: fit-content;
+      margin-top: px-to-rem(-8px);
+
+      .long {
+        @include blue-line(px-to-rem(57px), px-to-rem(11px));
+
+        @include respond-to(handhelds) {
+          @include blue-line(px-to-rem(34px), px-to-rem(6px));
+        }
+      }
+
+      .short {
+        @include blue-line(px-to-rem(11px), null);
+      }
+    }    
+  }
+
+  .modal-content {
+    padding-bottom: px-to-rem(9px);
+    height: px-to-rem(340px);
+    overflow-y: auto;
+  }
+
+  .edit-learner-technical-details-body {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family-light;
+  }
+
+  .learner-alc-languages-stacks { 
+    margin-bottom: px-to-rem(9px);
+  }
+
+  .input-label {
+    font-size: px-to-rem(13px);
+    color: $faded-grey;
+  }
+
+  .input-container {
+    display: block;
+    position: relative;
+    padding-left: px-to-rem(25px);
+    margin-bottom: px-to-rem(6px);
+    cursor: pointer;
+    font-size: px-to-rem(13px);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .input-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: px-to-rem(5px);
+    left: 0;
+    height: px-to-rem(16px);
+    width: px-to-rem(16px);
+    box-sizing: border-box;
+    border: px-to-rem(2px) solid rgba(0,0,0,.54);
+    border-radius: px-to-rem(2px);
+  }
+
+  .input-container input:checked ~ .checkmark {
+    border: 0;
+    background-color: $background-blue;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .input-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .input-container .checkmark:after {
+    left: px-to-rem(5px);
+    top: px-to-rem(2px);
+    width: px-to-rem(3px);
+    height: px-to-rem(9px);
+    border: solid $background-white;
+    border-width: 0 px-to-rem(2px) px-to-rem(2px) 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .preferred-languages-stacks-input {
+    margin-bottom: px-to-rem(5px);
+  }
+
+  .edit-learner-technical-details-footer {
+    height: px-to-rem(75px);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $background-white;
+    box-shadow: 0 px-to-rem(-2px) px-to-rem(5px) 0 rgba(0, 0, 0, 0.1);
+
+    button {
+      cursor: pointer;
+    }
+
+    .save-edit-learner-technical-details {
+      @include buttons($save-btn-style...);
+      border: none;
+      margin-right: px-to-rem(40px);
+    }
+  }
+}

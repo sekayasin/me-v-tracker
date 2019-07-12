@@ -1,0 +1,17 @@
+video_1:
+  title: Make end of week decision
+  subtitle: How to Make an end of week decision
+  video: https://player.vimeo.com/video/342061861
+  image: decision.jpg
+
+video_2:
+  title: Give Feedback
+  subtitle: How to Give Learner Feedback
+  video: https://player.vimeo.com/video/342959895
+  image: give_feedback.jpg
+
+video_3:
+  title: Holistic evaluation
+  subtitle: How to Give Holistic Evaluation
+  video: https://player.vimeo.com/video/342959944
+  image: holistic_evaluation.jpg

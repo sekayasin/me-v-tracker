@@ -1,0 +1,46 @@
+{
+  "submissionsPageHints": [
+      {
+        "element": ".filter-container",
+        "hint": "This filter container allows you to filter the learners’ submissions displayed on the table.</p>"
+      }
+    ],
+
+  "submissionCardsSteps":[
+      {
+        "intro": "<span class='intro-title'>Welcome to the Submissions Page.</span><br><p>Here, you can manage the submissions by learners by reviewing, giving feedback and viewing learners’ reflections on feedback.</p>"
+      },
+      {
+        "element": "#learners-submissions",
+        "intro": "This table holds cards that represent the submissions made by a given learner."
+      },
+      {
+        "element": ".learner-submission-overview",
+        "intro": "This card holds a single learner’s submissions. Note that if there is a blue dot on the top right corner of the card, this indicates that the learner has an unreviewed submission."
+      },
+      {
+        "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><p><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+      }
+    ],
+
+  "filterSteps": [
+      {
+        "element": "#location-filter",
+        "intro": "For example, you can use this to filter by location."
+      },
+      {
+        "element": ".filter-btn",
+        "intro": "On clicking this button, all the filter selected will be applied."
+      },
+      {
+        "element": ".clear-btn",
+        "intro": "You can use this to clear all the filters applied to the submissions table."
+      }
+    ],
+    "takeThisTourAgainHint": [
+      {
+        "element": ".tour-trigger",
+        "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+      }
+    ]
+  }

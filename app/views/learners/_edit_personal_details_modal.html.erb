@@ -1,0 +1,162 @@
+<input type="hidden" value="<%= @personal_info.to_json %>" id="personal_info">
+<div id="edit-personal-details-modal">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="modal-header">
+        <span class="close-button close-modal"></span>
+        <div class="edit-learner-header-section">
+          <div class="edit-learner-header">
+            Edit Personal Details
+          </div>
+          <div class="line">
+            <span class="long"></span>
+            <span class="short"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-content">
+      <%= form_tag "editLearnerDetailsForm", id: "editLearnerDetailsForm", method: "post", multipart: true do %>
+        <div id="personal-detail-fields" class="edit-modal-content-body">
+          <div class="profile-image-row">
+            <div id="preview-profile-image">
+              <div class="avatar-edit">
+                <label for="imageUpload">
+                  <i class="large material-icons upload-icon">camera_alt</i>
+                <label>
+                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+              </div>
+              <img src="<%= @personal_info[:avatar] %>" alt="Profile Image" id="image-preview">
+            </div>
+            <p id="image_error">Change/Upload Profile Picture</p>
+          </div>
+          <div class="detail-form-row">
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="first_name" class="pull-left">First Name</label>
+                <%= text_field_tag("first_name", @personal_info[:first_name], {class: "form-input-field", type: "text", 'disabled': true}) %>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="middle_name" class="pull-left">Middle Name</label>
+                <%= text_field_tag("middle_name", @personal_info[:middle_name], {class: "form-input-field", type: "text", 'disabled': true}) %>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="last_name" class="pull-left">Last Name</label>
+                <%= text_field_tag("last_name", @personal_info[:last_name], {class: "form-input-field", type: "text", 'disabled': true}) %>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="email_address" class="pull-left">Email Address</label>
+                <%= text_field_tag("email_address", @personal_info[:email], {class: "form-input-field", type: "email", 'disabled': true}) %>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="username" class="pull-left">Username</label>
+                <%= text_field_tag("username", @personal_info[:username], {class: "form-input-field", type: "text"}) %>
+                <p id="username_error" class="edit-modal-field-error">Enter a valid username</p>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="phone_number" class="pull-left">Contact Phone Number</label>
+                <%= text_field_tag("phone_number", @personal_info[:phone_number], {class: "form-input-field", type: "text"}) %>
+                <p id="phone_number_error" class="edit-modal-field-error">Enter a valid  phone number</p>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <p class="dropdown-label-text pull-left">Sex</p>
+                <%= render 'select_field', locals: {
+                  class: "gender-dropdown",
+                  id: "gender-dropdown",
+                  name: "gender",
+                  options: { Male: 'Male', Female: 'Female' },
+                  default: @personal_info[:gender]
+                } %>
+              </div>
+            </div>
+          </div>
+          <div class="detail-form-row-last">
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <p class="dropdown-label-text pull-left">Country</p>
+                <%= render 'select_field', locals: {
+                  class: "country-dropdown",
+                  name: "country",
+                  id: "country-dropdown",
+                  options: {
+                    Nigeria: 'Nigeria',
+                    Kenya: 'Kenya',
+                    Uganda: 'Uganda'
+                  },
+                  default: @personal_info[:location][:country]
+                } %>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <p class="dropdown-label-text pull-left">City</p>
+                <select class="city-dropdown" id="city-dropdown" name="city">
+                  <option value="">Select</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div id="about_me">
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="about" class="pull-left">About Me</label>
+                <%= text_area_tag("about", @personal_info[:about], {class: "form-input-field", placeholder: "Start Typing"}) %>
+              </div>
+            </div>
+          </div>
+          <div class="detail-form-links">
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="github">Github Profile Link</label>
+                <%= text_field_tag("github", @personal_info[:links][:github], {class: "form-input-field", type: "text"}) %>
+                <p id="github_error" class="edit-modal-field-error">Github link is not valid</p>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="linkedin">Linkedin Profile Link</label>
+                <%= text_field_tag("linkedin", @personal_info[:links][:linkedin], {class: "form-input-field", type: "text"}) %>
+                <p id="linkedin_error" class="edit-modal-field-error">LinkedIn link is not valid</p>
+              </div>
+            </div>
+          </div>
+          <div class="detail-form-links">
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="trello">Trello Username</label>
+                <%= text_field_tag("trello", @personal_info[:links][:trello], {class: "form-input-field", type: "text"}) %>
+                <p id="trello_error" class="edit-modal-field-error">Trello username is not valid</p>
+              </div>
+            </div>
+            <div class="edit-learner-detail-wrapper">
+              <div class="edit-learner-detail-input">
+                <label for="website">Personal Website URL</label>
+                <%= text_field_tag("website", @personal_info[:links][:website], {class: "form-input-field", type: "text"}) %>
+                <p id="website_error" class="edit-modal-field-error">Website url is not valid</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="modal-bottom">
+      <div class="modal-btn-wrapper">
+        <button class="cancel-button">Cancel</button>
+        <button class="save-button" id="update-personal-details">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+

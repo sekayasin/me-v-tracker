@@ -1,0 +1,31 @@
+<div class="frameworks-tab-wrapper"> 
+  <div class="frameworks-table-wrapper">
+    <table class='frameworks-header-table'>
+      <thead class="frameworks-table-header-wrapper">
+      <th class="framework-header">
+        <div class="frameworks-table-header">
+          <span>Framework</span>
+        </div>
+      </th>
+      <th class="description-header<%= admin? ? '-admin' : '' %>">
+        <div class="frameworks-table-header" >
+          <span>Description</span>
+        </div>
+      </th>
+      <% if admin? %>
+        <th class="action-header">
+          <div class="frameworks-table-header">
+            <span class="frameworks-action-header">Action</span>
+          </div>
+        </th>
+      <% end %>
+      </thead>
+    </table>
+
+    <div class="frameworks-body-wrapper">
+      <table class="frameworks-table">
+        <tbody id="frameworks-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>

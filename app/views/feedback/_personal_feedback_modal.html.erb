@@ -1,0 +1,65 @@
+<div id="personal-feedback-modal" class="personal-feedback-modal">
+  <form id="personal-feedback-form">
+    <div class="modal">
+      <div class="modal-top">
+        <div class="modal-header">
+          <span class="close-button close-personal-feedback-modal"></span>
+        </div>
+        <div class="modal-content personal-feedback-content">
+          <div class="personal-feedback-schema">
+            <div class="personal-feedback-modal-header">Feedback Schema</div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+          <div class="scrollable-section">
+          <div class="personal-feedback-schema">
+              <div class="feedback-schema-input">
+                <div class="learner-phase learner-dropdown-box">
+                  <label for='learner' class="input-label feedback-schema-label">Phase</label><br>
+                  <select name="learner-phase" id="learner-phase" class="learner-phase select-menu"></select>
+                </div>
+                <div class="learner-framework learner-dropdown-box">
+                  <label for='learner' class="input-label feedback-schema-label">Framework</label><br>
+                  <select name="learner-framework" id="learner-framework" class="learner-framework select-menu"></select>
+                </div>
+                <div class="learner-criteria learner-dropdown-box">
+                  <label for='learner' class="input-label feedback-schema-label">Criteria</label><br>
+                  <select name="learner-criteria" id="learner-criteria" class="learner-criteria select-menu"></select>
+                </div>
+                <div class="learner-output-menu learner-dropdown-box">
+                  <label for='learner' class="input-label feedback-schema-label">Output</label><br>
+                  <select name="output" id="learner-output" class="learner-output select-menu"></select>
+                  <span id="learner-output-error" class="validate-input-error">Please select an output</span>
+                </div>
+              </div>
+          </div>
+          <div class="personal-feedback-impression">
+            <div class="personal-feedback-modal-header">Feedback</div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+            <div class="learner-impression">
+              <label for='learner' class="input-label feedback-impression-label">Feedback Impression</label><br>
+              <select name="impression" id="learner-impression" class="learner-impression select-menu"></select><br>
+              <span id="learner-impression-error" class="validate-input-error">Please select an impression</span>
+            </div>
+          </div>
+          <div class="comment-box">
+            <label for='feedback' class="input-label feedback-impression-label">Feedback</label><br>
+            <textarea class="leave-comment" name="comment" id="comment-box" placeholder="Start Typing" required></textarea>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-bottom personal-feedback-bottom">
+        <div class="btn-wrapper personal-feedback-wrapper">
+          <a id="personal-feedback-cancel-btn" class="btns cancel-btn cancel-feedback-modal">Cancel</a>
+          <input id="personal-feedback-submit-btn" class="btns submit-btn" type="submit" value="Submit"/>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

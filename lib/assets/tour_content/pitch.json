@@ -1,0 +1,115 @@
+{
+	"takeThisTourAgainHint": [
+		{
+			"element": ".tour-trigger",
+			"hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+		}
+	],
+	"panelistsTabHint": [
+		{
+			"element": "#panellists-tab",
+			"hint":
+				"<span class='intro-title'>Panelists Tab</span><br><p>Click here to view the list of panelists invited to this pitch.</p>",
+			"hintPosition": "middle-middle"
+		}
+	],
+	"learnersTabHint": [
+		{
+			"element": "#learners-tab",
+			"hint":
+				"<span class='intro-title'>Learners Tab</span><br><p>Click here to view the list of learners participating in this pitch.</p>",
+			"hintPosition": "middle-middle"
+		}
+	],
+	"pitchPageTourSteps": [
+		{
+			"intro":
+				"<span class='intro-title'>Welcome to the Pitch Page</span><br><p> This page contains all the learners and panelists participating in this pitch.</p>",
+			"role": "Admin"
+		},
+		{
+			"element": "#learners-tab",
+			"intro":
+				"<p>This is the <strong>learners' tab</strong>. Click here to view the list of learners participating in this pitch.</p>",
+			"role": "Admin"
+		},
+		{
+			"element": "#panellists-tab",
+			"intro":
+				"<p>This is the <strong>panelists' tab</strong>. Click here to view the list of panelists invited to this pitch.</p>",
+			"role": "Admin"
+		},
+		{
+			"element": "#learners-panel .invite-report",
+			"intro": "<p>This section shows a brief report of the learners in this pitch.</p>",
+			"role": "Admin"
+		},
+    {
+			"element": "#panellists-panel .invite-report",
+			"intro": "<p>This section shows a brief report of the panelists in this pitch.</p>",
+			"role": "Admin"
+		},
+		{
+			"element": ".learner-pitch-tab-card",
+			"intro":
+				"<p>This is a <strong>learner's card</strong>. Clicking on it allows you to view the learner's grades <strong>if the learner has been graded</strong>.</p>",
+			"role": "Admin"
+		},
+		{
+			"element": ".learner-pitch-tab-card .persona-badge",
+			"intro": "<p>You can tell if the learner has been graded or not from here.</p>",
+			"role": "Admin"
+		},
+		{
+			"element": "#panellists-pitch-grid .pitch-persona-card",
+			"intro": "<p>This is a <strong>panelist's card</strong>. It contains information about the panelist and whether or they have accepted the invite to this pitch.</p>",
+			"role": "Admin"
+		},
+		{
+			"intro":
+				"<span class='intro-title'>Welcome to the Pitch Page</span><br><p> This page contains the list of all the learners you have been invited to rate.</p>",
+			"role": "LFA"
+		},
+		{
+			"element": ".panelist-card",
+			"intro":
+				"<p>This is a <strong>learner's profile card</strong>. Clicking on it allows you to view the ratings you gave to this learner <strong>if the learner has been rated</strong>. Otherwise, click on it to rate this learner.</p>",
+			"role": "LFA"
+		},
+		{
+			"element": ".panelist-card .persona-badge",
+			"intro": "<p>You can tell if you have rated this learner or not from here.</p>",
+			"role": "LFA"
+		},
+		{
+			"element": "#learners-pagination .main-pages",
+			"intro": "<p>Click on any page number to view and rate more learners in this pitch.</p>",
+			"role": "LFA"
+		},
+		{
+			"intro":
+				"<span class='intro-title'>Welcome to the Pitch Page</span><br><p> This page contains the list of all the learners you have been invited to rate.</p>",
+			"role": "Non-LFA"
+		},
+		{
+			"element": ".panelist-card",
+			"intro":
+				"<p>This is a <strong>learner's profile card</strong>. Clicking on it allows you to view the ratings you gave to this learner <strong>if the learner has been rated</strong>. Otherwise, click on it to rate this learner.</p>",
+			"role": "Non-LFA"
+		},
+		{
+			"element": ".panelist-card .persona-badge",
+			"intro": "<p>You can tell if you have rated this learner or not from here.</p>",
+			"role": "Non-LFA"
+		},
+		{
+			"element": "#learners-pagination .main-pages",
+			"intro": "<p>Click on any page number to view and rate more learners in this pitch.</p>",
+			"role": "Non-LFA"
+		},
+		{
+			"intro":
+				"<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+		}
+	]
+}

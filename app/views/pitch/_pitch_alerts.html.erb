@@ -1,0 +1,3 @@
+<% flash.each do |type, msg| %>
+  <%= content_tag :span, msg, class: "#{type} puffly", id: "puffly" %>
+<% end %>

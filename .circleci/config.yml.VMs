@@ -1,0 +1,470 @@
+default: &defaults
+  docker:
+    - image: gcr.io/${GCLOUD_VOF_PROJECT}/vof-ci-ruby-node-image
+      auth:
+        username: _json_key
+        password: '${SERVICE_ACCOUNT}'
+      environment:
+        - VOF_PATH: /home/circleci/vof
+        - PG_HOST: localhost
+        - PGUSER: circleci
+        - RAILS_ENV: test
+        - DATABASE_URL: postgresql://circleci@localhost/circlecidb
+        - CC_TEST_REPORTER_ID: ${CC_TEST_REPORTER_ID}
+    - image: postgres:9.6
+      environment:
+        - POSTGRES_USER: circleci
+        - POSTGRES_DB: circlecidb
+        - POSTGRES_PASSWORD: ''
+  dependencies:
+    pre:
+      - sudo gem install --no-ri --no-rdoc bundler
+  working_directory: ~/vof
+
+release_default: &release_defaults
+  docker:
+    - image: gcr.io/${GCLOUD_VOF_PROJECT}/vof-ci-ruby-node-image
+      auth:
+        username: _json_key
+        password: '${SERVICE_ACCOUNT}'
+  working_directory: ~/vof
+
+cmd_restore_cache: &cmd_restore_cache
+  restore_cache:
+    keys:
+    - vof-dependencies-{{ checksum "Gemfile.lock" }}
+    - vof-dependencies-
+
+cmd_install_dependancies: &cmd_install_dependancies
+  run:
+    name: Install dependencies
+    command: |
+      bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --path=vendor/bundle
+cmd_install_dependancies: &cmd_save_cache
+  save_cache:
+    key: vof-dependencies-{{ checksum "Gemfile.lock" }}
+    paths:
+      - ./vendor/bundle
+
+cmd_generate_app_yml: &cmd_generate_app_yml
+  run:
+    name: Generate application.yml file
+    command: |
+      touch config/application.yml
+        cat <<EOF > config/application.yml
+      LOGIN_URL: 'https://api-staging.andela.com/login?redirect_url='
+      AUTH_URL: 'https://vof-login-staging.andela.com'
+      AUTH_ACCESS_TOKEN: '48572b447d4f96cad034cb9f6ed9d0885864de64d77c4fd90bd90164998b1fd471ba2011b3a409c107a7032529abc9f4c3456da0cd74ac7b249086440bb2daab'
+      LOGOUT_URL: 'https://api-staging.andela.com/logout?redirect_url='
+      POSTGRES_USER: 'circleci'
+      POSTGRES_PASSWORD: ''
+      POSTGRES_HOST: 'localhost'
+      POSTGRES_DB: 'circlecidb'
+      POSTGRES_TEST_DB: 'circlecidb'
+      SECRET_KEY_BASE: '6304b0850bfc07ecdc9337090e24fe9efa29ffecad3ecb174a87ee9ab767f7e32efbe82ba92afb1122e7d2bec6c8a091631d53979082232fbaf8f9ea0dda3b1a'
+      TEST_URL: "https://api-staging.andela.com/logout?redirect_url=http://test.host:80/login"
+      EOF
+cmd_wait_for_postgres: &cmd_wait_for_postgres
+  run:
+    name: Waiting for Postgres to be ready
+    command: |
+      dockerize -wait tcp://localhost:5432 -timeout 1m
+cmd_download_cc_test_reporter: &cmd_download_cc_test_reporter
+  run:
+    name:  Download cc-test-reporter
+    command: |
+      mkdir -p tmp/
+      curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /tmp/cc-test-reporter
+      chmod +x /tmp/cc-test-reporter
+cmd_notify_test_pass: &cmd_notify_test_pass
+  run:
+    name: Notify after Tests Finish Running (passing)
+    command: |
+      export TESTS_STATUS="passing" &&
+      source .circleci/ENV_VARS.sh &&
+      ruby .circleci/ci_test_status.rb &&
+      curl -X POST --data-urlencode \
+      "payload=$(cat .circleci/ci_test_status_report.json)" \
+      "${SLACK_NOTIFICATIONS_CHANNEL_HOOK}"
+cmd_notify_test_fail: &cmd_notify_test_fail
+  run:
+    name: Notify after Tests Finish Running (failing)
+    command: |
+      echo "fail" > tmp/test_status &&
+      export TESTS_STATUS="failing" &&
+      source .circleci/ENV_VARS.sh &&
+      ruby .circleci/ci_test_status.rb &&
+      curl -X POST --data-urlencode \
+      "payload=$(cat .circleci/ci_test_status_report.json)" \
+      "${SLACK_NOTIFICATIONS_CHANNEL_HOOK}"
+    when: on_fail
+
+cmd_attach_workspace: &cmd_attach_workspace
+  attach_workspace:
+    at: tmp/
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - *cmd_restore_cache
+      - *cmd_install_dependancies
+      - *cmd_save_cache
+      - *cmd_wait_for_postgres
+      - run:
+          name: Set up DB
+          command: |
+            bundle exec rake db:create db:schema:load --trace
+            bundle exec rake db:migrate
+          environment:
+            DATABASE_URL: "postgres://circleci@localhost:5432/circlecidb"
+      - run:
+          name: Create build test status file
+          command: |
+            touch tmp/test_status && echo "pass" > tmp/test_status
+            echo ${SERVICE_ACCOUNT} > account.json
+            gcloud auth activate-service-account --key-file=account.json
+            gsutil cp tmp/test_status gs://${GCLOUD_VOF_BUCKET}/circleci/${CIRCLE_SHA1}/test_status
+  test_non_features:
+    <<: *defaults
+    steps:
+      - checkout
+      - *cmd_restore_cache
+      - *cmd_install_dependancies
+      - *cmd_save_cache
+      - *cmd_generate_app_yml
+      - *cmd_wait_for_postgres
+      - *cmd_download_cc_test_reporter
+      - run:
+          name: run tests
+          command: |
+            bundle exec rspec --exclude-pattern "spec/features/*_spec.rb" spec
+      - run:
+          name: format coverage
+          command: |
+            /tmp/cc-test-reporter format-coverage -t simplecov -o tmp/codeclimate.non-features.json coverage/non-features/.resultset.json
+      - persist_to_workspace:
+          root: tmp/
+          paths:
+            - codeclimate.non-features.json
+      - *cmd_notify_test_fail
+
+  test_features_1:
+    <<: *defaults
+    steps:
+      - checkout
+      - *cmd_restore_cache
+      - *cmd_install_dependancies
+      - *cmd_save_cache
+      - *cmd_generate_app_yml
+      - *cmd_wait_for_postgres
+      - *cmd_download_cc_test_reporter
+      - run:
+          name: run tests
+          command: |
+            files=$(.circleci/split_features.sh 0)
+            echo "Testing: ${files}"
+            bundle exec rspec $files
+      - run:
+          name: format coverage
+          command: |
+            /tmp/cc-test-reporter format-coverage -t simplecov -o tmp/codeclimate.test-features-1.json coverage/test-features-1/.resultset.json
+      - persist_to_workspace:
+          root: tmp/
+          paths:
+            - codeclimate.test-features-1.json
+
+  test_features_2:
+    <<: *defaults
+    steps:
+      - checkout
+      - *cmd_restore_cache
+      - *cmd_install_dependancies
+      - *cmd_save_cache
+      - *cmd_generate_app_yml
+      - *cmd_wait_for_postgres
+      - *cmd_download_cc_test_reporter
+      - run:
+          name: run tests
+          command: |
+            files=$(.circleci/split_features.sh 1)
+            echo "Testing: ${files}"
+            bundle exec rspec $(.circleci/split_features.sh 1)
+      - run:
+          name: format coverage
+          command: |
+            /tmp/cc-test-reporter format-coverage -t simplecov -o tmp/codeclimate.test-features-2.json coverage/test-features-2/.resultset.json
+      - persist_to_workspace:
+          root: tmp/
+          paths:
+            - codeclimate.test-features-2.json
+
+  test_features_3:
+    <<: *defaults
+    steps:
+      - checkout
+      - *cmd_restore_cache
+      - *cmd_install_dependancies
+      - *cmd_save_cache
+      - *cmd_generate_app_yml
+      - *cmd_wait_for_postgres
+      - *cmd_download_cc_test_reporter
+      - run:
+          name: run tests
+          command: |
+            files=$(.circleci/split_features.sh 2)
+            echo "Testing: ${files}"
+            bundle exec rspec $(.circleci/split_features.sh 2)
+      - run:
+          name: format coverage
+          command: |
+            /tmp/cc-test-reporter format-coverage -t simplecov -o tmp/codeclimate.test-features-3.json coverage/test-features-3/.resultset.json
+      - persist_to_workspace:
+          root: tmp/
+          paths:
+            - codeclimate.test-features-3.json
+
+  test_features_4:
+    <<: *defaults
+    steps:
+      - checkout
+      - *cmd_restore_cache
+      - *cmd_install_dependancies
+      - *cmd_save_cache
+      - *cmd_generate_app_yml
+      - *cmd_wait_for_postgres
+      - *cmd_download_cc_test_reporter
+      - run:
+          name: run tests
+          command: |
+            files=$(.circleci/split_features.sh 3)
+            echo "Testing: ${files}"
+            bundle exec rspec $(.circleci/split_features.sh 3)
+      - run:
+          name: format coverage
+          command: |
+            /tmp/cc-test-reporter format-coverage -t simplecov -o tmp/codeclimate.test-features-4.json coverage/test-features-4/.resultset.json
+      - persist_to_workspace:
+          root: tmp/
+          paths:
+            - codeclimate.test-features-4.json
+  upload-coverage:
+    <<: *defaults
+    steps:
+      - checkout
+      - *cmd_download_cc_test_reporter
+      - *cmd_attach_workspace
+      - run:
+          name: Upload coverage results to Code Climate
+          command: |
+            /tmp/cc-test-reporter sum-coverage -p 5 -o /tmp/codeclimate.total.json tmp/codeclimate.*.json
+            /tmp/cc-test-reporter upload-coverage -i /tmp/codeclimate.total.json
+            sed -n -e 24p /tmp/codeclimate.total.json
+      - *cmd_notify_test_pass
+
+  bake_image:
+      <<: *defaults
+      steps:
+        - checkout
+        - run:
+            name: bake image
+            command: |
+                  if [[ "${CIRCLE_BRANCH}" == "develop" ||  "${CIRCLE_BRANCH}" == "master" ]]; then
+                    bash .circleci/bake.sh
+                  fi
+        - persist_to_workspace:
+            root: workspace
+            paths:
+              - output
+
+  bake_image_sandbox:
+      <<: *defaults
+      steps:
+        - checkout
+        - run:
+            name: bake image
+            command: |
+                  if [[ "${CIRCLE_BRANCH}" =~ "sandbox" ]]; then
+                    bash .circleci/bake.sh
+                  fi
+        - persist_to_workspace:
+            root: workspace
+            paths:
+              - output
+
+  release_to_sandbox:
+    <<: *release_defaults
+    steps:
+      - run: exit 0
+
+  release_to_staging:
+    <<: *release_defaults
+    steps:
+      - run: exit 0
+
+  release_to_production:
+    <<: *release_defaults
+    steps:
+      - run: exit 0
+
+  destroy_sandbox:
+    <<: *release_defaults
+    steps:
+      - run: exit 0
+
+  sandbox_destroying:
+    <<: *defaults
+    steps:
+      - checkout
+      - deploy:
+          name: Destroy service
+          command: |
+            if [[ "${CIRCLE_BRANCH}" =~ "sandbox" ]]; then
+              bash .circleci/destroy.sh
+            fi
+  deploy_sandbox:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/vof/workspace
+      - deploy:
+          name: Deploy service
+          command: |
+            if [[ "${CIRCLE_BRANCH}" != "master" || "${CIRCLE_BRANCH}" != "develop" ]]; then
+              bash .circleci/deploy.sh
+            fi
+  deploy_staging:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/vof/workspace
+      - deploy:
+          name: Deploy service
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+              bash .circleci/deploy.sh
+            fi
+  deploy_production:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/vof/workspace
+      - deploy:
+          name: Deploy service
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              bash .circleci/deploy.sh
+            fi
+workflows:
+  version: 2
+  build_test_and_deployment:
+    jobs:
+      - build
+      - test_non_features:
+          requires:
+            - build
+      - test_features_1:
+          requires:
+            - build
+      - test_features_2:
+          requires:
+            - build
+      - test_features_3:
+          requires:
+            - build
+      - test_features_4:
+          requires:
+            - build
+      - upload-coverage:
+          requires:
+            - test_non_features
+            - test_features_1
+            - test_features_2
+            - test_features_3
+            - test_features_4
+
+      - bake_image:
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+            tags:
+              only:
+                - /v[0-9]+(\.[0-9]+)*/
+      - bake_image_sandbox:
+          filters:
+            branches:
+              only:
+                - /^(.*?(\bsandbox\b)[^$]*)$/
+      - release_to_sandbox:
+          type: approval
+          requires:
+            - bake_image_sandbox
+          filters:
+            branches:
+              only: /^(.*?(\bsandbox\b)[^$]*)$/
+      - deploy_sandbox:
+          requires:
+            - release_to_sandbox
+          filters:
+            branches:
+              only: /^(.*?(\bsandbox\b)[^$]*)$/
+      - destroy_sandbox:
+          type: approval
+          requires:
+            - deploy_sandbox
+          filters:
+            branches:
+              only: /^(.*?(\bsandbox\b)[^$]*)$/
+      - sandbox_destroying:
+          requires:
+            - destroy_sandbox
+          filters:
+            branches:
+              only: /^(.*?(\bsandbox\b)[^$]*)$/
+      - release_to_staging:
+          requires:
+            - upload-coverage
+            - bake_image
+          filters:
+            branches:
+              only: develop
+            tags:
+              only:
+                - /v[0-9]+(\.[0-9]+)*/
+      - deploy_staging:
+          requires:
+            - release_to_staging
+          filters:
+            branches:
+              only: develop
+            tags:
+              only:
+                - /v[0-9]+(\.[0-9]+)*/
+
+      - release_to_production:
+          requires:
+            - bake_image
+            - upload-coverage
+          filters:
+            branches:
+              only: master
+            tags:
+              only:
+                - /v[0-9]+(\.[0-9]+)*/
+
+      - deploy_production:
+          requires:
+            - release_to_production
+          filters:
+            branches:
+              only: master
+            tags:
+              only:
+                - /v[0-9]+(\.[0-9]+)*/

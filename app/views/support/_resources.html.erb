@@ -1,0 +1,18 @@
+<% unless @resources.nil? %>
+  <% @resources.each do |resource| %>
+    <div class="resource-card">
+      <span class="resource-title">
+        <%= resource['title'] %>
+      </span>
+      <ul class="resource-details">
+        <% resource['links'].each do |link| %>
+          <li class="resource-link">
+            <a href="<%= link['url'] %>" target="_blank">
+              <%= link['value'] %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

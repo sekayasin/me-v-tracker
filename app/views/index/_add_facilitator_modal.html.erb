@@ -1,0 +1,121 @@
+<div id="add-facilitator-modal">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="modal-header">
+        <span class="close-button close-modal"></span>
+      </div>
+    </div>
+    <div class="modal-content">
+      <%= form_tag "#", id: "add_facilitator_form", method: "post", multipart: true do %>
+        <div class="tab first-tab" >
+          <div class="tab-content-header">
+            <div class="step-header select-country">
+              Select Country
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+          <div class="tab-content-body">
+            <input type="hidden" name="country" id="facilitator-country" required/>
+            <div class="country-wrapper">
+              <div id="facilitator-Kenya" class="facilitator-country">
+              </div>
+              <p class="country-name">Kenya</p>
+            </div>
+            <div class="country-wrapper">
+              <div id="facilitator-Nigeria" class="facilitator-country">
+              </div>
+              <p class="country-name">Nigeria</p>
+            </div>
+            <div class="country-wrapper">
+              <div id="facilitator-Rwanda" class="facilitator-country">
+              </div>
+              <p class="country-name">Rwanda</p>
+            </div>
+            <div class="country-wrapper">
+              <div id="facilitator-Uganda" class="facilitator-country">
+              </div>
+              <p class="country-name">Uganda</p>
+            </div>
+          </div>
+        </div>
+        <div class="tab second-tab">
+          <div class="tab-content-header">
+            <div class="step-header upload-learner-details">
+              LFA Details
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+          <div id="facilitator-detail-fields" class="tab-content-body">
+            <div class="detail-form-row">
+              <div class="add-facilitator-detail-wrapper lfa-email-wrapper">
+                <div class="add-facilitator-detail-input" id="fac-email">
+                  <label class="add-facilitator-detail-label"for="input_email">LFA Email </label>
+                  </br>
+                  <%= text_field_tag("input_fac_email", nil, {class: "enter-lfa-email", type: "text"}) %>
+                  <p id="input_fac_email_error" class="active-error fac-active-error"></p>
+                </div>
+              </div>
+              <div class="add-facilitator-detail-wrapper">
+                <div class="add-facilitator-detail-dropdown" id="fac-city">
+                  <label class="add-facilitator-detail-label"for="select_city">Select City </label>
+                  </br>
+                  <%= select_tag("select_fac_city", options_for_select([]), :include_blank => 'Select City', :id => "select_fac_city", :class => "select-detail", :required => true) %>
+                  <p id="select_fac_city_error" class="active-error fac-active-error"></p>
+                </div>
+              </div>
+              <div class="add-facilitator-detail-wrapper">
+                <div class="add-facilitator-detail-dropdown" id="fac-week">
+                  <label class="add-facilitator-detail-label" for="select_week">Select Week</label>
+                  </br>
+                  <%= select_tag("select_week", options_for_select(['Week 1', 'Week 2']), :include_blank => 'Select Week', :id => "select_week", :class => "select-detail", :required => true) %>
+                  <p id="select_week_error" class="active-error fac-active-error"></p>
+                </div>
+              </div>
+              <div class="add-facilitator-detail-wrapper add-facilitator-learners-wrapper">
+                <div class="add-facilitator-detail-input" id="fac-learners">
+                  <p class="add-facilitator-detail-label">Select Learners </p>
+                  <div id="learner-name-tags" class="learners-tags"></div>
+                  <%= text_field_tag("learner_name", nil, {
+                    placeholder: 'Select learners...',
+                    class: 'learners-names',
+                    type: "text", disabled: true
+                  }) %>
+                  <p id="learner_name_error" class="active-error fac-active-error"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab last-tab">
+          <div class="tab-content-body success-fields">
+            <div class="success-check">
+              <i class="icon material-icons">check</i>
+            </div>
+            <h4>Facilitator added successfully.</h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="modal-bottom">
+      <div class="add-facilitator-wrapper">
+        <button class="modal-nav-button" type="button" id="left_btn_facilitator">
+          <span class="ic-prev-arrow"></span>&nbsp; Back
+        </button>
+        <div id="steps-indicator" class="steps-indicator">
+          <span class="step active"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+        <button class="modal-nav-button" type="button" id="right_btn_facilitator">
+          Next&nbsp; <span class="ic-next-arrow"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

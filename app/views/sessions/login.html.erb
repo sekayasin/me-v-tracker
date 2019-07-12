@@ -1,0 +1,41 @@
+
+<div class="mdl-grid">
+  <section class="mdl-cell mdl-cell--4-col login-section">
+    <div class="login-container">
+      <div class="brand-logo"></div>
+      <div class="welcome-text-wrapper">
+          Welcome to VOF <br>
+          Please sign in with your <br>
+          Google account to proceed
+      </div>
+      <div class="content">
+        <div class="flash-message">
+          <% if flash[:notice] == 'unauthorized'%>
+            <%= content_tag :span, 'Unauthorized ¯¯\_(ツ)_/¯¯', class: "notice", id: "puffly" %>
+          <% end %>
+          <% if flash[:notice] == 'unauthenticated'%>
+            <%= content_tag :span, 'Login to view dashboard', class: "notice", id: "puffly" %>
+          <% end %>
+        </div>
+          <%= link_to image_tag("button.svg", :class => "login-btn"), @oauth_url %>
+      </div>
+      <div class="or-divider">
+        <span class="or-text">or</span>
+      </div>
+      <div id="login">
+        <form action="javascript:void(0);" method="get" id="learner-login-form">
+          <fieldset>
+            <label class="grey-text">Email address</label>
+            <p><input id="learners_email" name="learners_email" type="email" required></p>
+            <label class="grey-text">Password</label>
+            <input id="learners_password" name="learners_password" type="password" required>
+            <div class="right"><a class="forgot-password" href="<%= @forgot_url %>">Forgot Password?</a></div>
+            <%= hidden_field_tag "api_url", @login_url, { id: "api_url" } %>
+            <p><input type="submit" value="Login" id="login-learner"></p>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+  <%= render("shared/slider")%>
+</div>

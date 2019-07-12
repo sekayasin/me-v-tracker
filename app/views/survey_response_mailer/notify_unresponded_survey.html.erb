@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+      .survey-response-container {
+        display: flex;
+        background: #f0efef;
+        height: 100vh;
+      }
+      .survey-response-email-card {
+        width: 40%;
+        background: white;
+        padding: 25px;
+        height: 60vh;
+        margin: 20px auto;
+      }
+      .survey-response-title {
+        background: #205be2;
+        padding: 5px 20px;
+      }
+      .survey-response-title {
+        background: #205be2;
+        padding: 5px 20px;
+      }
+      .survey-response-vof-team {
+        margin-top: 40px;
+      }
+      h1 {
+        color: white;
+        font-size: 27px;
+      }
+      p, h5 {
+        font-size: 19px;
+        font-weight: normal;
+      }
+      h3 {
+        font-size: 21px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="survey-response-container">
+      <div class="survey-response-email-card">
+        <div class="survey-response-title">
+          <h1 class="survery-response-notification">Survey Notification</h1>
+        </div>
+        <div class="survey-response-content">
+          <h3>Pending Survey Response</h3>
+          <h5 class="receipent-name">Hi <%= @bootcamper.first_name %>,</h5>
+          <p class="survey-response-text">
+            You are yet to respond to
+            <a href="https://www.vof.andela.com/surveys-v2/respond/<%= @survey.id %>"> <%= @survey.title %></a>
+          </p>
+          <p>
+            Kindly follow this <a href="https://www.vof.andela.com/surveys-v2/respond/<%= @survey.id %>"> link</a>
+            to respond as you have less than 24hours before
+            end date.
+          </p>
+          <p>
+            Good luck!
+          </p>
+          <p class="survey-response-vof-team">
+            The VOF Team
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

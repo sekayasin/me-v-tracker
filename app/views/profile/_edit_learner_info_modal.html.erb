@@ -1,0 +1,62 @@
+<div id="edit-learner-bio-info-modal" class="edit-learner-bio-info-modal">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="edit-header">
+        <div class="modal-header">
+          <span class="close-button"></span>
+          <div class="edit-learner-header">
+            <span class="account-circle"></span>
+            <div class="learner-name">
+              <%= @learner_details[:learner].bootcamper.first_name %> <%= @learner_details[:learner].bootcamper.last_name %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-content learner-bio">
+      <div class="learner-info">
+        <div id="learner-email">
+          <label for="email">Email</label>
+          <input type="text" class="learner-email" value="<%= @learner_details[:learner].bootcamper.email %>"/>
+        </div>
+        <div id="learner-mobile">
+          <label for="mobile">Mobile Number</label>
+          <input type="text" class="learner-mobile" value="<%= @learner_details[:learner].bootcamper.phone_number %>" disabled/>
+        </div>
+      </div>
+      <div class="learner-region">
+        <div class="learner-location">
+          <label for="location">Location</label>
+          <select class="learner-country-dropdown learner-country" id="select-dropdown" disabled>
+            <% @countries.each do |country| %>
+              <option value=<%= country.strip %>
+                <%= confirm_selected(
+                      @learner_details[:learner].cycle_center.cycle_center_details[:country].strip, country.strip
+                  ) %>><%= country.strip %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="learner-city">
+          <label for="location">City</label>
+          <select class="learner-city-dropdown city" id="select-dropdown" disabled>
+          </select>
+        </div>
+      </div>
+      <div class="learner-gender">
+        <label for="location">Sex</label>
+        <select class="learner-gender-dropdown gender" id="select-dropdown">
+          <option value="Male" <%= confirm_selected(@learner_details[:learner].bootcamper.gender, "Male") %>>Male<option>
+          <option value="Female" <%= confirm_selected(@learner_details[:learner].bootcamper.gender, "Female") %>>Female<option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-bottom">
+      <div class="edit-learner-footer">
+        <div class="btn-wrapper edit-learner-btn-wrapper">
+          <a class="cancel-learner-info cancel-btn">Cancel</a>
+          <a class='save-learner-info btn-submit'>Save</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

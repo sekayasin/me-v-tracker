@@ -1,0 +1,45 @@
+<div>
+  <div id="holistic-performance-history" class="holistic-evaluation-history">
+    <div class="modal">
+      <div class="modal-top">
+        <div class="modal-header">
+          <span class="close-button close-holistic-modal"></span>
+            <div class="top-section holistic-evaluation-top-header">
+              <div class="holistic-evaluation-header">
+                  Holistic Evaluation
+              </div>
+              <div class="line">
+                <span class="long"></span>
+                <span class="short"></span>
+              </div>
+              <% unless user_is_lfa_or_admin?(params[:id])%>
+                <div class="unauthorized-notice">
+                  <div class="yellow-oval"></div>
+                  <div class="user-notice">You are not authorised to update the scores for this learner</div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div id="holistic-history-modal-content" class="accordion modal-content">
+          </div>
+
+      </div>
+    </div>
+    <div class ="modal-bottom" id="holistic-perfomance-history-modal-bottom">
+      <div class="holistic-performance-close-text">
+        <div class="btn-wrapper close-text">
+        </div>
+      </div>
+      <div class="holistic-performance-export">
+        <div class= "btn-wrapper">
+          <% if admin? %>
+            <a class="export-btn scores-history-export-btn">
+                Export <%= image_tag("download-icon.svg", class: 'export-icon') %>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

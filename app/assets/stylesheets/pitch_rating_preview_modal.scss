@@ -1,0 +1,95 @@
+@import 'base';
+
+#rating-preview-modal {
+    display: none;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+
+    .rating-preview-modal-content {
+      font-family: DINPro-Light;
+      font-size: 1rem;
+      overflow: visible;
+      text-align: center;
+      border-radius: px-to-rem(10px) !important;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: px-to-rem(40px) !important;
+      pointer-events: auto;
+      background-clip: padding-box;
+    }
+
+    .rating-preview {
+        padding: px-to-rem(5px) !important;
+    }
+
+    .rating-value {
+        font-weight: bolder !important;
+        font-size: px-to-rem(18.56px);
+    }
+
+    .comment-value {
+        font-weight: bolder !important;
+        padding-left: px-to-rem(40px);
+        padding-right: px-to-rem(40px);
+        display: block;
+        min-height: px-to-rem(10px);
+        max-height: px-to-rem(100px);
+        overflow: scroll;
+    }
+
+    .comment-rating {
+        text-align: center;
+        margin-top: px-to-rem(15px);
+    }
+
+    .soft-warning {
+        color: tomato;
+    }
+
+    table {
+        margin-inline-start: unset;
+        margin-inline-end: unset;
+        margin: auto;
+        width: 80%;
+    }
+
+    .preview_heading {
+        height: px-to-rem(26px);
+        width: px-to-rem(237px);
+        padding: px-to-rem(10px);
+        color: #3359db;
+        font-family: DINPro-Regular;
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: 0.05rem;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+    }
+
+  .preview_learner_name {
+    text-decoration: underline;
+    margin-top: px-to-rem(10px);
+  }
+
+    .continue-submission-btn {
+        height: px-to-rem(35px);
+        width: px-to-rem(136px);
+        margin: auto;
+        font-family: DINPro-Regular;
+        background-color: #10a36d;
+        color: $background-white;
+        text-align: center;
+        border-radius: px-to-rem(6px);
+        padding-top: px-to-rem(4px);
+        cursor: pointer;
+
+        &.disabled {
+          color: black;
+          background-color: $background-grey;
+        }
+      }
+
+}

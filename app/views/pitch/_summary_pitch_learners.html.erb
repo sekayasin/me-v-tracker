@@ -1,0 +1,34 @@
+<div class="mdl-tabs__panel summary-tab" id="summary-panel">
+    <% if @avg_ratings[:paginated_data].length == 0 %>
+      <h2 class='center-blank-state-text no-data-summary'>No data to show :(</h2>
+    <% else %>
+      <p class="invite-report">A pitch summary of learners that have been graded</p>
+      <div id="summary-pitch-grid">
+          <div class="mdl-cell mdl-cell--12-col learners-table">
+              <div class="bootcamper-data">
+                <div class="pane-hScroll scrollable summary-panel-vScroll">
+                  <table class="mdl-data-table mdl-js-data-table campers-data-table summary-table">
+                    <thead class="pitch-summary-table-head">
+                      <tr class="tr_first">
+                        <th class="td-summary-table">Learner</th>
+                        <th class="td-summary-table">UI/UX</th>
+                        <th class="td-summary-table">API Functionality</th>
+                        <th class="td-summary-table">Error Handling</th>
+                        <th class="td-summary-table">Project Understanding</th>
+                        <th class="td-summary-table">Presentational Skills</th>
+                        <th class="td-summary-table">Cumulative Average</th>
+                      </tr>
+                    </thead>
+                    <tbody class="pitch-summary-table-body" id="pitch-summary-data">
+                    </tbody>
+                  </table>
+              </div>
+              </div>
+          </div>
+          <div class="btn-wrapper">
+              <div class="pagination-control summary-page-pagination">
+              </div>
+          </div>
+      </div>
+    <%end %>
+</div>

@@ -1,0 +1,66 @@
+<div id="create-program-modal">
+  <div class="modal-top">
+    <div class="modal-header">
+      <span class="close-button"></span>
+      <div class="top-section">
+        <h5 class="header-text">Add Program</h5>
+        <div class="line">
+          <span class="long"></span>
+          <span class="short"></span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-content">
+      <form id="create-program-form">
+        <div class="program-details-header">
+          <div class="program-name-wrapper">
+            <label for="program-name">Program Name<span class="required-field">&#42;</span></label>
+            <input name="program_name" type="text" autocomplete="off">
+            <p id="program_name-error" class="program-error"></p>
+          </div>
+          <div class="clone-program">
+            <label for="clone-program">Clone Program [optional]</label>
+            <select name="clone_program" id="clone-program-dropdown" class="clone-program-dropdown">
+              <option value="" selected>Select Program</option>
+              <% program_options.each do |program|%>
+                <option value= "<%= program[1] %>"><%= program[0] %></option>
+              <% end %>
+            </select>
+          </div>
+        </div>
+        <div class="program-description">
+          <label for="program-description">Description<span class="required-field">&#42;</span></label>
+          <textarea name="program_description" class="description-textarea" placeholder="Start Typing..."></textarea>
+          <p id="program_description-error" class="program-error"></p>
+        </div>
+        <div class="program-phase">
+          <label for="program-phase">Phase [ordered start to finish]<span class="required-field">&#42;</span></label>
+          <input name="program_phase" placeholder="Start Typing and separate phases by hitting 'Enter'" autocomplete="off">
+          <p id="program_phase-error" class="program-error"></p>
+          <div class="program-phases-tags"></div>
+        </div>
+        <div class="holistic-evaluation-option">
+          <div class="holistic-evaluation-checkbox">
+            <label for="holistic-evaluation-status">Holistic Evaluation</label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="holistic-evaluation">
+              <input name="holistic-evaluation" type="checkbox" id="holistic-evaluation" class="mdl-checkbox__input">
+              <span class="mdl-checkbox__label">Include Holistic Evaluation</span>
+            </label>
+          </div>
+          <div class="program-cadence">
+            <select name="select_cadence" id="cadence-dropdown" class="cadence-dropdown">
+              <option value="" disabled selected>Select Cadence</option>
+            </select>
+            <p id="select_cadence-error" class="program-error"></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-bottom">
+    <div class="btn-wrapper">
+      <button class="cancel-button">Cancel</button>
+      <button class="save-program-button">Save</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,517 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "base";
+@import "partials/cycle_center_metrics";
+@import "partials/program_metrics";
+@import "partials/program_feedback";
+
+.dashboard-page {
+  .main-section {
+    position: unset;
+
+    .switching-tabs {
+      margin-left: 1%;
+      margin-bottom: 7.5%;
+
+      .export-div {
+        width: px-to-rem(159px);
+        flex-grow: 2;
+        text-align: right;
+    
+        .export-container {
+          position: relative;
+          display: inline-block;
+          width: px-to-rem(159px )!important;
+    
+          .export-div-text {
+            height: px-to-rem(50px);
+            width: px-to-rem(150px);
+            border: px-to-rem(1px) solid $background-blue;
+            border-radius: px-to-rem(4px);
+            background-color: $background-white;
+            float: right;
+            cursor: pointer;
+    
+          .export-btn-style {
+            color: $background-blue;
+          }
+    
+          .text-icon {
+            height: px-to-rem(26px);
+            width: px-to-rem(109px);
+            background-color: $background-white;
+            color: $background-blue;
+            font-size: 1.125rem;
+            font-family: DINPro-Regular;
+            font-weight: 500;
+            margin: px-to-rem(12px) px-to-rem(20px) px-to-rem(12px) px-to-rem(21px);
+            text-decoration: none;
+    
+            >span:first-child {
+              height: px-to-rem(26px);
+              width: px-to-rem(59px);
+              color: $background-blue;
+              font-size: px-to-rem(20px);
+              line-height: px-to-rem(26px);
+            }
+          }
+          .export-icon {
+            height: px-to-rem(26px);
+            width: px-to-rem(30px);
+            margin-top: px-to-rem(-10px);
+          }
+        }
+    
+          .mdl-menu__container.is-visible {
+            left: px-to-rem(15px) !important;
+            z-index: 1 !important;
+          }
+          .export-parent-dropdown {
+            width: px-to-rem(159px) !important;
+            padding: 0 px-to-rem(12px);
+            box-sizing: border-box;
+            overflow: hidden;
+            margin-left: px-to-rem(20px);
+            height: px-to-rem(114px) !important;
+    
+            .export-options-dropdown {
+              height: px-to-rem(114px);
+              width: px-to-rem(155px);
+              padding-left: px-to-rem(5px);
+              margin-left: px-to-rem(-18px);
+              font-family: DINPro-Light;
+              li {
+                padding: px-to-rem(5px) 0;
+                cursor: pointer;
+                list-style-type: none;
+                width: px-to-rem(45px);
+                color: $analytics-export-list-charcoal;
+                font-size: px-to-rem(14px);
+                line-height: px-to-rem(18px);
+    
+                &:hover {
+                  color: $background-blue;
+                }
+              }
+            }
+    
+          }
+    
+        }
+      }
+
+      @media only screen and (max-width: px-to-rem(480px)) {
+        margin-left: 4%;
+      }
+
+      @media only screen and (min-width: px-to-rem(500px)) and (max-width: px-to-rem(1440px)) {
+        margin-bottom: px-to-rem(30px);
+        height: auto;
+      }
+
+      a.mdl-tabs__tab {
+        font-size: px-to-rem(18px);
+        font-weight: 500;
+        min-width: px-to-rem(250px);
+
+        b {
+          margin-bottom: px-to-rem(24px)
+        }
+
+        @media only screen and (min-width: px-to-rem(500px)) and (max-width: px-to-rem(582px)) {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          padding: 0 px-to-rem(12px);
+        }
+
+        @media only screen and (min-width: px-to-rem(1440px)) {
+          max-width: px-to-rem(250px);
+        }
+      }
+    }
+  }
+
+  .switching-tabs .mdl-tabs__tab {
+    height: px-to-rem(114px) !important;
+  }
+
+  .mdl-cell.chart-cell {
+    padding: px-to-rem(20px) px-to-rem(16px) !important;
+  }
+  .date-select {
+    padding-left: px-to-rem(15px) !important;
+    padding-bottom: px-to-rem(15px) !important;
+
+    span {
+      display: inline-block;
+    }
+
+    label {
+      color: $light-grey;
+      font-family: $font-family-light;
+    }
+
+    input {
+      width: px-to-rem(100px) !important;
+      height: px-to-rem(35px);
+      padding-left: px-to-rem(13px);
+      padding-right: px-to-rem(13px);
+      border: px-to-rem(1px) solid $select-color;
+      font-family: $font-family-light;
+      color: $faded-grey;
+      font-size: 1rem;
+      outline: none;
+      background: none;
+    }
+
+    .select-start-date {
+      border-top-left-radius: px-to-rem(4px);
+      border-bottom-left-radius: px-to-rem(4px);
+      border-right: px-to-rem(1px);
+    }
+
+    .select-end-date {
+      margin-left: px-to-rem(-6px);
+      border-right: px-to-rem(1px);
+    }
+
+    .calendar-icon {
+      display: inline-block;
+      align-items: baseline;
+      vertical-align: bottom;
+    }
+
+    .icon {
+      height: px-to-rem(39px);
+      width: px-to-rem(39px);
+      border: px-to-rem(1px) solid $select-color;
+      border-top-right-radius: px-to-rem(4px);
+      border-bottom-right-radius: px-to-rem(4px);
+      margin-left: px-to-rem(-5px);
+      vertical-align: bottom;
+      box-sizing: border-box;
+      line-height: px-to-rem(37px);
+      background-size: contain;
+      background-image: image-url("calendar.png");
+    }
+  }
+
+  .mdl-card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: px-to-rem(6px);
+    box-shadow: 0 0 px-to-rem(5px) 0 rgba(0, 0, 0, 0.03);
+    overflow: visible;
+  }
+
+  .pie-chart {
+    padding-bottom: 0;
+  }
+
+  .chart-content {
+    padding-top: px-to-rem(57px) !important;
+
+    @media only screen and (min-width: px-to-rem(900px)) and (max-width: px-to-rem(1235px)) {
+      transform: translateY(px-to-rem(-17px));
+
+      &.gender {
+        transform: translate(8%, px-to-rem(-17px));
+      }
+    }
+
+    @media only screen and (max-width: px-to-rem(600px)) {
+      transform: translateY(px-to-rem(-17px));
+    }
+
+    @media only screen and (max-width: px-to-rem(400px)) {
+      &.gender {
+        transform: translate(8%, px-to-rem(-17px));
+      }
+    }
+  }
+
+  .card-content {
+    width: 100%;
+
+    canvas {
+      margin-top: px-to-rem(30px);
+      margin-bottom: px-to-rem(30px);
+    }
+
+    .mdl-cell {
+      padding: 0 !important;
+      text-align: center;
+      position: relative;
+    }
+
+    .mdl--cell--4nn-col {
+      width: 33.3% !important;
+    }
+  }
+
+  .card-title {
+    background-color: #ffffff;
+    box-shadow: 0 px-to-rem(4px) px-to-rem(5px) 0 rgba(0, 0, 0, 0.03);
+    padding: px-to-rem(24px) px-to-rem(40px) px-to-rem(20px);
+    border-radius: px-to-rem(6px) px-to-rem(6px) 0 0;
+    width: calc(100% - 80px);
+    display: block;
+    font-size: 1.125rem;
+    overflow: hidden;
+    color: #303030;
+
+    .title-icon {
+      display:inline-block;
+      margin: 0 0 0 px-to-rem(10px);
+      cursor: pointer;
+      outline: none;
+
+      i {
+        color: #888;
+        font-size: px-to-rem(21px)
+      }
+    }
+
+    .title-caption{
+      font-family: $font-family-light;
+      float: right;
+      font-size: 1rem;
+      position: relative;
+      text-align: right;
+    }
+
+    .top-legend-container{
+      display:inline-block;
+
+      .legend {
+        display: inline-block;
+        margin-right: px-to-rem(24px);
+
+        .circle {
+          display:inline-block;
+          height: px-to-rem(15px);
+          width: px-to-rem(15px);
+          border-radius: 50%;
+          background: #ff0000;
+          margin: 0 px-to-rem(10px) 0 0;
+        }
+
+        .text {
+          font-family: $font-family-light;
+          font-size: 1.1rem;
+        }
+
+        .circle-color-A {
+          background: #ffaf30;
+        }
+
+        .circle-color-B {
+          background: #3459db;
+        }
+      }
+    }
+
+    @media only screen and (max-width: px-to-rem(513px)) {
+      .title-caption {
+        display: block;
+        float: left !important;
+        clear: both !important;
+        margin-top: px-to-rem(15px);
+      }
+      .top-legend-container{
+        display: block;
+        float: left !important;
+        clear: both !important;
+        margin-top: px-to-rem(20px);
+      }
+    }
+
+    @media only screen and (max-width: px-to-rem(352px)) {
+      padding-left: px-to-rem(20px);
+      padding-right: px-to-rem(20px);
+      width: calc(100% - 40px)
+    }
+  }
+
+  .piechart-wrapper {
+    display: block;
+    width: 95%;
+    max-width: px-to-rem(340px);
+    height: px-to-rem(270px);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    .canvas-wrapper {
+      display: inline-block;
+      width: 55%;
+      max-width: 45%;
+      height: 100%;
+      overflow: hidden;
+
+      canvas {
+        display: block;
+        margin: 2.8rem auto 0;
+        min-height: 8.125rem !important;
+        min-width: 10.125rem !important;
+      }
+    }
+
+    .legends-wrapper {
+      display: inline-block;
+      width: 40%;
+      max-width: 46%;
+      height: 100%;
+      overflow:hidden;
+
+      .legends-container {
+        display: block;
+        width: 100%;
+        margin:0 auto;
+
+        .legend {
+          display: block;
+          width: 100%;
+          margin: 0 auto px-to-rem(8px);
+
+          .legend-circle {
+            display: inline-block;
+            height: px-to-rem(20px);
+            width: px-to-rem(20px);
+            border-radius: 50%;
+            margin: px-to-rem(2px) px-to-rem(10px) 0 0;
+          }
+
+          .legend-text {
+            font-family: $font-family-light;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .mdl-data-table {
+    width: 100%;
+    border: unset;
+
+    td {
+      border: unset;
+    }
+  }
+
+  canvas {
+    width: 100%;
+  }
+
+  table {
+    white-space: unset;
+  }
+
+  .label {
+    font-size: px-to-rem(12px);
+    font-family: 'DINPro-Light';
+    line-height: 1.2;
+    line-break: auto
+  }
+
+  .label-wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-content: center;
+  }
+
+  .barchart-wrapper {
+    max-width: px-to-rem(240px);
+  }
+
+  .barchart-content {
+    padding: px-to-rem(35px) px-to-rem(20px) 0 !important;
+
+    @include respond-to(handhelds) {
+      padding: px-to-rem(30px) 0 !important;
+    }
+  }
+
+  @media only screen and (max-width: $break-point-large-tablet + 1) {
+    .mdl-cell.chart-cell {
+      width: 100% !important;
+    }
+  }
+
+  @media only screen and (max-width: px-to-rem(900px)) {
+    .mdl-cell {
+      width: 100% !important;
+    }
+  }
+
+  @media only screen and (max-width: px-to-rem(364px)) {
+    .date-select {
+      input {
+        width: px-to-rem(90px) !important;
+      }
+    }
+  }
+
+  @media only screen and (max-width: px-to-rem(352px)) {
+    .card-title {
+      padding-left: px-to-rem(20px);
+      padding-right: px-to-rem(20px);
+      width: calc(100% - 40px);
+    }
+  }
+
+  @media only screen and (min-width: px-to-rem(900px)) {
+    #quality-average-mobile {
+      display: none;
+    }
+
+    #quality-average-desktop {
+      display: flex;
+    }
+  }
+
+  @media only screen and (max-width: px-to-rem(900px)) {
+    #quality-average-desktop {
+      display: none;
+    }
+  }
+
+}
+
+.bottom-legend-container{
+  display:inline-block;
+  text-align: center;
+
+  .legend {
+    display: inline-block;
+    margin-right: px-to-rem(10px);
+
+    .square {
+      display:inline-block;
+      height: px-to-rem(12px);
+      width: px-to-rem(12px);
+      border-radius: 15%;
+    }
+
+    .text {
+      font-family: $font-family-light;
+      font-size: px-to-rem(12px);
+    }
+
+    .square-one {
+      background: #3459db;
+    }
+
+    .square-two {
+      background: #ff3333;
+    }
+
+    .square-three {
+      background: #ffaf30;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<div>
+  <div id="view-output-submission" class="view-submission assessment-submission">
+    <div class="modal">
+      <div class="modal-top">
+          <span class="close-button" id="close-submission-modal"></span>
+            <div class="modal-header">
+              View Submission
+            </div>
+            <div class="lfa-view-late-submission"></div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+        </div>
+        <div class="modal-content">
+          <form class="learner-submission-form">
+            <label for="link" id="submission-for-link">
+              Enter a Link<span class="error-mode required-symbol">*</span>
+            </label>
+            <input type="text" name="link" id="linkUpdate" class="field-required submission-link assessment-update" placeholder="www.link.com" maxlength="200">
+            <div class='drop-area-wrapper'>
+              <label for="fileUploadEdit" class="file-upload">
+              <div class="drop-area">
+                <label for="fileUploadEdit" class="drop-area-text">
+                <%= image_tag("upload-icon.svg", :class => "upload-icon")%>
+                  <strong>click to upload</strong> or drop your file here
+                </label>
+                <input type='file' id="fileUploadEdit" class="fileUpload assessment-update" name="file_link" accept=".png, .jpg, .jpeg" />
+              </div>
+              </label>
+            </div>
+            <div class="submission-wrapper">
+              <p class="uploaded-file">
+                <%= image_tag("file-icon.svg", :class => "uploaded-file-icon")%>
+                <span class="assignment-file uploaded-file-name"></span>
+                <a id="view-file"  target="_blank">View</a>
+                <a class="file-link remove-file">Remove</a>
+              </p>
+            </div>
+            <label  for="description">
+              Enter a description<span class="error-mode">*</span>
+            </label>
+            <textarea id="descriptionUpdate" type="text" name="description" class="field-required submission-description assessment-update" maxlength="200"></textarea>
+          </form>
+        </div>
+
+    </div>
+    <div class ="modal-bottom">
+      <div class="view-submission-export">
+        <div class= "btn-wrapper">
+          <a class='cancel-submission-btn' id="cancel-submission-modal">Cancel</a>
+          <a id='update-submission' class="update-submission-btn">Update</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

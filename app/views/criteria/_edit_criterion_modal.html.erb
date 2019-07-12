@@ -1,0 +1,98 @@
+<div class="edit-criterion-modal-wrapper">
+	<div class="edit-criterion-modal">
+		<div class="modal criteria-edit-modal">
+			<div class="edit-criterion-modal-top modal-top">
+				<div class="modal-header">
+					<span class="close-button" id="close-button"></span>
+					<div class="edit-criterion-header-section">
+						<div class="edit-criterion-header">
+							Edit Criterion
+						</div>
+						<div class="line">
+							<span class="long"></span>
+							<span class="short"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-content">
+				<div class="edit-criterion-body-section">
+					<%= form_tag({class: "edit-criterion-form" })%>
+					<input type="hidden" name="id" id="criterium_edit_id">
+					<input type="hidden" name="frameworkids" id="frameworkids">
+					<div class="edit-criterion__name-input">
+						<%= label_tag(:criterium_edit_name) %><br />
+						<%= text_field_tag(:criterium_edit_name) %>
+					</div>
+					<div class="select-framework-section">
+						<span class="select-framework-header">Change Framework</span><br/>
+						<div class="select-framework__checkboxes">
+							<% @frameworks.each do |framework| %>
+							<label class="mdl-checkbox mdl-js-checkbox select-framework__checkbox-section">
+								<%= check_box_tag "edit-"+framework[0].to_s, framework[0] ,false, class: "edit-framework edit-criteria-checkbox__input mdl-checkbox__input  framework-checkbox__input" %>
+								<span class="framework-text"><%= framework[1] %></span>
+							</label>
+							<% end %>
+						</div>
+					</div>
+					<div class="edit-criterion__description-input">
+						<%= label_tag(:criterium_edit_description) %><br/>
+						<%= text_area_tag(:criterium_edit_description) %>
+					</div>
+					<div class="edit-criterion__context">
+						<%= label_tag(:criterium_edit_context, "Context / Metrics") %><br/>
+						<%= text_area_tag(:criterium_edit_context) %>
+					</div>
+					<div class="satisfaction-levels">
+						<div class="very-satisfied">
+							<div class="metric-label">
+								<%= label_tag(:criterium_edit_very_satisfied, "Very Satisfied (2)") %>
+							</div>
+							<div class="metric-info">
+								<%= text_field_tag(:criterium_edit_very_satisfied) %>
+							</div>
+						</div>
+						<div class="satisfied">
+							<div class="metric-label">
+								<%= label_tag(:criterium_edit_satisfied, "Satisfied (1)") %>
+							</div>
+							<div class="metric-info">
+								<%= text_field_tag(:criterium_edit_satisfied) %>
+							</div>
+						</div>
+						<div class="neutral">
+							<div class="metric-label">
+								<%= label_tag(:criterium_edit_neutral, "Neutral (0)") %>
+							</div>
+							<div class="metric-info">
+								<%= text_field_tag(:criterium_edit_neutral) %>
+							</div>
+						</div>
+						<div class="unsatisfied">
+							<div class="metric-label">
+								<%= label_tag(:criterium_edit_unsatisfied, "Unsatisfied (-1)") %>
+							</div>
+							<div class="metric-info">
+								<%= text_field_tag(:criterium_edit_unsatisfied) %>
+							</div>
+						</div>
+						<div class="very-unsatisfied">
+							<div class="metric-label">
+								<%= label_tag(:criterium_edit_very_unsatisfied, "Very Unsatisfied (-2)") %>
+							</div>
+							<div class="metric-info">
+								<%= text_field_tag(:criterium_edit_very_unsatisfied) %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="edit-criterion-modal-bottom edit-criteria-bottom">
+			<div class="btn-wrapper">
+				<button type="button" class="btns edit-criterion-cancel">Cancel</button>
+				<button type="button" class='btns edit-criterion-save'>Save</button>
+			</div>
+		</div>
+	</div>
+</div>

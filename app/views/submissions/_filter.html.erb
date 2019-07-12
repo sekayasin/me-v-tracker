@@ -1,0 +1,92 @@
+<div class="filter-container">
+  <h4 id="filter-header"> Filters</h4>
+  <p id="filter-count"></p>
+  <div class="filter-content" id="location-box">
+    <div id="location-filter" class="option-box">
+      <div><p class="label">Location</p></div>
+      <span class="arrow-down-icon arrow-icon" id="location-dropdown"></span>
+    </div>
+    <div class="wrapper list-wrapper hidden">
+      <ul id="location-list" class="list-items">
+        <li class="list-checkbox" data-value="Select All">
+          <label class='checkbox-label' for='select-cities'> Select All
+            <input type="checkbox" id='select-cities' values="select-all" class='filter-item all' />
+            <span class="checkmark"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="filter-content" id="cycle-box">
+    <div id="cycle-filter" class="option-box">
+      <div><p class="label">Cycle</p></div>
+      <span class="arrow-down-icon arrow-icon" id="cycle-dropdown"></span>
+    </div>
+    <div class="wrapper hidden">
+      <div class = "mdl-textfield mdl-js-textfield hidden">
+        <input class = "mdl-textfield__input" type = "text" id = "search-cycle">
+        <label class = "mdl-textfield__label" for = "search-cycle">Search cycles</label>
+      </div>
+      <div class="hidden error-text" id="cycle-error"><h4>No result found</h4></div>
+      <p class="search-location search" id="cycle-search">Select location to search</p>
+      <ul id="cycle-list" class="list-items">
+        <li class="list-checkbox hidden" id="cycle-all" data-value="Select All">
+          <label class='checkbox-label' for='cycles'> Select All
+          <input type="checkbox" id="cycles"  values="select-all" class='filter-item all Select All' />
+            <span class="checkmark"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="filter-content" id="first-lfa-box">
+    <div id="first-lfa-filter" class="option-box">
+      <div><p class="label">LFA 1</p></div>
+      <span class="arrow-down-icon arrow-icon" id="fist-lfa-dropdown"></span>
+    </div>
+    <div class="wrapper hidden">
+      <div class = "mdl-textfield mdl-js-textfield hidden">
+        <input class = "mdl-textfield__input" type = "text" id = "search-lfa-one">
+        <label class = "mdl-textfield__label" for = "search-lfa-one">Search week one LFAs</label>
+      </div>
+      <div class="hidden error-text" id="cycle-error"><h4>No result found</h4></div>
+      <p class="search-lfa search">Select cycle to search</p>
+      <ul class="list-items" id="first-lfa-list">
+        <li class="list-checkbox lfa-box hidden" id="lfa-one-all" data-value="Select All">
+          <label class='checkbox-label' for='lfa-one'> Select All
+          <input type="checkbox" id="lfa-one"  values="select-all" class='filter-item all' />
+          <span class="checkmark"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="filter-content" id="sec-lfa-box">
+    <div id="sec-lfa-filter" class="option-box">
+      <div><p class="label">LFA 2</p></div>
+      <span class="arrow-down-icon arrow-icon" id="sec-lfa-dropdown"></span>
+    </div>
+    <div class="wrapper hidden">
+      <div class = "mdl-textfield mdl-js-textfield hidden">
+        <input class = "mdl-textfield__input" type = "text" id ="search-lfa-two">
+        <label class = "mdl-textfield__label" for = "search-lfa-two">Search week two LFAs</label>
+      </div>
+      <div class="hidden error-text" id="cycle-error"><h4>No result found</h4></div>
+      <p class="search-lfa search">Select cycle to search</p>
+      <ul class="list-items" id="sec-lfa-list">
+        <li class="list-checkbox hidden" id="lfa-two-all" data-value="Select All">
+          <label class='checkbox-label' for='lfa-two'> Select All
+          <input type="checkbox" id="lfa-two"  values="select-all" class='filter-item all'/>
+          <span class="checkmark"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button class='btns filter-btn' href="">
+    Apply
+  </button>
+  <button class='btns clear-btn' href="">
+    Clear filter
+  </button>
+</div>

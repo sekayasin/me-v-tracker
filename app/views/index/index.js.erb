@@ -1,0 +1,20 @@
+$('.campers-table-body').append("<%= escape_javascript (render 'campers_table', campers: @campers) %>");
+
+$('.total-learners .total-number').text("<%= @all_campers_count %>")
+
+<% if @campers.length == 0 %>
+  $(".bootcamper-data .scrollable > table").hide()
+  $('.all-campers-no-data').removeClass('hidden')
+<% else %>
+  $('.bootcamper-data .scrollable > table').show()
+  $('.all-campers-no-data').addClass('hidden')
+<% end %>
+
+<% if @campers.next_page %>
+  $('.pagination').replaceWith('<%= escape_javascript paginate(@campers) %>');  
+<% else %>
+  <% if @campers.length >= 15 %>
+    $('.loader').remove();
+    $('.pagination').remove();
+  <% end %>
+<% end %>

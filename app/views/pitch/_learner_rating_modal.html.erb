@@ -1,0 +1,86 @@
+<div id="learner-modal-dialog">
+  <div class="learners-rating-modal-content">
+    <div class="preview-button">
+        <span id="preview-close"></span>
+    </div>
+    <div class="learner-performance-header">
+      <div><span class="learner-header-name"></span>’s Performance Rating</div>
+    </div>
+    <div class="group-1">
+      <div class="learner-rectangle">
+        <div class="oval learner-image">
+
+        </div>
+        <div class="learner-details">
+          <div class="learner-name"></div>
+          <div class="learner-email"></div>
+        </div>
+        <div class="learner-cumulative">
+          <div> Cumulative Decision: </div>
+          <div class="learner-cumulative-decision"> </div>
+        </div>
+      </div>
+    </div>
+    <div class="group-2">
+      <div>
+        <ul>
+          <li class="title-ui-ux">UI/<br>UX</li>
+          <li class="ui-ui-rating  ui-ux-rating"></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li class="api-functionality">API Functionality</li>
+          <li class="ui-ui-rating api-functionality-rating"></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li class="error-handling">Error  Handling</li>
+          <li class="ui-ui-rating error-handling-rating"></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li class="project-understanding">Project Understanding</li>
+          <li class="ui-ui-rating project-understanding-rating"></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li class="presentation-skills">Presentational Skills</li>
+          <li class="ui-ui-rating presentation-skills-rating"></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li class="cumulative-average">Cumulative Average</li>
+          <li class="ui-ui-rating average-skills-rating"></li>
+        </ul>
+      </div>
+    </div>
+    <% if admin? %>
+      <div class="learner-dropdown admin-learner-dropdown">
+        <span class="line-1"></span>
+        <div class="view-score-breakdown">
+        </div>
+        <span class="line-2"></span>
+      </div>
+      <div class="lfa-modal-dialog">
+        <div class="lfa-modal-dialog-field">
+
+        </div>
+        <div class="fa-modal-dialog-field-space">
+        </div>
+      </div>
+    <% end %>
+    <% if pitch_panelist? %>
+      <div class="learner-dropdown panelist-learner-dropdown">
+        <span class="line-1"></span>
+        <div class="comment">Comment</div>
+        <span class="line-2"></span>
+      </div>
+      <div class="panelist-comment"></div>
+    <% end %>
+  </div>
+</div>

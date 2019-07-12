@@ -1,0 +1,140 @@
+<div class="program-details-editable" id="program-details-editable">
+  <div class="top-part">
+    <div class='program-edit'>
+      Edit Program
+      <div class="line">
+        <span class="long"></span>
+        <span class="short"></span>
+      </div>
+    </div>
+    <div class="first-row row">
+      <div class="form-group program-name-group">
+        <label>Program Name<span id="name-required">*</span></label>
+        <input type="text" class="detail-border" id="program-name" />
+      </div>
+      <div class="form-group program-duration-group">
+        <label>Duration (Days)</label>
+        <input type="number" class="detail-border total-duration" disabled id="program-duration" />
+      </div>
+      <div class="form-group language-stack-group">
+        <label>Language/Stack</label>
+        <div class="select-group-wrapper detail-border" id="language-stacks-group">
+          <span class="select-group" >
+            <span >
+              <input class="selected-input" placeholder="Select stacks/languages(Hold ctrl/cmd to select multiple)" id="language-stack-input"/>
+            </span>
+            <span class="icon-background open-option-dropdown" data-open="language-stack"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="second-row row">
+      <div class="form-group">
+        <label>Description<span id="description-required">*</span></label>
+        <textarea class="detail-border" id="program-description" rows="6" placeholder="Enter Description"></textarea>
+      </div>
+    </div>
+    <div class="third-row row">
+      <label>Phases [ordered start to finish]<span id="phases-required">*</span></label>
+      <div class="current-phases">
+        <div id="sortable"></div>
+        <input class="type-new-phase" type="text" placeholder="Type new phase and press Enter" maxlength="50"/>
+      </div>
+    </div>
+    <div class="fourth-row row">
+      <div class="form-group">
+        <label>Holistic Evaluation</label>
+        <div class="select-group-wrapper detail-border">
+          <span class="select-group open-option-dropdown" data-open="evaluation">
+            <span class="selected-input" id="evaluation-input">loading...</span>
+            <span class="icon-background"></span>
+          </span>
+          <ul class="options-dropdown" id="evaluation">
+            <li>Yes<li>
+            <li>No<li>
+          </ul>
+        </div>
+      </div>
+      <div class="evaluation-duration" id="evaluation-duration">
+        <div class="form-group first-group">
+          <label>Repeat Every</label>
+          <input type="number" id="frequency" class="detail-border" value="1" min="1"/>
+        </div>
+        <div class="form-group second-group">
+          <label></label>
+          <div class="select-group-wrapper detail-border">
+            <span class="select-group open-option-dropdown" data-open="repeat-every">
+              <span class="selected-input" id="repeat-every-input">Day</span>
+              <span class="icon-background"></span>
+            </span>
+            <ul class="options-dropdown" id="repeat-every">
+              <li>Day<li>
+              <li>Week<li>
+              <li>Month<li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mid-part x-scrollable">
+    <div class="phases" id="phase-boxes"></div>
+  </div>
+  <div class="third-part">
+    <div class="phase-title">
+      <div class="current-phase-title"></div>
+      <div class="decorate">
+        <div class="title-underline title-underline-left"></div>
+        <div class="title-underline title-underline-right"></div>
+      </div>
+    </div>
+    <div class="x-scrollable">
+      <div class="v-o-f" id="v-o-f">
+        <% @frameworks.each_with_index do |framework, index| %>
+            <span class=<%= "framework-#{(index+1).odd? ? 'odd' : 'even'}" %>><%= framework[:name] %></span>
+        <% end %>
+      </div>
+      <div class="vof-program-points" id="vof-program-points">
+        <% @frameworks.each_with_index do |framework, index| %>
+            <ul class=<%= "framework-#{(index+1).odd? ? 'odd' : 'even'}" %>>
+              <% framework[:criteria].each do |criterium| %>
+                  <li>
+                    <span class="vof-program-point open-checkbox-dropdown" data-open=<%="#{criterium[:id]}-dropdown"%>><%= criterium[:name] %></span>
+                    <div class="checkpoints checkbox-dropdown" id=<%="#{criterium[:id]}-dropdown"%>>
+                      <% criterium[:assessments].each do |assessment| %>
+                          <div class="checkpoint checkbox-group">
+                            <input type="checkbox" class="small-checkbox" data-assessment_id=<%= assessment[0] %> />
+                            <%= assessment[1] %>
+                          </div>
+                      <% end %>
+                    </div>
+                  </li>
+              <% end %>
+            </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="fourth-part">
+    <a class="save pull-right open-confirm-save-modal" id="open-confirm-save-modal">Save Updates</a>
+    <a class="cancel pull-right" id="cancel-program-edit">Cancel</a>
+  </div>
+  <div class="program-details-modal confirm-save-modal" id="confirm-save-modal">
+    <div class="confirm-save-content">
+      <div class="confirmation">
+        <h5>
+          <span class="confirm-warning-icon"></span>Confirm Submission
+        </h5>
+        <h6>No more changes can be made after saving this program! Are you sure you want to save?</h6>
+      </div>
+      <div class="confirm-or-deny">
+        <a class="save pull-right" id="submit-program">Yes</a>
+        <a class="cancel pull-right close-confirm-save-modal" id="close-confirm-save-modal">No</a>
+      </div>
+    </div>
+  </div>
+  <div class="program-details-modal program-loader-modal" id="program-loader-modal">
+    <div class="loader"></div>
+  </div>
+</div>
+

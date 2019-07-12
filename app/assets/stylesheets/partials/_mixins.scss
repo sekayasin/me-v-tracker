@@ -1,0 +1,289 @@
+@mixin alignment {
+  padding-left: 4%;
+  text-align: left;
+}
+
+@mixin buttons($bg-color, $text-color, $btn-padding, $font-size, $border) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $btn-padding;
+  font-size: $font-size;
+  border: $border;
+  font-family: $font-family-regular;
+  border-radius: $btn-border-radius;
+}
+
+// -- Beginning of Dropdown mixin -------
+@mixin dropdown-alignment($margin-left) {
+  margin-left: $margin-left;
+  padding: 0;
+}
+
+@mixin dropdown-content-container($position) {
+  position: $position;
+}
+
+@mixin dropdown-input($background, $background-position, $display, $padding-right, $width, $height, $border-radius, $margin-top) {
+  background: $background;
+  background-position: $background-position;
+  display: $display;
+  padding-right: $padding-right;
+  border: 1px solid $select-color;
+  width: $width;
+  height: $height;
+  text-decoration: none;
+  border-radius: $border-radius;
+  font-family: $font-family-light;
+  color: $select-color;
+  margin-top: $margin-top;
+}
+
+@mixin dropdown-input-span($display, $padding, $font-size) {
+  cursor: pointer;
+  display: $display;
+  padding: $padding;
+  font-size: $font-size;
+}
+
+@mixin dropdown-input-span-line($display, $position, $left, $top, $bottom, $height) {
+  content: '';
+  display: $display;
+  position: $position;
+  left: $left;
+  top: $top;
+  bottom: $bottom;
+  border: 1px solid $select-color;
+  border-width: 0 0 0 1px;
+  height: $height;
+}
+
+@mixin dropdown-content($padding, $position, $top, $width, $min-width, $box-shadow, $border-radius, $min-height, $max-height) {
+  background: #fff none repeat scroll 0 0;
+  display: none;
+  list-style: none;
+  padding: $padding;
+  position: $position;
+  top: $top;
+  width: $width;
+  min-width: $min-width;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  min-height: $min-height;
+  max-height: $max-height;
+}
+
+@mixin dropdown-span-value {
+  display: none;
+}
+
+@mixin dropdown-link($display, $font-size) {
+  display: $display;
+  text-decoration: none;
+  color: #000;
+  font-family: $font-family-light;
+  font-size: $font-size;
+}
+
+@mixin dropdown-list($padding-left, $padding-bottom, $margin) {
+  padding-left: $padding-left;
+  padding-bottom: $padding-bottom;
+  margin: $margin;
+}
+
+@mixin dropdown-link-hover {
+  &:hover {
+    cursor: pointer;
+    color: $andela-blue;
+    font-size: 101%;
+  }
+}
+
+@mixin dropdown-list-first-child($padding-top) {
+  padding-top: $padding-top;
+}
+
+@mixin dropdown-select-class {
+  color: #000;
+}
+// -- End of Dropdown mixin -------
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (min-width: $break-point-smobile) and (max-width: $break-point-mobile) { @content; }
+  } @else if $media == tablets {
+    @media only screen and (min-width: $break-point-mobile + 1) and (max-width: $break-point-large-tablet) { @content; }
+  } @else if $media == tablet-and-mobile {
+    @media only screen and (max-width: $break-point-large-tablet) { @content; }
+  } @else if $media == medium-screens {
+    @media only screen and (min-width: $break-point-desktop + 1) and (max-width: $break-point-large) { @content; }
+  } @else if $media == wide-screens {
+    @media only screen and (min-width: $break-point-large) { @content; }
+  }
+}
+
+@mixin blue-line($width, $margin-right) {
+  width: $width;
+  margin-right: $margin-right;
+  height: 5px;
+  border-radius: $btn-border-radius + 0.5;
+  background-color: $background-blue;
+  display: inline-block;
+}
+
+@mixin grey-out-or-disabled {
+  color: $disabled-text-color;
+}
+
+@mixin wrapper($flex-flow, $margin) {
+  display: flex;
+  flex-flow: $flex-flow;
+  overflow-x: auto;
+  letter-spacing: normal;
+  font-stretch: normal;
+  font-style: normal;
+  background: $background-white;
+  width: 100%;
+  height: auto;
+  margin: $margin;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(221,221,221,0.6);
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+@mixin ecosystem-buttons($width) {
+  cursor: pointer;
+  box-sizing: border-box;
+  height: px-to-rem(38px);
+  width: $width;
+  border: px-to-rem(2px) solid $learning-ecosystem-btn;
+  border-radius: px-to-rem(5px);
+  box-shadow: 0 px-to-rem(1px) 0 0 rgba(22, 29, 37, 0.05);
+  &:focus {
+    outline: none;
+  }
+  .button-text {
+    height: px-to-rem(20px);
+    width: px-to-rem(110px);
+    color: $learning-ecosystem-btn-text;
+    font-size: px-to-rem(14px);
+    line-height: px-to-rem(20px);
+    text-align: center;
+    font-family: $font-family-light;
+  }
+}
+
+@mixin legend-container() {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+@mixin legend-icon($color) {
+  background: $color;
+  width: px-to-rem(22px);
+  height: px-to-rem(22px);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@mixin lfa-stats-container {
+  text-align: center;
+  display: flex !important;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 1.6rem !important;
+
+  #legend-container {
+    padding-top: 13% !important;
+
+    div {
+      text-align: center;
+      padding: .5rem 0;
+
+      .actual,
+      .target {
+        margin-right: 1.5rem;
+        vertical-align: sub;
+      }
+      .actual {
+        @include legend-icon(#FFAF30);
+      }
+      .target {
+        @include legend-icon(#3359DB);
+      }
+    }
+
+    @media only screen and (max-width: px-to-rem(900px)) {
+      padding-top: 2% !important;
+      div {
+        display: inline-block;
+        padding: .5rem .5rem;
+      }
+    }
+
+    @media only screen and (min-width: px-to-rem(901px)) and (max-width: px-to-rem(1199px)) {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: px-to-rem(875px)) {
+    .holistic-wrapper {
+      margin-bottom: 1.875rem !important;
+    }
+  }
+}
+@mixin lfa-decision-scrollbar {
+  &::-webkit-scrollbar {
+    width: px-to-rem(8px);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: px-to-rem(10px);
+    background-color: rgba(0,0,0,.5);
+  }
+}
+
+@mixin drop-area {
+  cursor: pointer;
+  padding-top:  px-to-rem(25px);
+  height:  px-to-rem(60px);
+  margin:  px-to-rem(15px)  px-to-rem(0px);
+  text-align: center;
+  width:  px-to-rem(445px);
+  @media only screen and (min-width: px-to-rem(320px)) and (max-width: px-to-rem(582px)) {
+    width: 100%;
+  }
+  border:  px-to-rem(1px) dashed $background-blue;
+  border-radius:  px-to-rem(6px);	
+  background-color: $background-white;	
+  box-shadow: 0  px-to-rem(2px)  px-to-rem(9px) 0 $shadow-color;
+
+  .drop-area-text {
+    cursor: pointer;
+    height: px-to-rem(14px);
+    width: px-to-rem(155px);
+    color: $background-blue;
+    font-family: $font-family-light;
+    font-size: px-to-rem(11px);
+    letter-spacing: px-to-rem(-0.09px);
+    line-height: px-to-rem(14px);
+  }
+
+  .upload-icon {
+    box-sizing: border-box;
+    height: px-to-rem(12.25px);
+    width: px-to-rem(14.28px);
+    border: px-to-rem(0.3px) solid $background-white;
+  }
+
+  .fileUpload {
+    visibility: hidden;
+  }
+}
+
+@mixin main-content-margin {
+  width: 95%;
+  margin: $main-content-margin-top auto 0;
+  position: relative;
+}

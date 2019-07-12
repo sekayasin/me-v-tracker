@@ -1,0 +1,116 @@
+{
+  "Excellence": {
+    "assessmentDescription": "With this life approach, I aspire to be the best possible version of myself. I know that my work is a representation of who I am, and I hold everything I do and everyone I interact with to the highest standards. I am a lifelong learner who strives for mastery of my craft.",
+    "assessmentContext": "When confronted with a problem...",
+    "assessmentExpectation": "Task: Write a list of obstacles that you face in your current daily life. Resources: Transform them one at a time into a set of opportunities, and outine the process to get there. Include: Share with your colleagues for reflection. Task: Describe how you currently embody excellence, and how you strive to to do so in the future. Resources: Create a short blog post, reflection, image, or other artifact. Incude: Share with your colleagues for reflection.",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Ignore the problem and/or does not seek help."
+      },
+      {
+        "type": 2,
+        "description": "Seeks help"
+      },
+      {
+        "type": 3,
+        "description": "Seeks to solve it in a way that adds value to him/herself and others."
+      }
+    ]
+  },
+  "Passion": {
+    "assessmentDescription": "With this life approach, I believe I can change the world and I act accordingly. I constantly seek to inspire and to be inspired. I approach every goal with unwavering energy and conviction; I embody grit and persistence.",
+    "assessmentContext": "When disagreeing or challenging a teammate...",
+    "assessmentExpectation": "Task: Craft your own personal (and/or professional) mission and vision statements. Resources: Create a short statement in writing. Task: Draw an Inspiration Map that shows where you derive your inspiration from and what your core passions are. Resources: Use any physical or digital medium you choose. Task: Create a vision board that shows your passions and how you plan to act on them.Resources: Use any physical or digital medium you choose. ",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Fails to give feedback and/or is unable to resolve conflict (does not seek assistance)"
+      },
+      {
+        "type": 2,
+        "description": "Reaches out for assistance in solving conflict from others."
+      },
+      {
+        "type": 3,
+        "description": "Delivers and receives (or asks for) ASK feedback, recognizes mutual contributions to each other, and walks away as friends."
+      }
+    ]
+  },
+  "Integrity": {
+    "assessmentDescription": "With this life approach, I live in accordance with my values. I know that all I do is a reflection of the values I profess. I embrace the added responsibility of leading by example, and want others to hold me accountable. I know Integrity is everything I say and everything I do which is a true reflections of what I value and what is important to me.",
+    "assessmentContext": "When stuck or don't understand something...",
+    "assessmentExpectation": "Task: Write a personal honor code. Resources: Reflect (in writing) on how you prioritize what is right relative to what might bring you personal benefit.Include: Share with colleageus for reflection. ",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Does not acknowledge any areas of weakness/doesn't seek help in areas he/she struggling in"
+      },
+      {
+        "type": 2,
+        "description": "Shy to accept or voice area of struggle, but shows potential to improve."
+      },
+      {
+        "type": 3,
+        "description": "Is open about the blockers and challenges facing, and asks for help from support system."
+      }
+    ]
+  },
+  "Collaboration": {
+    "assessmentDescription": "With this life approach, I will be able to have a greater impact by joining forces with others. I will know how to effectively collaborate with individuals from different backgrounds, with different beliefs and personalities, in order to achieve our goals.",
+    "assessmentContext": "When collaborating in a group...",
+    "assessmentExpectation": "Task: Co-design a guide to your team principles regarding collaboration. Resources: Use a visualization or writing. Include reflections on the creation process. Include: Collaborate with colleague on your team during the building process. ",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Fails to share information with other people that would enable them to do their job more effectively and/or makes minimal contribution to achievement of team goals and objectives"
+      },
+      {
+        "type": 2,
+        "description": "Willingly learns from other team members, but does not go out of the way to assist others or seek engagements "
+      },
+      {
+        "type": 3,
+        "description": "Shares work frequently, gives and asks for feedback from teammates, learns about the individual motivations of each team member"
+      }
+    ]
+  },
+  "Commitment": {
+    "assessmentDescription": "With this life approach, I will be able to have a greater impact by joining forces with others. I will know how to effectively collaborate with individuals from different backgrounds, with different beliefs and personalities, in order to achieve our goals.",
+    "assessmentContext": "When joining an initiative...",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The output was not submiited"
+      },
+      {
+        "type": 1,
+        "description": "Contributes to the group but does not give strong support to the group or try to make it better; is not prepared, informed, or ready to work with the team (prefers to work individually)"
+      },
+      {
+        "type": 2,
+        "description": "Puts the team before own self interests during (could include doing some project tasks separately, but makes sure to put them together at the end)"
+      },
+      {
+        "type": 3,
+        "description": "Portrays leadership attributes by taking charge of the group, always putting group's interest before his/her own, while recognizing and using special talents of each team member"
+      }
+    ]
+  }
+}

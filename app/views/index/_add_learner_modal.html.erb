@@ -1,0 +1,164 @@
+<div id="add-learner-modal">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="modal-header">
+        <span class="close-button close-modal"></span>
+      </div>
+    </div>
+    <div class="modal-content">
+      <%= form_tag "#", id: "addLearnerForm", method: "post", multipart: true do %>
+        <div class="tab first-tab" >
+          <div class="tab-content-header">
+            <div class="step-header select-country">
+              Select Country
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+          <div class="tab-content-body">
+            <input type="hidden" name="country" id="country" required/>
+            <div class="country-wrapper">
+              <div id="Kenya" class="country">
+              </div>
+              <p class="country-name">Kenya</p>
+            </div>
+            <div class="country-wrapper">
+              <div id="Nigeria" class="country">
+              </div>
+              <p class="country-name">Nigeria</p>
+            </div>
+            <div class="country-wrapper">
+              <div id="Rwanda" class="country">
+              </div>
+              <p class="country-name">Rwanda</p>
+            </div>
+            <div class="country-wrapper">
+              <div id="Uganda" class="country">
+              </div>
+              <p class="country-name">Uganda</p>
+            </div>
+          </div>
+        </div>
+        <div class="tab second-tab">
+          <div class="tab-content-header">
+            <div class="step-header upload-learner-details">
+              Details &amp; Upload
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+          <div id="learner-detail-fields" class="tab-content-body">
+            <div class="detail-form-row"> 
+              <div class="add-learner-detail-wrapper">
+                <div class="add-learner-detail-dropdown">
+                  <label for="select_program">Select Program</label>
+                  </br>
+                  <%= select_tag("select_program", options_for_select(program_options), :include_blank => 'Select Program', :id => "select_program", :class => "select-detail", :required => true) %>
+                  <p id="select_program_error" class="active-error"></p>
+                </div>
+              </div>
+              <div class="add-learner-detail-wrapper">
+                <div class="add-learner-detail-dropdown">
+                  <label for="select_dlc_stack">Select ALC Stack</label>
+                  </br>
+                  <%= select_tag("select_dlc_stack", options_for_select([]), :include_blank => 'Select ALC Stack', :id => "select_dlc_stack", :class => "select-detail", :required => true) %>
+                  <p id="select-dlc-stack-error" class="active-error"></p>
+                </div>
+              </div>
+              <div class="add-learner-detail-wrapper">
+                <div class="add-learner-detail-dropdown" >
+                  <label for="select_city">Select City </label>
+                  </br>
+                  <%= select_tag("select_city", options_for_select([]), :include_blank => 'Select City', :id => "select_city", :class => "select-detail", :required => true) %>
+                  <p id="select-city-error" class="active-error"></p>
+                </div>
+              </div>
+            </div>
+            <div class="detail-form-row">
+              <div class="add-learner-detail-wrapper">
+                <div class="add-learner-detail-input">
+                  <label for="enter_cycle_number">Enter Cycle Number </label>
+                  </br>
+                  <%= text_field_tag("enter_cycle_number", nil, {class: "enter-cycle-number", type: "number", id: "new_cycle_number"}) %>
+                  <p id="enter-cycle-number-error" class="active-error"></p>
+                </div>
+              </div>
+              <div class="add-learner-detail-wrapper">
+                <div class="add-learner-detail-input">
+                  <label for="select_start_date">Cycle Start Date</label>
+                  </br>
+                  <%= text_field_tag("select_start_date", nil, {id: "select_start_date", class: "select-start-date", type: "text", autocomplete: "off"}) %>
+                  <p id="select-start-date-error" class="active-error"></p>
+                </div>
+              </div>
+              <div class="add-learner-detail-wrapper">
+                <div class="add-learner-detail-input">
+                  <label for="select_end_date">Cycle End Date</label>
+                  </br>
+                  <%= text_field_tag("select_end_date", nil, {id: "select_end_date", class: "select-end-date", type: "text", autocomplete: "off"}) %>
+                  <p id="select-end-date-error" class="active-error"></p>
+                </div>
+              </div>
+              <div id="material-header-holder"></div>
+            </div>
+            <div class="detail-form-row last-row">
+
+              <div class="add-learner-detail-wrapper">
+                <div class="add-learner-detail-input upload-learner">
+                  <label for="upload_learners_file">Upload Spreadsheet </label> </br>
+                  <div class="upload-learner-box">
+                    <%= text_field_tag("upload_learners_file", nil, {id: "upload-learners-file", class: "upload-learners-file", type: "file"}) %>
+                    <div class="uploaded-file-name">
+                      <span class="text-file-name">Choose file</span>
+                    </div>
+                    <i class="icon material-icons upload-learner-btn">add</i>&nbsp;
+                  </div>
+                  <p id="upload-learners-file-error" class="upload-active-error active-error"></p>
+                </div>
+              </div>
+
+              <div class="download-csv-template">
+                <a class="download-csv-btn" href="https://docs.google.com/a/andela.com/spreadsheets/d/111l0AE8Rw0b4KddwnNA9aRBB5JKdogryfuulpOPUnbI/export?format=xlsx&gid=0">
+                Download the sheet template
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab last-tab">
+          <div class="tab-content-body success-fields">
+            <div class="success-check">
+              <i class="icon material-icons">check</i>
+            </div>
+            <h4>Upload Successful</h4>
+            <p class="upload-success-message">
+              You can either view the new cycle below or close this notification
+            </p>
+            <div class="warning-container"></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="modal-bottom">
+      <div class="add-learner-wrapper">
+        <button class="modal-nav-button" type="button" id="leftBtn">
+          <span class="ic-prev-arrow"></span>&nbsp; Back
+        </button>
+        <div class="steps-indicator">
+          <span class="step active"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+        <button class="modal-nav-button" type="button" id="rightBtn">
+          Next&nbsp; <span class="ic-next-arrow"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

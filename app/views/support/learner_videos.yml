@@ -1,0 +1,29 @@
+video_1:
+  title: Submit output
+  subtitle: How to Submit Output
+  video: https://player.vimeo.com/video/342960072
+  image: submit_output.jpg
+
+video_2:
+  title: Respond to survey
+  subtitle: How to Respond to a Survey
+  video: https://player.vimeo.com/video/342062101
+  image: first.jpg
+
+video_3:
+  title: Reflect  on feedback
+  subtitle: How to Reflect on Feedback
+  video: https://player.vimeo.com/video/342960049
+  image: reflect_feedback.jpg
+
+video_4:
+  title: View/Update submission
+  subtitle: How to View/Update Submissions
+  video: https://player.vimeo.com/video/342960026
+  image: view_submission.jpg
+
+video_5:
+  title: Navigate through phases
+  subtitle: How to Navigate Through Phases
+  video: https://player.vimeo.com/video/342959993
+  image: navigate_phases.jpg

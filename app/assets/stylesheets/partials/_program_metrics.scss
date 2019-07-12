@@ -1,0 +1,277 @@
+@import 'base';
+
+#program-metric-ui {
+
+  #cycle-per-center-title {
+    font-family: $font-family-light;
+    color: $faded-grey;
+    margin-top: px-to-rem(20px);
+    margin-left: px-to-rem(15px);
+  }
+
+  .cycle-per-center-container {
+    margin-bottom: px-to-rem(25px);
+  }
+
+  .mdl-cell {
+    padding: px-to-rem(15px) !important;
+  }
+
+  canvas {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .canvas-label {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: $font-family-light;
+  }
+
+  .canvas-label.graph-label{
+    width:87.5%;
+    margin-left: 6.5%;
+    padding-bottom: 0.8rem;
+  }
+
+  .card-title {
+    @media only screen and (max-width: px-to-rem(352px)), (min-width: px-to-rem(901px)) and (max-width: px-to-rem(947px)) {
+      padding-left: px-to-rem(20px);
+      padding-right: px-to-rem(20px);
+      width: calc(100% - 40px)
+    }
+
+    @media only screen and (max-width: px-to-rem(335px)) {
+      padding-left: px-to-rem(20px);
+      padding-right: px-to-rem(20px);
+      width: calc(100% - 40px);
+    }
+  }
+
+  .horizontalbarchart-wrapper {
+    max-width: 100%;
+    padding-bottom: px-to-rem(10px);
+    text-align: center;
+
+    #historicalCenterAndGenderDistributionChartContainer {
+      max-height: px-to-rem(250px);
+      overflow-y: scroll;
+    }
+
+    #readinessChartContainer {
+      max-height: px-to-rem(250px);
+      overflow-y: scroll;
+    }
+
+    #lfaToLearnerRatioChartContainer {
+      margin-top: px-to-rem(50px);
+    }
+  }
+
+  .piechart-wrapper {
+    max-width: px-to-rem(420px);
+    min-height: px-to-rem(320px);
+
+    .canvas-wrapper {
+      display: inline-block;
+      width: 50%;
+      max-width: unset;
+
+      canvas {
+        margin: 3.3rem auto 0;
+        min-height: px-to-rem(162px) !important;
+        min-width: px-to-rem(162px) !important;
+      }
+    }
+
+    .legends-wrapper {
+      width: 48%;
+      max-width: unset;
+
+      .legends-container {
+
+        .legend {
+          margin: 0 auto px-to-rem(6px);
+
+          .legend-circle {
+            margin: px-to-rem(5px) px-to-rem(22px) 0 0;
+          }
+
+          .legend-text {
+            font-size: 1.125rem;
+          }
+        }
+
+      }
+
+      // Control legend top margin on large screen
+      #learnersDispersionLegends {
+        margin-top: 3.2rem;
+      }
+
+      #programOutcomeMetricsWeekOneLegends, #programOutcomeMetricsWeekTwoLegends {
+        margin-top: 3.2rem;
+      }
+
+      #programMetricsGenderDistributionLegends {
+        margin-top: 8.8rem;
+      }
+      // End
+    }
+
+    @media only screen and (max-width: px-to-rem(449px)) {
+      height: auto;
+
+      .canvas-wrapper {
+        width: 40%;
+
+        canvas {
+          margin: 1.4rem auto 0;
+          max-width: auto !important;
+          min-width: auto !important;
+        }
+      }
+      .legends-wrapper {
+        width: 59%;
+
+        // Control legend top margin on small screen
+        #learnersDispersionLegends {
+          margin-top: 3rem;
+        }
+
+        #programOutcomeMetricsWeekOneLegends, #programOutcomeMetricsWeekTwoLegends {
+          margin-top: 1.3rem;
+        }
+
+        #programMetricsGenderDistributionLegends {
+          margin-top: 4rem;
+        }
+        // End
+
+        .legends-container {
+
+          .legend {
+            margin-bottom: px-to-rem(4px);
+
+            .legend-circle {
+              height: px-to-rem(17px);
+              width: px-to-rem(17px);
+              margin: px-to-rem(5px) px-to-rem(10px) 0 0;
+            }
+
+            .legend-text {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: px-to-rem(1230px)) and (max-width: px-to-rem(1355px)) {
+      .canvas-wrapper {
+        width: 48%;
+      }
+
+      .legends-wrapper {
+        width: 50%;
+      }
+    }
+  }
+
+  .barchart-grid {
+    width: calc(100% - 80px);
+    padding: px-to-rem(10px) 0 !important;
+
+    @media only screen and (max-width: px-to-rem(480px)) {
+      width: 100%;
+    }
+  }
+
+  #lfa-stats-container {
+    @include lfa-stats-container();
+  }
+
+  #lfaStatsBarChartContainer {
+
+    canvas {
+      max-width: px-to-rem(300px);
+      margin:0 auto;
+    }
+  }
+
+  #lfaToLearnerRatioContainer {
+    margin-top: px-to-rem(50px);
+    margin-bottom: px-to-rem(40px);
+    
+    canvas {
+      width: 100% !important;
+      margin:0 auto;
+    }
+  }
+
+  @media only screen and (min-width: px-to-rem(840px)) and (max-width: px-to-rem(1229px)) {
+    .piechart-responsive {
+      width: 100% !important;
+    }
+    
+    .horizontalbarchart-responsive {
+      width: 100% !important;
+    }
+
+    .lfa-stats-responsive {
+      width: 100% !important;
+    }
+
+    #quality-average-mobile {
+      display: none;
+    }
+
+    #quality-average-desktop {
+      display: flex;
+    }
+  }
+
+  @media only screen and (min-width: px-to-rem(479px)) and (max-width: px-to-rem(839px)) {
+    #lfa-stats-grid-divider {
+      display: none;
+    }
+  }
+
+  .center-per-cycle {
+    min-height:  px-to-rem(60px);
+    min-width:  px-to-rem(200px); 
+    max-width:  px-to-rem(600px);
+    padding:  px-to-rem(5px);
+    margin:0 px-to-rem(10px);
+    border-radius: px-to-rem(8px);
+
+    .center {
+      height:  px-to-rem(40px); 
+      border-radius:  px-to-rem(100px);
+      color: #303030;
+      font-family: $font-family-light;
+      font-size:  px-to-rem(20px); 
+      padding-left: px-to-rem(20px); 
+      padding-top: px-to-rem(10px);
+      float: left;
+      margin: px-to-rem(10px);
+    }
+
+    .cycle {
+      height:  px-to-rem(30px);
+      width:  px-to-rem(30px);
+      border-radius:  px-to-rem(16.5px);
+      background-color: #FFAF30;
+      float: right; 
+      margin-right:  px-to-rem(8px); 
+      border-right: px-to-rem(20px);
+      margin-right:  px-to-rem(8px);
+      text-align: center; 
+      color: $background-white; 
+      font-style: normal; 
+      font-family: $font-family-light;
+    }
+  }
+}

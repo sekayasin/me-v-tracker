@@ -1,0 +1,33 @@
+<%= render 'pitch_alerts' %>
+<div class="main-content">
+  <div class="loading-bar">
+    <div class="loader"></div>
+  </div>
+  <div id="main-pitch-section">
+    <div class="dashboard">
+      <div class="dashboard-side-section">
+        <div class="btn-card">
+          <!-- <span class="title"> -->
+          <% if admin? or (admin? && pitch_panelist?) %>
+          <span class="title">Ongoing Pitches</span>
+          <span class="body">You have <span id="pitches-count"></span> Created</span>
+          <% end %>
+
+          <% if pitch_panelist? && (not admin?) %>
+          <span class="title">Invited Pitches</span>
+          <span class="body">You have <span id="pitches-count"></span> Invitation(s)</span>
+          <% end %>
+        </div>
+      </div>
+      <div class="dashboard-main-section">
+        <div class="pitches-grid">
+        </div>
+        <div class="btn-wrapper">
+          <div class="pagination-control pitches-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'pitch_delete_confirmation_modal' %>
+<%= render 'tour/pitch_setup_tour_modal' %>

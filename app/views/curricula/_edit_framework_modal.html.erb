@@ -1,0 +1,46 @@
+<div class="edit-framework-modal-wrapper">
+  <div class="edit-framework-modal">
+    <div class="modal">
+      <div class="edit-framework-modal-top modal-top">
+        <div class="modal-header">
+          <span class="close-button" id="close-button"></span>
+          <div class="edit-framework-header-section">
+            <div class="edit-framework-header">
+                Edit Framework
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-content">
+        <div class="edit-framework-body-section">
+          <form id="edit-framework-form">
+            <div class="edit-framework-name">
+              <label for ='framework-name-input' class="input-label"> Framework</label><br>
+              <input type ="text" id="framework-name-input" name="framework_name_input"
+              class="framework-name-input" value="Some Framework" readonly>
+            </div>
+
+            <div class="edit-framework-description">
+              <label for ='framework-description-input' class="input-label"> Description</label><br>
+              <textarea class="framework-description-input" name="framework_description_input"
+              id="framework-description-input" required
+              data-gramm="false" autofocus placeholder="Start Typing..."></textarea>
+              <p id="framework-description-error" class="framework-description-error"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="edit-framework-modal-bottom">
+      <div class="btn-wrapper">
+        <a class='btns edit-framework-save'>Save</a>
+      </div>
+    </div>
+  </div>
+</div>

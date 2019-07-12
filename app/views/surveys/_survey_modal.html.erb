@@ -1,0 +1,56 @@
+<div class="create-survey-modal-wrapper">
+  <div id="create-survey" class="create-survey">
+    <div class="modal">
+      <div class="modal-top">
+        <div class="modal-header">
+          <span class="close-button" id="close-survey-modal"></span>
+          <div class="top-section">
+            <div class="create-survey-header">
+                Create Survey
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="create-survey-modal-content" class="modal-content">
+          <form class="create-survey-form" id="create-survey-form">
+            <div class="survey-item-container">
+              <label id="label-title" for="title">Survey Title</label>
+              <input type="text" name="title" id="title" class="field-required" maxlength="200">
+            </div>
+
+            <div class="survey-item-container">
+              <label id="label-link" for="link">Link to Survey</label>
+              <input type="text" name="link" id="link" class="field-required" maxlength="200" placeholder="http:// or https://">
+            </div>
+
+            <div class="survey-item-container">
+              <label id="label-recipient" for="recipient">Survey Recipients</label>
+              <select class="create-survey-dropdown" id="select-recipients"></select>
+            </div>
+            <div class="survey-item-container" id="cycle-pills"></div>
+
+            <div class="survey-item-container" id="schedule-survey-div">
+              <label for="select_start_date">Schedule Survey <span id="survey-duration"></span></label>
+              <br/>
+              <span>From:</span>
+              <input type="text" name="select_start_date_survey" id ="select_start_date_survey" class="field-required select-start-date-survey" autocomplete="off">
+              <span>To:</span>
+              <input type="text" name="select_end_date_survey" id ="select_end_date_survey" class="field-required select-end-date-survey" autocomplete="off">
+              <p id="select-date-error" class="active-error"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal-bottom">
+      <div class="btn-wrapper">
+        <a class='create-survey-btn' id="create-survey-button"></a>
+        <a class='update-survey-btn' id="update-survey-button">Update</a>
+      </div>
+    </div>
+  </div>
+</div>

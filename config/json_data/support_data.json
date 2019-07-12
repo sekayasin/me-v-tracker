@@ -1,0 +1,241 @@
+{
+  "faqs": {
+    "learner": [
+      {
+        "question": "What is Andela",
+        "answer": "<a href='https://andela.com/join/' target='_blank' class='faq-link'>This is Andela</a>"
+      },
+      {
+        "question": "When was Andela founded?",
+        "answer": "Andela was founded in 2014 by veteran entrepreneurs Jeremy Johnson, Christina Sass, Iyinoluwa Aboyeji, and Ian Carnevale. We accepted our first cohort of developers in July 2014."
+      },
+      {
+        "question": "What is Andela’s mission?",
+        "answer": "Andela’s mission is to advance human potential by powering today’s teams and investing in tomorrow’s leaders."
+      },
+      {
+        "question": "What is the culture at Andela?",
+        "answer": "Our culture is the primary means by which we motivate and retain our people. This culture is defined by living our values, setting the performance bar high, listening to employees, eliminating blockers and pain points that get in the way of people doing their best work, defining the rules by which we all play together, and resolving disagreements in dignified ways that leave everyone feeling committed to one another."
+      },
+      {
+        "question": "What type of companies does Andela work with?",
+        "answer": " Andela partners with high-growth companies, which range from IBM and Viacom to dozens of venture-backed startups including Gusto and SeatGeek. We’re currently working with just over 100 partners spread across 45 cities worldwide."
+      },
+      {
+        "question": "What type of engineering work do Andela developers do?",
+        "answer": "Andela engineers specialize in one of several tech stacks, including JavaScript, Python, Ruby, PHP, iOS and Android. 80% of developers have completed degrees in Computer Science or Engineering prior to entering Andela."
+      },
+      {
+        "question": "How many applications has Andela received to date?",
+        "answer": "Andela has received more than 70,000 applications from 19 African countries over the last two years. We have accepted the top 0.7 percent, which makes Andela by far the most competitive technical program on the continent"
+      },
+      {
+        "question": "How many developers has Andela accepted to date?",
+        "answer": "Andela has accepted around 500 developers to date across our Lagos, Nairobi and Kampala offices. About half of those have been placed with Andela’s partners, and the other half are either building Andela’s internal products or still onboarding."
+      },
+      {
+        "question": "Why did Andela choose to launch in Africa?",
+        "answer": "For every software developer in the United States, there are five open jobs. Africa, meanwhile, has the youngest, fastest-growing population on earth, with more people joining the labor force over the next 20 years than the rest of the world combined. By connecting engineering organizations to the brightest individuals on the African continent, Andela provides a bridge to close the talent gap while investing in the smartest, most creative minds in software development."
+      },
+      {
+        "question": "What is Andela’s hiring philosophy?",
+        "answer": "<ul><li>We believe in people who believe in themselves.</li> <li>We identify people who take ownership for their own learning. </li> <li> We are committed to investing in and supporting future African technology leaders. </li><li> We assess people for values-alignment in the areas of excellence, passion, integrity, and collaboration. </li></ul>"
+      },
+      {
+        "question": "What is the gender breakdown of Andela developers?",
+        "answer": "Currently, 26% of Andela developers are female, compared to a global average of 7% female software developers. In an effort to achieve a more balanced ratio, Andela has held multiple female-only recruitment cycles and bootcamps in both Lagos and Nairobi, as well as launched the 'She Loves Code' initiative by which women in the program mentor young women in the community and host local events."
+      },
+      {
+        "question": "What is the ALC?",
+        "answer": "The Andela Learning Community is a network of people across Africa dedicated to learning how to develop technology to solve humanity’s problems."
+      },
+      {
+        "question": "What happens during the 2-week simulated sprint (BootCamp)?",
+        "answer": "Throughout the two weeks, candidates are rated on three things: Values, Output, and Feedback -- or VOF. We expect candidates to learn independently as well as on a team to deliver a final project, and we’re looking for work ethic, passion and teamwork throughout."
+      },
+      {
+        "question": "What can potentially disqualify me from joining Andela?",
+        "answer": "<ul><li>Using downloaded website templates for HTML and CSS </li><li> Submitting copied code as yours </li><li>Submitting someone else’s work as yours</li></ul>"
+      },
+      {
+        "question": "What if I have more questions?",
+        "answer": "You can contact us at <a href='mailto:xxx@andela.com' target='_blank'>xxx@andela.com</a>."
+      }
+    ],
+    "user": [
+      {
+        "question": "What is the ALC?",
+        "answer": "The Andela Learning Community is a network of people across Africa dedicated to learning how to develop technology to solve humanity’s problems."
+      },
+      {
+        "question": "What is VOF?",
+        "answer": "VOF exists to provide learners with the self-awareness that empowers them to drive new identity creation in the realm of technology leadership and Andela with the data to support them in becoming fit-for-Fellowship."
+      },
+      {
+        "question": "What is the history of VOF?",
+        "answer": "VOF evolved out of an identified need to use data-driven decision making in our Pre-Fellowship programs as we identified top performers to enter the Fellowship. Prior to VOF, Google Sheets were developed to capture continuous information on learner growth and outputs throughout their Bootcamp experience."
+      },
+      {
+        "question": "Who are the users of VOF?",
+        "answer": "Within Andela, Bootcamp LF(A)s and Talent members are the current users. Within the ALC, we hope to expand access to all members of our pre-Fellowship programs. Currently, only Bootcampers will have access to the application. "
+      },
+      {
+        "question": "What are the key functionalities of VOF? ",
+        "answer": "<ul><li>Enable Learners to view and submit the outputs required for each of their programs, and provide insight on their progress over time. </li><li>Capture information (data) on learner performance over time, based on a specified set of outputs</li><li>Serve as a decision-making tool for learner selection into the Fellowship</li><li>Enable facilitators and learners to exchange feedback and reflections aimed at improving performance and self-awareness</li></ul>"
+      },
+      {
+        "question": "Who is evaluated using VOF? ",
+        "answer": "Currently, the app supports the growth evaluation of Bootcamp learners. We have plans to expand this to include ALC members at large, incrementally, over the next few quarters."
+      },
+      {
+        "question": "What happens during the 2-week simulated sprint (BootCamp)?",
+        "answer": "Throughout the two weeks, candidates are rated on three things: Values, Output, and Feedback -- or VOF. We expect candidates to learn independently as well as on a team to deliver a final project, and we’re looking for work ethic, passion and teamwork throughout."
+      },
+      {
+        "question": "What can potentially disqualify a candidate from joining Andela?",
+        "answer": "<ul><li>Using downloaded website templates for HTML and CSS</li><li>Submitting copied code as his/hers</li><li>Submitting someone else’s work as his/hers</li><li>Note: an NDA document is currently being finalized and will be hyperlinked as soon as complete.</li></ul>"
+      },
+      {
+        "question": "How does a LFA get started? ",
+        "answer": "Check out <a href='https://drive.google.com/open?id=0B7kfnKMiaEGIeU9PQWFLU01FTVE' target='_blank' class='faq-link'>this quick video.</a>"
+      },
+      {
+        "question": "How can I give feedback on VOF?",
+        "answer": "<ul><li>Feel free to share your thoughts directly on #talent-solutions and help us improve!</li><li>Satisfaction Survey <ul><li>The goal of the Satisfaction Survey is to capture LF(A) experience using the VOF Tracker during Bootcamps. All information is anonymous.</li><li>To provide feedback and ratings on the various attributes of VOF, please take the survey <a href='https://goo.gl/forms/cicc7e1uUBbw584y1' target='_blank' class='faq-link'>here</a> </li></ul></li></ul>"
+      },
+      {
+        "question": "How do I report bugs?",
+        "answer": "<ul><li>Via intercom widget:<ul><li>Find a floating widget at the bottom right corner of the page (<a href='https://vof.andela.com' target='_blank' class='faq-link'>https://vof.andela.com</a>)</li><li>Send your feedback to technology</li></ul></li><li>Via slack: <ul><li>Find us over at #talent-solutions</li><li>Send your feedback and tag <span class='mentions'>@talent-dev-team</span></li></ul></li></ul>"
+      },
+      {
+        "question": "How can I help the program succeed?",
+        "answer": "<ul><li>Ask questions  and share feedback about BootCamp and VOF in #bootcampdesign channel </li><li>Join VOF demo sessions</li><li>Volunteer as an LFA.</li><li>Do a brown-bag session for the candidates</li><li>Join final project demos of candidates as a panelist</li><li>Suggest <a href='https://docs.google.com/spreadsheets/d/1_DUfYi_gHZ8pxM1CTLndUxA718vNkP67Pn6sjgZ40Zo/edit#gid=728151351' target='_blank' class='faq-link'>project ideas</a> for CheckPoint apps. See <a href='https://docs.google.com/document/d/1usrRiM2Dix_-ZHHGL45ygGaTyPca92a3PAIizdql0ko/edit#heading=h.1svmfokajawx' target='_blank' class='faq-link'>sample template</a> here</li><li>Contact <span class='mentions'>@maya</span> or <span class='mentions'>@chalu</span> on Slack</li></ul>"
+      },
+      {
+        "question": "What if I have more questions?",
+        "answer": "<ul><li>For questions about VOF, please contact @maya or @chalu (by DM or on #talent-solutions).</li><li>For questions about pre-Fellowship program facilitation, please contact your country Learning Facilitator. </li></ul>"
+      }
+    ]
+  },
+  "resources": {
+    "learner": [
+      {
+        "title": "Andela & Program-Related Resources",
+        "links":
+          [
+            {
+              "url": "https://andela.com/join/",
+              "value": "Learn more about Andela!"
+            },
+            {
+              "url": "https://docs.google.com/spreadsheets/d/1WzguOFtsHVDd0KCX9cgvj2_YGQOtyQ6nOeUcb_uzDvo/edit#gid=580414053",
+              "value": "Self Learning Clinic: Prep Package"
+            },
+            {
+              "url": "https://drive.google.com/file/d/0B5Vrqhb-7cCncW1EQ2c1Zl9sT3c/view",
+              "value": "Learning map"
+            },
+            {
+              "url": "https://drive.google.com/open?id=12ufCd3sF6XPncPEYJ0_gK4TAi7uBy4H5nDLDqJav4OU",
+              "value": "Feedback scorecard"
+            },
+            {
+              "url": "https://docs.google.com/a/andela.com/spreadsheets/d/1ybDRAFKuW3wPWttNCzrYxGZt7kXa43s8plfAe_kqE5Y/edit?usp=sharing",
+              "value": "Week 1 Guide"
+            }
+          ]
+      },
+      {
+        "title": "Learning Resources",
+        "links":
+          [
+            {
+              "url": "https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow",
+              "value": "Recommended Git Workflow"
+      
+            },
+            {
+              "url": "http://chris.beams.io/posts/git-commit/",
+              "value": "Recommended Commit Message"
+            },
+            {
+              "url": "https://guides.github.com/activities/hello-world/#pr",
+              "value": "Recommended Pull Request (PR)"
+            },
+            {
+              "url": "https://www.pivotaltracker.com/help/articles/quick_start/",
+              "value": "Pivotal Tracker Quick Start"
+            },
+            {
+              "url": "https://code.tutsplus.com/tutorials/beginning-test-driven-development-in-python--net-30137",
+              "value": "TDD in python"
+            },
+            {
+              "url": "https://www.sitepoint.com/learning-javascript-test-driven-development-by-example/",
+              "value": "TDD in Javascript By Example"
+            },
+            {
+              "url": "https://docs.travis-ci.com/user/for-beginners",
+              "value": "Continous integration with Travis"
+            },
+            {
+              "url": "http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api",
+              "value": "RESTful API best practices"
+            },
+            {
+              "url": "https://swagger.io/",
+              "value": "API Documentation using Swagger"
+            },
+            {
+              "url": "https://apiary.io/",
+              "value": "API Documentation using Apiary"
+            },
+            {
+              "url": "https://github.com/airbnb/javascript",
+              "value": "JS Airbnb Style Guide"
+            },
+            {
+              "url": "http://www.postgresqltutorial.com/install-postgresql/",
+              "value": "PostgreSQL Databases"
+            }
+          ]
+      }
+    ],
+    "user": [
+      {
+        "title": "Important Resources",
+        "links":
+          [
+            {
+              "url": "https://docs.google.com/document/d/1xFAGKOFAVra9nVgtkW0TNYIiPliZd3sOsXwxvUQjbAY/edit#",
+              "value": "VOF Vision / Mission"
+            },
+            {
+              "url": "https://drive.google.com/file/d/0B5Vrqhb-7cCncW1EQ2c1Zl9sT3c/view",
+              "value": "Bootcamp Curriculum"
+            },
+            {
+              "url": "https://github.com/andela/learning/tree/master/Bootcamp",
+              "value": "State of Bootcamp"
+            },
+            {
+              "url": "https://github.com/andela/learningmap/tree/master/Bootcamp/Curriculum",
+              "value": "Andela OKBBs"
+            },
+            {
+              "url": "https://docs.google.com/spreadsheets/d/1dOX1MibJDVxmFVuAhX2buvYdDNrUgrkaoC7QIhvK3V0/edit#gid=0",
+              "value": "VOF Framework & Levels"
+            },
+            {
+              "url": "https://docs.google.com/spreadsheets/d/1u5z0uf0KLJ1YnVCFwWcIcEjY2rfquLGCEcr0mSZ62es/edit#gid=1425508101",
+              "value": "VOF Scoring Algorithms"
+            },
+            {
+              "url": "https://docs.google.com/document/d/1usrRiM2Dix_-ZHHGL45ygGaTyPca92a3PAIizdql0ko/edit#",
+              "value": "Sample Checkpoint Template"
+            }
+          ]
+      }
+    ]
+  }
+}

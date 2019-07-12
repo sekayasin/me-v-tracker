@@ -1,0 +1,18 @@
+var message = "<%= flash[:notice] == 'assessment-success' ? 'Assessment Successfully created' : flash[:error] %>";
+
+var toast = $(".toast")
+
+$('.main-content').removeClass('loading')
+<% if flash[:notice] == 'assessment-success' %>
+  toast.messageToast.start(message, "success")
+  $("#assessment-name-id").val("")
+  $("#assessment-description").val("")
+  $("#assessment-expectation").val("")
+  $("#context").val("")
+  $("#N\\/R").val("")
+  $("[id='Below Expectations']").val("")
+  $("[id='At Expectations']").val("")
+  $("[id='Exceeds Expectations']").val("")
+<% else %>
+  toast.messageToast.start(message, "error")
+<% end %>

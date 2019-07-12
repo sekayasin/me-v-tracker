@@ -1,0 +1,70 @@
+{
+  "Learning Ability": {
+    "Feedback": [
+      "Openness To Feedback",
+      "Progress Attempts"
+    ]
+  },
+  "Self-awareness": {
+    "Feedback": []
+  },
+  "Quality": {
+    "Output Quality": [
+      "Programming Logic",
+      "Test-Driven Development",
+      "Object Oriented Programming",
+      "HTTP & Web Services",
+      "Front-End Development",
+      "Agile Methodology",
+      "Databases",
+      "Github Repository",
+      "Code Syntax Norms"
+    ]
+  },
+  "Quantity": {
+    "Output Quality": [
+      "GIT",
+      "Project Management"
+    ]
+  },
+  "Initiative": {
+    "Output Quality": [
+      "Growth Mindset"
+    ]
+  },
+  "Communication": {
+    "Output Quality": [
+      "Writing Professionally",
+      "Seeks Feedback",
+      "Asks Questions",
+      "Code Understanding"
+    ]
+  },
+  "Professionalism": {
+    "Output Quality": []
+  },
+  
+  "Integration": {
+    "Output Quality": [
+      "Motivation and Commitment",
+      "Adaptability",
+      "Relationship Building",
+      "Version Control"
+    ]
+  },
+  "EPIC": {
+    "Values Alignment": [
+      "Excellence",
+      "Passion",
+      "Integrity",
+      "Collaboration",
+      "Commitment"
+    ]
+  },
+  "Technology Leader": {
+    "Values Alignment": []
+  },
+  "Human Empowerment": {
+    "Values Alignment": []
+  }
+}

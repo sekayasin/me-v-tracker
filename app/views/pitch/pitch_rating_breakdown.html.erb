@@ -1,0 +1,60 @@
+<div class="ratings-container">
+    <div class="breakdown-panelists">
+        <div>
+            <span class="tab-btn-back-icon">
+                <%= image_tag("back-icon-copy.svg") %>
+            </span>
+            <span class="rating-info-1">John Doe's Rating Breakdown</span>
+            <p class="rating-info-2">John Doe was rated by 5 panelists</p>
+        </div>
+        <div class="one-panelist" id="panelist-1">
+            <div class="panelist-image">PA</div>
+            <div class="panelist-info">
+                <p class="panelist-name">Panelist A</p>
+                <p class="panelist-email">johndoe@andela.com</p>
+            </div>
+        </div>
+        <div class="one-panelist" id="panelist-2">
+            <div class="panelist-image">PB</div>
+            <div class="panelist-info">
+                <p class="panelist-name">Panelist B</p>
+                <p class="panelist-email">johndoe@andela.com</p>
+            </div>
+        </div>
+        <div class="one-panelist" id="panelist-3">
+            <div class="panelist-image">PC</div>
+            <div class="panelist-info">
+                <p class="panelist-name">Panelist C</p>
+                <p class="panelist-email">johndoe@andela.com</p>
+            </div>
+        </div>
+        <div class="one-panelist" id="panelist-4">
+            <div class="panelist-image">PD</div>
+            <div class="panelist-info">
+                <p class="panelist-name">Panelist D</p>
+                <p class="panelist-email">johndoe@andela.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="breakdown-one-panelist">
+        <div class="panelist-ratings">
+            <div>
+                <span class="one-panelist-image">
+                    PA
+                </span>
+                <span class="rating-info-1">Panelist A's Ratings for John Doe</span>
+        </div>
+        <%= render  "rating_breakdown" %>
+        <hr>
+        <div class="decision-wrapper">
+            <p class="decision-phrase"><em>Will Panelist A want to work with this person on his/her team?</em><span class="decision-word-wrapper"><span class="decision-word">YES</span></span></p>
+            <p>Addtional Comments: <span class="decision-comments"><em>I really think he was able to articulate the product vision in an EPIC manner. Also responds well to feedback.</em></span></p>
+        </div>
+        </div>
+        <div class="panelist-cumulative-average">
+            <span class="rating-info-1" id="rating-info-1">John Doe's Cumulative Average</span>
+            <%= render  "rating_breakdown" %>
+        </div>
+    </div>
+</div>
+

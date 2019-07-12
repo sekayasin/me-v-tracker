@@ -1,0 +1,98 @@
+<div id="lfa-feedback-view" class="view-submission">
+  <div class="modal lfa-modal">
+    <div class="modal-top">
+      <span class="close-button close-give-feedback-modal"></span>
+      <div class="modal-header submission-header">
+          View Submission
+      </div>
+      <div class="lfa-view-late-submission"></div>
+      <div class="line">
+        <span class="long"></span>
+        <span class="short"></span>
+      </div>
+    </div>
+    <div class="modal-content">
+      <div class="details-bar">
+        <span>Phase: <div class="phase-name"></div></span>
+        &nbsp;&nbsp;&nbsp;
+        <span>Assessment: <div class="assessment-name"></div></span>
+      </div>
+      <ul class="multiple-output-bar" id="multiple-output-bar"></ul>
+      <ul class="view-submission-bar">
+        <li class="view-submission-item active" id="submission-and-feedback"><a>Submission & Feedback</a></li>
+        <li class="view-submission-item" id="reflection"><a>Reflection</a></li>
+      </ul>
+      <form id="feedback-form">
+        <div>
+          <label for="link" id="submission-link-label">
+            Link<span class="error-mode required-symbol"></span>
+          </label>
+          <div id="submission-link" class="submission-link"></div>
+        </div>
+        <div class="submission-wrapper">
+          <div class="icon-file">
+            <%= image_tag("file-icon.svg", :class => "file-icon")%>
+          </div>
+          <div class="assignment-pdf assignment" id="submission-file">
+            Assignment_pdf
+          </div>
+          <div class="submission-links links">
+            <a href="#" id="a-view"  onclick="" target="_blank">View</a>
+            <a href="#" id="a-download">Download</a>
+          </div>
+        </div>
+        <div>
+          <label  for="description" id="submission-description-label">
+            Description<span class="error-mode"></span>
+          </label>
+          <textarea  type="text" name="description" id="submission-description" class="submission-description" maxlength="200"></textarea>
+        </div>
+        <div id="lfa-feedback-group">
+          <div>
+            <label  for="lfa-feedback">
+              Impression<span class="error-mode"></span>
+            </label>
+            <div class="impression">
+              <select class="learner-impression-dropdown select-menu" id="impression-of-lfa"></select>
+            </div>
+          </div>
+          <div>
+            <label  for="lfa-feedback">
+              Your feedback<span class="error-mode"></span>
+            </label>
+            <span class="edit-feedback-wrapper"></span>
+            <textarea  type="text" id="lfa-give-feedback" name="feedback" class="submission-description"></textarea>
+          </div>
+        </div>
+      </form>
+      <div id="reflection-tab">
+        <div id="no-reflection-container">
+          <span id="no-reflection">
+            <span class="learner-name"></span> hasn't entered a reflection to your feedback yet.
+          </span>
+        </div>
+        <label for="reflection" id="reflection-label">
+          <span class="learner-name"></span>'s Reflection<span class="error-mode"></span>
+        </label>
+        <textarea type="text" id="learner-reflect" name="reflection" class="reflection"></textarea>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-bottom" id="modal-bottom-submission">
+    <div class="view-submission-export">
+      <div class= "btn-wrapper">
+        <a id="save-feedback-button">Save</a>
+        <a class='cancel-submission-btn close-give-feedback-modal' id="cancel-give-feedback-modal">Cancel</a>
+        <a class='update-submission-btn' id="post-feedback">Submit Feedback</a>
+      </div>
+    </div>
+  </div>
+  <div class="modal-bottom" id="modal-bottom-reflection">
+    <div class="view-submission-export">
+      <div class= "btn-wrapper">
+        <a class='cancel-submission-btn close-give-feedback-modal'>Close</a>
+      </div>
+    </div>
+  </div>
+</div>

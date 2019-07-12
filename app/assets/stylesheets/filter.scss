@@ -1,0 +1,233 @@
+@import "base";
+
+.filter-container {
+  max-width: 15%;
+  min-width: px-to-rem(200px);
+  float: left;
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  flex-direction: column;
+  margin-top: px-to-rem(28px);
+  background-color:rgb(248, 249, 251);
+  border: px-to-rem(0.5px) solid rgba(0,0,0,0.05);
+  border-radius: px-to-rem(5px);
+  box-shadow: 0 px-to-rem(1.6px) px-to-rem(1px) 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+
+  @include respond-to(handhelds) {
+    max-width: 60%;
+    margin-left: 20%;
+    float: none;
+    top: px-to-rem(15px);
+    left: 0;
+    width: 70%;
+  }
+
+  .filter-container:after {
+    clear: both;
+  }
+
+  #filter-header {
+    margin: px-to-rem(30px) px-to-rem(25px) px-to-rem(15px) px-to-rem(25px)!important;
+    color: rgb(85, 84, 84);
+    font-size: px-to-rem(19px) !important;
+  }
+
+  #filter-count {
+    margin: 0 px-to-rem(15px) px-to-rem(14px) px-to-rem(26px);
+    color: rgb(182, 180, 180) !important;
+  }
+  .search {
+    font-size: px-to-rem(14px);
+    color: rgb(182, 180, 180) !important;
+  }
+
+  .filter-content {
+    background-color: $background-white;
+    width: 96%;
+    margin: 0 auto;
+    float: left;
+    padding: 2% 10%;
+    cursor: pointer;
+    font-size: px-to-rem(9px);
+    border: px-to-rem(0.5px) solid rgba(0,0,0,0.05);
+    border-radius: px-to-rem(3px);
+    box-shadow: 0 px-to-rem(1px) px-to-rem(1px) 0 rgba(0,0,0,0.05),
+    0 px-to-rem(2px) px-to-rem(2px) 0 rgba(0,0,0,0.05);
+
+    @include respond-to(handhelds) {
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    div.filter-box {
+      float: left;
+      max-width: 100%;
+      text-align: center;
+      cursor: pointer !important;
+      margin: 0 auto;
+      font-size: px-to-rem(12px);
+      padding: px-to-rem(10px);
+      font-weight: lighter;
+    }
+
+    p.label {
+      margin-top: px-to-rem(7px);
+      font-size: px-to-rem(16px) !important;
+    }
+
+    .wrapper {
+      .mdl-textfield__input {
+        padding-bottom: px-to-rem(5px) !important;
+        margin-top: px-to-rem(-15px) !important;
+        font-weight: 60 !important;
+        font-size: px-to-rem(14px) !important;
+      }
+
+      .mdl-textfield__label {
+        font-size: px-to-rem(15px);
+        margin-top: px-to-rem(-18px);
+      }
+
+      .error-text {
+        text-align: center;
+        h4 {
+          background: $background-yellow;
+          color: $background-white;
+          font-size: px-to-rem(15px);
+        }
+      }
+
+      ul.list-items {
+        list-style: none;
+        max-height: px-to-rem(140px);
+        overflow: hidden;
+        overflow-y: auto;
+        overflow-x: auto;
+        cursor: pointer;
+        left: 0 !important;
+        padding: px-to-rem(4px) px-to-rem(10px) !important;
+
+        span {
+          padding-left: px-to-rem(12px);
+        }
+
+        .checkbox-label {
+          display: block;
+          position: relative;
+          padding-left: px-to-rem(35px);
+          margin-bottom: px-to-rem(12px);
+          cursor: pointer;
+          font-size: px-to-rem(15px);
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+
+          .checkmark {
+            position: absolute;
+            top: px-to-rem(3px);
+            margin-bottom: px-to-rem(3px);
+            left: 0;
+            height: px-to-rem(19px);
+            width: px-to-rem(19px);
+            border-radius: px-to-rem(2px);
+            border: px-to-rem(2px) solid $header-text-color;
+          }
+
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+        }
+
+        .checkbox-label input:checked ~ .checkmark {
+          background-color: $andela-blue;
+          border: none;
+        }
+
+        .checkbox-label {
+          input:checked ~ .checkmark:after {
+          display: block;
+        }
+      }
+        .checkbox-label {
+          .checkmark:after {
+            left: px-to-rem(5px);
+            top: px-to-rem(2px);
+            width: px-to-rem(5px);
+            height: px-to-rem(10px);
+            border: solid white;
+            border-width: 0 px-to-rem(3px) px-to-rem(3px) 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    span.arrow-icon {
+      display: block;
+      position: relative;
+      float: right;
+      margin-top: px-to-rem(-30px);
+      width: px-to-rem(18px);
+      height: px-to-rem(18px);
+    }
+  }
+
+  #clear {
+    color: $andela-blue;
+    float: right;
+    font-size: px-to-rem(12px);
+    margin-left: auto;
+    margin-right: 7%;
+    padding: px-to-rem(4px) px-to-rem(0px);
+  }
+
+  .arrow-up-icon {
+    background: #fff url("up.svg") no-repeat;
+  }
+
+  .arrow-down-icon {
+    background: #fff url("down.svg") no-repeat;
+  }
+
+  $filter-btn-style: (
+    $background-blue,
+    $background-white,
+    px-to-rem(7px) px-to-rem(40px),
+    px-to-rem(17px),
+    null
+  );
+
+  .filter-btn {
+    @include buttons($filter-btn-style...);
+    margin: px-to-rem(20px) px-to-rem(25px);
+    text-align: center !important;
+    cursor: pointer;
+  }
+  .clear-btn {
+    background: $background-white;
+    margin: 0 px-to-rem(26px) px-to-rem(20px) px-to-rem(26px);
+    color: $background-blue;
+    border-color: $background-blue;
+    font-size: px-to-rem(16px);
+    padding: px-to-rem(7px) px-to-rem(20px);
+  }
+}

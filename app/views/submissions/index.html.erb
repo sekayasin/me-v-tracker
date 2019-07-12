@@ -1,0 +1,28 @@
+<div id="submissions-page-container">
+    <div class="main-section">
+      <% if admin? %>
+        <div id="filter-small-main">
+        </div>
+      <% end %>
+    <div id="submission-main-container">
+        <% if flash[:error]%>
+        <div id="authorised-lfa-error">
+          <%= content_tag :span, flash[:error], class: "error", id: "puffly" %>
+        </div>
+      <% end %>
+      <div class="learners-submission-container" id="learners-submissions">
+        <div class="learners-submissions-cards"></div>
+        <div class="submission-bottom">
+          <div class="btn-wrapper">
+            <div class="pagination-control-submissions"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <% if admin? %>
+        <div id="filter-main">
+           <%= render 'filter.html'%>
+        </div>
+      <% end %>
+    </div>
+</div>

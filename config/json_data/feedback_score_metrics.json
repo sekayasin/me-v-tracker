@@ -1,0 +1,46 @@
+{
+  "Openness To Feedback": {
+    "assessmentDescription": "With this life approach, I seek and receive feedback from all those around me. I do this because I know this feedback will propel me forward to reach my personal and team goals.",
+    "assessmentContext": "When receiving feedback....",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The behavior was not observed"
+      },
+      {
+        "type": 1,
+        "description": "Pays little or no attention to teammates’ suggestions or contributions. * Often defensive when receiving feedback (especially negative feedback)."
+      },
+      {
+        "type": 2,
+        "description": "Willing to accept feedback, but often shy or timid to consult other. * Does not willingly invite/request opinions from teammates"
+      },
+      {
+        "type": 3,
+        "description": "Quick to admit areas of weakness; seeks help promptly, when it is necessary. * Acknowledges and appreciates both positive and negative feedback"
+      }
+    ]
+  },
+  "Progress Attempts": {
+    "assessmentDescription": "With this life approach, I harness the power of reflection and action after receiving feedback. I do this to push my learning into action and bring about observable changes in my day-to-day way of being. ",
+    "assessmentContext": "After receving feedback...",
+    "scoringContext": [
+      {
+        "type": 0,
+        "description": "The behavior was not observed"
+      },
+      {
+        "type": 1,
+        "description": "Does not evaluate or reflect on feedback given to identify any inherent value/benefit. * Reflections often surface-level, showing little or no intention/commitment to apply feedback given"
+      },
+      {
+        "type": 2,
+        "description": "Considers feedback valuable, but does not seek additional clarification. * Shows willingness to incorporate the feedback, but does not provide a plan of intended action(s)"
+      },
+      {
+        "type": 3,
+        "description": "Reflects on feedback and asks additional questions for clarification. * Responds with an articulate plan (verbal or written) showing commitment to apply the feedback, taking noticeable action(s)."
+      }
+    ]
+  }
+}

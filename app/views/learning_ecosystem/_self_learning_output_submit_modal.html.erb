@@ -1,0 +1,57 @@
+<div>
+  <div id="multiple-output-submission" class="learner-submission">
+    <div class="modal">
+      <div class="modal-top">
+        <div class="modal-header">
+          <span class="close-button" id="close-multiple-output-modal"></span>
+          <div class="top-section learner-submission-top-header">
+            <div class="learner-submission-header">
+                Enter Submission
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="learner-submission modal-content" id="multiple-output-submission-modal-content">
+          <ul class="multiple-output-bar" id="multiple-output-bar">
+            <li class="multiple-output-item active"><a>Day 1</a></li>
+            <li class="multiple-output-item"><a>Day 2</a></li>
+            <li class="multiple-output-item"><a>Day 3</a></li>
+          </ul>
+          <form class="multiple-output-submission-form" id="multiple-output-submission-form">
+            <label id="label-link" for="multiple-output-link">
+              Enter a link<span id="link-required" class="error-mode required-symbol">*</span>
+            </label>
+            <input id="multiple-output-link" type="text" name="multiple-output-link" maxlength="200" placeholder="http:// or https://">
+            <label for="selfLearningfileUpload">
+            <div class="drop-area">
+              <label for="selfLearningfileUpload" class="drop-area-text">
+              <%= image_tag("upload-icon.svg", :class => "upload-icon")%>
+                <strong>click to upload</strong> or drop your file here
+              </label>
+              <input type='file' id="selfLearningfileUpload" name="file" accept=".png, .jpg, .jpeg" />
+            </div>
+            <p id="file_error" class="error"></p>
+            </label>
+            <label id="label-description" for="multiple-output-description">
+              Enter a description<span id="description-required" class="error-mode required-symbol">*</span>
+            </label>
+            <textarea id="multiple-output-description" type="text" name="multiple-output-description" maxlength="200"></textarea>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class ="modal-bottom">
+      <div class="learner-submission-export">
+        <div class= "btn-wrapper">
+          <a class='cancel-output-btn' id="cancel-multiple-output-submission">Cancel</a>
+          <a class='save-output-btn' id="save-multiple-output-submission">Save</a>
+          <a class='disabled-save-output-btn'>Save</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

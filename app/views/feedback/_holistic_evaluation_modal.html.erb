@@ -1,0 +1,62 @@
+<div id="holistic-performance-evaluation" class="holistic-performance-evaluation">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="modal-header">
+        <span class="close-button close-modal"></span>
+          <div class="top-section">
+            <div class="holistic-evaluation-header">
+                Holistic Evaluation
+            </div>
+            <div class="line">
+              <span class="long"></span>
+              <span class="short"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-content">
+          <form id="evaluation-form">
+            <div class="criterium-wrapper">
+            <input class="hidden-length" value="<%= @criteria.length %>" disabled/>
+            <% @criteria.each do |criterium| %>
+              <div class="criterium-card <%= criterium[:name] %>">
+                <div class="criterium-box">
+                  <div class="criterium-header">
+                  <span id="<%= criterium[:id] %>"><%= criterium[:name] %></span><span class="holistic-average">AVG: N/A</span>
+                  <span id="criterion-<%= criterium[:id] %>" class="material-icons information-icon"> info_outline </span>
+                </div>
+                </div>
+                <div class="select-background">
+                <select name="satisfaction-level" class="satisfaction-level">
+                  <option value="">Satisfaction Level</option>
+                  <option value="-2">Very Unsatisfied (-2)</option>
+                  <option value="-1">Unsatisfied (-1)</option>
+                  <option value="0">Neutral (0)</option>
+                  <option value="1">Satisfied (1)</option>
+                  <option value="2">Very Satisfied (2)</option>
+                </select>
+                </div>
+                <div class="comment-area">
+              <textarea class="leave-comment" placeholder="Leave Comments"></textarea>
+            </div>
+          </div>
+          <% end %>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class ="modal-bottom">
+    <% if can_edit_scores?(params[:id], @learner_details[:learner].cycle_center.id) %>
+      <a class='score-history-btn' id="holistic-performance">View/Edit Scores History</a>
+    <% else %>
+      <a class='score-history-btn' id="holistic-performance">View Scores History</a>
+    <% end %>
+    <div class="btn-wrapper">
+      <input class='btns submit' id="confirm-submission" type="submit" value="Submit"/>
+    </div>
+    <div class="mandatory-comment ">Mandatory Comments Applicable: Very Unsatisfied [-2],
+        Unsatisfied [-1], Very Satisfied [2]
+    </div>
+  </div>
+</form>
+</div>
+<%= render("feedback/criterion_tooltip_modal") %>

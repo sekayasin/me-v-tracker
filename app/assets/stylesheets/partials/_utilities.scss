@@ -1,0 +1,47 @@
+@import "./variables";
+
+.flex {
+  display: flex;
+}
+
+.flex-space-btw {
+  justify-content: space-between;
+}
+
+.is-centered {
+  margin: 0 auto;
+}
+
+.is-primary {
+  color: $background-white;
+  background-color: $background-blue;
+}
+
+.is-success {
+  color: $background-white;
+  background-color: $respond-success-btn;
+}
+
+.is-circular {
+  border-radius: 50%;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+.is-blue {
+  color: $andela-blue;
+}
+
+.is-capitalized {
+  text-transform: capitalize;
+}
+
+.is-black {
+  color: $top-section-black;
+}

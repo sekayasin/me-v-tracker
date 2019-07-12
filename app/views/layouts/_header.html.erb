@@ -1,0 +1,457 @@
+<section class="header-container-on-mobile-view">
+  <div class="header-on-mobile-view">
+    <div class="header-left">
+      <div class="mobile-view-container">
+        <div class="icon-bars">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <ul class="navigation-list-dropdown">
+          <li class="mobile-search-container search-box">
+            <span class="current-modifier modifier"></span>
+            <input type="search" placeholder="Search" autocomplete="off" />
+            <span class="mobile-search-icon"></span>
+            <div class="modifiers-list mobile-modifiers-dropdown">
+              <span class="modifier-error"></span>
+              <ul>
+                <li>In: Curriculum </li>
+                <li>In: Learners </li>
+                <li>In: Support </li>
+              </ul>
+            </div>
+          </li>
+          <% if admin? %>
+          <li class="mobile-add-program">
+            <a class="add-program-btn add-new-program">
+              <span class="add-program-btn-text">CREATE NEW ALC</span>
+              <span class="add-circle"></span>
+            </a>
+          </li>
+          <% end %>
+          <% unless authorized_learner? %>
+          <li class="mobile-dlc-options">
+            <span class="mobile-dlc"> Change ALC - Bootcamp </span>
+            <span class="mobile-right-arrow-key"></span>
+          </li>
+          <% end %>
+          <li class="mobile-tour">
+            <a href="#">
+              Start tour
+            </a>
+          </li>
+          <li class="mobile-notifications-container notifications-trigger" id="mobile-notification-container">
+            <a href="#" class="mobile-notifications-badge"
+              data-badge="<%= current_user_notifications[0][:notification_count] %>">Notifications</a>
+            <span class="mobile-right-arrow-key"></span>
+          </li>
+          <% if admin? %>
+          <li class="mobile-all-programs">
+            <a class="all-programs-button">
+              All Programs
+            </a>
+          </li>
+          <%end%>
+          <li class="mobile-logout">
+            <a class="add-program-btn logout-link" href="/logout">
+              Sign out
+            </a>
+          </li>
+        </ul>
+        <ul class="mobile-select-dlc">
+          <li class="select-dlc">
+            <span class="mobile-left-arrow-key"></span>
+            <span class="select-dlc-title"> Select ALC </span>
+          </li>
+          <% program_options.each do |program| %>
+          <li data-value="<%= program[1] %>">
+            <a class="dropdown-link" href="/learners?program_id=<%= program[1] %>"><%= program[0]%></a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <a class="brand-logo-on-mobile-view" href="/learners"></a>
+    </div>
+    <div class="header-right">
+      <div class="navbar-on-mobile-view">
+        <div class="navbar-nav">
+          <% unless authorized_learner? %>
+          <a class="navbar-item-container analytics" href="/analytics">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="pie-chart link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <% if admin? || andelan_lfa? %>
+          <a class="navbar-item-container index learner-link" href="/learners">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="account-circle link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <% end %>
+
+          <a class="navbar-item-container curriculum" href="/curriculum">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="notepad link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <a class="navbar-item-container submission" href="/submissions">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="submission-icon link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <% if admin? %>
+          <a class="navbar-item-container survey" href="/surveys-v2">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="survey-icon link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <a class="navbar-item-container programs" href="/programs">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="programs-icon link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <a class="navbar-item-container pitch" href="/pitch">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="pitch-icon link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <% end %>
+          <a class="navbar-item-container support" href="/support">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="chat-box link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <% end %>
+          <% if authorized_learner? %>
+          <a class="navbar-item-container learner-profile" href="/learner">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="account-circle link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <a class="navbar-item-container learning-ecosystem" href="/learner/ecosystem">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="notepad link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <a class="navbar-item-container survey" href="/surveys-v2">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="survey-icon link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <a class="navbar-item-container" href="https://homestudy.andela.com/" target="_blank">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="ic-link-icon link-icon"></span></span>
+            </span>
+          </a>
+          <a class="navbar-item-container" href="#">
+            <span class="navbar-item">
+              <span class="navbar-item-icon"><span class="chat-box link-icon"></span></span>
+              <div class="active-border"></div>
+            </span>
+          </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="header-container">
+  <div class="header">
+    <a class="brand-logo" href="/analytics">
+    </a>
+    <div class="pull-right header-right">
+      <div class="search-container search-box">
+        <span class="current-modifier modifier"></span>
+        <input type="search" id="search" class="search-input" autocomplete="off" />
+        <span class="search-icon"></span>
+        <div class="modifiers-list modifiers-dropdown">
+          <span class="modifier-error"></span>
+          <ul>
+            <li>In: Curriculum </li>
+            <li>In: Learners </li>
+            <li>In: Support </li>
+          </ul>
+        </div>
+      </div>
+      <a href="#" class="tour-trigger tour-tip" id="tour-icon">
+        <span class="tour-icon" id="tour-icon"></span>
+        <div class="mdl-tooltip mdl-tooltip--top tour-icon-text" style="display: block" for="tour-icon">
+          Start tour
+        </div>
+      </a>
+      <a id="notifications-container" class="notifications-trigger" href="#" aria-label="Toggle Notifications Pane">
+        <span
+          class="notification-icon <%= 'has-notifications' if current_user_notifications[0][:results].length != 0 %>">
+          <span>
+            <p class="notification-total"></p>
+          </span>
+        </span>
+      </a>
+      <div class="profile-container logout-select">
+        <div class="profile-img">
+          <img id="header-profile-image" src="<%= session[:current_user_info][:picture] %>" />
+        </div>
+        <div class="profile-name-container">
+          <span class="profile-name truncate" data-email="<%= session[:current_user_info][:email] %>">
+            <%= session[:current_user_info][:name] %>
+          </span>
+          <span class="profile-name-icon"><i class="material-icons">&#xE5C5;</i></span>
+        </div>
+      </div>
+      <div class="logout-select-dropdown">
+        <dl id="sample" class="dropdown logout-dropdown">
+          <dd>
+            <ul class="dropdown-content">
+              <li>
+                <a class="add-program-btn logout-link" href="/logout">
+                  Log Out
+                </a>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="navbar">
+    <% unless authorized_learner? %>
+    <a href="#" class="program-select">
+      <span class="icon-container"></span>
+      <span class="program-name-container">
+        <span class="program-name">
+          <span class="dropdown-text program-text-display truncate"></span>
+        </span>
+        <span class="program-name-icon"><i class="material-icons">&#xE5C5;</i></span>
+      </span>
+    </a>
+    <div class="program-select-dropdown">
+      <dl id="sample" class="dropdown program-dropdown">
+        <dd>
+          <ul class="dropdown-content" id="program-list">
+            <% if admin? %>
+            <li>
+              <a class="add-program-btn add-new-program">
+                <span class="add-circle"></span>
+                <span class="add-program-btn-text">CREATE NEW</span>
+              </a>
+            </li>
+            <% end%>
+            <% program_options.each do |program|%>
+            <li data-value="<%= program[1] %>"><a class="dropdown-link" href="/analytics"><%= program[0] %></a></li>
+            <% end %>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+    <% end %>
+    <% unless authorized_learner? %>
+    <div class="navbar-nav">
+      <a class="navbar-item-container analytics" href="/analytics">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="pie-chart link-icon"></span></span>
+          <span class="navbar-item-name">Analytics</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <% if admin? || andelan_lfa? %>
+      <a class="navbar-item-container index learner-link" href="/learners">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="account-circle link-icon"></span></span>
+          <span class="navbar-item-name">Learners</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <a class="navbar-item-container submission" href="/submissions">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="submission-icon link-icon"></span></span>
+          <span class="navbar-item-name">Submissions</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <% end %>
+      <a class="navbar-item-container curriculum" href="/curriculum">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="notepad link-icon"></span></span>
+          <span class="navbar-item-name">Curriculum</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <% if admin? %>
+      <a class="navbar-item-container survey" href="/surveys-v2">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="survey-icon link-icon"></span></span>
+          <span class="navbar-item-name">Surveys</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <a class="navbar-item-container programs" id="programs-link" href="/programs">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="programs-icon link-icon"></span></span>
+          <span class="navbar-item-name">Programs</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <% end %>
+      <% if admin? || pitch_panelist? %>
+      <a class="navbar-item-container pitch" href="/pitch">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="pitch-icon link-icon"></span></span>
+          <span class="navbar-item-name">Pitches</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <% end %>
+      <a class="navbar-item-container support" href="/support">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="chat-box link-icon"></span></span>
+          <span class="navbar-item-name">Support</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+    </div>
+    <% end %>
+    <% if authorized_learner? %>
+    <div class="navbar-nav navbar-learner" id="learner-navbar">
+      <a class="navbar-item-container learner-profile" href="/learner">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="account-circle link-icon"></span></span>
+          <span class="navbar-item-name">Profile</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <a class="navbar-item-container learning-ecosystem" href="/learner/ecosystem">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="notepad link-icon"></span></span>
+          <span class="navbar-item-name">Learning Ecosystem</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <a class="navbar-item-container survey" href="/surveys-v2">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="survey-icon link-icon"></span></span>
+          <span class="navbar-item-name">Surveys</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+      <a class="homestudy-link" href="https://homestudy.andela.com/" target="_blank">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="ic-link-icon link-icon"></span></span>
+          <span class="navbar-item-name ">View Homestudy</span>
+        </span>
+      </a>
+      <a class="navbar-item-container support" href="/support">
+        <span class="navbar-item">
+          <span class="navbar-item-icon"><span class="chat-box link-icon"></span></span>
+          <span class="navbar-item-name">Support</span>
+          <div class="active-border"></div>
+        </span>
+      </a>
+    </div>
+    <% end %>
+  </div>
+</section>
+<section class="notifications-pane">
+  <div class="pane-header">
+    <span class="close-button" tabindex="0"></span>
+    <span class="notification-header-text">Notifications</span>
+    <span class="switch-notification-class">View Archives</span>
+  </div>
+  <div class="pane-body">
+    <span id="current-notifications">
+      <div id="current-panel">
+        <div class="empty-notification-message <%= 'hidden' if current_user_notifications[0][:results].size != 0 %>">All
+          caught up :)</div>
+        <div class="notification-boxes">
+          <% current_user_notifications[0][:results].each do |notification_group, notification_messages| %>
+          <div class="notification-box <%= notification_group.gsub(/\s+/, '-') %>">
+            <div class="notification-box-header">
+              <%= present(notification_messages[0]) { notification_group.upcase } %>
+              <button class="clear-notification-btn">Clear All</button>
+            </div>
+            <div class="notification-group-box">
+              <% notification_messages.each do |notification_message| %>
+              <% present(notification_message) do |message| %>
+              <div class="notification current-notification" data-id="<%= message.id %>">
+                <div class="notification-content-header">
+                  <span class="notif-icon"
+                    data-type="<%= message.notifications_message.priority == 'Urgent' ? 'danger' : 'success' %>"></span>
+                  <span class="notification-time"
+                    tabindex="0"><%= get_notification_day_text(message.created_at) %></span>
+                  <span class="close-button" tabindex="0"></span>
+                </div>
+                <div class="notification-content" tabindex="0">
+                  <%= message.notifications_message.content.html_safe %>
+                </div>
+              </div>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </span>
+    <span id="archives-box">
+      <div id="archived-panel">
+        <div class="empty-notification-message  <%= 'hidden' if current_user_notifications[0][:is_read].size != 0 %>">
+          All caught up :)</div>
+        <div class="notification-boxes">
+          <% current_user_notifications[0][:is_read].each do |notification_group, notification_messages| %>
+          <div class="notification-box">
+            <div class="notification-box-header">
+              <%= present(notification_messages[0]) { notification_group.upcase } %>
+            </div>
+            <div class="notification-group-box">
+              <% notification_messages.each do |notification_message| %>
+              <% present(notification_message) do |message| %>
+              <div class="notification archived-notification" data-id="<%= message.id %>">
+                <div class="notification-content-header">
+                  <span class="notif-icon"
+                    data-type="<%= message.notifications_message.priority == 'Urgent' ? 'danger' : 'success' %>"></span>
+                  <span class="notification-time"
+                    tabindex="0"><%= get_notification_day_text(message.updated_at) %></span>
+                </div>
+                <div class="notification-content" tabindex="0">
+                  <%= message.notifications_message.content.html_safe %>
+                </div>
+              </div>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </span>
+  </div>
+</section>
+<section class="reload-container reload-fade-in">
+  <div>
+    <p>This page is out of date</p>
+    <a href="">Reload</a>
+  </div>
+</section>
+<div class="notification-toast">
+  <div class="notification-toast--header">
+    <span class="notification-toast--icon"></span>
+    <span class="notification-toast--time">Notification</span>
+    <span class="notification-toast--close"></span>
+  </div>
+  <div class="notification-toast--content" id="notification-toast-content">
+  </div>
+</div>
+<div class="notifications-pane-backdrop"></div>
+<%= render("programs/create_program_modal") %>
+<%= render("learners/learner_feedback_modal") if authorized_learner? %>

@@ -1,0 +1,293 @@
+@import "base";
+
+
+.mobile-all-programs {
+  width: 80vw;
+  padding: 0 9%;
+  a {
+    color: $light-grey;
+  }
+}
+  #all-programs {
+    overflow: hidden;
+    .fixed-top{
+      @media only screen and (min-width: $break-point-desktop) and (max-width: $break-point-extra-large) {
+        position: sticky;
+        background: $main-background-color;
+        top: px-to-rem(63px);
+        z-index: 1;
+      }
+
+    }
+    .programs-top {
+      @media only screen and (min-width: $break-point-smobile) and (max-width: $break-point-tablet) {
+        margin-left: px-to-rem(10px)
+      }
+      @media only screen and (min-width: $break-point-tablet) and (max-width: $break-point-large-tablet) {
+        margin-left: px-to-rem(60px);
+      }
+      .programs-content {
+        .all-programs-table-wrapper {
+          width: 100% !important;
+          .program-header-table {
+            margin: 0 auto;
+            min-width: 100%;
+            white-space: nowrap;
+            table-layout: fixed;
+            width: 100% !important;
+            text-align: left;
+            .program-table-header-wrapper {
+              margin: 0 auto;
+              white-space: nowrap;
+              text-align: left;
+              width: 100% !important;
+              font-size:  px-to-rem(15px);
+              th {
+                margin-left: -1rem !important;
+              }
+              .name-header {
+                width:  px-to-rem(150px);
+              }
+
+              .description-header {
+                width:  px-to-rem(350px);
+              }
+
+              .stack-header {
+                width:  px-to-rem(220px);
+              }
+
+              .phase-header {
+                width:  px-to-rem(100px);
+              }
+
+              .duration-header {
+                width:  px-to-rem(100px);
+              }
+              .action-header {
+                width:  px-to-rem(85px);
+              }
+            }
+          }
+        }
+        @media only screen and (min-width:  px-to-rem(320px)) {
+          .all-programs-table-wrapper {
+            display: block;
+            overflow-x: auto;
+          }
+        }
+        .column-title {
+          color: $border-black;
+          text-align: left;
+          font-family: $font-family-light !important;
+          display: flex;
+          align-items: center;
+          padding: 0 0 0 1.2em;
+          font-weight: bold;
+          font-size:  px-to-rem(15px);
+        }
+        @media only screen and (max-width:  px-to-rem(480px)) {
+          .column-title {
+            padding: 0 0 0 .2em;
+          }
+        }
+        .sort-icon-outcomes {
+          height: 1em;
+          width: 1em;
+          margin-left: 0.5em;
+          display: inline-block;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .sort-icon-asc-outcomes {
+          background-image: image-url("a-z.svg");
+          background-repeat: no-repeat;
+        }
+        .sort-icon-desc-outcomes {
+          background-image: image-url("z-a.svg");
+          background-repeat: no-repeat;
+        }
+        .edit-icon, .edit-icon-disabled, .remove-icon-disabled {
+          background-image: image-url("edit.svg");
+          background-repeat: no-repeat;
+          display: inline-block;
+          height:  px-to-rem(23px);
+          width:  px-to-rem(23px);
+          margin-right:  px-to-rem(6px);
+          cursor: pointer;
+        }
+        .edit-icon-disabled, .remove-icon-disabled, .view-icon-disabled {
+          background: transparent;
+          height:  px-to-rem(19px);
+          width:  px-to-rem(19px);
+          display: none;
+        }
+        .remove-icon {
+          background-image: image-url("delete.svg");
+          background-repeat: no-repeat;
+          display: inline-block;
+          height:  px-to-rem(23px);
+          width:  px-to-rem(23px);
+          cursor: pointer;
+        }
+        .view-icon {
+          background-image: image-url("view-eye.svg");
+          background-repeat: no-repeat;
+          display: block;
+          height: px-to-rem(23px);
+          width: px-to-rem(23px);
+          cursor: pointer;
+        }
+        .all-programs-body-wrapper {
+          font-family: $font-family-regular !important;
+          min-width:  px-to-rem(976px) !important;
+          height: auto;
+          .all-programs-table, .all-programs-table_fixed {
+            margin: 0 auto;
+            border: 0;
+            border-spacing: 0 1em;
+            table-layout: fixed;
+            width: 100% !important;
+            z-index: 12;
+          }
+          .all-programs-table {
+            margin-top: -2em !important;
+          }
+          .all-programs-table-container {
+            height: 75vh;
+            overflow-y: auto !important;
+          }
+          .phase-list, .stack-list {
+            list-style-type: none;
+            padding-left: 0 !important;
+            margin: 0 !important;
+          }
+          .programs-row-wrapper {
+            height: auto;
+            background: $background-white;
+            min-height: 3em;
+            width: 100%;
+            border-radius: 5%;
+            .program-url{
+              color: $border-black;
+            }
+            .name-data {
+              width:  px-to-rem(150px) !important;
+              position: relative;
+              a {
+                text-decoration: none;
+                outline: none;
+                display: inline-block;
+                position: absolute;
+              }
+              i {
+                margin-right:  px-to-rem(5px);
+              }
+            }
+
+            .description-data {
+              width:  px-to-rem(350px);
+            }
+
+            .stack-data {
+              width:  px-to-rem(220px);
+            }
+
+            .phase-data {
+              width:  px-to-rem(100px);
+            }
+
+            .duration-data {
+              width:  px-to-rem(100px);
+            }
+            .action-data {
+              width:  px-to-rem(80px);
+            }
+            td {
+              font-weight: normal;
+              padding: 1em 0 2em 1.2em;
+              border-radius: 1%;
+              word-wrap: break-word;
+              line-height: normal;
+              vertical-align: top;
+              font-size:  px-to-rem(15px);
+
+              @include respond-to(handhelds) {
+                padding: 1em 0.21em 2em 0.21em;
+              }
+            }
+          }
+        }
+      }
+    }
+    .programs-bottom {
+      bottom: px-to-rem(-50px);
+      left: 0;
+      right: 0;
+      width: 100%;
+      .btn-wrapper {
+        text-align: right;
+        margin-right:  px-to-rem(14px);
+        padding:  px-to-rem(9px)  px-to-rem(14px);
+        button.cancel-button {
+          outline: none;
+          cursor: pointer;
+          color: $background-blue !important;
+        }
+      }
+    }
+  }
+
+  .button {
+    padding: px-to-rem(1px, 11px, 2px, 10px);
+    border-radius: px-to-rem(2px);
+    box-shadow: $btn-shadow;
+    font-size: px-to-rem(13px);
+  
+    &--filled {
+      background-color: $background-blue;
+      color: $background-white;
+    }
+  }
+
+[aria-describedby="single-program-modal"] {
+  top: 10vh !important;
+  width: 80% !important;
+  height: auto !important;
+
+  #single-program-modal {
+    height: auto !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    margin: 0 auto;
+    z-index: 3147483660 !important;
+    background-color: $main-background-color;
+
+    .modal-header {
+      height: 5rem !important;
+    }
+  }
+}
+
+.ui-widget-content {
+  max-height: none !important;
+}
+
+@media only screen and (max-width:  px-to-rem(820px)) {
+  [aria-describedby="all-programs"] {
+    top: 4vh !important;
+    margin-left:  px-to-rem(-33px) !important;
+  }
+  [aria-describedby="all-programs"] #all-programs {
+    height: 93vh !important;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  [aria-describedby="all-programs"] {
+    top: 6vh !important;
+    margin-left:  px-to-rem(1px) !important;
+  }
+}

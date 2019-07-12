@@ -1,0 +1,138 @@
+{
+  "analyticsPageHints": [
+    {
+      "element": "#cycle-metrics-tab",
+      "hint": "<span class='intro-title'>This is the Cycle Metric Tab</span><br><p>It shows the analytics of cycles over time for a given center.</p>"
+    },
+    {
+      "element": "#program-feedback-tab",
+      "hint": "<span class='intro-title'>The Program Feedback Tab</span><br /><span>It shows Net Promoter Score (NPS) analytics on VOF’s usability and the learners' experiences of the program.</span>"
+    }
+  ],
+  "takeThisTourAgainHint": [
+    {
+      "element": "#tour-icon",
+      "hint": "<p>You can take the tour again by clicking on this icon<br>See you later!</p>"
+    }
+  ],
+  "analyticsTableSteps": [
+    {
+      "intro": "<span class='intro-title'<b>Welcome To The Analytics Page</b></span><br /><p>This page holds VOF programs analytics such as cycle center. Click the button to continue the tour</p>"
+    },
+    {
+      "element": "#program-metrics-tab",
+      "intro": "<span class='intro-title'>The program metrics tab</span><br><p>Under this, you will find all analytics related to a program.</p>",
+      "position": "top"
+    },
+    {
+      "element": "#select_start_date",
+      "intro": "<span>Use this to set the start date of the analytics.</span><br />"
+    },
+    {
+      "element": "#select_end_date",
+      "intro": "<span>Use this to set the end date of the analytics.</span><br />"
+    },
+    {
+      "element": "#center-per-cycle",
+      "intro": "<span>This shows the number of cycles taken per center.</span>"
+    },
+    {
+      "element": "#historical-center",
+      "intro": "<span>This chart shows the historical numbers and percentages of learners by center and gender</span>",
+      "position": "right"
+    },
+    {
+      "element": "#lfa-to-learner",
+      "intro": "<span>This chart shows the historical data of LFA to Learner ratio across Week 1 and Week 2</span>"
+    },
+    {
+      "element": "#center-two",
+      "intro": "<span>This chart shows the historical average perceived readiness of learners for bootcamp by centers. </span>",
+      "position": "right"
+    },
+    {
+      "element": "#perceived-readiness-across-genders",
+      "intro": "<span>This chart shows the historical average perceived readiness of learners for bootcamp across genders. </span>"
+    },
+    {
+      "element": "#program-outcome-week-one",
+      "intro": "<span>This shows an aggregate program outcome metric for the 1st week.</span>"
+    },
+    {
+      "element": "#program-outcome-week-two",
+      "intro": "<span>This shows an aggregate program outcome metric for the 2nd week.</span>"
+    },
+    {
+      "element": "#learners-dispersion",
+      "intro": "<span>This shows the learners distribution across different centers.</span>"
+    },
+    {
+      "element": "#export-dropdown",
+      "intro": "<span>You can use this to export the program metrics data as a PDF, an image or CSV format.</span>",
+      "position": "right"
+    },
+    {
+      "intro": "<span class='intro-title'>Look Out! This is a hint</span><br><div style='display: flex; align-items: center; justify-content: center; height: 2em;'><a class='introjs-hint'><div class='introjs-hint-dot'></div><div class='introjs-hint-pulse'></div></a></div><p>Look out for them. Click on them to get more information about certain parts of the page</p>"
+    }
+  ],
+  "cycleMetricsSteps": [
+    {
+      "element": "#center-dropdown-button",
+      "intro": "<span>Use this to select the center for which you want to see the cycles analytics.</span><br />"
+    },
+    {
+      "element": "#performance-quality",
+      "intro": "<span>This shows the performance quality for different bootcamp cycles in the selected center.</span>",
+      "position": "right"
+    },
+    {
+      "element": "#output-quality",
+      "intro": "<span>This is used to display the output quality for different bootcamp cycles in the selected centers.</span>"
+    },
+    {
+      "element": "#learner-quantity",
+      "intro": "<span>This shows the distribution of different learners across different cycles in the selected centers.</span>",
+      "position": "right"
+    },
+    {
+      "element": "#cycle-dropdown-button",
+      "intro": "<span>Use this to select the cycles for which you want to see analytics.</span><br />"
+    },
+    {
+      "element": "#cycle_center_program-outcome-week-one",
+      "intro": "<span>This shows the 1st week’s outcome distribution for the selected cycle.</span>",
+      "position": "right"
+    },
+    {
+      "element": "#cycle_center_program-outcome-week-two",
+      "intro": "<span>This shows the 2nd week’s outcome distribution for the selected cycle.</span>"
+    },
+    {
+      "element": "#lfa-learner-ratio",
+      "intro": "<span>This chart shows the historical data of LFA to Learner ratio across Week 1 and Week 2 for the selected cycle.</span>",
+      "position": "right"
+    },
+    {
+      "element": "#gender-distribtion",
+      "intro": "<span>This shows the gender distribution in the selected cycle.</span>"
+    }
+  ],
+  "programFeedbackSteps": [
+    {
+      "element": "#program-feedback-center-dropdown-button",
+      "intro": "<span>You can use this to select the center for which you want to see the feedback.</span>"
+    },
+    {
+      "element": "#program-feedback-cycle-dropdown-button",
+      "intro": "<span>You can use this to select the cycle of the center for which you want to see the feedback.</span>"
+    },
+    {
+      "element": "#VOF-Usability-NPS",
+      "intro": "<span>This pie-chart shows the VOF Usability NPS for the selected center & cycle.</span>"
+    },
+    {
+      "element": "#Program-NPS",
+      "intro": "<span>This pie-chart shows the Program NPS for the selected center & cycle.</span>"
+    }
+  ]
+}
