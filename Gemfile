@@ -24,7 +24,7 @@ gem "telephone_number"
 # Use Puma as the app server. versions higher than this have memory leaks
 # https://github.com/puma/puma/issues/1600
 # Use Puma as the app server
-gem "puma", "3.9.1"
+gem "puma", "3.12.3"
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 5.0"
 # Use Uglifier as compressor for JavaScript assets
