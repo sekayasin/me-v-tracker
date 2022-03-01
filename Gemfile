@@ -17,7 +17,7 @@ gem "fog-google"
 gem "fog-aws"
 
 # For processing images before upload
-gem 'image_processing', '~>1.0'
+gem 'image_processing', '~>1.12'
 
 # Use telephone_number to validate phone numbers
 gem "telephone_number"
